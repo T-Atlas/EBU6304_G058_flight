@@ -1,7 +1,9 @@
-package entity;
+package com.app.fight.entity;
 
 /**
  * @author SongBo
+ * @version 0.1
+ * @date 2022.3.17
  */
 public class Tag {
     private Passenger passenger;

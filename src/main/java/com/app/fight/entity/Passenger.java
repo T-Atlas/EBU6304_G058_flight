@@ -1,9 +1,11 @@
-package entity;
+package com.app.fight.entity;
 
 import java.util.ArrayList;
 
 /**
  * @author SongBo
+ * @version 0.1
+ * @date 2022.3.17
  */
 public class Passenger {
     private String firstName;
