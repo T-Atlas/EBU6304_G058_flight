@@ -10,6 +10,9 @@ import java.util.ArrayList;
 public class Passenger {
     private String firstName;
     private String lastName;
+    /**
+     * idNumber 身份证号
+     */
     private int idNumber;
     private int age;
     private final ArrayList<Flight> flights = new ArrayList<>();

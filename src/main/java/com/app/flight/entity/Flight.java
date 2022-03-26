@@ -9,11 +9,17 @@ import java.time.LocalTime;
  * @date 2022.3.17
  */
 public class Flight {
+    private Passenger passenger;
+    private int bookingNumber;
+    /**
+     * flightId前两个为字母，后四位为数字
+     */
     private String flightId;
     private String departureStation;
     private String destination;
     private String seatLevel;
-    private boolean baggage;
+    private int carryOnBaggage;
+    private int checkInBaggage;
     private boolean food;
     private LocalTime time;
     private LocalDate date;
@@ -26,78 +32,17 @@ public class Flight {
     public Flight() {
     }
 
-    public String getFlightId() {
-        return flightId;
-    }
-
-    public void setFlightId(String flightId) {
-        this.flightId = flightId;
-    }
-
-    public String getDepartureStation() {
-        return departureStation;
-    }
-
-    public void setDepartureStation(String departureStation) {
-        this.departureStation = departureStation;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public String getSeatLevel() {
-        return seatLevel;
-    }
-
-    public void setSeatLevel(String seatLevel) {
-        this.seatLevel = seatLevel;
-    }
-
-    public boolean isBaggage() {
-        return baggage;
-    }
-
-    public void setBaggage(boolean baggage) {
-        this.baggage = baggage;
-    }
-
-    public boolean isFood() {
-        return food;
-    }
-
-    public void setFood(boolean food) {
-        this.food = food;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
     @Override
     public String toString() {
         return "Flight{" +
-                "flightId='" + flightId + '\'' +
+                "passenger=" + passenger +
+                ", bookingNumber=" + bookingNumber +
+                ", flightId='" + flightId + '\'' +
                 ", departureStation='" + departureStation + '\'' +
                 ", destination='" + destination + '\'' +
                 ", seatLevel='" + seatLevel + '\'' +
-                ", baggage=" + baggage +
+                ", carryOnBaggage=" + carryOnBaggage +
+                ", checkInBaggage=" + checkInBaggage +
                 ", food=" + food +
                 ", time=" + time +
                 ", date=" + date +
