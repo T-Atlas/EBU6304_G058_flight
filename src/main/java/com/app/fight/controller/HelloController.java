@@ -1,4 +1,4 @@
-package com.app.fight;
+package com.app.fight.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
