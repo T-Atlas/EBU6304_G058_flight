@@ -3,14 +3,15 @@ package com.app.flight.entity;
 /**
  * @author SongBo
  * @version 0.1
- * @date 2022.3.17
+ * @date 2022.3.26
  */
-public class Tag {
+public class Voucher {
     private Passenger passenger;
     private Flight flight;
-    private int tagNo;
+    private int voucherId;
+    private int counterNo;
 
-    public Tag() {
+    public Voucher() {
     }
 
     public Passenger getPassenger() {
@@ -29,20 +30,29 @@ public class Tag {
         this.flight = flight;
     }
 
-    public int getTagNo() {
-        return tagNo;
+    public int getVoucherId() {
+        return voucherId;
     }
 
-    public void setTagNo(int tagNo) {
-        this.tagNo = tagNo;
+    public void setVoucherId(int voucherId) {
+        this.voucherId = voucherId;
+    }
+
+    public int getCounterNo() {
+        return counterNo;
+    }
+
+    public void setCounterNo(int counterNo) {
+        this.counterNo = counterNo;
     }
 
     @Override
     public String toString() {
-        return "Tag{" +
+        return "Voucher{" +
                 "passenger=" + passenger +
                 ", flight=" + flight +
-                ", tagNo=" + tagNo +
+                ", voucherId=" + voucherId +
+                ", counterNo=" + counterNo +
                 '}';
     }
 }
