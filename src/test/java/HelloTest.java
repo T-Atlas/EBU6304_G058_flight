@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import com.app.fight.entity.Passenger;
+import com.app.flight.entity.Passenger;
 
 public class HelloTest {
 
