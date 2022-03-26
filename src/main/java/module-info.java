@@ -3,6 +3,8 @@ module com.app.fight {
     requires javafx.fxml;
 
 
-    opens com.app.fight to javafx.fxml;
-    exports com.app.fight;
+    opens com.app.flight to javafx.fxml;
+    exports com.app.flight;
+    exports com.app.flight.controller;
+    opens com.app.flight.controller to javafx.fxml;
 }
