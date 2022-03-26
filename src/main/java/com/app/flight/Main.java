@@ -1,4 +1,4 @@
-package com.app.fight;
+package com.app.flight;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,4 +1,4 @@
-package com.app.fight.entity;
+package com.app.flight.entity;
 
 import java.util.ArrayList;
 

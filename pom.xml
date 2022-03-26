@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.app</groupId>
-    <artifactId>fight</artifactId>
+    <artifactId>flight</artifactId>
     <version>1.0</version>
     <name>fight</name>
 
@@ -69,7 +69,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.app.fight/com.app.fight.Main</mainClass>
+                            <mainClass>com.app.flight/com.app.flight.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
