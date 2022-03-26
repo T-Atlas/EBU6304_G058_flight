@@ -1,10 +1,9 @@
-package entity;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
+package com.app.fight.entity;
 
 /**
  * @author SongBo
+ * @version 0.1
+ * @date 2022.3.17
  */
 public class BoardingPass {
     private Passenger passenger;
