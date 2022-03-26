@@ -1,0 +1,9 @@
+com\app\fight\entity\BoardingPass.class
+com\app\fight\HelloController.class
+module-info.class
+com\app\fight\entity\Flight.class
+com\app\fight\entity\Passenger.class
+com\app\fight\HelloApplication.class
+com\app\fight\entity\BoardingPass$typeOfMeal.class
+com\app\fight\entity\Flight$seatClass.class
+com\app\fight\entity\Tag.class
