@@ -2,6 +2,8 @@ package com.app.flight.entity;
 
 /**
  * @author LianJunhong
+ * @version 1.0
+ * @date 2022.3.27
  */
 public class Reservation {
 
@@ -11,20 +13,19 @@ public class Reservation {
     private String reservationId;
 
     /**
-     * A flight number with six characters in total.
-     * The first two characters are letters and the last four characters are numbers.
+     * The passenger for the reserved flight.
      */
-    private String flightId;
+    private Passenger passenger;
+
+    /**
+     * The information for the reserved flight.
+     */
+    private Flight flight;
 
     /**
      * It is represented by three aircraft class enumeration constants.
      */
     private String seatLevel;
-
-    /**
-     * The passenger for the reserved flight.
-     */
-    private Passenger passenger;
 
     /**
      * Determine whether meals are included in the scheduled flight.
@@ -51,5 +52,72 @@ public class Reservation {
     public Reservation() {
     }
 
+    public String getReservationId() {
+        return reservationId;
+    }
 
+    public void setReservationId(String reservationId) {
+        this.reservationId = reservationId;
+    }
+
+    public Passenger getPassenger() {
+        return passenger;
+    }
+
+    public void setPassenger(Passenger passenger) {
+        this.passenger = passenger;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
+    public String getSeatLevel() {
+        return seatLevel;
+    }
+
+    public void setSeatLevel(String seatLevel) {
+        this.seatLevel = seatLevel;
+    }
+
+    public boolean isMealsAvailable() {
+        return mealsAvailable;
+    }
+
+    public void setMealsAvailable(boolean mealsAvailable) {
+        this.mealsAvailable = mealsAvailable;
+    }
+
+    public int getHandBaggageNum() {
+        return handBaggageNum;
+    }
+
+    public void setHandBaggageNum(int handBaggageNum) {
+        this.handBaggageNum = handBaggageNum;
+    }
+
+    public int getCheckedBaggageNum() {
+        return checkedBaggageNum;
+    }
+
+    public void setCheckedBaggageNum(int checkedBaggageNum) {
+        this.checkedBaggageNum = checkedBaggageNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "reservationId='" + reservationId + '\'' +
+                ", passenger=" + passenger.getPassengerId() +
+                ", flight='" + flight.getFlightId() + '\'' +
+                ", seatLevel='" + seatLevel + '\'' +
+                ", mealsAvailable=" + mealsAvailable +
+                ", handBaggageNum=" + handBaggageNum +
+                ", checkedBaggageNum=" + checkedBaggageNum +
+                '}';
+    }
 }

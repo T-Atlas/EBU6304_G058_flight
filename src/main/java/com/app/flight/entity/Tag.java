@@ -2,7 +2,7 @@ package com.app.flight.entity;
 
 /**
  * @author SongBo
- * @version 0.1
+ * @version 1.0
  * @date 2022.3.17
  */
 public class Tag {
@@ -20,8 +20,41 @@ public class Tag {
     /**
      * Serial number of hand baggage
      */
-    private int[] baggageNo;
+    private int baggageNo;
 
     public Tag() {
+    }
+
+    public int getTagNo() {
+        return tagNo;
+    }
+
+    public void setTagNo(int tagNo) {
+        this.tagNo = tagNo;
+    }
+
+    public int getHandBaggageNum() {
+        return handBaggageNum;
+    }
+
+    public void setHandBaggageNum(int handBaggageNum) {
+        this.handBaggageNum = handBaggageNum;
+    }
+
+    public int getBaggageNo() {
+        return baggageNo;
+    }
+
+    public void setBaggageNo(int baggageNo) {
+        this.baggageNo = baggageNo;
+    }
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "tagNo=" + tagNo +
+                ", handBaggageNum=" + handBaggageNum +
+                ", baggageNo=" + baggageNo +
+                '}';
     }
 }
