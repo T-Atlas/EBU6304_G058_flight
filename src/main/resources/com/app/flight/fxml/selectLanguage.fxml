@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.SelectLanguageController">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="97.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="345.0" minHeight="10.0" prefHeight="259.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="67.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Button layoutX="100.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="132.0" text="简体中文" textAlignment="CENTER" onAction="#onHelloButtonClick" />
+                  <Button layoutX="380.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="132.0" text="English" textAlignment="CENTER" onAction="#onHelloButtonClick"/>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="240.0" prefWidth="600.0" GridPane.rowIndex="2">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="54.0" layoutY="42.0" prefHeight="54.0" prefWidth="493.0" text="Smart flight check-in kiosk" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font></Label>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="245.0" layoutY="110.0" prefHeight="34.0" prefWidth="112.0" text="Welcome" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="CENTER" layoutX="98.0" layoutY="127.0" prefHeight="95.0" prefWidth="404.0" text="Select the language and you can check-in right now" textAlignment="CENTER" textFill="#0f81d9" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#bcbcbc" layoutX="31.0" layoutY="24.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Text layoutX="59.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hainan Airlines" wrappingWidth="112.240234375">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Text>
+               </children></AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

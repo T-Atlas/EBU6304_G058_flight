@@ -4,11 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 /**
+ * This code is used to control the interface for selecting language.
  * @author LianJunhong
  * @version 0.1
- * @date 2022.3.26
+ * @date 2022.3.27
  */
-public class HelloController {
+public class SelectLanguageController {
     @FXML
     private Label welcomeText;
 
@@ -16,4 +17,5 @@ public class HelloController {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
+
 }
