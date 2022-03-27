@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Updated the code of its own version.
  * @author LianJunhong
- * @version 0.2
+ * @version 1.0
  * @date 2022.3.27
  */
 public class Main extends Application {

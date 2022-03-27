@@ -2,6 +2,7 @@ package com.app.flight.entity;
 
 /**
  * @author LianJunhong
+ * @author SongBo
  * @version 1.0
  * @date 2022.3.27
  */

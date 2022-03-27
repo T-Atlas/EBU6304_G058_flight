@@ -2,8 +2,9 @@ package com.app.flight.entity;
 
 /**
  * @author SongBo
+ * @author LianJunhong
  * @version 1.0
- * @date 2022.3.17
+ * @date 2022.3.27
  */
 public class BoardingPass {
 
