@@ -3,7 +3,7 @@ package com.app.flight.entity;
 /**
  * @author JiaBoran
  * @author LianJunhong
- * @version 0.1
+ * @version 1.0
  * @date 2022.3.27
  */
 public class Admin {
