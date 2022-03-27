@@ -10,13 +10,7 @@ public class BoardingPass {
     private Flight flight;
     private String seatNumber;
     private String foodType;
-    private int boardingGate;
     private int boardingNo;
-
-    public enum typeOfMeal {
-        //Three types of meal
-        STANDARD, VEGETARIAN, HALAL
-    }
 
     public BoardingPass() {
     }
@@ -53,14 +47,6 @@ public class BoardingPass {
         this.foodType = foodType;
     }
 
-    public int getBoardingGate() {
-        return boardingGate;
-    }
-
-    public void setBoardingGate(int boardingGate) {
-        this.boardingGate = boardingGate;
-    }
-
     public int getBoardingNo() {
         return boardingNo;
     }
@@ -76,7 +62,6 @@ public class BoardingPass {
                 ", flight=" + flight +
                 ", seatNumber='" + seatNumber + '\'' +
                 ", foodType='" + foodType + '\'' +
-                ", boardingGate=" + boardingGate +
                 ", boardingNo=" + boardingNo +
                 '}';
     }

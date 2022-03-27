@@ -9,43 +9,77 @@ import java.time.LocalTime;
  * @date 2022.3.17
  */
 public class Flight {
-    private Passenger passenger;
-    private int bookingNumber;
-    /**
-     * flightId前两个为字母，后四位为数字
-     */
+
     private String flightId;
-    private String departureStation;
+    private String departure;
     private String destination;
-    private String seatLevel;
-    private int carryOnBaggage;
-    private int checkInBaggage;
-    private boolean food;
-    private LocalTime time;
+    private String boardingGate;
+    private LocalTime boardingTime;
+    private LocalTime departureTime;
+    private LocalTime arrivalTime;
     private LocalDate date;
 
-    public enum seatClass {
-        //Three types of aircraft accommodation
-        ECONOMY_CLASS, BUSINESS_CLASS, First_CLASS
+    public String getFlightId() {
+        return flightId;
     }
 
-    public Flight() {
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
     }
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "passenger=" + passenger +
-                ", bookingNumber=" + bookingNumber +
-                ", flightId='" + flightId + '\'' +
-                ", departureStation='" + departureStation + '\'' +
-                ", destination='" + destination + '\'' +
-                ", seatLevel='" + seatLevel + '\'' +
-                ", carryOnBaggage=" + carryOnBaggage +
-                ", checkInBaggage=" + checkInBaggage +
-                ", food=" + food +
-                ", time=" + time +
-                ", date=" + date +
-                '}';
+    public String getDeparture() {
+        return departure;
+    }
+
+    public void setDeparture(String departure) {
+        this.departure = departure;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public String getBoardingGate() {
+        return boardingGate;
+    }
+
+    public void setBoardingGate(String boardingGate) {
+        this.boardingGate = boardingGate;
+    }
+
+    public LocalTime getBoardingTime() {
+        return boardingTime;
+    }
+
+    public void setBoardingTime(LocalTime boardingTime) {
+        this.boardingTime = boardingTime;
+    }
+
+    public LocalTime getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(LocalTime departureTime) {
+        this.departureTime = departureTime;
+    }
+
+    public LocalTime getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime(LocalTime arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

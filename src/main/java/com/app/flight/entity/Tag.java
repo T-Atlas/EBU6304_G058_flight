@@ -6,28 +6,11 @@ package com.app.flight.entity;
  * @date 2022.3.17
  */
 public class Tag {
-    private Passenger passenger;
-    private Flight flight;
+
     private int tagNo;
-
-    public Tag() {
-    }
-
-    public Passenger getPassenger() {
-        return passenger;
-    }
-
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
+    private int checkedBaggageNum;
+    private int baggageId;
+    private double weight;
 
     public int getTagNo() {
         return tagNo;
@@ -37,12 +20,27 @@ public class Tag {
         this.tagNo = tagNo;
     }
 
-    @Override
-    public String toString() {
-        return "Tag{" +
-                "passenger=" + passenger +
-                ", flight=" + flight +
-                ", tagNo=" + tagNo +
-                '}';
+    public int getCheckedBaggageNum() {
+        return checkedBaggageNum;
+    }
+
+    public void setCheckedBaggageNum(int checkedBaggageNum) {
+        this.checkedBaggageNum = checkedBaggageNum;
+    }
+
+    public int getBaggageId() {
+        return baggageId;
+    }
+
+    public void setBaggageId(int baggageId) {
+        this.baggageId = baggageId;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 }
