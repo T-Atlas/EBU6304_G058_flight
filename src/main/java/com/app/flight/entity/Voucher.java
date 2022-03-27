@@ -2,40 +2,35 @@ package com.app.flight.entity;
 
 /**
  * @author SongBo
- * @version 0.1
- * @date 2022.3.26
+ * @version 1.0
+ * @date 2022.3.17
  */
 public class Voucher {
-    private Passenger passenger;
-    private Flight flight;
-    private int voucherId;
+
+    /**
+     * Serial number of the voucher
+     */
+    private int voucherNo;
+
+    /**
+     * Counter number for checked baggage
+     */
     private int counterNo;
+
+    /**
+     * Number of checked baggage
+     */
+    private int checkedBaggageNum;
 
     public Voucher() {
     }
 
-    public Passenger getPassenger() {
-        return passenger;
+    public int getVoucherNo() {
+        return voucherNo;
     }
 
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
-
-    public int getVoucherId() {
-        return voucherId;
-    }
-
-    public void setVoucherId(int voucherId) {
-        this.voucherId = voucherId;
+    public void setVoucherNo(int voucherNo) {
+        this.voucherNo = voucherNo;
     }
 
     public int getCounterNo() {
@@ -46,13 +41,20 @@ public class Voucher {
         this.counterNo = counterNo;
     }
 
+    public int getCheckedBaggageNum() {
+        return checkedBaggageNum;
+    }
+
+    public void setCheckedBaggageNum(int checkedBaggageNum) {
+        this.checkedBaggageNum = checkedBaggageNum;
+    }
+
     @Override
     public String toString() {
         return "Voucher{" +
-                "passenger=" + passenger +
-                ", flight=" + flight +
-                ", voucherId=" + voucherId +
+                "voucherNo=" + voucherNo +
                 ", counterNo=" + counterNo +
+                ", checkedBaggageNum=" + checkedBaggageNum +
                 '}';
     }
 }

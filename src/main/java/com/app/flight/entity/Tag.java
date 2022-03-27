@@ -2,31 +2,27 @@ package com.app.flight.entity;
 
 /**
  * @author SongBo
- * @version 0.1
+ * @version 1.0
  * @date 2022.3.17
  */
 public class Tag {
-    private Passenger passenger;
-    private Flight flight;
+
+    /**
+     * Serial number of the tag
+     */
     private int tagNo;
 
+    /**
+     * Number of hand baggage
+     */
+    private int handBaggageNum;
+
+    /**
+     * Serial number of hand baggage
+     */
+    private int baggageNo;
+
     public Tag() {
-    }
-
-    public Passenger getPassenger() {
-        return passenger;
-    }
-
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
     }
 
     public int getTagNo() {
@@ -37,12 +33,28 @@ public class Tag {
         this.tagNo = tagNo;
     }
 
+    public int getHandBaggageNum() {
+        return handBaggageNum;
+    }
+
+    public void setHandBaggageNum(int handBaggageNum) {
+        this.handBaggageNum = handBaggageNum;
+    }
+
+    public int getBaggageNo() {
+        return baggageNo;
+    }
+
+    public void setBaggageNo(int baggageNo) {
+        this.baggageNo = baggageNo;
+    }
+
     @Override
     public String toString() {
         return "Tag{" +
-                "passenger=" + passenger +
-                ", flight=" + flight +
-                ", tagNo=" + tagNo +
+                "tagNo=" + tagNo +
+                ", handBaggageNum=" + handBaggageNum +
+                ", baggageNo=" + baggageNo +
                 '}';
     }
 }
