@@ -8,4 +8,7 @@ package com.app.flight.entity;
  * @date 2022.3.27
  */
 public class Staff {
+    private int staffId;
+    private String password;
+    private String companyId;
 }

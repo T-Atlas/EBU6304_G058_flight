@@ -8,13 +8,29 @@ import java.util.ArrayList;
  * @date 2022.3.17
  */
 public class Passenger {
+    /**
+     * The first name of passenger.
+     */
     private String firstName;
-    private String lastName;
-    private int idNumber;
-    private int age;
-    private final ArrayList<Flight> flights = new ArrayList<>();
 
-    public Passenger() {
+    /**
+     * The last name of passenger.
+     */
+    private String lastName;
+
+    /**
+     * The unique identification of particular passenger.
+     */
+    private int passengerId;
+
+    /**
+     * The age of passenger.
+     */
+    private int age;
+    private String telephone;
+
+    public Passenger(int passengerId) {
+        this.passengerId = passengerId;
     }
 
     public String getFirstName() {
@@ -33,12 +49,12 @@ public class Passenger {
         this.lastName = lastName;
     }
 
-    public int getIdNumber() {
-        return idNumber;
+    public int getPassengerId() {
+        return passengerId;
     }
 
-    public void setIdNumber(int idNumber) {
-        this.idNumber = idNumber;
+    public void setPassengerId(int passengerId) {
+        this.passengerId = passengerId;
     }
 
     public int getAge() {
@@ -49,18 +65,11 @@ public class Passenger {
         this.age = age;
     }
 
-    public ArrayList<Flight> getFlights() {
-        return flights;
+    public String getTelephone() {
+        return telephone;
     }
 
-    @Override
-    public String toString() {
-        return "Passenger{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", idNumber=" + idNumber +
-                ", age=" + age +
-                ", flights=" + flights +
-                '}';
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 }

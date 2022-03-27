@@ -9,22 +9,15 @@ import java.time.LocalTime;
  * @date 2022.3.17
  */
 public class Flight {
+
     private String flightId;
-    private String departureStation;
+    private String departure;
     private String destination;
-    private String seatLevel;
-    private boolean baggage;
-    private boolean food;
-    private LocalTime time;
+    private String boardingGate;
+    private LocalTime boardingTime;
+    private LocalTime departureTime;
+    private LocalTime arrivalTime;
     private LocalDate date;
-
-    public enum seatClass {
-        //Three types of aircraft accommodation
-        ECONOMY_CLASS, BUSINESS_CLASS, First_CLASS
-    }
-
-    public Flight() {
-    }
 
     public String getFlightId() {
         return flightId;
@@ -34,12 +27,12 @@ public class Flight {
         this.flightId = flightId;
     }
 
-    public String getDepartureStation() {
-        return departureStation;
+    public String getDeparture() {
+        return departure;
     }
 
-    public void setDepartureStation(String departureStation) {
-        this.departureStation = departureStation;
+    public void setDeparture(String departure) {
+        this.departure = departure;
     }
 
     public String getDestination() {
@@ -50,36 +43,36 @@ public class Flight {
         this.destination = destination;
     }
 
-    public String getSeatLevel() {
-        return seatLevel;
+    public String getBoardingGate() {
+        return boardingGate;
     }
 
-    public void setSeatLevel(String seatLevel) {
-        this.seatLevel = seatLevel;
+    public void setBoardingGate(String boardingGate) {
+        this.boardingGate = boardingGate;
     }
 
-    public boolean isBaggage() {
-        return baggage;
+    public LocalTime getBoardingTime() {
+        return boardingTime;
     }
 
-    public void setBaggage(boolean baggage) {
-        this.baggage = baggage;
+    public void setBoardingTime(LocalTime boardingTime) {
+        this.boardingTime = boardingTime;
     }
 
-    public boolean isFood() {
-        return food;
+    public LocalTime getDepartureTime() {
+        return departureTime;
     }
 
-    public void setFood(boolean food) {
-        this.food = food;
+    public void setDepartureTime(LocalTime departureTime) {
+        this.departureTime = departureTime;
     }
 
-    public LocalTime getTime() {
-        return time;
+    public LocalTime getArrivalTime() {
+        return arrivalTime;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setArrivalTime(LocalTime arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
 
     public LocalDate getDate() {
@@ -88,19 +81,5 @@ public class Flight {
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightId='" + flightId + '\'' +
-                ", departureStation='" + departureStation + '\'' +
-                ", destination='" + destination + '\'' +
-                ", seatLevel='" + seatLevel + '\'' +
-                ", baggage=" + baggage +
-                ", food=" + food +
-                ", time=" + time +
-                ", date=" + date +
-                '}';
     }
 }
