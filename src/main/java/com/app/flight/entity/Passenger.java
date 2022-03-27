@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 /**
  * @author SongBo
- * @version 0.1
+ * @version 1.0
  * @date 2022.3.17
  */
 public class Passenger {
+
     /**
      * The first name of passenger.
      */
@@ -27,49 +28,14 @@ public class Passenger {
      * The age of passenger.
      */
     private int age;
+
+    /**
+     * The telephone of passenger.
+     */
     private String telephone;
 
-    public Passenger(int passengerId) {
-        this.passengerId = passengerId;
+    public Passenger() {
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getPassengerId() {
-        return passengerId;
-    }
-
-    public void setPassengerId(int passengerId) {
-        this.passengerId = passengerId;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 }

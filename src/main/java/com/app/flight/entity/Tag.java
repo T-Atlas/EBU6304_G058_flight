@@ -7,40 +7,21 @@ package com.app.flight.entity;
  */
 public class Tag {
 
+    /**
+     * Serial number of the tag
+     */
     private int tagNo;
-    private int checkedBaggageNum;
-    private int baggageId;
-    private double weight;
 
-    public int getTagNo() {
-        return tagNo;
-    }
+    /**
+     * Number of hand baggage
+     */
+    private int handBaggageNum;
 
-    public void setTagNo(int tagNo) {
-        this.tagNo = tagNo;
-    }
+    /**
+     * Serial number of hand baggage
+     */
+    private int[] baggageNo;
 
-    public int getCheckedBaggageNum() {
-        return checkedBaggageNum;
-    }
-
-    public void setCheckedBaggageNum(int checkedBaggageNum) {
-        this.checkedBaggageNum = checkedBaggageNum;
-    }
-
-    public int getBaggageId() {
-        return baggageId;
-    }
-
-    public void setBaggageId(int baggageId) {
-        this.baggageId = baggageId;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public Tag() {
     }
 }

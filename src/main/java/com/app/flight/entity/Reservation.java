@@ -10,11 +10,35 @@ public class Reservation {
      */
     private String reservationId;
 
-    private int passengerId;
+    /**
+     * A flight number with six characters in total.
+     * The first two characters are letters and the last four characters are numbers.
+     */
     private String flightId;
+
+    /**
+     * It is represented by three aircraft class enumeration constants.
+     */
     private String seatLevel;
-    private boolean foodReserved;
+
+    /**
+     * The passenger for the reserved flight.
+     */
+    private Passenger passenger;
+
+    /**
+     * Determine whether meals are included in the scheduled flight.
+     */
+    private boolean mealsAvailable;
+
+    /**
+     * Number of passengers' hand baggage.
+     */
     private int handBaggageNum;
+
+    /**
+     * Number of passengers' checked baggage.
+     */
     private int checkedBaggageNum;
 
     public enum seatClass {
@@ -24,59 +48,8 @@ public class Reservation {
         ECONOMY_CLASS, BUSINESS_CLASS, FIRST_CLASS
     }
 
-    public String getReservationId() {
-        return reservationId;
+    public Reservation() {
     }
 
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
-    }
 
-    public int getPassengerId() {
-        return passengerId;
-    }
-
-    public void setPassengerId(int passengerId) {
-        this.passengerId = passengerId;
-    }
-
-    public String getFlightId() {
-        return flightId;
-    }
-
-    public void setFlightId(String flightId) {
-        this.flightId = flightId;
-    }
-
-    public String getSeatLevel() {
-        return seatLevel;
-    }
-
-    public void setSeatLevel(String seatLevel) {
-        this.seatLevel = seatLevel;
-    }
-
-    public boolean isFoodReserved() {
-        return foodReserved;
-    }
-
-    public void setFoodReserved(boolean foodReserved) {
-        this.foodReserved = foodReserved;
-    }
-
-    public int getHandBaggageNum() {
-        return handBaggageNum;
-    }
-
-    public void setHandBaggageNum(int handBaggageNum) {
-        this.handBaggageNum = handBaggageNum;
-    }
-
-    public int getCheckedBaggageNum() {
-        return checkedBaggageNum;
-    }
-
-    public void setCheckedBaggageNum(int checkedBaggageNum) {
-        this.checkedBaggageNum = checkedBaggageNum;
-    }
 }

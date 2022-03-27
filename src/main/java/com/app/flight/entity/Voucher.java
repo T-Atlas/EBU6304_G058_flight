@@ -7,31 +7,21 @@ package com.app.flight.entity;
  */
 public class Voucher {
 
-    private int voucherId;
+    /**
+     * Serial number of the voucher
+     */
+    private int voucherNo;
+
+    /**
+     * Counter number for checked baggage
+     */
     private int counterNo;
-    private int handBaggageNum;
 
-    public int getVoucherId() {
-        return voucherId;
-    }
+    /**
+     * Number of checked baggage
+     */
+    private int checkedBaggageNum;
 
-    public void setVoucherId(int voucherId) {
-        this.voucherId = voucherId;
-    }
-
-    public int getCounterNo() {
-        return counterNo;
-    }
-
-    public void setCounterNo(int counterNo) {
-        this.counterNo = counterNo;
-    }
-
-    public int getHandBaggageNum() {
-        return handBaggageNum;
-    }
-
-    public void setHandBaggageNum(int handBaggageNum) {
-        this.handBaggageNum = handBaggageNum;
+    public Voucher() {
     }
 }

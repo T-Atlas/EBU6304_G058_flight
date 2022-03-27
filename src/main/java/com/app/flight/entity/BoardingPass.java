@@ -8,61 +8,16 @@ package com.app.flight.entity;
 public class BoardingPass {
     private Passenger passenger;
     private Flight flight;
-    private String seatNumber;
-    private String foodType;
+    /**
+     * Seat number with a total of three characters.
+     * The first two characters are numbers and the last character is letters.
+     */
+    private String seatNo;
+    private Food food;
     private int boardingNo;
 
     public BoardingPass() {
     }
 
-    public Passenger getPassenger() {
-        return passenger;
-    }
 
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
-
-    public String getSeatNumber() {
-        return seatNumber;
-    }
-
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
-    }
-
-    public String getFoodType() {
-        return foodType;
-    }
-
-    public void setFoodType(String foodType) {
-        this.foodType = foodType;
-    }
-
-    public int getBoardingNo() {
-        return boardingNo;
-    }
-
-    public void setBoardingNo(int boardingNo) {
-        this.boardingNo = boardingNo;
-    }
-
-    @Override
-    public String toString() {
-        return "BoardingPass{" +
-                "passenger=" + passenger +
-                ", flight=" + flight +
-                ", seatNumber='" + seatNumber + '\'' +
-                ", foodType='" + foodType + '\'' +
-                ", boardingNo=" + boardingNo +
-                '}';
-    }
 }

@@ -11,4 +11,7 @@ public class Staff {
     private int staffId;
     private String password;
     private String companyId;
+
+    public Staff() {
+    }
 }

@@ -14,4 +14,7 @@ public class Food {
          */
         STANDARD, HALAL, VEGETARIAN
     }
+
+    public Food() {
+    }
 }
