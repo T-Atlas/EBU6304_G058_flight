@@ -10,7 +10,7 @@ public class Passenger {
     /**
      * The unique identification of particular passenger.
      */
-    private int passengerId;
+    private String passengerId;
 
     /**
      * The first name of passenger.
@@ -35,11 +35,11 @@ public class Passenger {
     public Passenger() {
     }
 
-    public int getPassengerId() {
+    public String getPassengerId() {
         return passengerId;
     }
 
-    public void setPassengerId(int passengerId) {
+    public void setPassengerId(String passengerId) {
         this.passengerId = passengerId;
     }
 
