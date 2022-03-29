@@ -34,6 +34,7 @@ public class Flight {
     /**
      * Boarding time of flight.
      */
+
     private LocalDateTime boardingTime;
 
     /**
