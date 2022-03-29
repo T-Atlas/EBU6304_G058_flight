@@ -7,4 +7,5 @@ module com.app.fight {
     exports com.app.flight;
     exports com.app.flight.controller;
     opens com.app.flight.controller to javafx.fxml;
+
 }

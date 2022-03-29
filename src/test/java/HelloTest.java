@@ -1,14 +1,12 @@
-
 import com.alibaba.fastjson.JSON;
 import com.app.flight.entity.Flight;
+import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
 import org.junit.jupiter.api.Test;
-import com.app.flight.entity.Passenger;
 
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class HelloTest {
     @Test
@@ -70,7 +68,7 @@ public class HelloTest {
 
         reservation.setReservationId("001");
         reservation.setPassenger(passenger);
-        //reservation.setFlight(flight);
+        reservation.setFlight(flight);
         reservation.setSeatLevel("High");
         reservation.setMealsAvailable(true);
         reservation.setHandBaggageNum(2);
