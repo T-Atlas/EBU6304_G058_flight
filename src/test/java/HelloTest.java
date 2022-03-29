@@ -1,18 +1,18 @@
-import cn.hutool.core.date.LocalDateTimeUtil;
+import com.alibaba.fastjson.JSON;
 import com.app.flight.entity.Flight;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
 import com.app.flight.entity.Passenger;
+import org.junit.jupiter.api.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
+
 
 public class HelloTest {
     @Test
     public static void main(String[] args) throws IOException {
-        File file = new File("src/main/resources/com/app/flight/data/json/Passenger.json");
 
         Passenger passenger = new Passenger();
         passenger.setPassengerId("220802200005217777");
@@ -20,10 +20,18 @@ public class HelloTest {
         passenger.setLastName("Lian");
         passenger.setTelephone("13104368888");
         passenger.setAge(18);
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(file, passenger);
-        Passenger passenger1 = mapper.readValue(file, Passenger.class);
-        System.out.println(passenger1);
+
+        Flight flight = new Flight();
+        flight.setBoardingTime(LocalDateTime.now());
+        String s = JSON.toJSONString(flight);
+        System.out.println(s);
+
+        FileWriter fw = new FileWriter("src/main/resources/com/app/flight/data/json/Flight.json");
+        PrintWriter out = new PrintWriter(fw);
+        out.write(s);
+        out.println();
+        fw.close();
+        out.close();
 
 
     }

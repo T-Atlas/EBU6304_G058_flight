@@ -5,7 +5,7 @@ import com.app.flight.entity.Passenger;
 import java.io.IOException;
 
 /**
- * @author 贾博然
+ * @author JiaBoran
  */
 public class PassengerController {
 
