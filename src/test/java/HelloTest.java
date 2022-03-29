@@ -18,7 +18,6 @@ public class HelloTest {
         PrintWriter out = new PrintWriter(pJson);
 
 
-
         ArrayList<Passenger> users = new ArrayList<>();
         Passenger passenger = new Passenger();
         passenger.setPassengerId("220802200005217777");
