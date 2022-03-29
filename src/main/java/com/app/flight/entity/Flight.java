@@ -1,5 +1,8 @@
 package com.app.flight.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
+import java.text.Format;
 import java.time.LocalDateTime;
 
 /**
@@ -34,7 +37,7 @@ public class Flight {
     /**
      * Boarding time of flight.
      */
-
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime boardingTime;
 
     /**
