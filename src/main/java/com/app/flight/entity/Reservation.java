@@ -1,11 +1,14 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author LianJunhong
  * @author SongBo
  * @version 1.0
  * @date 2022.3.27
  */
+@Data
 public class Reservation {
 
     /**
@@ -50,75 +53,4 @@ public class Reservation {
         ECONOMY_CLASS, BUSINESS_CLASS, FIRST_CLASS
     }
 
-    public Reservation() {
-    }
-
-    public String getReservationId() {
-        return reservationId;
-    }
-
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
-    }
-
-    public Passenger getPassenger() {
-        return passenger;
-    }
-
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
-
-    public String getSeatLevel() {
-        return seatLevel;
-    }
-
-    public void setSeatLevel(String seatLevel) {
-        this.seatLevel = seatLevel;
-    }
-
-    public boolean isMealsAvailable() {
-        return mealsAvailable;
-    }
-
-    public void setMealsAvailable(boolean mealsAvailable) {
-        this.mealsAvailable = mealsAvailable;
-    }
-
-    public int getHandBaggageNum() {
-        return handBaggageNum;
-    }
-
-    public void setHandBaggageNum(int handBaggageNum) {
-        this.handBaggageNum = handBaggageNum;
-    }
-
-    public int getCheckedBaggageNum() {
-        return checkedBaggageNum;
-    }
-
-    public void setCheckedBaggageNum(int checkedBaggageNum) {
-        this.checkedBaggageNum = checkedBaggageNum;
-    }
-
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "reservationId='" + reservationId + '\'' +
-                ", passenger=" + passenger.getPassengerId() +
-                ", flight='" + flight.getFlightId() + '\'' +
-                ", seatLevel='" + seatLevel + '\'' +
-                ", mealsAvailable=" + mealsAvailable +
-                ", handBaggageNum=" + handBaggageNum +
-                ", checkedBaggageNum=" + checkedBaggageNum +
-                '}';
-    }
 }

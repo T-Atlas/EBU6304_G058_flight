@@ -1,1 +1,25 @@
-[{"checkedBaggageNum":1,"flight":{"arrivalTime":"2022-07-11T20:22:50","boardingGate":"D11","boardingTime":"2022-03-30 00:17:19","departure":"Beijing","departureTime":"2022-07-11T17:22:50","destination":"Hainan","flightId":"MU1234"},"handBaggageNum":2,"mealsAvailable":true,"passenger":{"age":18,"firstName":"Junhong","lastName":"Lian","passengerId":"220802200005217777","telephone":"13104368888"},"reservationId":"001","seatLevel":"High"}]
+[
+	{
+		"checkedBaggageNum":1,
+		"flight":{
+			"arrivalTime":"2022-07-11 20:22",
+			"boardingGate":"D11",
+			"boardingTime":"2022-03-31 07:44",
+			"departure":"Beijing",
+			"departureTime":"2022-07-11 17:22",
+			"destination":"Hainan",
+			"flightId":"MU1234"
+		},
+		"handBaggageNum":2,
+		"mealsAvailable":true,
+		"passenger":{
+			"passengerId":"220802200005217777",
+			"firstName":"Jun",
+			"lastName":"Lian",
+			"age":18,
+			"telephone":"13104368888"
+		},
+		"reservationId":"001",
+		"seatLevel":"High"
+	}
+]
