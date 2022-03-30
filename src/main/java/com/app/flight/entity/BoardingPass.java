@@ -1,11 +1,14 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author SongBo
  * @author LianJunhong
  * @version 1.0
  * @date 2022.3.27
  */
+@Data
 public class BoardingPass {
 
     /**
@@ -34,57 +37,4 @@ public class BoardingPass {
      */
     private Food food;
 
-    public BoardingPass() {
-    }
-
-    public String getSeatNo() {
-        return seatNo;
-    }
-
-    public void setSeatNo(String seatNo) {
-        this.seatNo = seatNo;
-    }
-
-    public int getBoardingNo() {
-        return boardingNo;
-    }
-
-    public void setBoardingNo(int boardingNo) {
-        this.boardingNo = boardingNo;
-    }
-
-    public Passenger getPassenger() {
-        return passenger;
-    }
-
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
-
-    public Food getFood() {
-        return food;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
-    }
-
-    @Override
-    public String toString() {
-        return "BoardingPass{" +
-                "seatNo='" + seatNo + '\'' +
-                ", boardingNo=" + boardingNo +
-                ", passenger=" + passenger.getPassengerId() +
-                ", flight=" + flight.getFlightId() +
-                ", food=" + food +
-                '}';
-    }
 }
