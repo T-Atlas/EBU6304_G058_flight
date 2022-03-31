@@ -4,7 +4,7 @@ import com.app.flight.entity.Admin;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
-import com.app.flight.util.JsonToCsv;
+import com.app.flight.util.Csv;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
@@ -38,7 +38,7 @@ public class HelloTest {
         out.write(passengerJson);
         pJson.close();
         out.close();
-        if (JsonToCsv.addEntityToCsv(passenger2, "src/main/resources/com/app/flight/data/csv/Passenger.csv")) {
+        if (Csv.addCsv(passenger2, "src/main/resources/com/app/flight/data/csv/Passenger.csv")) {
             System.out.println("添加csv成功");
         }
 

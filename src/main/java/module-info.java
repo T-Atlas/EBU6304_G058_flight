@@ -11,5 +11,6 @@ module com.app.fight {
     opens com.app.flight.controller to javafx.fxml;
     exports com.app.flight.util;
     opens com.app.flight.util to javafx.fxml;
-
+    exports com.app.flight.entity;
+    opens com.app.flight.entity to fastjson;
 }
