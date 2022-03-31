@@ -2,6 +2,7 @@ package com.app.flight.entity;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author SongBo
@@ -10,17 +11,9 @@ import lombok.Data;
  * @version 2.0
  * @date 2022.3.29
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class Staff {
-    /**
-     * The unique identification of staff
-     */
-    private int staffId;
-
-    /**
-     * The password of staff
-     */
-    private String password;
+public class Staff extends BaseAccount {
 
     /**
      * The company id of which staff belongs to
