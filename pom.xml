@@ -14,7 +14,6 @@
         <junit.version>5.8.2</junit.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -59,15 +58,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
         </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok-maven-plugin</artifactId>
-            <version>1.18.20.0</version>
-        </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
