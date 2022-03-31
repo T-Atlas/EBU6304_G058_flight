@@ -1,1 +1,11 @@
-{"boardingTime":"2022-03-29T23:37:58.018308800"}
+[
+	{
+		"arrivalTime":"2022-07-11 20:22",
+		"boardingGate":"D11",
+		"boardingTime":"2022-03-31 07:44",
+		"departure":"Beijing",
+		"departureTime":"2022-07-11 17:22",
+		"destination":"Hainan",
+		"flightId":"MU1234"
+	}
+]

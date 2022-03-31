@@ -41,7 +41,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label contentDisplay="CENTER" layoutX="98.0" layoutY="127.0" prefHeight="95.0" prefWidth="404.0" text="Select the language and you can check-in right now" textAlignment="CENTER" textFill="#0f81d9" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+                  <Label fx:id="welcomeText" contentDisplay="CENTER" layoutX="98.0" layoutY="127.0" prefHeight="95.0" prefWidth="404.0" text="Select the language and you can check-in right now" textAlignment="CENTER" textFill="#0f81d9" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>

@@ -1,10 +1,13 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author LianJunhong
  * @version 1.0
  * @date 2022.3.27
  */
+@Data
 public class Food {
 
     /**
@@ -22,32 +25,5 @@ public class Food {
          * Three types of food
          */
         STANDARD, HALAL, VEGETARIAN
-    }
-
-    public Food() {
-    }
-
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
-
-    public double getFoodPrice() {
-        return foodPrice;
-    }
-
-    public void setFoodPrice(double foodPrice) {
-        this.foodPrice = foodPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "Food{" +
-                "foodName='" + foodName + '\'' +
-                ", foodPrice=" + foodPrice +
-                '}';
     }
 }

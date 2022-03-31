@@ -1,10 +1,13 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author SongBo
  * @version 1.0
  * @date 2022.3.27
  */
+@Data
 public class Voucher {
 
     /**
@@ -22,39 +25,4 @@ public class Voucher {
      */
     private int checkedBaggageNum;
 
-    public Voucher() {
-    }
-
-    public int getVoucherNo() {
-        return voucherNo;
-    }
-
-    public void setVoucherNo(int voucherNo) {
-        this.voucherNo = voucherNo;
-    }
-
-    public int getCounterNo() {
-        return counterNo;
-    }
-
-    public void setCounterNo(int counterNo) {
-        this.counterNo = counterNo;
-    }
-
-    public int getCheckedBaggageNum() {
-        return checkedBaggageNum;
-    }
-
-    public void setCheckedBaggageNum(int checkedBaggageNum) {
-        this.checkedBaggageNum = checkedBaggageNum;
-    }
-
-    @Override
-    public String toString() {
-        return "Voucher{" +
-                "voucherNo=" + voucherNo +
-                ", counterNo=" + counterNo +
-                ", checkedBaggageNum=" + checkedBaggageNum +
-                '}';
-    }
 }

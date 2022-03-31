@@ -1,88 +1,44 @@
 package com.app.flight.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import lombok.Data;
+
 /**
  * @author SongBo
  * @version 1.0
  * @date 2022.3.27
  */
+@Data
 public class Passenger {
 
     /**
      * The unique identification of particular passenger.
      */
+    @JSONField(ordinal = 1)
     private String passengerId;
 
     /**
      * The first name of passenger.
      */
+    @JSONField(ordinal = 2)
     private String firstName;
 
     /**
      * The last name of passenger.
      */
+    @JSONField(ordinal = 3)
     private String lastName;
 
     /**
      * The age of passenger.
      */
+    @JSONField(ordinal = 4)
     private int age;
 
     /**
      * The telephone of passenger.
      */
+    @JSONField(ordinal = 5)
     private String telephone;
 
-    public Passenger() {
-    }
-
-    public String getPassengerId() {
-        return passengerId;
-    }
-
-    public void setPassengerId(String passengerId) {
-        this.passengerId = passengerId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    @Override
-    public String toString() {
-        return "Passenger{" +
-                "passengerId=" + passengerId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", telephone='" + telephone + '\'' +
-                '}';
-    }
 }
