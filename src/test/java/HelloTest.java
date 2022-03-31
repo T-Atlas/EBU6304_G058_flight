@@ -1,5 +1,6 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.app.flight.entity.Admin;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
@@ -81,6 +82,11 @@ public class HelloTest {
         out3.write(reservationJson);
         pJson.close();
         out3.close();
+
+        Admin admin = new Admin();
+        admin.setId(111);
+        admin.setTelephone("111");
+        System.out.println(admin);
 
     }
 }
