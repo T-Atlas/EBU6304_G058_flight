@@ -38,7 +38,7 @@ public class HelloTest {
         out.write(passengerJson);
         pJson.close();
         out.close();
-        if (Csv.addEntityToCsv(passenger2, "src/main/resources/com/app/flight/data/csv/Passenger.csv")) {
+        if (Csv.addCsv(passenger2, "src/main/resources/com/app/flight/data/csv/Passenger.csv")) {
             System.out.println("添加csv成功");
         }
 
