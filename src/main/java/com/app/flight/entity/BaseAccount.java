@@ -4,6 +4,8 @@ import lombok.Data;
 
 /**
  * @author LianJunhong
+ * @version 1.0
+ * @date 2022.3.31
  */
 @Data
 public abstract class BaseAccount {
