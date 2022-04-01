@@ -8,7 +8,10 @@ import com.app.flight.entity.Passenger;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Map;
@@ -40,6 +43,7 @@ public class Csv {
                 i++;
             }
             csvWriter.writeRecord(csvContent, false);
+            System.out.println("添加csv成功");
             csvWriter.close();
             bufferedWriter.close();
         } catch (IOException e) {
@@ -64,10 +68,34 @@ public class Csv {
         return csvList;
     }
 
-    public static boolean updateCsv(Object entity, String filePath) {
-
-
-        return true;
+    public static boolean deleteCsv(Object entity, String filePath) {
+        String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
+        JSONObject jsonObj = JSONObject.parseObject(data, Feature.OrderedField);
+        String[] csvHeaders = Obj.generateObjAttr(entity);
+        ArrayList<String[]> csvData = readCsv(filePath);
+        int i = 0;
+        for (String[] csvRowData : csvData) {
+            if (csvRowData[0].equals(jsonObj.getString(csvHeaders[0]))) {
+                csvData.remove(i);
+                try {
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8));
+                    CsvWriter csvWriter = new CsvWriter(bufferedWriter, ',');
+                    csvWriter.writeRecord(csvHeaders);
+                    for (String[] newData : csvData) {
+                        csvWriter.writeRecord(newData);
+                    }
+                    csvWriter.close();
+                    bufferedWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("数据移除成功");
+                return true;
+            }
+            i++;
+        }
+        System.out.println("数据移除失败");
+        return false;
     }
 
     public static void main(String[] args) {
@@ -78,8 +106,7 @@ public class Csv {
         passenger.setTelephone("13104368888");
         passenger.setAge(18);
         String filePath = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
-        if (Csv.addCsv(passenger, filePath)) {
-            System.out.println("添加csv成功");
-        }
+        Csv.addCsv(passenger, filePath);
+        Csv.deleteCsv(passenger, filePath);
     }
 }
