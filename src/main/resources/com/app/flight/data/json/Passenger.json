@@ -1,1 +1,16 @@
-{"passengerId":"220802200005217777","firstName":"Junhong","lastName":"Lian","age":18,"telephone":"13104368888"}
+[
+	{
+		"passengerId":"220802200005217777",
+		"firstName":"Jun",
+		"lastName":"Lian",
+		"age":18,
+		"telephone":"13104368888"
+	},
+	{
+		"passengerId":"220802200005216666",
+		"firstName":"Bo",
+		"lastName":"Song",
+		"age":18,
+		"telephone":"13104365555"
+	}
+]

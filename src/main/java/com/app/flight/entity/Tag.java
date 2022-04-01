@@ -1,10 +1,13 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author SongBo
  * @version 1.0
  * @date 2022.3.27
  */
+@Data
 public class Tag {
 
     /**
@@ -22,39 +25,4 @@ public class Tag {
      */
     private int baggageNo;
 
-    public Tag() {
-    }
-
-    public int getTagNo() {
-        return tagNo;
-    }
-
-    public void setTagNo(int tagNo) {
-        this.tagNo = tagNo;
-    }
-
-    public int getHandBaggageNum() {
-        return handBaggageNum;
-    }
-
-    public void setHandBaggageNum(int handBaggageNum) {
-        this.handBaggageNum = handBaggageNum;
-    }
-
-    public int getBaggageNo() {
-        return baggageNo;
-    }
-
-    public void setBaggageNo(int baggageNo) {
-        this.baggageNo = baggageNo;
-    }
-
-    @Override
-    public String toString() {
-        return "Tag{" +
-                "tagNo=" + tagNo +
-                ", handBaggageNum=" + handBaggageNum +
-                ", baggageNo=" + baggageNo +
-                '}';
-    }
 }

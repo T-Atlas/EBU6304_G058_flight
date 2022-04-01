@@ -1,18 +1,19 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
- * @author JiaBoran
  * @author LianJunhong
+ * @author JiaBoran
  * @version 1.0
- * @date 2022.3.27
+ * @date 2022.3.31
  */
-public class Admin {
-    private int adminId;
-    private String password;
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class Admin extends BaseAccount {
 
-    public Admin(){
-    }
-
+    private String telephone;
 
 }
 

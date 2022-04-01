@@ -60,8 +60,10 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      
-      <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="226.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
-      <Circle fill="#bfbfbf" layoutX="300.0" layoutY="132.0" radius="45.0" stroke="WHITE" strokeType="INSIDE" />
+
+       <ImageView fitHeight="102.0" fitWidth="148.0" layoutX="249.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../image/finish.png" />
+           </image></ImageView>
    </children>
 </AnchorPane>

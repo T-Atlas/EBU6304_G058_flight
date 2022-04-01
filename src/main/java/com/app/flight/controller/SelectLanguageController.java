@@ -1,6 +1,7 @@
 package com.app.flight.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
@@ -10,6 +11,9 @@ import javafx.scene.control.Label;
  * @date 2022.3.27
  */
 public class SelectLanguageController {
+    public Button finish;
+    public Button loginButton;
+    public Button backButton;
     @FXML
     private Label welcomeText;
 
@@ -18,4 +22,7 @@ public class SelectLanguageController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
+    @FXML
+    public void onBackButtonClick() {
+    }
 }
