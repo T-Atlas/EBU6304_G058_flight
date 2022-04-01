@@ -1,6 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.entity.Passenger;
+import javafx.event.ActionEvent;
 
 import java.io.IOException;
 
@@ -67,4 +68,6 @@ public class PassengerController {
 
     }
 
+    public void nextClick(ActionEvent actionEvent) {
+    }
 }

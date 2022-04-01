@@ -8,17 +8,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Updated the code of its own version.
- * @author LianJunhong
- * @version 1.0
- * @date 2022.3.27
+ * @author HuangHong
+ * @version 0.1
+ * @date 2022.3.29
  */
-public class Main extends Application {
+
+public class Last extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/printTags.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        stage.setTitle("Welcome!");
+        FXMLLoader fxmlLoader = new FXMLLoader(Last.class.getResource("fxml/finished.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
