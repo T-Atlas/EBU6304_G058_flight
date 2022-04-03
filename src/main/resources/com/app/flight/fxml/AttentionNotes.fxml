@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0"
-            xmlns="http://javafx.com/javafx/18" fx:controller="com.app.flight.controller.SelectLanguageController">
+            xmlns="http://javafx.com/javafx/17" fx:controller="com.app.flight.controller.SelectLanguageController">
     <children>
         <GridPane prefHeight="800.0" prefWidth="1200.0">
             <columnConstraints>

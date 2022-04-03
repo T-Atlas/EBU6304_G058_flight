@@ -23,6 +23,8 @@ import java.io.IOException;
 public class FoodTypeController {
 
     @FXML
+    public ToggleGroup tg;
+    @FXML
     private Button next;
     @FXML
     private RadioButton r1;
@@ -30,6 +32,9 @@ public class FoodTypeController {
     private RadioButton r2;
     @FXML
     private RadioButton r3;
+
+
+
 
     private String type = null;
 
@@ -44,19 +49,7 @@ public class FoodTypeController {
         r2.setUserData("Vegetarian");
         r3.setUserData("Halal");
 
-        if(r1.isSelected()){
-            r2.setSelected(false);
-            r3.setSelected(false);
-            type = r1.getUserData().toString();
-        }else if(r2.isSelected()){
-            r1.setSelected(false);
-            r3.setSelected(false);
-            type = r2.getUserData().toString();
-        }else if(r3.isSelected()){
-            r1.setSelected(false);
-            r2.setSelected(false);
-            type = r3.getUserData().toString();
-        }
+        type=tg.getSelectedToggle().getUserData().toString();
         return type;
 
     }
