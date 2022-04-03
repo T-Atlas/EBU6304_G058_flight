@@ -4,6 +4,7 @@ module com.app.fight {
     requires fastjson;
     requires javacsv;
     requires lombok;
+    requires hutool.all;
 
     opens com.app.flight to javafx.fxml;
     exports com.app.flight;
