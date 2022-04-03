@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -46,11 +48,11 @@ public class FoodTypeController {
             r2.setSelected(false);
             r3.setSelected(false);
             type = r1.getUserData().toString();
-        }if(r2.isSelected()){
+        }else if(r2.isSelected()){
             r1.setSelected(false);
             r3.setSelected(false);
             type = r2.getUserData().toString();
-        }if(r3.isSelected()){
+        }else if(r3.isSelected()){
             r1.setSelected(false);
             r2.setSelected(false);
             type = r3.getUserData().toString();
@@ -91,4 +93,6 @@ public class FoodTypeController {
         stage.show();
     }
 
+    public void R1CLICK(MouseEvent mouseEvent) {
+    }
 }

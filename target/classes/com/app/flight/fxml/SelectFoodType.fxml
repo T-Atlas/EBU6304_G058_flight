@@ -144,7 +144,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <RadioButton fx:id="r1" layoutX="69.0" layoutY="312.0" mnemonicParsing="false" onAction="#foodType" text=" Standard">
+      <RadioButton fx:id="r1" layoutX="69.0" layoutY="312.0" mnemonicParsing="false" onAction="#foodType"  text=" Standard">
          <font>
             <Font size="16.0" />
          </font>
