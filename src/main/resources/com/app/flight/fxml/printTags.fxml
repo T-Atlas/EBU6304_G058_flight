@@ -116,7 +116,7 @@
       
               <ImageView fitHeight="231.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                      <Image url="@../image/loading.gif" />
+                      <Image url="@../ico/loading.gif" />
                   </image>
               </ImageView>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center; -fx-font-weight: bold;" text=" The boarding pass and related tags are being printed." wrappingWidth="686.6402072906494">
