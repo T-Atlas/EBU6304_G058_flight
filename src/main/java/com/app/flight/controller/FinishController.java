@@ -47,7 +47,7 @@ public class FinishController  {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/finished.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
