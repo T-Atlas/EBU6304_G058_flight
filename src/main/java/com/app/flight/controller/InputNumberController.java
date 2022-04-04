@@ -1,6 +1,8 @@
 package com.app.flight.controller;
 
 import com.app.flight.entity.Passenger;
+import com.app.flight.service.GetFoodType;
+import com.app.flight.service.impl.GetFoodImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -11,10 +13,10 @@ import javafx.scene.control.TextField;
 public class InputNumberController {
     @FXML
     public TextField id;
-    getFoodtype getFoodtype1= new getfoodimpl();
+    GetFoodType getFoodType = new GetFoodImpl();
 
     public void submit(ActionEvent actionEvent) {
-        Passenger p = getFoodtype1.lookupPassenger(id.getText());
+        Passenger p = getFoodType.lookupPassenger(id.getText());
         System.out.println(p);
     }
 }

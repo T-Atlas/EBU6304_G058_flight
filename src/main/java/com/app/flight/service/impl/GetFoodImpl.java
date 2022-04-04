@@ -1,15 +1,16 @@
-package com.app.flight.controller;
+package com.app.flight.service.impl;
 
 import com.app.flight.entity.Passenger;
+import com.app.flight.service.GetFoodType;
 
 /**
  * @author LianJunhong
  */
-public class getfoodimpl implements getFoodtype{
+public class GetFoodImpl implements GetFoodType {
     @Override
-    public Passenger lookupPassenger(String ID) {
+    public Passenger lookupPassenger(String id) {
         Passenger passenger = new Passenger();
-        passenger.setPassengerId(ID);
+        passenger.setPassengerId(id);
         passenger.setFirstName("Jun");
         passenger.setLastName("Lian");
         passenger.setTelephone("13104368888");
