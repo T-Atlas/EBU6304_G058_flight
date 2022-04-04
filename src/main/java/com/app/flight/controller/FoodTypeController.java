@@ -34,14 +34,12 @@ public class FoodTypeController {
     private RadioButton r3;
 
 
-
-
     private String type = null;
 
 
     /**
      * To judge which food type is the passenger selected
-     * @return
+     * @return type
      */
     public String foodType(){
 
@@ -49,7 +47,7 @@ public class FoodTypeController {
         r2.setUserData("Vegetarian");
         r3.setUserData("Halal");
 
-        type=tg.getSelectedToggle().getUserData().toString();
+        type = tg.getSelectedToggle().getUserData().toString();
         return type;
 
     }
