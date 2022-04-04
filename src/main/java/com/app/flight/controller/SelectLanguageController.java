@@ -1,9 +1,11 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -20,8 +22,26 @@ public class SelectLanguageController {
     private Label welcomeText;
 
     @FXML
+    private Button loginButton;
+
+    @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
+    }
+
+    /**
+     * The code to close current page and open the login page
+     */
+    @FXML
+    public void loginButtonClick() {
+        Platform.runLater(() -> {
+            try {
+                new AdminLoginController().start(new Stage());
+                ((Stage) (loginButton.getScene().getWindow())).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 

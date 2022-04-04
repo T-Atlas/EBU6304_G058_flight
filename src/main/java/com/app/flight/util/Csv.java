@@ -64,6 +64,10 @@ public class Csv {
         return csvList;
     }
 
+    public static Object checkCsv(Object entity, String filePath) {
+        return null;
+    }
+
     public static boolean updateCsv(Object entity, String filePath) {
 
 
