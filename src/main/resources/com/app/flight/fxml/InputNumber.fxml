@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.InputNumberController">
+<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.InputNumberController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
     </columnConstraints>
@@ -106,7 +99,7 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="next" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                <Button fx:id="next" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -118,7 +111,7 @@
                 <Font name="System Bold" size="26.0" />
             </font>
         </Label>
-      <TextField prefHeight="50.0" prefWidth="400.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+      <TextField fx:id="id" prefHeight="50.0" prefWidth="400.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets bottom="100.0" left="350.0" right="400.0" top="100.0" />
          </GridPane.margin>

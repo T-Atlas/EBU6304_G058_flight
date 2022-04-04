@@ -141,7 +141,7 @@
 
         <ImageView fitHeight="102.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
             <image>
-                <Image url="@../image/finish.png" />
+                <Image url="@../ico/finish.png" />
             </image>
         </ImageView>
     </children>
