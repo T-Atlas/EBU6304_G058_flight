@@ -18,4 +18,6 @@ module com.app.fight {
     opens com.app.flight.service to javafx.fxml;
     exports com.app.flight.service.impl;
     opens com.app.flight.service.impl to javafx.fxml;
+    exports com.app.flight.service.temp;
+    opens com.app.flight.service.temp to javafx.fxml;
 }
