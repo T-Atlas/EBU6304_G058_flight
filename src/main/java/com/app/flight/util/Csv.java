@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.app.flight.entity.Admin;
 import com.app.flight.entity.Passenger;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
@@ -95,6 +96,8 @@ public class Csv {
         }
         System.out.println("数据移除失败");
         return false;
+    }
+
     public static Object checkCsv(Object entity, String filePath) {
         return null;
     }
@@ -111,3 +114,4 @@ public class Csv {
         Csv.deleteCsv(passenger, filePath);
     }
 }
+
