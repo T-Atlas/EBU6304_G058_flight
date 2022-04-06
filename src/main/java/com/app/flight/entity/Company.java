@@ -1,48 +1,28 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author Huanghong
+ * @author LianJunhong
+ * @version 1.0
+ * @date 2022.3.27
  */
+@Data
 public class Company {
-    //the order number of company
+    /**
+     * the order number of company
+     */
     private String companyId;
 
-    //the name of the airline company
+    /**
+     * the name of the airline company
+     */
     private String name;
 
-    //the introduction of the airline company
+    /**
+     * the introduction of the airline company
+     */
     private String introduction;
 
-    public String getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    @Override
-    public String toString() {
-        return "Company{" +
-                "companyId='" + companyId + '\'' +
-                ", name='" + name + '\'' +
-                ", introduction='" + introduction + '\'' +
-                '}';
-    }
 }

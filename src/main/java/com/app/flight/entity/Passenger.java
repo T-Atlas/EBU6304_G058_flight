@@ -1,66 +1,44 @@
 package com.app.flight.entity;
 
-import java.util.ArrayList;
+import com.alibaba.fastjson.annotation.JSONField;
+import lombok.Data;
 
 /**
  * @author SongBo
- * @version 0.1
- * @date 2022.3.17
+ * @version 1.0
+ * @date 2022.3.27
  */
+@Data
 public class Passenger {
+
+    /**
+     * The unique identification of particular passenger.
+     */
+    @JSONField(ordinal = 1)
+    private String passengerId;
+
+    /**
+     * The first name of passenger.
+     */
+    @JSONField(ordinal = 2)
     private String firstName;
+
+    /**
+     * The last name of passenger.
+     */
+    @JSONField(ordinal = 3)
     private String lastName;
-    private int idNumber;
+
+    /**
+     * The age of passenger.
+     */
+    @JSONField(ordinal = 4)
     private int age;
-    private final ArrayList<Flight> flights = new ArrayList<>();
 
-    public Passenger() {
-    }
+    /**
+     * The telephone of passenger.
+     */
+    @JSONField(ordinal = 5)
+    private String telephone;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getIdNumber() {
-        return idNumber;
-    }
-
-    public void setIdNumber(int idNumber) {
-        this.idNumber = idNumber;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public ArrayList<Flight> getFlights() {
-        return flights;
-    }
-
-    @Override
-    public String toString() {
-        return "Passenger{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", idNumber=" + idNumber +
-                ", age=" + age +
-                ", flights=" + flights +
-                '}';
-    }
 }

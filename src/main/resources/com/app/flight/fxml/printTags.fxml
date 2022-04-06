@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.PrintTagsController">
+    <root>
+        <GridPane prefHeight="800.0" prefWidth="1200.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="113.9333282470703" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="518.0" minHeight="10.0" prefHeight="233.06665649414063" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="549.0" minHeight="10.0" prefHeight="270.6666625976562" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="183.73333740234375" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <GridPane prefHeight="94.0" prefWidth="1170.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="42.00001754760742" minHeight="0.0" prefHeight="42.00001754760742" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="93.60000000000001" minHeight="10.0" prefHeight="71.59998245239257" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <FlowPane prefHeight="83.0" prefWidth="242.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Identity" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="237.3333740234375">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                    <FlowPane.margin>
+                                        <Insets top="15.0" />
+                                    </FlowPane.margin>
+                                </Text>
+                            </children>
+                        </FlowPane>
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrieve information" textAlignment="CENTER" wrappingWidth="232.533447265625">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                    <FlowPane.margin>
+                                        <Insets top="2.0" />
+                                    </FlowPane.margin>
+                                </Text>
+                            </children>
+                        </FlowPane>
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in" textAlignment="CENTER" wrappingWidth="240.0">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                    <FlowPane.margin>
+                                        <Insets top="15.0" />
+                                    </FlowPane.margin>
+                                </Text>
+                            </children>
+                        </FlowPane>
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print tags" textAlignment="CENTER" wrappingWidth="240.0">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                    <FlowPane.margin>
+                                        <Insets top="15.0" />
+                                    </FlowPane.margin>
+                                </Text>
+                            </children>
+                        </FlowPane>
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Finish" textAlignment="CENTER" wrappingWidth="234.4000244140625">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                    <FlowPane.margin>
+                                        <Insets top="15.0" />
+                                    </FlowPane.margin>
+                                </Text>
+                            </children>
+                        </FlowPane>
+                    </children>
+                </GridPane>
+                <GridPane prefHeight="337.0" prefWidth="1200.0" GridPane.rowIndex="2">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="122.46666717529297" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="960.3999389648436" minWidth="10.0" prefWidth="954.0000366210936" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="124.39996337890625" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="70.93334579467773" minHeight="10.0" prefHeight="70.93334579467773" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="68.2" minHeight="10.0" prefHeight="55.800001525878926" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="98.86666870117188" minHeight="10.0" prefHeight="63.73336181640626" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="146.7999267578125" minHeight="10.0" prefHeight="100.26663818359378" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Please check all are printed:" wrappingWidth="553.7398223876953" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1) the boarding pass" wrappingWidth="346.21875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2) a tag that needs to be attached to the carry-on baggage" wrappingWidth="916.2855224609375" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3) a ticket with the number of the assigned bag drop counter where the passenger needs to go to drop his/her check-in baggage" wrappingWidth="948.8855590820312" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <Button fx:id="finish" mnemonicParsing="false"  prefHeight="62.0" prefWidth="189.0" style="-fx-background-color: grey; -fx-font-weight: bold; -fx-font-size: 25px;" text="Finish" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets top="-30.0" />
+                    </GridPane.margin>
+                </Button>
+
+                <ImageView fitHeight="151.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <image>
+                        <Image url="@../ico/finish.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </GridPane>
+    </root>
+</Scene>

@@ -1,83 +1,40 @@
 package com.app.flight.entity;
 
+import lombok.Data;
+
 /**
  * @author SongBo
- * @version 0.1
- * @date 2022.3.17
+ * @author LianJunhong
+ * @version 1.0
+ * @date 2022.3.27
  */
+@Data
 public class BoardingPass {
-    private Passenger passenger;
-    private Flight flight;
-    private String seatNumber;
-    private String foodType;
-    private int boardingGate;
+
+    /**
+     * Seat number with a total of three characters.
+     * The first two characters are numbers and the last character is letters.
+     */
+    private String seatNo;
+
+    /**
+     * Serial number of the boarding pass.
+     */
     private int boardingNo;
 
-    public enum typeOfMeal {
-        //Three types of meal
-        STANDARD, VEGETARIAN, HALAL
-    }
+    /**
+     * The passenger for the boarding pass.
+     */
+    private Passenger passenger;
 
-    public BoardingPass() {
-    }
+    /**
+     * The flight information for the boarding pass.
+     */
+    private Flight flight;
 
-    public Passenger getPassenger() {
-        return passenger;
-    }
+    /**
+     * The food information for the boarding pass.
+     */
+    private Food food;
 
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
-    }
-
-    public String getSeatNumber() {
-        return seatNumber;
-    }
-
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
-    }
-
-    public String getFoodType() {
-        return foodType;
-    }
-
-    public void setFoodType(String foodType) {
-        this.foodType = foodType;
-    }
-
-    public int getBoardingGate() {
-        return boardingGate;
-    }
-
-    public void setBoardingGate(int boardingGate) {
-        this.boardingGate = boardingGate;
-    }
-
-    public int getBoardingNo() {
-        return boardingNo;
-    }
-
-    public void setBoardingNo(int boardingNo) {
-        this.boardingNo = boardingNo;
-    }
-
-    @Override
-    public String toString() {
-        return "BoardingPass{" +
-                "passenger=" + passenger +
-                ", flight=" + flight +
-                ", seatNumber='" + seatNumber + '\'' +
-                ", foodType='" + foodType + '\'' +
-                ", boardingGate=" + boardingGate +
-                ", boardingNo=" + boardingNo +
-                '}';
-    }
 }

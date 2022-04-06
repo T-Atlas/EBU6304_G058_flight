@@ -8,16 +8,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
+ * Updated the code of its own version.
  * @author LianJunhong
- * @version 0.1
- * @date 2022.3.26
+ * @version 1.0
+ * @date 2022.3.27
  */
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        stage.setTitle("Welcome!");
         stage.setScene(scene);
         stage.show();
     }
