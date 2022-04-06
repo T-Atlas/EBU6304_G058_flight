@@ -37,7 +37,7 @@ public class AttentionNotesController {
 
         Platform.runLater(() -> {
             try {
-                new PrintTagsController().start(new Stage());//需要修改成页面展示的controller
+                new SelectMethodController().start(new Stage());//需要修改成页面展示的controller
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -49,7 +49,7 @@ public class AttentionNotesController {
      * The code for other pages to open InputNumber.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
