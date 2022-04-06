@@ -2,6 +2,7 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -46,14 +47,17 @@ public class SelectLanguageController {
 
 
     /**
-     * The code to open selectLanguage.fxml.
+     * The code to open SelectLanguage.fxml.
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/selectLanguage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Welcome!");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void onBackButtonClick(ActionEvent actionEvent) {
     }
 }
