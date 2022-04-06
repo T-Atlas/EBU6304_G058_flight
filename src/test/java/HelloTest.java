@@ -35,6 +35,7 @@ public class HelloTest {
         users.add(passenger2);
 
         String passengerJson = JSON.toJSONString(users, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue);
+
         out.write(passengerJson);
         pJson.close();
         out.close();

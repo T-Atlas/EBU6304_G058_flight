@@ -1,12 +1,12 @@
 package com.app.flight.service.temp;
 
 import com.app.flight.entity.Passenger;
-import com.app.flight.service.GetFoodType;
+import com.app.flight.service.GetPassenger;
 
 /**
  * @author LianJunhong
  */
-public class GetFoodImplTemp implements GetFoodType {
+public class GetPassengerImplTemp implements GetPassenger {
     @Override
     public Passenger lookupPassenger(String id) {
         Passenger passenger = new Passenger();

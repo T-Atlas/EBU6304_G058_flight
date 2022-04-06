@@ -68,6 +68,19 @@ public class Csv {
         return csvList;
     }
 
+    public static boolean updateCsv(Object entity, String filePath) {
+        if (!deleteCsv(entity, filePath)) {
+            System.out.println("数据不存在");
+        } else {
+            if (addCsv(entity, filePath)) {
+                System.out.println("数据更新成功");
+                return true;
+            }
+            System.out.println("数据更新失败");
+        }
+        return false;
+    }
+
     public static boolean deleteCsv(Object entity, String filePath) {
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
         JSONObject jsonObj = JSONObject.parseObject(data, Feature.OrderedField);
@@ -100,13 +113,14 @@ public class Csv {
 
     public static void main(String[] args) {
         Passenger passenger = new Passenger();
-        passenger.setPassengerId("220802200005217774");
-        passenger.setFirstName("Test");
-        passenger.setLastName("Lian");
-        passenger.setTelephone("13104368888");
-        passenger.setAge(18);
+        passenger.setPassengerId("220802200005217777");
+        passenger.setFirstName("笨蛋");
+        passenger.setLastName("小");
+        passenger.setTelephone("13104362121");
+        passenger.setAge(5);
         String filePath = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
-        Csv.addCsv(passenger, filePath);
-        Csv.deleteCsv(passenger, filePath);
+        //Csv.addCsv(passenger, filePath);
+        //Csv.deleteCsv(passenger, filePath);
+        //Csv.updateCsv(passenger, filePath);
     }
 }
