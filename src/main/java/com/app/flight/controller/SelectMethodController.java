@@ -29,6 +29,7 @@ public class SelectMethodController {
     public ToggleGroup method;
     public Button next;
 
+
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectMethod.fxml"));
 
@@ -46,13 +47,32 @@ public class SelectMethodController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
-        Platform.runLater(() -> {
-            try {
-                new SelectLanguageController().start(new Stage());//需要修改成页面展示的controller
-                ((Stage) (next.getScene().getWindow())).close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+
+        idNum.setUserData("id");
+        bookingNum.setUserData("booking");
+        scan.setUserData("scan");
+
+        //send selected method to next controller depending on which radiobutton is selected
+        if (method.getSelectedToggle() == idNum ||method.getSelectedToggle() == bookingNum) {
+            Platform.runLater(() -> {
+                try {
+                    Stage stage = new Stage();
+                    new InputNumberController().start(stage);//需要修改成页面展示的controller
+                    //TODO:call labelText and sent userdata to next page
+                    ((Stage) (next.getScene().getWindow())).close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } else if (method.getSelectedToggle() == scan) {
+            Platform.runLater(() -> {
+                try {
+                    new SelectLanguageController().start(new Stage());//需要修改成页面展示的controller
+                    ((Stage) (next.getScene().getWindow())).close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 }

@@ -20,13 +20,14 @@ import java.io.IOException;
  * @date 2022.3.27
  */
 public class SelectLanguageController {
+    @FXML
     public Button english;
     @FXML
-    private Label welcomeText;
+    public Label coming;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void onChineseButtonClick() {
+        coming.setText("Coming soon!");
     }
 
 
