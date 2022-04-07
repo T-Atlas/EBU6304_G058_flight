@@ -22,9 +22,8 @@ public class AdminWelcomeController {
     @FXML
     private Button logoutButton;
 
-
     public void setWelcomeMeg(String meg) {
-        this.welcomeMeg.setText(meg);
+        welcomeMeg.setText(meg);
     }
 
     /**
@@ -41,11 +40,13 @@ public class AdminWelcomeController {
         });
     }
 
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage, String meg) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/adminWelcome.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        stage.setTitle("Welcome Administrator");
+        stage.setTitle(meg);
+        AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
+        adminWelcomeController.setWelcomeMeg(meg);
         stage.setScene(scene);
         stage.show();
     }
