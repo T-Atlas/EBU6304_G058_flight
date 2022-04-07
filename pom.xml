@@ -18,12 +18,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.2</version>
+            <version>18</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.2</version>
+            <version>18</version>
         </dependency>
 
         <dependency>
@@ -123,7 +123,7 @@
                         <configuration>
                             <mainClass>com.app.flight/com.app.flight.Main</mainClass>
                             <launcher>launcher</launcher>
-                            <jlinkZipName>app</jlinkZipName>
+                            <jlinkZipName>appzip</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
