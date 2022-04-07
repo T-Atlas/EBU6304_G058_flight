@@ -104,12 +104,12 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="next" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                <Button fx:id="next" onAction="#nextClick" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-            <Button fx:id="help1" layoutX="525.0" layoutY="70.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: grey; -fx-font-weight: bold;" text="Return" textFill="WHITE">
+            <Button fx:id="return" layoutX="525.0" layoutY="70.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: grey; -fx-font-weight: bold;" text="Return" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
