@@ -1,10 +1,7 @@
 package com.app.flight.controller;
 
-import com.alibaba.fastjson.asm.Label;
 import com.app.flight.Main;
-import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,7 +44,7 @@ public class FinishController  {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/finished.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();

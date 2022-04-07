@@ -66,7 +66,7 @@ public class FoodTypeController {
 
         Platform.runLater(() -> {
             try {
-                new PrintTagsController().start(new Stage());//需要修改成页面展示的controller
+                new ResultController().start(new Stage());
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
