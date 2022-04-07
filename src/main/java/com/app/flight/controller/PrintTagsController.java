@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author HuangHong
+ */
 public class PrintTagsController {
 
     @FXML

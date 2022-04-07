@@ -33,8 +33,12 @@ public class InputNumberController {
         System.out.println(p);
         Platform.runLater(() -> {
             try {
-                new InfoConfirmController().start(new Stage());
-                ((Stage) (clean.getScene().getWindow())).close();
+                if(p!=null) {
+                    new InfoConfirmController().start(new Stage());
+                    ((Stage) (clean.getScene().getWindow())).close();
+                }else{
+                    number.clear();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
