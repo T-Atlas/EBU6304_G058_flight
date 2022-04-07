@@ -20,19 +20,21 @@ import java.util.Map;
  * @author SongBo
  */
 public class Csv {
-    public static boolean addCsv(Object entity, String filePath){
+    public static boolean addCsv(Object entity, String filePath, boolean unique){
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
         JSONObject jsonObj = JSONObject.parseObject(data, Feature.OrderedField);
         String[] csvHeaders = Obj.generateObjAttr(entity);
         String[] csvContent = new String[csvHeaders.length];
         int i = 0;
         try {
-            ArrayList<String[]> csvData = readCsv(filePath);
-            for (String[] csvRowData : csvData) {
-                for (int j = 0; j < csvData.size(); j++) {
-                    if (csvRowData[0].equals(jsonObj.getString(csvHeaders[0]))) {
-                        System.out.println("数据重复添加");
-                        return false;
+            if(unique) {
+                ArrayList<String[]> csvData = readCsv(filePath);
+                for (String[] csvRowData : csvData) {
+                    for (int j = 0; j < csvData.size(); j++) {
+                        if (csvRowData[0].equals(jsonObj.getString(csvHeaders[0]))) {
+                            System.out.println("数据重复添加");
+                            return false;
+                        }
                     }
                 }
             }
@@ -69,41 +71,39 @@ public class Csv {
     }
 
     public static boolean updateCsv(Object entity, String filePath) {
-        if (!deleteCsv(entity, filePath)) {
+        if (!deleteCsv(entity, filePath, true)) {
             System.out.println("数据不存在");
         } else {
-            if (addCsv(entity, filePath)) {
+            if (addCsv(entity, filePath, false)) {
                 System.out.println("数据更新成功");
                 return true;
             }
-            System.out.println("数据更新失败");
         }
+        System.out.println("数据更新失败");
         return false;
     }
 
-    public static boolean deleteCsv(Object entity, String filePath) {
+    public static boolean deleteCsv(Object entity, String filePath, boolean unique) {
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
         JSONObject jsonObj = JSONObject.parseObject(data, Feature.OrderedField);
         String[] csvHeaders = Obj.generateObjAttr(entity);
         ArrayList<String[]> csvData = readCsv(filePath);
         int i = 0;
         for (String[] csvRowData : csvData) {
-            if (csvRowData[0].equals(jsonObj.getString(csvHeaders[0]))) {
-                csvData.remove(i);
-                try {
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8));
-                    CsvWriter csvWriter = new CsvWriter(bufferedWriter, ',');
-                    csvWriter.writeRecord(csvHeaders);
-                    for (String[] newData : csvData) {
-                        csvWriter.writeRecord(newData);
-                    }
-                    csvWriter.close();
-                    bufferedWriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+            if (unique) {
+                if (csvRowData[0].equals(jsonObj.getString(csvHeaders[0]))) {
+                    return rewriteCsv(filePath, csvHeaders, csvData, i);
                 }
-                System.out.println("数据移除成功");
-                return true;
+            } else {
+                boolean only = true;
+                for (int j = 0; j < csvHeaders.length; j++) {
+                    if (!csvRowData[j].equals(jsonObj.getString(csvHeaders[j]))) {
+                        only = false;
+                    }
+                }
+                if (only) {
+                    return rewriteCsv(filePath, csvHeaders, csvData, i);
+                }
             }
             i++;
         }
@@ -111,16 +111,36 @@ public class Csv {
         return false;
     }
 
+    private static boolean rewriteCsv(String filePath, String[] csvHeaders, ArrayList<String[]> csvData, int i) {
+        csvData.remove(i);
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8));
+            CsvWriter csvWriter = new CsvWriter(bufferedWriter, ',');
+            csvWriter.writeRecord(csvHeaders);
+            for (String[] newData : csvData) {
+                csvWriter.writeRecord(newData);
+            }
+            csvWriter.close();
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("数据移除成功");
+        return true;
+    }
+
     public static void main(String[] args) {
         Passenger passenger = new Passenger();
-        passenger.setPassengerId("220802200005217777");
+        passenger.setPassengerId("220802200005217772");
         passenger.setFirstName("笨蛋");
         passenger.setLastName("小");
         passenger.setTelephone("13104362121");
         passenger.setAge(5);
         String filePath = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
-        //Csv.addCsv(passenger, filePath);
-        //Csv.deleteCsv(passenger, filePath);
+        //Csv.addCsv(passenger, filePath,false);
+        //Csv.deleteCsv(passenger, filePath,false);
         //Csv.updateCsv(passenger, filePath);
+
+
     }
 }
