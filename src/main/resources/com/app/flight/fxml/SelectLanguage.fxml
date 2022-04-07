@@ -55,8 +55,8 @@
                                 <Font size="20.0"/>
                             </font>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                                onAction="#onHelloButtonClick" prefHeight="100.0" prefWidth="250.0" text="English"
+                        <Button fx:id="english" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                                onAction="#onEnglishButtonClick" prefHeight="100.0" prefWidth="250.0" text="English"
                                 textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER"
                                 GridPane.valignment="CENTER">
                             <GridPane.margin>

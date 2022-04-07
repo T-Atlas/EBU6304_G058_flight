@@ -120,15 +120,15 @@
                             <children>
                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                     <image>
-                                        <Image url="@../image/Halal.jpeg" />
+                                        <Image url="@../ico/Booking_Number.png" />
                                     </image>
                                 </ImageView>
-                                <RadioButton mnemonicParsing="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                <RadioButton fx:id="bookingNum" mnemonicParsing="false" onAction="#check" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                     <toggleGroup>
                                         <ToggleGroup fx:id="method" />
                                     </toggleGroup>
                                 </RadioButton>
-                                <Label fx:id="bookingNum" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="Booking number" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="Booking number" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                     <font>
                                         <Font name="System Bold" size="20.0" />
                                     </font>
@@ -154,10 +154,10 @@
                             <children>
                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                     <image>
-                                        <Image url="@../image/Standard.jpeg" />
+                                        <Image url="@../ico/ID_Card.png" />
                                     </image>
                                 </ImageView>
-                                <RadioButton fx:id="idNum" mnemonicParsing="false" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="idNum" mnemonicParsing="false" onAction="#check" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                                 <Label alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="Input ID number" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                     <font>
                                         <Font name="System Bold" size="20.0" />
@@ -189,10 +189,10 @@
                                 </Label>
                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                     <image>
-                                        <Image url="@../image/Vegetarian.jpeg" />
+                                        <Image url="@../ico/Scanner.png" />
                                     </image>
                                 </ImageView>
-                                <RadioButton fx:id="scan" mnemonicParsing="false" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="scan" mnemonicParsing="false" onAction="#check" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                             </children>
                         </GridPane>
                     </children>
@@ -206,7 +206,7 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="next" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                <Button fx:id="next" onAction="#nextClick" disable="true" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>

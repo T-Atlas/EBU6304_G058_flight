@@ -5,7 +5,7 @@ import com.app.flight.entity.Passenger;
 /**
  * @author LianJunhong
  */
-public interface GetFoodType {
+public interface GetPassenger {
     /**
      * apple
      * @param id id
