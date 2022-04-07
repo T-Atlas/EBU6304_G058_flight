@@ -46,9 +46,9 @@ public class AdminLoginController {
             if(admin != null)
             {
                 try {
-                    AdminWelcomeController adminWelcomeController = new AdminWelcomeController();
-                    adminWelcomeController.setWelcomeMeg("Welcome, Administrator " + admin.getName() + "!");
-                    adminWelcomeController.start(new Stage());
+                    admin.setName("Jack");
+                    String meg = "Welcome, Administrator " + admin.getName() + "!";
+                    new AdminWelcomeController().start(new Stage(), meg);
                     ((Stage) (loginButton.getScene().getWindow())).close();
                 } catch (IOException e) {
                     e.printStackTrace();

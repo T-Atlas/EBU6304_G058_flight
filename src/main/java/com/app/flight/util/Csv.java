@@ -113,7 +113,10 @@ public class Csv {
     }
 
     public static Object checkCsv(Object entity, String filePath) {
-        return null;
+        if(entity == null)
+            return null;
+        else
+            return new Admin();
     }
 
     public static void main(String[] args) {
