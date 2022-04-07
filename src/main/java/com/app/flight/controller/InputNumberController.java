@@ -5,10 +5,12 @@ import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.service.impl.GetPassengerImpl;
 import com.app.flight.service.temp.GetPassengerImplTemp;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -20,15 +22,23 @@ import java.io.IOException;
  */
 public class InputNumberController {
     @FXML
-    public TextField id;
+    public TextField number;
     @FXML
     public Label annotation;
-    GetPassenger getPassenger = new GetPassengerImplTemp();
-    GetPassenger getPassenger1 = new GetPassengerImpl();
+    public Button clean;
+    GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {
-        Passenger p = getPassenger.lookupPassenger(id.getText());
+        Passenger p = getPassenger.lookupPassenger(number.getText());
         System.out.println(p);
+        Platform.runLater(() -> {
+            try {
+                new InfoConfirmController().start(new Stage());
+                ((Stage) (clean.getScene().getWindow())).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     /**
@@ -43,12 +53,7 @@ public class InputNumberController {
         stage.show();
     }
 
-    //TODO:BUG
-    public void labelText(String type) {
-        if ("booking".equals(type)) {
-            annotation.setText("--&gt; Please input your booking number:");
-        }else if ("id".equals(type)) {
-            annotation.setText("--&gt; Please input your ID card number:");
-        }
+    public void clean(ActionEvent actionEvent) {
+        number.setText("");
     }
 }

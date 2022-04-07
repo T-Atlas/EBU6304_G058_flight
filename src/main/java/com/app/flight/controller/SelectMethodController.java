@@ -53,7 +53,7 @@ public class SelectMethodController {
         scan.setUserData("scan");
 
         //send selected method to next controller depending on which radiobutton is selected
-        if (method.getSelectedToggle() == idNum ||method.getSelectedToggle() == bookingNum) {
+        if (method.getSelectedToggle() == bookingNum) {
             Platform.runLater(() -> {
                 try {
                     Stage stage = new Stage();
@@ -64,15 +64,7 @@ public class SelectMethodController {
                     e.printStackTrace();
                 }
             });
-        } else if (method.getSelectedToggle() == scan) {
-            Platform.runLater(() -> {
-                try {
-                    new SelectLanguageController().start(new Stage());//需要修改成页面展示的controller
-                    ((Stage) (next.getScene().getWindow())).close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
         }
+
     }
 }
