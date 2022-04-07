@@ -71,6 +71,7 @@ public class Csv {
     public static boolean updateCsv(Object entity, String filePath) {
         if (!deleteCsv(entity, filePath)) {
             System.out.println("数据不存在");
+            return false;
         } else {
             if (addCsv(entity, filePath)) {
                 System.out.println("数据更新成功");
