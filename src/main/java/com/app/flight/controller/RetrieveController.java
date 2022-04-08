@@ -6,6 +6,9 @@ import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
 import com.app.flight.service.temp.GetPassengerImplTemp;
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,13 +17,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -44,10 +51,11 @@ public class RetrieveController {
         }
         tableView.setItems(list2);
 
+        TableColumn check = new TableColumn();
         TableColumn flightId= new TableColumn("FlightID");
         TableColumn departure=new TableColumn("Departure");
         TableColumn destination=new TableColumn("Destination");
-        TableColumn time=new TableColumn("Time");
+        TableColumn time=new TableColumn("DepartureTime");
         TableColumn handBaggage=new TableColumn("Carry-on");
         TableColumn checkedBaggage=new TableColumn("Check-in");
 
@@ -57,22 +65,28 @@ public class RetrieveController {
         baggage.getColumns().add(checkedBaggage);
 
         for(int i = 0; i < list2.size(); i++){
-            //flightId.setCellValueFactory(new PropertyValueFactory<Flight,String>("flight"));
-            /*flightId.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>() {
+            check.setCellFactory(new Callback<TableColumn<Reservation,Boolean>, TableCell<Reservation,Boolean>>() {
                 @Override
-                public ObservableValue<String> call(TableColumn.CellDataFeatures<Reservation, String> r) {
-                    // p.getValue() returns the Person instance for a particular TableView row
-                    return r.getValue().getFlight().getFlightId();
+                public TableCell<Reservation, Boolean> call(TableColumn<Reservation, Boolean> param) {
+                    //make checkbox editable
+                    CheckBoxTableCell<Reservation, Boolean> cell = new CheckBoxTableCell<Reservation, Boolean>();
+                    cell.setDisable(false);
+                    return cell;
                 }
-            });*/
 
-            //departure.setCellValueFactory(new PropertyValueFactory<Reservation, String>(list2.get(i).getFlight().getDeparture()));
-            //destination.setCellValueFactory(new PropertyValueFactory<Reservation, String>(list2.get(i).getFlight().getDestination()));
-            //time.setCellValueFactory(new PropertyValueFactory<Reservation, LocalDateTime>(String.valueOf(list2.get(i).getFlight().getDepartureTime())));
+            });
+
+
+
+            flightId.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getFlightId()));
+            departure.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDeparture()));
+            destination.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDestination()));
+            time.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDepartureTime().toString()));
             handBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("handBaggageNum"));
             checkedBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("checkedBaggageNum"));
         }
 
+        tableView.getColumns().add(check);
         tableView.getColumns().add(flightId);
         tableView.getColumns().add(departure);
         tableView.getColumns().add(destination);
@@ -101,5 +115,11 @@ public class RetrieveController {
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    public void mouseClick(MouseEvent mouseEvent) {
+        //get the mouse selected row
+        Reservation selectedRow=tableView.getSelectionModel().getSelectedItem();
+        System.out.println(selectedRow.getFlight().getFlightId());
     }
 }
