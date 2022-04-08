@@ -12,15 +12,15 @@ import lombok.Data;
 public class BoardingPass {
 
     /**
+     * Serial number of the boarding pass.
+     */
+    private String boardingNo;
+
+    /**
      * Seat number with a total of three characters.
      * The first two characters are numbers and the last character is letters.
      */
     private String seatNo;
-
-    /**
-     * Serial number of the boarding pass.
-     */
-    private int boardingNo;
 
     /**
      * The passenger for the boarding pass.
