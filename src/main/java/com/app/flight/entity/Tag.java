@@ -13,7 +13,7 @@ public class Tag {
     /**
      * Serial number of the tag
      */
-    private int tagNo;
+    private String tagNo;
 
     /**
      * Number of hand baggage
