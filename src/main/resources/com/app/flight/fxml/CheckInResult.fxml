@@ -2,7 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -127,22 +127,24 @@
       </GridPane>
       <GridPane GridPane.rowIndex="1">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.5332641601562" minWidth="10.0" prefWidth="301.99998779296874" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="268.2000366210938" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="374.5999633789063" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="279.93328857421875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="592.5332641601562" minWidth="10.0" prefWidth="242.53334350585936" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="303.8666564941406" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="389.8000366210937" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="53.79996337890623" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1055.4667358398438" minWidth="10.0" prefWidth="230.7333984374999" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="109.73334350585938" minHeight="10.0" prefHeight="74.53330078125" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="70.26669921875" minHeight="10.0" prefHeight="70.26669921875" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="109.73334350585938" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="106.66667785644533" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="118.53336944580079" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center; -fx-font-weight: bold;" text="Please check all your information:" wrappingWidth="643.5861067771912" GridPane.columnIndex="1">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center; -fx-font-weight: bold;" text="Please check all your information:" wrappingWidth="687.3194441795349" GridPane.columnIndex="1">
                <font>
                   <Font size="25.0" />
                </font>
@@ -152,37 +154,71 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Flight:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departrue:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seat:" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seat:" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FoodType:" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FoodType:" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Carry-on baggage:" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Carry-on baggage:" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in baggage:" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in baggage:" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
-            <TextArea prefHeight="41.0" prefWidth="322.0" style="-fx-max-height: 15px;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-max-height: 15px;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-max-height: 15px;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-max-height: 15px;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-max-height: 15px;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-max-height: 15px;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="name" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="departure" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="seat" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="foodtype" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="handBaggage" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="checkedBaggage" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Destination:" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <TextField fx:id="destination" editable="false" style="-fx-alignment: left;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
          </children>
       </GridPane>
     </children>
