@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
@@ -73,7 +72,7 @@
                 </FlowPane>
                 <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Print tags" textAlignment="CENTER" wrappingWidth="240.0">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER" wrappingWidth="240.0">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font>
@@ -113,16 +112,8 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <TableView prefHeight="431.0" prefWidth="1067.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn prefWidth="34.0" sortable="false" style="-fx-font-size: 20px;" />
-                <TableColumn minWidth="0.0" prefWidth="170.0" style="-fx-font-size: 20px;" />
-                  <TableColumn prefWidth="170.0" sortable="false" style="-fx-font-size: 20px;" />
-                  <TableColumn prefWidth="170.0" sortable="false" style="-fx-font-size: 20px;" />
-                  <TableColumn prefWidth="310.0" sortable="false" style="-fx-font-size: 20px;" />
-                  <TableColumn minWidth="0.0" prefWidth="100.0" sortable="false" style="-fx-font-size: 20px;" />
-                  <TableColumn prefWidth="100.0" sortable="false" style="-fx-font-size: 20px;" />
-              </columns>
+            <TableView fx:id="tableView" prefHeight="431.0" prefWidth="1067.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
             </TableView>
          </children>
       </GridPane>

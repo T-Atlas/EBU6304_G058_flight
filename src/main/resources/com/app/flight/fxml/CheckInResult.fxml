@@ -72,7 +72,7 @@
                 </FlowPane>
                 <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Print tags" textAlignment="CENTER" wrappingWidth="240.0">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER" wrappingWidth="240.0">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font>
