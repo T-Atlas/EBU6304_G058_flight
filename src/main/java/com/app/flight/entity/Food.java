@@ -13,7 +13,7 @@ public class Food {
     /**
      * Name of each food.
      */
-    private String foodName;
+    private foodType foodName;
 
     /**
      * Price of each food.
