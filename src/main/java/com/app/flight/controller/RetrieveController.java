@@ -1,16 +1,13 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
-import com.app.flight.entity.Flight;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
 import com.app.flight.service.impl.GetPassengerImpl;
 import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.service.temp.GetPassengerImplTemp;
 import javafx.application.Platform;
-import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,7 +26,6 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**

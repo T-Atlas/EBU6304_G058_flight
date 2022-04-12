@@ -1,8 +1,6 @@
 package com.app.flight.service;
 
 import com.app.flight.entity.Flight;
-
-import java.util.ArrayList;
 /**
  * @author 贾博然
  */

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.SelectLanguageController">
     <children>
         <GridPane prefHeight="800.0" prefWidth="1200.0">
@@ -30,7 +30,7 @@
                                 <Image url="@../ico/OneworldLogo.png" />
                             </image>
                         </ImageView>
-                        <Button onAction="#onChineseButtonClick" layoutX="1098.0" layoutY="39.0" mnemonicParsing="false" text="Login" />
+                        <Button fx:id="loginButton" onAction="#loginButtonClick" layoutX="1098.0" layoutY="39.0" mnemonicParsing="false" text="Login" />
                     </children>
                 </AnchorPane>
                 <GridPane prefHeight="0.0" prefWidth="1200.0" GridPane.rowIndex="2">
@@ -42,7 +42,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onChineseButtonClick" prefHeight="100.0" prefWidth="250.0" text="简体中文" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onChineseButtonClick" prefHeight="100.0" prefWidth="250.0" text="Chinese" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                             </GridPane.margin>

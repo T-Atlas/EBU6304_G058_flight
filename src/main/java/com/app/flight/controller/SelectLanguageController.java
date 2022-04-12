@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -26,8 +25,26 @@ public class SelectLanguageController {
     public Label coming;
 
     @FXML
+    private Button loginButton;
+
+    @FXML
     protected void onChineseButtonClick() {
         coming.setText("Coming soon!");
+    }
+
+    /**
+     * The code to close current page and open the login page
+     */
+    @FXML
+    public void loginButtonClick() {
+        Platform.runLater(() -> {
+            try {
+                new AdminLoginController().start(new Stage());
+                ((Stage) (loginButton.getScene().getWindow())).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 
