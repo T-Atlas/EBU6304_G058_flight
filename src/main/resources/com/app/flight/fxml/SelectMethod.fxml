@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.SelectMethodController">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.SelectMethodController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
     </columnConstraints>
@@ -79,7 +68,7 @@
                 </FlowPane>
                 <FlowPane style="-fx-background-color: GREY; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print tags" textAlignment="CENTER" wrappingWidth="235.0">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER" wrappingWidth="235.0">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -133,12 +122,12 @@
                                         <Image url="@../ico/Booking_Number.png" />
                                     </image>
                                 </ImageView>
-                                <RadioButton mnemonicParsing="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                <RadioButton fx:id="bookingNum" mnemonicParsing="false" onAction="#check" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                     <toggleGroup>
                                         <ToggleGroup fx:id="method" />
                                     </toggleGroup>
                                 </RadioButton>
-                                <Label fx:id="bookingNum" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="Booking number" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="Booking number" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                     <font>
                                         <Font name="System Bold" size="20.0" />
                                     </font>
@@ -167,7 +156,7 @@
                                         <Image url="@../ico/ID_Card.png" />
                                     </image>
                                 </ImageView>
-                                <RadioButton fx:id="idNum" mnemonicParsing="false" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="idNum" mnemonicParsing="false" onAction="#check" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                                 <Label alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="Input ID number" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                     <font>
                                         <Font name="System Bold" size="20.0" />
@@ -202,7 +191,7 @@
                                         <Image url="@../ico/Scanner.png" />
                                     </image>
                                 </ImageView>
-                                <RadioButton fx:id="scan" mnemonicParsing="false" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="scan" mnemonicParsing="false" onAction="#check" toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                             </children>
                         </GridPane>
                     </children>
@@ -216,7 +205,7 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="next" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                <Button fx:id="next" onAction="#nextClick" disable="true" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>

@@ -50,4 +50,10 @@ public class GetPassengerImpl implements GetPassenger {
         System.out.println("数据查找失败");
         return null;
     }
+
+    /*public static void main(String[] args){
+        String id = "220802200005217774";
+        GetPassengerImpl getPassenger = new GetPassengerImpl();
+        getPassenger.lookupPassenger(id);
+    }*/
 }

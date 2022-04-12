@@ -13,33 +13,17 @@ import java.io.IOException;
 
 /**
  * @author HuangHong
- * @author Zheng Han
  */
-public class PrintTagsController {
+public class ResultController {
 
     @FXML
     private Button next;
 
     /**
-     * The code for button "next" in printTags.fxml
-     * When click the button, change to finished.fxml
-     */
-    public void nextClick(ActionEvent actionEvent) {
-        Platform.runLater(() -> {
-            try {
-                new FinishController().start(new Stage());
-                ((Stage) (next.getScene().getWindow())).close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
-    /**
-     * The code for other pages to open printTags.fxml
+     * The code for other pages to open CheckInResult.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/printTags.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/CheckInResult.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
@@ -47,4 +31,14 @@ public class PrintTagsController {
         stage.show();
     }
 
+    public void nextClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            try {
+                new PrintTagsController().start(new Stage());
+                ((Stage) (next.getScene().getWindow())).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 }

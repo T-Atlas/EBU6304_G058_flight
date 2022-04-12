@@ -6,47 +6,48 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 /**
- * This code is used to finish all the steps of check-in.
- * @author Huanghong
- * @version 0.1
- * @date 2022.3.30
+ * @author Zheng Han
  */
-
-public class FinishController  {
+public class AdminWelcomeController {
 
     @FXML
-    private Button finish;
+    private Label welcomeMeg;
+
+    @FXML
+    private Button logoutButton;
+
+    public void setWelcomeMeg(String meg) {
+        welcomeMeg.setText(meg);
+    }
 
     /**
      * The code to close current page and open the first page
      */
-    public void finishClick() {
+    public void logoutButtonClick() {
         Platform.runLater(() -> {
             try {
                 new SelectLanguageController().start(new Stage());
-                ((Stage) (finish.getScene().getWindow())).close();
+                ((Stage) (logoutButton.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
-
-    /**
-     * The code for other pages to open finished.fxml
-     */
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/finished.fxml"));
+    public void start(Stage stage, String meg) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/adminWelcome.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        stage.setTitle("Smart flight check-in kiosk");
+        stage.setTitle(meg);
+        AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
+        adminWelcomeController.setWelcomeMeg(meg);
         stage.setScene(scene);
         stage.show();
     }
-
 }

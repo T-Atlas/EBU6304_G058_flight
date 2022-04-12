@@ -1,6 +1,5 @@
 package com.app.flight.controller;
 
-import cn.hutool.core.text.csv.CsvBaseReader;
 import com.app.flight.Main;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -10,11 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * This code is used to select the food type.
@@ -66,7 +63,7 @@ public class FoodTypeController {
 
         Platform.runLater(() -> {
             try {
-                new PrintTagsController().start(new Stage());//需要修改成页面展示的controller
+                new ResultController().start(new Stage());
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
