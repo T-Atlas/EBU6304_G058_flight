@@ -15,5 +15,7 @@ public class Admin extends BaseAccount {
 
     private String telephone;
 
+    private String name;
+
 }
 

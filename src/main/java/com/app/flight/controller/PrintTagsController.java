@@ -13,6 +13,7 @@ import java.io.IOException;
 
 /**
  * @author HuangHong
+ * @author Zheng Han
  */
 public class PrintTagsController {
 

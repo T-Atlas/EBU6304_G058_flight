@@ -3,7 +3,6 @@ package com.app.flight.service.temp;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
-import com.app.flight.service.GetPassenger;
 import com.app.flight.service.GetReservation;
 
 import java.time.LocalDateTime;

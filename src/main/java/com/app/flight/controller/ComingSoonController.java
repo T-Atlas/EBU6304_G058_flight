@@ -1,7 +1,6 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
-import com.app.flight.controller.PrintTagsController;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

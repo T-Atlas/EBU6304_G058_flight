@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.app.flight.entity.Admin;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
@@ -174,6 +175,13 @@ public class Csv {
         return true;
     }
 
+    public static Object checkCsv(Object entity, String filePath) {
+        if(entity == null)
+            return null;
+        else
+            return new Admin();
+    }
+
     public static void main(String[] args) {
         Passenger passenger = new Passenger();
         passenger.setPassengerId("220802200005217774");
@@ -237,3 +245,4 @@ public class Csv {
         Csv.addCsv(reservation1,filePath,true);
     }
 }
+
