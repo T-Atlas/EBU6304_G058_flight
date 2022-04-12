@@ -3,6 +3,8 @@ package com.app.flight.controller;
 import com.app.flight.Main;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.impl.GetPassengerImpl;
+import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.service.temp.GetPassengerImplTemp;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -36,12 +38,12 @@ public class RetrieveController {
     @FXML
     private TableView<Reservation> tableView;
     public ArrayList<Reservation> rList;
-    GetReservation getReservation = new GetPassengerImplTemp();
+    GetReservation getReservation = new GetReservationImpl();
 
 
-    public void showRetrieve(ActionEvent actionEvent){
+    public void showRetrieve(){
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
-        rList = getReservation.lookupReservations("220802200005217777");
+        rList = getReservation.lookupReservations("220802200005217774");
 
         for(int i = 0; i < rList.size(); i++){
             list2.add(i,rList.get(i));
@@ -108,6 +110,8 @@ public class RetrieveController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        RetrieveController retrieveController = fxmlLoader.getController();
+        retrieveController.showRetrieve();
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
