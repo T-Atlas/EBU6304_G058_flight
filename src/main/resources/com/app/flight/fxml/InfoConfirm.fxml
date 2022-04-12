@@ -92,7 +92,7 @@
         </GridPane>
         <AnchorPane prefWidth="1200.0" GridPane.rowIndex="2">
             <children>
-                <Button fx:id="help" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#showNum" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: red; -fx-font-weight: bold;" text="Help" textFill="WHITE">
+                <Button fx:id="help" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: red; -fx-font-weight: bold;" text="Help" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>

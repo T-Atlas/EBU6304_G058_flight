@@ -35,10 +35,10 @@ public class InputNumberController {
         Platform.runLater(() -> {
             try {
                 if(p!=null) {
-                    new InfoConfirmController().start(new Stage());
+                    new InfoConfirmController().start(new Stage(), p);
                     ((Stage) (clean.getScene().getWindow())).close();
                 }else{
-                    number.clear();
+                    new ComingSoonController().start(new Stage());
                 }
             } catch (IOException e) {
                 e.printStackTrace();

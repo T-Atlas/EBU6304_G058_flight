@@ -3,6 +3,8 @@ package com.app.flight.controller;
 import com.app.flight.Main;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.impl.GetPassengerImpl;
+import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.service.temp.GetPassengerImplTemp;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -24,6 +26,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -35,12 +38,12 @@ public class RetrieveController {
     @FXML
     private TableView<Reservation> tableView;
     public ArrayList<Reservation> rList;
-    GetReservation getReservation = new GetPassengerImplTemp();
+    GetReservation getReservation = new GetReservationImpl();
 
 
-    public void showRetrieve(ActionEvent actionEvent){
+    public void showRetrieve(){
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
-        rList = getReservation.lookupReservations("220802200005217777");
+        rList = getReservation.lookupReservations("220802200005217774");
 
         for(int i = 0; i < rList.size(); i++){
             list2.add(i,rList.get(i));
@@ -77,7 +80,7 @@ public class RetrieveController {
             flightId.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getFlightId()));
             departure.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDeparture()));
             destination.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDestination()));
-            time.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDepartureTime().toString()));
+            time.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDepartureTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
             handBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("handBaggageNum"));
             checkedBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("checkedBaggageNum"));
         }
@@ -107,6 +110,8 @@ public class RetrieveController {
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        RetrieveController retrieveController = fxmlLoader.getController();
+        retrieveController.showRetrieve();
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
