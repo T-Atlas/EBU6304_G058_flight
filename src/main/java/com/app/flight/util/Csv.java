@@ -191,8 +191,24 @@ public class Csv {
         flight.setDepartureTime(LocalDateTime.of(2022, 1, 23, 11, 55));
         flight.setArrivalTime(LocalDateTime.of(2022, 1, 23, 16, 55));
 
+
+        Flight flight1 =new Flight();
+        flight1.setFlightId("MU1122");
+        flight1.setDeparture("Shanghai");
+        flight1.setDestination("Beijing");
+        flight1.setBoardingGate("D20");
+        flight1.setBoardingTime(LocalDateTime.of(2022,4,11,12,25));
+        flight1.setDepartureTime(LocalDateTime.of(2022,4,11,12,55));
+        flight1.setArrivalTime(LocalDateTime.of(2022,4,11,14,55));
+
+        String filePath2 = "src/main/resources/com/app/flight/data/csv/Flight.csv";
+        Csv.addCsv(flight1,filePath2,true);
+
+
+
         Snowflake snowflake = IdUtil.getSnowflake(1, 1);
         String id = snowflake.nextIdStr();
+
         Reservation reservation = new Reservation();
         reservation.setReservationId(id);
         reservation.setPassenger(passenger);
@@ -206,5 +222,18 @@ public class Csv {
         Csv.addCsv(reservation, filePath,true);
         //Csv.deleteCsv(reservation, filePath,false);
         //Csv.updateCsv(passenger, filePath);
+
+        Snowflake snowflake1 = new Snowflake(1,1);
+        String id1 = snowflake1.nextIdStr();
+        Reservation reservation1 =new Reservation();
+        reservation1.setReservationId(id1);
+        reservation1.setPassenger(passenger);
+        reservation1.setCheckedBaggageNum(1);
+        reservation1.setHandBaggageNum(1);
+        reservation1.setMealsAvailable(false);
+        reservation1.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
+        reservation1.setFlight(flight1);
+
+        Csv.addCsv(reservation1,filePath,true);
     }
 }

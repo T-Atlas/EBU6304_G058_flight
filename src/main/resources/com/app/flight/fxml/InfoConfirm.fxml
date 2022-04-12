@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.InfoConfirmController">
+<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.InfoConfirmController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
     </columnConstraints>
@@ -73,7 +73,7 @@
                 </FlowPane>
                 <FlowPane style="-fx-background-color: GREY; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print tags" textAlignment="CENTER" wrappingWidth="235.0">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER" wrappingWidth="235.0">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -99,17 +99,17 @@
         </GridPane>
         <AnchorPane prefWidth="1200.0" GridPane.rowIndex="2">
             <children>
-                <Button fx:id="help" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: red; -fx-font-weight: bold;" text="Help" textFill="WHITE">
+                <Button fx:id="help" layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#showNum" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: red; -fx-font-weight: bold;" text="Help" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="next" onAction="#nextClick" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false"  prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                <Button fx:id="next" layoutX="1036.0" layoutY="71.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-            <Button fx:id="return" layoutX="525.0" layoutY="70.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: grey; -fx-font-weight: bold;" text="Return" textFill="WHITE">
+            <Button fx:id="back" layoutX="525.0" layoutY="70.0" mnemonicParsing="false" onAction="#Return" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: grey; -fx-font-weight: bold;" text="Return" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -126,7 +126,7 @@
                   <Font name="System Bold" size="32.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="202.0" prefHeight="70.0" prefWidth="674.0" textAlignment="CENTER">
+            <Label fx:id="num" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="202.0" prefHeight="70.0" prefWidth="674.0" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

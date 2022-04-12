@@ -1,6 +1,9 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
+import com.app.flight.entity.Passenger;
+import com.app.flight.service.GetPassenger;
+import com.app.flight.service.impl.GetPassengerImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author HuangHong
+ */
 public class ResultController {
 
     @FXML

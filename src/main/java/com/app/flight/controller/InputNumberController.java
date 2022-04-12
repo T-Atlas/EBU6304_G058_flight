@@ -4,7 +4,6 @@ import com.app.flight.Main;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.service.impl.GetPassengerImpl;
-import com.app.flight.service.temp.GetPassengerImplTemp;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +18,7 @@ import java.io.IOException;
 
 /**
  * @author LianJunhong
+ * @author HuangHong
  */
 public class InputNumberController {
     @FXML
@@ -26,15 +26,20 @@ public class InputNumberController {
     @FXML
     public Label annotation;
     public Button clean;
+    public static Passenger p;
     GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {
-        Passenger p = getPassenger.lookupPassenger(number.getText());
+        p = getPassenger.lookupPassenger(number.getText());
         System.out.println(p);
         Platform.runLater(() -> {
             try {
-                new InfoConfirmController().start(new Stage());
-                ((Stage) (clean.getScene().getWindow())).close();
+                if(p!=null) {
+                    new InfoConfirmController().start(new Stage());
+                    ((Stage) (clean.getScene().getWindow())).close();
+                }else{
+                    number.clear();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

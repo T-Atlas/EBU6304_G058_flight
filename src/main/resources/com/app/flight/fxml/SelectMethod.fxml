@@ -69,7 +69,7 @@
                 </FlowPane>
                 <FlowPane style="-fx-background-color: GREY; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print tags" textAlignment="CENTER" wrappingWidth="235.0">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER" wrappingWidth="235.0">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>

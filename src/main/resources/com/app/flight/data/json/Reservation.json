@@ -1,25 +1,25 @@
 [
 	{
-		"checkedBaggageNum":1,
-		"flight":{
-			"arrivalTime":"2022-07-11 20:22",
-			"boardingGate":"D11",
-			"boardingTime":"2022-03-31 19:01",
-			"departure":"Beijing",
-			"departureTime":"2022-07-11 17:22",
-			"destination":"Hainan",
-			"flightId":"MU1234"
-		},
-		"handBaggageNum":2,
-		"mealsAvailable":true,
+		"reservationId":"1513362048673779712",
 		"passenger":{
-			"passengerId":"220802200005217777",
-			"firstName":"Jun",
-			"lastName":"Lian",
+			"passengerId":"220802200005217774",
+			"firstName":"Lian",
+			"lastName":"Test",
 			"age":18,
 			"telephone":"13104368888"
 		},
-		"reservationId":"001",
-		"seatLevel":"High"
+		"flight":{
+			"flightId":"MU1122",
+			"departure":"Shanghai",
+			"destination":"Beijing",
+			"boardingGate":"D20",
+			"boardingTime":"2022-04-11 12:25",
+			"departureTime":"2022-04-11 12:55",
+			"arrivalTime":"2022-04-11 14:55"
+		},
+		"seatLevel":"BUSINESS_CLASS",
+		"mealsAvailable":true,
+		"handBaggageNum":1,
+		"checkedBaggageNum":2
 	}
 ]
