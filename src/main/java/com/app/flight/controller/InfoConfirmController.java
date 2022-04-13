@@ -1,11 +1,8 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.app.flight.Main;
 import com.app.flight.entity.Passenger;
-import com.app.flight.entity.Reservation;
-import com.app.flight.service.GetReservation;
-import com.app.flight.service.impl.GetReservationImpl;
-import com.app.flight.service.temp.GetPassengerImplTemp;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,9 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * @author LianJunhong
@@ -29,7 +24,6 @@ public class InfoConfirmController {
     public Button next;
     @FXML
     public Button back;
-
 
     public void showNum(Passenger p){
         num.setText(p.getPassengerId());
@@ -44,7 +38,6 @@ public class InfoConfirmController {
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
-
 
     }
 
