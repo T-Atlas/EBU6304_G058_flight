@@ -6,10 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.app.flight.entity.Admin;
-import com.app.flight.entity.Flight;
-import com.app.flight.entity.Passenger;
-import com.app.flight.entity.Reservation;
+import com.app.flight.entity.*;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
@@ -176,10 +173,11 @@ public class Csv {
     }
 
     public static Object checkCsv(Object entity, String filePath) {
-        if(entity == null)
+        if(entity == null) {
             return null;
-        else
+        } else {
             return new Admin();
+        }
     }
 
     public static void main(String[] args) {
@@ -226,8 +224,8 @@ public class Csv {
         reservation.setSeatLevel(Reservation.seatClass.BUSINESS_CLASS);
         reservation.setFlight(flight);
 
-        String filePath = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
-        Csv.addCsv(reservation, filePath,true);
+        //String filePath = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
+        //Csv.addCsv(reservation, filePath,true);
         //Csv.deleteCsv(reservation, filePath,false);
         //Csv.updateCsv(passenger, filePath);
 
@@ -242,7 +240,20 @@ public class Csv {
         reservation1.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
         reservation1.setFlight(flight1);
 
-        Csv.addCsv(reservation1,filePath,true);
+        //Csv.addCsv(reservation1,filePath,true);
+
+        Food food1 = new Food();
+        food1.setFoodName(Food.foodType.STANDARD);
+        food1.setFoodPrice(Double.parseDouble("2"));
+        /*String filePath = "src/main/resources/com/app/flight/data/csv/Food.csv";
+        Csv.addCsv(food1, filePath,true);*/
+
+        Food food2 = new Food();
+        food2.setFoodName(Food.foodType.HALAL);
+        food1.setFoodPrice(Double.parseDouble("10"));
+        String filePath = "src/main/resources/com/app/flight/data/csv/Food.csv";
+        Csv.addCsv(food2, filePath,true);
+
     }
 }
 
