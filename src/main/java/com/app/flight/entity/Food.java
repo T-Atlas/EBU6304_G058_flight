@@ -1,5 +1,6 @@
 package com.app.flight.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 /**
@@ -13,11 +14,13 @@ public class Food {
     /**
      * Name of each food.
      */
+    @JSONField(ordinal = 1)
     private foodType foodName;
 
     /**
      * Price of each food.
      */
+    @JSONField(ordinal = 2)
     private double foodPrice;
 
     public enum foodType {
