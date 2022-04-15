@@ -17,6 +17,7 @@ import java.io.IOException;
 
 /**
  * This code is used to finish all the steps of check-in.
+ *
  * @author Huanghong
  * @version 0.1
  * @date 2022.3.30
@@ -44,8 +45,7 @@ public class AdminLoginController {
             admin.setId(Integer.parseInt(idTextField.getText()));
             admin.setPassword(passwordTextField.getText());
             admin = (Admin) Csv.checkCsv(admin, "src/main/resources/com/app/flight/data/csv/Admin.csv");
-            if(admin != null)
-            {
+            if (admin != null) {
                 try {
                     admin.setName("Jack");
                     String meg = "Welcome, Administrator " + admin.getName() + "!";

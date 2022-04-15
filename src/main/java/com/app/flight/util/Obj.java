@@ -10,7 +10,7 @@ public class Obj {
         Class<?> classObj = obj.getClass();
         Field[] fields = classObj.getDeclaredFields();
         String[] title = new String[fields.length];
-        for (int i = 0; i< fields.length; i++ ) {
+        for (int i = 0; i < fields.length; i++) {
             title[i] = fields[i].getName();
         }
         return title;

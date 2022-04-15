@@ -1,6 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
+import com.app.flight.entity.Food;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import java.io.IOException;
 
 /**
  * This code is used to select the food type.
+ *
  * @author HuangHong
  * @version 0.1
  * @date 2022.3.31
@@ -38,13 +40,14 @@ public class FoodTypeController {
 
     /**
      * To judge which food type is the passenger selected
+     *
      * @return type
      */
-    public String foodType(){
+    public String foodType() {
 
-        r1.setUserData("Standard");
-        r2.setUserData("Vegetarian");
-        r3.setUserData("Halal");
+        r1.setUserData(Food.foodType.STANDARD);
+        r2.setUserData(Food.foodType.VEGETARIAN);
+        r3.setUserData(Food.foodType.HALAL);
 
         type = tg.getSelectedToggle().getUserData().toString();
         return type;

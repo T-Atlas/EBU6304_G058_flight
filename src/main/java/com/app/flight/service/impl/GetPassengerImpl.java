@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class GetPassengerImpl implements GetPassenger {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Passenger.json";
+
     /**
      * 通过身份证号查找用户id
      *
