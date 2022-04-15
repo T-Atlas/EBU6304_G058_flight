@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
 <GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.FoodTypeController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -12,8 +21,8 @@
     <rowConstraints>
         <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="124.33332977294921" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="518.0" minHeight="10.0" prefHeight="162.1999938964844" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="518.0" minHeight="10.0" prefHeight="272.59999999999997" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="452.9333374023437" minHeight="10.0" prefHeight="241.39999999999998" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="518.0" minHeight="10.0" prefHeight="266.93333740234374" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="452.9333374023437" minHeight="10.0" prefHeight="248.26666259765625" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
         <GridPane prefWidth="1200.0">
@@ -93,17 +102,17 @@
         </GridPane>
         <Pane GridPane.rowIndex="3">
             <children>
-                <Button fx:id="next" layoutX="1018.0" layoutY="109.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold; -fx-font-size: 25px;" text="Next" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="next" layoutX="1019.0" layoutY="116.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold; -fx-font-size: 25px;" text="Next" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="28.0" />
                     </font>
                 </Button>
-                <Button fx:id="help" layoutX="2.0" layoutY="108.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;" text="Help" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="help" layoutX="1.0" layoutY="116.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;" text="Help" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="28.0" />
                     </font>
                 </Button>
-            <RadioButton fx:id="r1" layoutX="170.0" layoutY="-15.0" mnemonicParsing="false" onAction="#foodType" text="Standard">
+            <RadioButton fx:id="r1" layoutX="171.0" layoutY="-1.0" mnemonicParsing="false" onAction="#foodType" text="Standard">
                <font>
                   <Font size="25.0" />
                </font>
@@ -111,12 +120,12 @@
                   <ToggleGroup fx:id="tg" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="r2" layoutX="524.0" layoutY="-15.0" mnemonicParsing="false" onAction="#foodType" text="Vegetarian" toggleGroup="$tg">
+            <RadioButton fx:id="r2" layoutX="524.0" layoutY="-2.0" mnemonicParsing="false" onAction="#foodType" text="Vegetarian" toggleGroup="$tg">
                <font>
                   <Font size="25.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="r3" layoutX="919.0" layoutY="-14.0" mnemonicParsing="false" onAction="#foodType" text="Halal" toggleGroup="$tg">
+            <RadioButton fx:id="r3" layoutX="940.0" layoutY="-1.0" mnemonicParsing="false" onAction="#foodType" text="Halal" toggleGroup="$tg">
                <font>
                   <Font size="25.0" />
                </font>

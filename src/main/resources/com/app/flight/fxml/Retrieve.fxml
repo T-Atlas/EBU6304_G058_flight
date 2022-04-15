@@ -129,7 +129,7 @@
             <children>
                 <Pane>
                     <children>
-                        <Button fx:id="help" layoutX="1.0" layoutY="49.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;" text="Help" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="help" layoutX="1.0" layoutY="44.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;" text="Help" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font size="28.0" />
                             </font>
