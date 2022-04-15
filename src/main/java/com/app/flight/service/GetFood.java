@@ -9,6 +9,7 @@ public interface GetFood {
 
     /**
      * Method to get food
+     *
      * @param foodName
      * @return
      */

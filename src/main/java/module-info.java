@@ -13,7 +13,7 @@ module com.app.flight {
     exports com.app.flight.util;
     opens com.app.flight.util to javafx.fxml;
     exports com.app.flight.entity;
-    opens com.app.flight.entity to fastjson,lombok;
+    opens com.app.flight.entity to fastjson, lombok;
     exports com.app.flight.service;
     opens com.app.flight.service to javafx.fxml;
     exports com.app.flight.service.impl;

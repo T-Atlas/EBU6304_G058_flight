@@ -23,6 +23,7 @@ public class AttentionNotesController {
 
     /**
      * if checkbox is checked, make next button able to click
+     *
      * @param actionEvent
      */
     public void check(ActionEvent actionEvent) {

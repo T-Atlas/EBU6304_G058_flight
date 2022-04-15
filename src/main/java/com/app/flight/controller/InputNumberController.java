@@ -34,10 +34,10 @@ public class InputNumberController {
         System.out.println(p);
         Platform.runLater(() -> {
             try {
-                if(p!=null) {
+                if (p != null) {
                     new InfoConfirmController().start(new Stage(), p);
                     ((Stage) (clean.getScene().getWindow())).close();
-                }else{
+                } else {
                     new ComingSoonController().start(new Stage());
                 }
             } catch (IOException e) {
