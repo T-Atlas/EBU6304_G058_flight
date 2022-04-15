@@ -3,7 +3,7 @@
 
 EBU6304 – Software Engineering Group Project
 
-
+**Last Modified Date: 2022-04-16.**
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ xxx
 
    Our project was developed using **JetBrains IntelliJ IDEA** compiler. You can simply open this project folder in IDEA, wait for **Maven **to automatically complete the project build, and click the green triangle next to the application startup class **Main.java** to run it.
 
-   <img src="src\main\resources\com\app\flight\image\startUp.png" alt="startUp" style="zoom:100%;" />
+   <img src="src/main/resources/com/app/flight/image/startUp.png" alt="startUp" style="zoom:100%;" />
 
    
 
@@ -86,7 +86,7 @@ xxx
    [INFO] --- javafx-maven-plugin:0.0.8:run (default-cli) @ flight ---
    ```
 
-   <img src="src\main\resources\com\app\flight\image\firstInterface.png" alt="firstInterface" style="zoom:50%;" />
+   <img src="src/main/resources/com/app/flight/image/firstInterface.png" alt="firstInterface" style="zoom:50%;" />
 
    
 
@@ -101,9 +101,13 @@ xxx
    
 ## Requirements
 
-   111
+- ​	maven -- 3.8.1
 
-   
+- ​	jdk -- 17
+
+
+
+
 
 ## Documentation
 
@@ -118,13 +122,44 @@ xxx
 
 ## Iteration logs
 
-  ### 0.22.0 (October 01, 2021)
+  ### 2.0 (April 17, 2022)
+
+- xxx
+
+- xxx
+
+- xxx
+
+ ### 1.5 (April 10, 2022)
+  
+- xxx
+
+- xxx
+
+- xxx
+
+ ### 1.0 (April 4, 2022)
+  
+- xxx
+
+- xxx
+
+- xxx
+
+ ### 0.1 (March 24, 2022)
+  
+- xxx
+
+- xxx
+
+- xxx
 
    
 
    
 
 ------
+
 
 
 ## Credits
