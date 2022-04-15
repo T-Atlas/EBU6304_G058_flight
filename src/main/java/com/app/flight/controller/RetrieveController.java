@@ -3,9 +3,11 @@ package com.app.flight.controller;
 import com.app.flight.Main;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.GetSeatMap;
 import com.app.flight.service.impl.GetPassengerImpl;
 import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.service.temp.GetPassengerImplTemp;
+import com.app.flight.service.temp.GetSeatMapImplTemp;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -41,6 +43,7 @@ public class RetrieveController {
     private TableView<Reservation> tableView;
     public ArrayList<Reservation> rList;
     GetReservation getReservation = new GetReservationImpl();
+    GetSeatMap getSeatMap = new GetSeatMapImplTemp();
 
 
     public void showRetrieve(){
@@ -97,16 +100,9 @@ public class RetrieveController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
-        Map<String, Boolean> seatMap = new HashMap<>();
-        seatMap.put("1a", true);
-        seatMap.put("1b", false);
-        seatMap.put("1c", true);
-        seatMap.put("1d", true);
-        seatMap.put("1e", true);
-        seatMap.put("1f", true);
         Platform.runLater(() -> {
             try {
-                new SelectSeatController().start(new Stage(), seatMap);//need to be change
+                new SelectSeatController().start(new Stage(), getSeatMap.getSeatMap("1"));//need to be change
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
