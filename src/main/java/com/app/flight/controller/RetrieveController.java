@@ -28,6 +28,8 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author HuangHong
@@ -95,9 +97,16 @@ public class RetrieveController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
+        Map<String, Boolean> seatMap = new HashMap<>();
+        seatMap.put("1a", true);
+        seatMap.put("1b", false);
+        seatMap.put("1c", true);
+        seatMap.put("1d", true);
+        seatMap.put("1e", true);
+        seatMap.put("1f", true);
         Platform.runLater(() -> {
             try {
-                new FoodTypeController().start(new Stage());//need to be change
+                new SelectSeatController().start(new Stage(), seatMap);//need to be change
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
