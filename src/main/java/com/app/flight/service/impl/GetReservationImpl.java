@@ -25,6 +25,7 @@ public class GetReservationImpl implements GetReservation {
 
     /**
      * 通过身份证查找用户预定航班
+     *
      * @param id id
      * @return ArrayList<Reservation>
      */
@@ -74,7 +75,7 @@ public class GetReservationImpl implements GetReservation {
                 //System.out.println("数据查找成功");
             }
         }
-        if (flag){
+        if (flag) {
             try (FileWriter reservationJson = new FileWriter(JSON_PATH); PrintWriter out = new PrintWriter(reservationJson)) {
                 String reservationString = JSON.toJSONString(reservations, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue);
                 out.write(reservationString);
@@ -83,8 +84,7 @@ public class GetReservationImpl implements GetReservation {
             }
             System.out.println("数据查找成功");
             return reservations;
-        }
-        else {
+        } else {
             System.out.println("数据查找失败");
             return null;
         }
@@ -93,7 +93,7 @@ public class GetReservationImpl implements GetReservation {
     /**
      * 测试读取用户预定信息
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String id = "220802200005217774";
         GetReservationImpl getReservation = new GetReservationImpl();
         ArrayList<Reservation> reservations = getReservation.lookupReservations(id);

@@ -8,6 +8,7 @@ import com.app.flight.entity.Passenger;
 public interface GetPassenger {
     /**
      * apple
+     *
      * @param id id
      * @return Passenger
      */

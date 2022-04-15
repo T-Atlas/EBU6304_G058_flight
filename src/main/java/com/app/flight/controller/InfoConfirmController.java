@@ -1,6 +1,5 @@
 package com.app.flight.controller;
 
-import cn.hutool.core.bean.BeanUtil;
 import com.app.flight.Main;
 import com.app.flight.entity.Passenger;
 import javafx.application.Platform;
@@ -11,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 /**
@@ -25,7 +25,8 @@ public class InfoConfirmController {
     @FXML
     public Button back;
 
-    public void showNum(Passenger p){
+
+    public void showNum(Passenger p) {
         num.setText(p.getPassengerId());
     }
 
@@ -38,6 +39,7 @@ public class InfoConfirmController {
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
+
 
     }
 

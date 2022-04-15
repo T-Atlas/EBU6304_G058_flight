@@ -1,97 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.SelectSeatController">
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.app.flight.controller.SelectSeatController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="118.66667480468749" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="533.933349609375" minHeight="10.0" prefHeight="533.933349609375" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="137.66665039062502" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="118.66667480468749" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="533.933349609375" minHeight="10.0" prefHeight="533.933349609375" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="137.66665039062502" vgrow="SOMETIMES"/>
     </rowConstraints>
     <children>
         <GridPane prefWidth="1200.0">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="63.46667327880859" minHeight="3.7333339691162095" prefHeight="3.7333339691162095" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="77.0666660308838" minHeight="10.0" prefHeight="77.0666660308838" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="63.46667327880859" minHeight="3.7333339691162095"
+                                prefHeight="3.7333339691162095" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="77.0666660308838" minHeight="10.0" prefHeight="77.0666660308838"
+                                valignment="CENTER" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <FlowPane prefHeight="200.0" prefWidth="200.0"
+                          style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="0" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Identity" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="240.0">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Identity"
+                              textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="240.0">
                             <font>
-                                <Font name="System Bold" size="25.0" />
+                                <Font name="System Bold" size="25.0"/>
                             </font>
                             <FlowPane.margin>
-                                <Insets top="20.0" />
+                                <Insets top="20.0"/>
                             </FlowPane.margin>
                         </Text>
                     </children>
                 </FlowPane>
-                <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <FlowPane prefHeight="200.0" prefWidth="200.0"
+                          style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrieve information" textAlignment="CENTER" wrappingWidth="240.0">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrieve information"
+                              textAlignment="CENTER" wrappingWidth="240.0">
                             <font>
-                                <Font name="System Bold" size="25.0" />
+                                <Font name="System Bold" size="25.0"/>
                             </font>
                             <FlowPane.margin>
-                                <Insets top="5.0" />
+                                <Insets top="5.0"/>
                             </FlowPane.margin>
                         </Text>
                     </children>
                 </FlowPane>
-                <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <FlowPane prefHeight="200.0" prefWidth="200.0"
+                          style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in" textAlignment="CENTER" wrappingWidth="240.0">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in" textAlignment="CENTER"
+                              wrappingWidth="240.0">
                             <font>
-                                <Font name="System Bold" size="25.0" />
+                                <Font name="System Bold" size="25.0"/>
                             </font>
                             <FlowPane.margin>
-                                <Insets top="20.0" />
+                                <Insets top="20.0"/>
                             </FlowPane.margin>
                         </Text>
                     </children>
                 </FlowPane>
-                <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <FlowPane prefHeight="200.0" prefWidth="200.0"
+                          style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER" wrappingWidth="240.0">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER"
+                              wrappingWidth="240.0">
                             <font>
-                                <Font name="System Bold" size="25.0" />
+                                <Font name="System Bold" size="25.0"/>
                             </font>
                             <FlowPane.margin>
-                                <Insets top="20.0" />
+                                <Insets top="20.0"/>
                             </FlowPane.margin>
                         </Text>
                     </children>
                 </FlowPane>
-                <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <FlowPane prefHeight="200.0" prefWidth="200.0"
+                          style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="4" GridPane.rowIndex="1">
                     <children>
-                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Finish" textAlignment="CENTER" wrappingWidth="231.4666748046875">
+                        <Text fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Finish" textAlignment="CENTER"
+                              wrappingWidth="231.4666748046875">
                             <font>
-                                <Font name="System Bold" size="25.0" />
+                                <Font name="System Bold" size="25.0"/>
                             </font>
                             <FlowPane.margin>
-                                <Insets top="20.0" />
+                                <Insets top="20.0"/>
                             </FlowPane.margin>
                         </Text>
                     </children>
@@ -100,62 +112,74 @@
         </GridPane>
         <GridPane GridPane.rowIndex="1">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.866650390625" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1080.5333251953125" minWidth="10.0" prefWidth="995.4666748046876" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.8666748046875" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.866650390625" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1080.5333251953125" minWidth="10.0"
+                                   prefWidth="995.4666748046876"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.8666748046875" minWidth="10.0" prefWidth="100.0"/>
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="244.9999755859375" minHeight="10.0" prefHeight="130.6666717529297" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="443.4000076293945" minHeight="10.0" prefHeight="404.53332824707036" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="244.9999755859375" minHeight="10.0" prefHeight="130.6666717529297"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="443.4000076293945" minHeight="10.0" prefHeight="404.53332824707036"
+                                vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-            <ImageView fitHeight="323.0" fitWidth="1023.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../image/seat.png" />
-               </image>
-               <GridPane.margin>
-                  <Insets top="-50.0" />
-               </GridPane.margin>
-            </ImageView>
-            <ChoiceBox fx:id="seat" prefWidth="150.0" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets left="580.0" top="60.0" />
-               </GridPane.margin>
-            </ChoiceBox>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Please select your seat for the flight:" wrappingWidth="567.9307556152344" GridPane.columnIndex="1">
-               <font>
-                  <Font size="30.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets top="60.0" />
-               </GridPane.margin>
-            </Text>
+                <ImageView fitHeight="323.0" fitWidth="1023.0" pickOnBounds="true" preserveRatio="true"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../image/seat.png"/>
+                    </image>
+                    <GridPane.margin>
+                        <Insets top="-50.0"/>
+                    </GridPane.margin>
+                </ImageView>
+                <ChoiceBox fx:id="seat" prefWidth="150.0" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets left="580.0" top="60.0"/>
+                    </GridPane.margin>
+                </ChoiceBox>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;"
+                      text="Please select your seat for the flight:" wrappingWidth="567.9307556152344"
+                      GridPane.columnIndex="1">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                    <GridPane.margin>
+                        <Insets top="60.0"/>
+                    </GridPane.margin>
+                </Text>
 
             </children>
         </GridPane>
         <GridPane GridPane.rowIndex="2">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
                 <Pane>
                     <children>
-                        <Button fx:id="help" layoutX="2.0" layoutY="24.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;" text="Help" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="help" layoutX="2.0" layoutY="24.0" mnemonicParsing="false" prefHeight="64.0"
+                                prefWidth="179.0"
+                                style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;"
+                                text="Help" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font size="28.0" />
+                                <Font size="28.0"/>
                             </font>
                         </Button>
                     </children>
                 </Pane>
                 <Pane GridPane.columnIndex="1">
                     <children>
-                        <Button fx:id="next" layoutX="379.0" layoutY="24.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: #169BD5; -fx-font-weight: bold; -fx-font-size: 25px;" text="Next" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="next" layoutX="379.0" layoutY="24.0" mnemonicParsing="false"
+                                onAction="#nextClick" prefHeight="64.0" prefWidth="179.0"
+                                style="-fx-background-color: #169BD5; -fx-font-weight: bold; -fx-font-size: 25px;"
+                                text="Next" textAlignment="CENTER" textFill="WHITE">
                             <font>
-                                <Font size="28.0" />
+                                <Font size="28.0"/>
                             </font>
                         </Button>
                     </children>

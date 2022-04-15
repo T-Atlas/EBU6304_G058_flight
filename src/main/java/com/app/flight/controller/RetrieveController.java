@@ -3,7 +3,9 @@ package com.app.flight.controller;
 import com.app.flight.Main;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.GetSeatMap;
 import com.app.flight.service.impl.GetReservationImpl;
+import com.app.flight.service.temp.GetSeatMapImplTemp;
 import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -16,7 +18,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -38,31 +43,32 @@ public class RetrieveController {
     private TableView<Reservation> tableView;
     public ArrayList<Reservation> rList;
     GetReservation getReservation = new GetReservationImpl();
+    GetSeatMap getSeatMap = new GetSeatMapImplTemp();
 
     private IntegerProperty fontSize = new SimpleIntegerProperty((int) Font.getDefault().getSize());
     private StringProperty style = new SimpleStringProperty();
 
 
-    public void showRetrieve(){
+    public void showRetrieve() {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations("220802200005217774");
         tableView.isEditable();
 
-        for(int i = 0; i < rList.size(); i++){
-            list2.add(i,rList.get(i));
+        for (int i = 0; i < rList.size(); i++) {
+            list2.add(i, rList.get(i));
         }
         tableView.setItems(list2);
 
         TableColumn check = new TableColumn();
-        TableColumn flightId= new TableColumn("FlightID");
-        TableColumn departure=new TableColumn("Departure");
-        TableColumn destination=new TableColumn("Destination");
-        TableColumn time=new TableColumn("DepartureTime");
-        TableColumn handBaggage=new TableColumn("Carry-on");
-        TableColumn checkedBaggage=new TableColumn("Check-in");
+        TableColumn flightId = new TableColumn("FlightID");
+        TableColumn departure = new TableColumn("Departure");
+        TableColumn destination = new TableColumn("Destination");
+        TableColumn time = new TableColumn("DepartureTime");
+        TableColumn handBaggage = new TableColumn("Carry-on");
+        TableColumn checkedBaggage = new TableColumn("Check-in");
 
         //Combine the two types of baggage into one column
-        TableColumn<Reservation, Object> baggage=new TableColumn<Reservation, Object>("Baggage");
+        TableColumn<Reservation, Object> baggage = new TableColumn<Reservation, Object>("Baggage");
         baggage.getColumns().add(handBaggage);
         baggage.getColumns().add(checkedBaggage);
 
@@ -85,8 +91,8 @@ public class RetrieveController {
         checkedBaggage.setStyle("-fx-font-size:20px;-fx-alignment: center");
         baggage.setStyle("-fx-font-size:20px");
 
-        for(int i = 0; i < list2.size(); i++){
-            check.setCellFactory(new Callback<TableColumn<Reservation,Boolean>, TableCell<Reservation,Boolean>>() {
+        for (int i = 0; i < list2.size(); i++) {
+            check.setCellFactory(new Callback<TableColumn<Reservation, Boolean>, TableCell<Reservation, Boolean>>() {
                 @Override
                 public TableCell<Reservation, Boolean> call(TableColumn<Reservation, Boolean> param) {
                     //make checkbox editable
@@ -115,7 +121,7 @@ public class RetrieveController {
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             try {
-                new FoodTypeController().start(new Stage());//need to be change
+                new SelectSeatController().start(new Stage(), getSeatMap.getSeatMap("1"));//need to be change
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -136,7 +142,8 @@ public class RetrieveController {
     }
 
     public void mouseClick(MouseEvent mouseEvent) {
-        Reservation selectedRow=tableView.getSelectionModel().getSelectedItem();
+        //get the mouse selected row
+        Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         System.out.println(selectedRow.getFlight().getFlightId());
     }
 }
