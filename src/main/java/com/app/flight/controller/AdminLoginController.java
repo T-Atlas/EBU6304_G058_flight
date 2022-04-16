@@ -73,10 +73,10 @@ public class AdminLoginController {
     }
 
     /**
-     * The code for other pages to open adminLogin.fxml
+     * The code for other pages to open AdminLogin.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/adminLogin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminLogin.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Admin Login");
