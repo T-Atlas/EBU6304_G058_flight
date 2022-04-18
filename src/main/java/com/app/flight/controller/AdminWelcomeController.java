@@ -41,7 +41,7 @@ public class AdminWelcomeController {
     }
 
     public void start(Stage stage, String meg) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/adminWelcome.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle(meg);
