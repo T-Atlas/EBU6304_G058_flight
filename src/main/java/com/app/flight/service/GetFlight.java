@@ -3,14 +3,12 @@ package com.app.flight.service;
 import com.app.flight.entity.Flight;
 
 /**
- * @author 贾博然
+ * @author Jia Boran
  */
 
 public interface GetFlight {
 
     /**
-     * 通过航班号查找航班信息
-     *
      * @param id
      * @return
      */

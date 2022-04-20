@@ -18,6 +18,14 @@ public class GetFoodImpl implements GetFood {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Food.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Food.json";
 
+    public static void main(String[] args) {
+
+        GetFoodImpl getFood = new GetFoodImpl();
+        Food food = getFood.getFood(Food.foodType.HALAL);
+        System.out.println(food);
+
+    }
+
     @Override
     public Food getFood(Food.foodType foodName) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
@@ -45,13 +53,5 @@ public class GetFoodImpl implements GetFood {
             System.out.println("数据查找失败");
             return null;
         }
-    }
-
-    public static void main(String[] args) {
-
-        GetFoodImpl getFood = new GetFoodImpl();
-        Food food = getFood.getFood(Food.foodType.HALAL);
-        System.out.println(food);
-
     }
 }

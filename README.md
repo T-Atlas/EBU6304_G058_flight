@@ -19,7 +19,13 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ## Features
 
-xxx
+- Passengers look for their own booking information.
+- Passengers choose seats.
+- Passengers choose meals.
+- Passengers can check in.
+- Passengers can print tags.
+- Administrator can login.
+- Administrator can view all the passengers' information.(coming soon)
 
 
 
@@ -101,9 +107,8 @@ xxx
    
 ## Requirements
 
-- ​	maven -- 3.8.1
-
-- ​	jdk -- 17
+- maven -- 3.8.1 
+- jdk -- 17
 
 
 
@@ -122,37 +127,39 @@ xxx
 
 ## Iteration logs
 
-  ### 2.0 (April 17, 2022)
+  ### 2.0 (April 17, 2022) Latest version
 
-- xxx
+- Further improve the basic functions of our page and realize the closed loop of basic operation logic.
+- Integrate the administrator login function page.
+- Implements the display of flight information (in the form of a list) and passenger selection of seats and meals.
+- Several bugs fixed in this release.
 
-- xxx
+ ### 1.5 (April 12, 2022)
 
-- xxx
+- Fix bugs and complete the iteration of the 1.0 version.
+- Finish the pages and complete the functions of booking and retrieve information.
+- Change the design of flight and booking CSV data regardless of whether a passenger has more than one booking and flight.
+- Implement the GetFlight and GetReservation interface and GetFlightImpl and GetReservationImpl class.
 
- ### 1.5 (April 10, 2022)
-  
-- xxx
+### 1.0 (March 28, 2022)
 
-- xxx
+- Complete the first page about selecting a language.
+- Make entity classes about version 1.0.
+- Complete the programming of common tools related to CSV and JSON.
+- Complete the design of the interface between boundary class and control class.
+- Complete the login interface design and the implementation of the login function.
 
-- xxx
+ ### 0.5 (March 21, 2022)
 
- ### 1.0 (April 4, 2022)
-  
-- xxx
+- Finally determine 28 user stories and acceptance criteria.
+- Complete product prototype design using Axure.
+- Complete the priority and  Fibonacci story points （first version）.
 
-- xxx
+ ### 0.1 (March 15, 2022)
 
-- xxx
-
- ### 0.1 (March 24, 2022)
-  
-- xxx
-
-- xxx
-
-- xxx
+- Set up the QMPlus Hub group and discuss the project handout.
+- Discuss and write user stories focus on more specific and quantifiable details.
+- Build project framework.
 
    
 

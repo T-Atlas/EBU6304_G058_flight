@@ -37,14 +37,13 @@ import java.util.ArrayList;
  * @author HuangHong
  */
 public class RetrieveController {
+    public ArrayList<Reservation> rList;
+    GetReservation getReservation = new GetReservationImpl();
+    GetSeatMap getSeatMap = new GetSeatMapImplTemp();
     @FXML
     private Button next;
     @FXML
     private TableView<Reservation> tableView;
-    public ArrayList<Reservation> rList;
-    GetReservation getReservation = new GetReservationImpl();
-    GetSeatMap getSeatMap = new GetSeatMapImplTemp();
-
     private IntegerProperty fontSize = new SimpleIntegerProperty((int) Font.getDefault().getSize());
     private StringProperty style = new SimpleStringProperty();
 
@@ -142,7 +141,6 @@ public class RetrieveController {
     }
 
     public void mouseClick(MouseEvent mouseEvent) {
-        //get the mouse selected row
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         System.out.println(selectedRow.getFlight().getFlightId());
     }

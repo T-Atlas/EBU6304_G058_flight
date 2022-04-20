@@ -15,13 +15,25 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
- * @author 贾博然
+ * @author Jia Boran
  * @version 1.1
  * @date 2022.4.11
  */
 public class GetReservationImpl implements GetReservation {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Reservation.json";
+
+    /**
+     * 测试读取用户预定信息
+     */
+    public static void main(String[] args) {
+        String id = "220802200005217774";
+        GetReservationImpl getReservation = new GetReservationImpl();
+        ArrayList<Reservation> reservations = getReservation.lookupReservations(id);
+        for (Reservation reservation : reservations) {
+            System.out.println(reservation);
+        }
+    }
 
     /**
      * 通过身份证查找用户预定航班
@@ -87,18 +99,6 @@ public class GetReservationImpl implements GetReservation {
         } else {
             System.out.println("数据查找失败");
             return null;
-        }
-    }
-
-    /**
-     * 测试读取用户预定信息
-     */
-    public static void main(String[] args) {
-        String id = "220802200005217774";
-        GetReservationImpl getReservation = new GetReservationImpl();
-        ArrayList<Reservation> reservations = getReservation.lookupReservations(id);
-        for (Reservation reservation : reservations) {
-            System.out.println(reservation);
         }
     }
 }
