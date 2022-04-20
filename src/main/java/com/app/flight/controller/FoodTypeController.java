@@ -64,14 +64,16 @@ public class FoodTypeController {
         type = foodType();
         System.out.println(type);
 
-        Platform.runLater(() -> {
-            try {
-                new ResultController().start(new Stage());
-                ((Stage) (next.getScene().getWindow())).close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        if (type != null) {
+            Platform.runLater(() -> {
+                try {
+                    new ResultController().start(new Stage());
+                    ((Stage) (next.getScene().getWindow())).close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     /**

@@ -118,14 +118,16 @@ public class RetrieveController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
-        Platform.runLater(() -> {
-            try {
-                new SelectSeatController().start(new Stage(), getSeatMap.getSeatMap("1"));//need to be change
-                ((Stage) (next.getScene().getWindow())).close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        if (tableView.getSelectionModel().getSelectedItem() != null) {
+            Platform.runLater(() -> {
+                try {
+                    new SelectSeatController().start(new Stage(), getSeatMap.getSeatMap("1"));//need to be change
+                    ((Stage) (next.getScene().getWindow())).close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     public void start(Stage stage) throws IOException {

@@ -41,4 +41,11 @@ public class ResultController {
             }
         });
     }
+
+    /**
+     * return to the first page and do the progress again
+     */
+    public void Back() {
+
+    }
 }
