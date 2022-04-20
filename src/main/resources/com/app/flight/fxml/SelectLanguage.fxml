@@ -6,8 +6,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.flight.controller.SelectLanguageController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/16" fx:controller="com.app.flight.controller.SelectLanguageController">
     <children>
         <GridPane prefHeight="800.0" prefWidth="1200.0">
             <columnConstraints>
