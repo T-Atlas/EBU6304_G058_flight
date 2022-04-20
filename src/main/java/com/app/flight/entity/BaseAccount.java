@@ -12,7 +12,7 @@ public abstract class BaseAccount {
     /**
      * The unique identification of account
      */
-    private int id;
+    private String id;
 
     /**
      * The password of account
