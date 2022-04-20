@@ -6,12 +6,12 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.GridPane;
-import javafx.geometry.Insets;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -42,7 +42,7 @@ public class SelectSeatController {
 
     @FXML
     public void nextClick(ActionEvent actionEvent) {
-        if(this.choice != null) {
+        if (this.choice != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Your Selected Seat: " + this.choice);
             alert.setContentText("Please continue your check-in");
@@ -59,6 +59,7 @@ public class SelectSeatController {
     }
 
     int r = 2;
+
     @FXML
     public void helpClick(ActionEvent actionEvent) {
 //        gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
@@ -88,16 +89,16 @@ public class SelectSeatController {
 
         SelectSeatController selectSeatController = fxmlLoader.getController();
 
-        for(Map.Entry<Integer, Map<String, Boolean>> rowMap: seatMap.entrySet()) {
+        for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
             selectSeatController.gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
 
             Text rowText = new Text(String.valueOf(rowMap.getKey()));
             selectSeatController.gridPane.add(rowText, 0, rowMap.getKey() - 1);
             GridPane.setMargin(rowText, new Insets(24));
-            for(Map.Entry<String, Boolean> seats: rowMap.getValue().entrySet()) {
+            for (Map.Entry<String, Boolean> seats : rowMap.getValue().entrySet()) {
                 Button button = new Button(rowMap.getKey() + seats.getKey());
                 button.setMinWidth(80);
-                if(seats.getValue()) {
+                if (seats.getValue()) {
                     button.setStyle("-fx-background-color: #81cbf5");
                     selectSeatController.choiceButton = button;
                     button.setOnAction(actionEvent -> {
@@ -107,8 +108,7 @@ public class SelectSeatController {
                         selectSeatController.choiceButton = button;
                         button.setStyle("-fx-background-color: #008ef3");
                     });
-                }
-                else {
+                } else {
                     button.setStyle("-fx-background-color: #a8a8a8");
                     button.setOnAction(actionEvent -> {
                         Alert alert = new Alert(Alert.AlertType.WARNING);

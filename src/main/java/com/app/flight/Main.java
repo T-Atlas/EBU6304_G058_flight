@@ -1,6 +1,5 @@
 package com.app.flight;
 
-import com.app.flight.controller.SelectSeatController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,6 +9,7 @@ import java.io.IOException;
 
 /**
  * Updated the code of its own version.
+ *
  * @author LianJunhong
  * @version 1.0
  * @date 2022.3.27

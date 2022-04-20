@@ -25,17 +25,18 @@ public class GetFlightImpl implements GetFlight {
 
     /**
      * 通过航班号查找航班信息
+     *
      * @param id
      * @return
      */
     @Override
-    public Flight lookupFlight(String id){
+    public Flight lookupFlight(String id) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
         Flight flight = new Flight();
         //ArrayList<Flight> flights = new ArrayList<>();
         boolean flag = false;
-        for (String[] csvData : csvList){
-            if (csvData[0].equals(id)){
+        for (String[] csvData : csvList) {
+            if (csvData[0].equals(id)) {
                 flag = true;
                 String[] flightData = csvData.clone();
                 //Flight flight = new Flight();
@@ -77,7 +78,7 @@ public class GetFlightImpl implements GetFlight {
                 }*/
             }
         }
-        if (flag){
+        if (flag) {
             try (FileWriter flightJson = new FileWriter(JSON_PATH); PrintWriter out = new PrintWriter(flightJson)) {
                 String flightString = JSON.toJSONString(flight, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue);
                 out.write(flightString);
@@ -85,14 +86,13 @@ public class GetFlightImpl implements GetFlight {
                 e.printStackTrace();
             }
             return flight;
-        }
-        else {
+        } else {
             System.out.println("数据查找失败");
             return null;
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String id = "MU1122";
         GetFlightImpl getFlight = new GetFlightImpl();
         //ArrayList<Flight> flights = getFlight.lookupFlight(id);

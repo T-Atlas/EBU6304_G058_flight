@@ -12,12 +12,13 @@ import java.io.IOException;
 
 /**
  * This code is used to finish all the steps of check-in.
+ *
  * @author Huanghong
  * @version 0.1
  * @date 2022.3.30
  */
 
-public class FinishController  {
+public class FinishController {
 
     @FXML
     private Button finish;
