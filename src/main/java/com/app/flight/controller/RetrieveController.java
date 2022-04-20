@@ -4,9 +4,7 @@ import com.app.flight.Main;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
 import com.app.flight.service.GetSeatMap;
-import com.app.flight.service.impl.GetPassengerImpl;
 import com.app.flight.service.impl.GetReservationImpl;
-import com.app.flight.service.temp.GetPassengerImplTemp;
 import com.app.flight.service.temp.GetSeatMapImplTemp;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -30,8 +28,6 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author HuangHong
@@ -46,30 +42,30 @@ public class RetrieveController {
     GetSeatMap getSeatMap = new GetSeatMapImplTemp();
 
 
-    public void showRetrieve(){
+    public void showRetrieve() {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations("220802200005217774");
 
-        for(int i = 0; i < rList.size(); i++){
-            list2.add(i,rList.get(i));
+        for (int i = 0; i < rList.size(); i++) {
+            list2.add(i, rList.get(i));
         }
         tableView.setItems(list2);
 
         TableColumn check = new TableColumn();
-        TableColumn flightId= new TableColumn("FlightID");
-        TableColumn departure=new TableColumn("Departure");
-        TableColumn destination=new TableColumn("Destination");
-        TableColumn time=new TableColumn("DepartureTime");
-        TableColumn handBaggage=new TableColumn("Carry-on");
-        TableColumn checkedBaggage=new TableColumn("Check-in");
+        TableColumn flightId = new TableColumn("FlightID");
+        TableColumn departure = new TableColumn("Departure");
+        TableColumn destination = new TableColumn("Destination");
+        TableColumn time = new TableColumn("DepartureTime");
+        TableColumn handBaggage = new TableColumn("Carry-on");
+        TableColumn checkedBaggage = new TableColumn("Check-in");
 
         //Combine the two types of baggage into one column
-        TableColumn<Reservation, Object> baggage=new TableColumn<Reservation, Object>("Baggage");
+        TableColumn<Reservation, Object> baggage = new TableColumn<Reservation, Object>("Baggage");
         baggage.getColumns().add(handBaggage);
         baggage.getColumns().add(checkedBaggage);
 
-        for(int i = 0; i < list2.size(); i++){
-            check.setCellFactory(new Callback<TableColumn<Reservation,Boolean>, TableCell<Reservation,Boolean>>() {
+        for (int i = 0; i < list2.size(); i++) {
+            check.setCellFactory(new Callback<TableColumn<Reservation, Boolean>, TableCell<Reservation, Boolean>>() {
                 @Override
                 public TableCell<Reservation, Boolean> call(TableColumn<Reservation, Boolean> param) {
                     //make checkbox editable
@@ -79,7 +75,6 @@ public class RetrieveController {
                 }
 
             });
-
 
 
             flightId.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getFlightId()));
@@ -125,7 +120,7 @@ public class RetrieveController {
 
     public void mouseClick(MouseEvent mouseEvent) {
         //get the mouse selected row
-        Reservation selectedRow=tableView.getSelectionModel().getSelectedItem();
+        Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         System.out.println(selectedRow.getFlight().getFlightId());
     }
 }
