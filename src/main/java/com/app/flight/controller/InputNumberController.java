@@ -21,12 +21,12 @@ import java.io.IOException;
  * @author HuangHong
  */
 public class InputNumberController {
+    public static Passenger p;
     @FXML
     public TextField number;
     @FXML
     public Label annotation;
     public Button clean;
-    public static Passenger p;
     GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {

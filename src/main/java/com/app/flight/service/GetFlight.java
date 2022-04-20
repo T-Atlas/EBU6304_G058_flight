@@ -9,7 +9,6 @@ import com.app.flight.entity.Flight;
 public interface GetFlight {
 
     /**
-     *
      * @param id
      * @return
      */

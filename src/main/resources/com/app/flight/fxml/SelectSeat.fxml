@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
           fx:controller="com.app.flight.controller.SelectSeatController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
@@ -131,10 +131,10 @@
                         <Insets/>
                     </GridPane.margin>
                 </Text>
-                <ScrollPane prefHeight="437.0" prefWidth="998.0" style="-fx-font-size: 22;" GridPane.columnIndex="1"
+                <ScrollPane prefHeight="437.0" prefWidth="998.0" style="-fx-font-size: 24;" GridPane.columnIndex="1"
                             GridPane.rowIndex="2">
                     <content>
-                        <GridPane fx:id="gridPane" alignment="TOP_CENTER" prefHeight="409.0" prefWidth="965.0">
+                        <GridPane fx:id="gridPane" alignment="TOP_CENTER" prefHeight="421.0" prefWidth="965.0">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -145,6 +145,67 @@
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                             </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Button mnemonicParsing="false" text="1D" GridPane.columnIndex="5">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="24.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" text="1B" GridPane.columnIndex="2">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="24.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" text="1C" GridPane.columnIndex="3">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="24.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" text="1A" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="24.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" text="1E" GridPane.columnIndex="6">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="24.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" text="1F" GridPane.columnIndex="7">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="26.0"/>
+                                    </GridPane.margin>
+                                </Button>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                    <GridPane.margin>
+                                        <Insets left="24.0"/>
+                                    </GridPane.margin>
+                                </Text>
+                            </children>
                         </GridPane>
                     </content>
                 </ScrollPane>
@@ -208,9 +269,9 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Pane prefHeight="142.0" prefWidth="180.0">
+                <Pane>
                     <children>
-                        <Button fx:id="help" layoutX="2.0" layoutY="24.0" mnemonicParsing="false" onAction="#helpClick"
+                        <Button fx:id="help" layoutX="2.0" layoutY="24.0" mnemonicParsing="false"
                                 prefHeight="64.0" prefWidth="179.0"
                                 style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;"
                                 text="Help" textAlignment="CENTER" textFill="WHITE">
@@ -218,30 +279,9 @@
                                 <Font size="28.0"/>
                             </font>
                         </Button>
-                        <Button layoutX="266.0" layoutY="23.0" mnemonicParsing="false"
-                                style="-fx-background-color: #008ef3;" text="  "/>
-                        <Text layoutX="296.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Choice">
-                            <font>
-                                <Font size="25.0"/>
-                            </font>
-                        </Text>
-                        <Text layoutX="561.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available">
-                            <font>
-                                <Font size="25.0"/>
-                            </font>
-                        </Text>
-                        <Button layoutX="531.0" layoutY="21.0" mnemonicParsing="false"
-                                style="-fx-background-color: #81cbf5;" text="  "/>
-                        <Text layoutX="825.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupied">
-                            <font>
-                                <Font size="25.0"/>
-                            </font>
-                        </Text>
-                        <Button layoutX="793.0" layoutY="21.0" mnemonicParsing="false"
-                                style="-fx-background-color: #a8a8a8;" text="  "/>
                     </children>
                 </Pane>
-                <Pane prefHeight="142.0" prefWidth="411.0" GridPane.columnIndex="1">
+                <Pane GridPane.columnIndex="1">
                     <children>
                         <Button fx:id="next" layoutX="379.0" layoutY="24.0" mnemonicParsing="false"
                                 onAction="#nextClick" prefHeight="64.0" prefWidth="179.0"

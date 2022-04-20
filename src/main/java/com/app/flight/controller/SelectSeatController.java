@@ -39,6 +39,7 @@ public class SelectSeatController {
     public Button choiceButton;
 
     public String choice;
+    int r = 2;
 
     @FXML
     public void nextClick(ActionEvent actionEvent) {
@@ -57,8 +58,6 @@ public class SelectSeatController {
             });
         }
     }
-
-    int r = 2;
 
     @FXML
     public void helpClick(ActionEvent actionEvent) {
