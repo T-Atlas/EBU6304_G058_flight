@@ -120,7 +120,7 @@ public class RetrieveController {
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             try {
-                new SelectSeatController().start(new Stage(), getSeatMap.getSeatMap("MU1122"));//need to be change
+                new SelectSeatController().start(new Stage(), getSeatMap.lookupSeatMap("MU1122"));//need to be change
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
