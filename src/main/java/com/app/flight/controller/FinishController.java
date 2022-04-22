@@ -14,7 +14,7 @@ import java.io.IOException;
  * This code is used to finish all the steps of check-in.
  *
  * @author Huanghong
- * @version 0.1
+ * @version 2.1
  * @date 2022.3.30
  */
 
@@ -28,9 +28,10 @@ public class FinishController {
      */
     public void finishClick() {
         Platform.runLater(() -> {
+            Stage stage = (Stage) finish.getScene().getWindow();
             try {
-                new SelectLanguageController().start(new Stage());
-                ((Stage) (finish.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new SelectLanguageController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -42,12 +43,14 @@ public class FinishController {
      * The code for other pages to open finished.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/finished.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
 
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/finished.fxml"));
+    }
 }

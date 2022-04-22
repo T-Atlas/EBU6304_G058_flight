@@ -15,6 +15,7 @@ import java.io.IOException;
 
 /**
  * @author LianJunhong
+ * @version 2.1
  */
 public class SelectMethodController {
 
@@ -30,8 +31,7 @@ public class SelectMethodController {
 
 
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectMethod.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Welcome!");
         stage.setScene(scene);
@@ -54,16 +54,21 @@ public class SelectMethodController {
         //send selected method to next controller depending on which radiobutton is selected
         if (method.getSelectedToggle() == bookingNum) {
             Platform.runLater(() -> {
+                Stage stage = (Stage) next.getScene().getWindow();
                 try {
-                    Stage stage = new Stage();
-                    new InputNumberController().start(stage);//需要修改成页面展示的controller
+
+                    FXMLLoader fxmlLoader = new InputNumberController().getLoader();//需要修改成页面展示的controller
                     //TODO:call labelText and sent userdata to next page
-                    ((Stage) (next.getScene().getWindow())).close();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         }
 
+    }
+
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/SelectMethod.fxml"));
     }
 }
