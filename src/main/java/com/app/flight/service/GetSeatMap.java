@@ -12,5 +12,5 @@ public interface GetSeatMap {
      * @param flightId Flight No.
      * @return Seat information map
      */
-    Map<Integer, Map<String, Boolean>> getSeatMap(String flightId);
+    Map<Integer, Map<String, Boolean>> lookupSeatMap(String flightId);
 }
