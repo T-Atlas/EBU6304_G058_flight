@@ -39,9 +39,10 @@ public class SelectLanguageController {
     @FXML
     public void loginButtonClick() {
         Platform.runLater(() -> {
+            Stage stage = (Stage) loginButton.getScene().getWindow();
             try {
-                new AdminLoginController().start(new Stage());
-                ((Stage) (loginButton.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new AdminLoginController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }

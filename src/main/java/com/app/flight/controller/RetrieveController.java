@@ -133,18 +133,14 @@ public class RetrieveController {
 
     public void start(Stage stage) throws IOException {
 
-        Scene scene = loadScene();
+        FXMLLoader fxmlLoader = getLoader();
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         RetrieveController retrieveController = getLoader().getController();
         retrieveController.showRetrieve();
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
 
-    }
-
-    public Scene loadScene() throws IOException {
-        FXMLLoader fxmlLoader = getLoader();
-        return new Scene(fxmlLoader.load(), 1200, 800);
     }
 
     public FXMLLoader getLoader() throws IOException {

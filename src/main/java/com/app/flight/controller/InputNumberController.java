@@ -22,7 +22,7 @@ import java.io.IOException;
  * @version 2.1
  */
 public class InputNumberController {
-    public static Passenger p;
+    public Passenger p;
     @FXML
     public TextField number;
     @FXML
@@ -34,13 +34,18 @@ public class InputNumberController {
         p = getPassenger.lookupPassenger(number.getText());
         System.out.println(p);
         Platform.runLater(() -> {
+            Stage stage = (Stage) clean.getScene().getWindow();
             try {
+                FXMLLoader fxmlLoader;
                 if (p != null) {
-                    new InfoConfirmController().start(new Stage(), p);
-                    ((Stage) (clean.getScene().getWindow())).close();
+                    fxmlLoader = new InfoConfirmController().getLoader();
+
                 } else {
-                    new ComingSoonController().start(new Stage());
+                    fxmlLoader = new ComingSoonController().getLoader();
                 }
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                InfoConfirmController i = fxmlLoader.getController();
+                i.showNum(p);
             } catch (IOException e) {
                 e.printStackTrace();
             }

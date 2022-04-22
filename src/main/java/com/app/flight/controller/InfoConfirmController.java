@@ -53,17 +53,21 @@ public class InfoConfirmController {
             try {
                 FXMLLoader fxmlLoader = new RetrieveController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                RetrieveController retrieveController = fxmlLoader.getController();
+                retrieveController.showRetrieve();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
-    public void Return(ActionEvent actionEvent) {
+
+    public void returnButton(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) back.getScene().getWindow();
             try {
-                new InputNumberController().start(new Stage());
-                ((Stage) (back.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new InputNumberController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
