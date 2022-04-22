@@ -4,6 +4,8 @@ import java.lang.reflect.Field;
 
 /**
  * @author SongBo
+ * @version 1.0
+ * @date 2022.4.6
  */
 public class Obj {
     public static String[] generateObjAttr(Object obj) {

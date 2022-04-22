@@ -14,6 +14,8 @@ import java.util.Map;
 
 /**
  * @author SongBo
+ * @version 1.0
+ * @date 2022.4.22
  */
 public class Seat {
     public static void generateSeatMap(String flightId, int rowSize) {
