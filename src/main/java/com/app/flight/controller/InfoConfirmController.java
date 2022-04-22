@@ -25,6 +25,8 @@ public class InfoConfirmController {
     @FXML
     public Button back;
 
+    public Passenger pRetrieve;
+
 
     public void showNum(Passenger p) {
         num.setText(p.getPassengerId());
@@ -36,6 +38,7 @@ public class InfoConfirmController {
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         InfoConfirmController i = fxmlLoader.getController();
         i.showNum(p);
+        i.pRetrieve = p;
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
@@ -46,7 +49,7 @@ public class InfoConfirmController {
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             try {
-                new RetrieveController().start(new Stage());
+                new RetrieveController().start(new Stage(), pRetrieve);
                 ((Stage) (next.getScene().getWindow())).close();
             } catch (IOException e) {
                 e.printStackTrace();
