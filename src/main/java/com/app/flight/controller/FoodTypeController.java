@@ -64,15 +64,17 @@ public class FoodTypeController {
         type = foodType();
         System.out.println(type);
 
-        Platform.runLater(() -> {
-            Stage stage = (Stage) next.getScene().getWindow();
-            try {
-                FXMLLoader fxmlLoader = new ResultController().getLoader();
-                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        if (type != null) {
+            Platform.runLater(() -> {
+                Stage stage = (Stage) next.getScene().getWindow();
+                try {
+                    FXMLLoader fxmlLoader = new ResultController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     /**
