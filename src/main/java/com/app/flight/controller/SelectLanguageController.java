@@ -53,21 +53,25 @@ public class SelectLanguageController {
      * The code to open SelectLanguage.fxml.
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
-
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = loadScene();
         stage.setTitle("Welcome!");
         stage.setScene(scene);
         stage.show();
     }
 
+    public Scene loadScene() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
+        return new Scene(fxmlLoader.load(), 1200, 800);
+    }
+
     public void onEnglishButtonClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) english.getScene().getWindow();
             try {
-                new AttentionNotesController().start(new Stage());
-                ((Stage) (english.getScene().getWindow())).close();
+                stage.setScene(new AttentionNotesController().loadScene());
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new RuntimeException(e);
             }
         });
     }

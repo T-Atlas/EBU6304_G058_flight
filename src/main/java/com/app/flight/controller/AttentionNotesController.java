@@ -50,12 +50,14 @@ public class AttentionNotesController {
      * The code for other pages to open InputNumber.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
-
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = loadScene();
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
 
+    public Scene loadScene() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
+        return new Scene(fxmlLoader.load(), 1200, 800);
+    }
 }
