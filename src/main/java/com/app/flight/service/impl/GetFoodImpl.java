@@ -23,7 +23,6 @@ public class GetFoodImpl implements GetFood {
         GetFoodImpl getFood = new GetFoodImpl();
         Food food = getFood.lookupFood(Food.foodType.HALAL);
         System.out.println(food);
-
     }
 
     @Override
