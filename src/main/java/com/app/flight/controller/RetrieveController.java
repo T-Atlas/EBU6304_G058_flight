@@ -5,7 +5,7 @@ import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
 import com.app.flight.service.GetSeatMap;
 import com.app.flight.service.impl.GetReservationImpl;
-import com.app.flight.service.temp.GetSeatMapImplTemp;
+import com.app.flight.service.impl.GetSeatMapImpl;
 import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -39,7 +39,7 @@ import java.util.ArrayList;
 public class RetrieveController {
     public ArrayList<Reservation> rList;
     GetReservation getReservation = new GetReservationImpl();
-    GetSeatMap getSeatMap = new GetSeatMapImplTemp();
+    GetSeatMap getSeatMap = new GetSeatMapImpl();
     @FXML
     private Button next;
     @FXML
@@ -118,16 +118,16 @@ public class RetrieveController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
-        if (tableView.getSelectionModel().getSelectedItem() != null) {
-            Platform.runLater(() -> {
-                try {
-                    new SelectSeatController().start(new Stage(), getSeatMap.getSeatMap("1"));//need to be change
-                    ((Stage) (next.getScene().getWindow())).close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-        }
+        Platform.runLater(() -> {
+            try {
+                Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
+                String flightId = selectedRow.getFlight().getFlightId();
+                new SelectSeatController().start(new Stage(), getSeatMap.lookupSeatMap(flightId), flightId);//need to be change
+                ((Stage) (next.getScene().getWindow())).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public void start(Stage stage) throws IOException {

@@ -19,13 +19,6 @@ import java.util.ArrayList;
 public class GetPassengerImpl implements GetPassenger {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Passenger.json";
-
-    /**
-     * 通过身份证号查找用户id
-     *
-     * @param id id
-     * @return Passenger
-     */
     @Override
     public Passenger lookupPassenger(String id) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
@@ -44,17 +37,9 @@ public class GetPassengerImpl implements GetPassenger {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                System.out.println("数据查找成功");
                 return passenger;
             }
         }
-        System.out.println("数据查找失败");
         return null;
     }
-
-    /*public static void main(String[] args){
-        String id = "220802200005217774";
-        GetPassengerImpl getPassenger = new GetPassengerImpl();
-        getPassenger.lookupPassenger(id);
-    }*/
 }
