@@ -46,6 +46,7 @@ public class InputNumberController {
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                 InfoConfirmController i = fxmlLoader.getController();
                 i.showNum(p);
+                i.pRetrieve = p;
             } catch (IOException e) {
                 e.printStackTrace();
             }

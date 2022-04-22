@@ -55,11 +55,12 @@ public class SelectSeatController {
             alert.setContentText("Please continue your check-in");
             alert.showAndWait();
             Platform.runLater(() -> {
+                Stage stage = (Stage) next.getScene().getWindow();
                 try {
                     SetSeatMap setSeatMap = new SetSeatMapImpl();
                     setSeatMap.updateSeatMap(flightId, choiceColumn, choiceRow);
-                    new FoodTypeController().start(new Stage());
-                    ((Stage) (next.getScene().getWindow())).close();
+                    FXMLLoader fxmlLoader = new FoodTypeController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -136,4 +137,7 @@ public class SelectSeatController {
         stage.show();
     }
 
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
+    }
 }
