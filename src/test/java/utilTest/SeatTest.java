@@ -6,6 +6,6 @@ import org.junit.Test;
 public class SeatTest {
     @Test
     public void generateSeatMapTest() {
-        Seat.generateSeatMap("MU1122", 20);
+        Seat.generateSeatMap("MH8633", 20);
     }
 }
