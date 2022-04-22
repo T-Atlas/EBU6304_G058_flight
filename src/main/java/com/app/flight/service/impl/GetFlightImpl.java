@@ -21,18 +21,6 @@ import java.util.ArrayList;
 public class GetFlightImpl implements GetFlight {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Flight.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Flight.json";
-
-    public static void main(String[] args) {
-        String id = "MU1122";
-        GetFlightImpl getFlight = new GetFlightImpl();
-        //ArrayList<Flight> flights = getFlight.lookupFlight(id);
-        /*for (Flight flight : flights) {
-            System.out.println(flight);
-        }*/
-        Flight flight = getFlight.lookupFlight(id);
-        System.out.println(flight);
-    }
-
     /**
      * 通过航班号查找航班信息
      *

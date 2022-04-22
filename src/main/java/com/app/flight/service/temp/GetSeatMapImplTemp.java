@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class GetSeatMapImplTemp implements GetSeatMap {
     @Override
-    public Map<Integer, Map<String, Boolean>> getSeatMap(String flightId) {
+    public Map<Integer, Map<String, Boolean>> lookupSeatMap(String flightId) {
         Map<String, Boolean> rowMap = new HashMap<>(50);
         rowMap.put("A", true);
         rowMap.put("B", false);

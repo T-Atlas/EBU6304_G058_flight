@@ -6,16 +6,16 @@
       "firstName": "Lian",
       "lastName": "Test",
       "age": 18,
-      "telephone": "13104368888"
+      "telephone": "13104367774"
     },
     "flight": {
       "flightId": "MU1122",
       "departure": "Shanghai",
       "destination": "Beijing",
       "boardingGate": "D20",
-      "boardingTime": "2022-04-11 12:25",
-      "departureTime": "2022-04-11 12:55",
-      "arrivalTime": "2022-04-11 14:55"
+      "boardingTime": "2022-05-11 12:25",
+      "departureTime": "2022-05-11 12:55",
+      "arrivalTime": "2022-05-11 14:55"
     },
     "seatLevel": "BUSINESS_CLASS",
     "mealsAvailable": true,

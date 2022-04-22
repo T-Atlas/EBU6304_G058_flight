@@ -13,7 +13,7 @@ public class Voucher {
     /**
      * Serial number of the voucher
      */
-    private int voucherNo;
+    private String voucherNo;
 
     /**
      * Counter number for checked baggage

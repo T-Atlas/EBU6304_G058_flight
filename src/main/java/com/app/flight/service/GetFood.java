@@ -13,5 +13,5 @@ public interface GetFood {
      * @param foodName
      * @return
      */
-    Food getFood(Food.foodType foodName);
+    Food lookupFood(Food.foodType foodName);
 }
