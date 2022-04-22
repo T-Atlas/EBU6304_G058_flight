@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class GetPassengerTest {
     @Test
     public void lookupPassengerTest() {
-        String id = "220802200005217774";
+        String id = "220802200005217748";
         GetPassengerImpl getPassenger = new GetPassengerImpl();
         System.out.println(getPassenger.lookupPassenger(id));
     }
