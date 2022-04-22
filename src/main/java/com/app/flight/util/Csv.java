@@ -19,15 +19,17 @@ import java.util.Map;
 
 /**
  * @author SongBo
+ * @version 2.0
+ * @date 2022.4.16
  */
 public class Csv {
     /**
-     * 添加一行csv数据
+     * Add a row of csv data
      *
-     * @param entity   添加数据对应的实体
-     * @param filePath 添加数据的文件目录
-     * @param unique   该实体是否有唯一字段
-     * @return 是否添加成功
+     * @param entity   Add the entity corresponding to the data
+     * @param filePath File directory for adding data
+     * @param unique   Does the entity have a unique field
+     * @return Whether added successfully or not
      */
     public static boolean addCsv(Object entity, String filePath, boolean unique) {
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
@@ -62,10 +64,10 @@ public class Csv {
     }
 
     /**
-     * 读取所有csv数据
+     * Read all csv data
      *
-     * @param filePath 读取csv数据的文件目录
-     * @return 读取到的数据集
+     * @param filePath Directory of files for reading csv data
+     * @return Retrieved data sets
      */
     public static ArrayList<String[]> readCsv(String filePath) {
         ArrayList<String[]> csvList = new ArrayList<>();
@@ -83,11 +85,11 @@ public class Csv {
     }
 
     /**
-     * 更新某一行csv数据并且该实体必须有唯一字段
+     * Update a row of csv data and the entity must have a unique field
      *
-     * @param entity   更新数据对应的实体
-     * @param filePath 更新数据的文件目录
-     * @return 是否更新成功
+     * @param entity   Update the entity corresponding to the data
+     * @param filePath File directory for updating data
+     * @return Whether updated successfully or not
      */
     public static boolean updateCsv(Object entity, String filePath) {
         if (!deleteCsv(entity, filePath, true)) {
@@ -103,12 +105,12 @@ public class Csv {
     }
 
     /**
-     * 删除某一行csv数据
+     * Delete a row of csv data
      *
-     * @param entity   删除数据对应的实体
-     * @param filePath 删除数据的文件目录
-     * @param unique   该实体是否有唯一字段
-     * @return 是否删除成功
+     * @param entity   Delete the entity corresponding to the data
+     * @param filePath File directory for deleted data
+     * @param unique   Does the entity have a unique field
+     * @return Whether deleted successfully or not
      */
     public static boolean deleteCsv(Object entity, String filePath, boolean unique) {
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
@@ -180,7 +182,5 @@ public class Csv {
             return new Admin();
         }
     }
-
-
 }
 
