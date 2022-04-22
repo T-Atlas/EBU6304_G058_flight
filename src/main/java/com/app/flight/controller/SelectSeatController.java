@@ -23,6 +23,7 @@ import java.util.Map;
 
 /**
  * @author zhenghan
+ * @version 2.1
  */
 public class SelectSeatController {
 

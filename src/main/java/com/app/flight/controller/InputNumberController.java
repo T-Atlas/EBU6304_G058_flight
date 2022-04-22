@@ -19,6 +19,7 @@ import java.io.IOException;
 /**
  * @author LianJunhong
  * @author HuangHong
+ * @version 2.1
  */
 public class InputNumberController {
     public static Passenger p;
@@ -50,8 +51,7 @@ public class InputNumberController {
      * The code for other pages to open InputNumber.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
@@ -60,5 +60,9 @@ public class InputNumberController {
 
     public void clean(ActionEvent actionEvent) {
         number.setText("");
+    }
+
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
     }
 }

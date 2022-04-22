@@ -35,6 +35,7 @@ import java.util.ArrayList;
 
 /**
  * @author HuangHong
+ * @version 2.1
  */
 public class RetrieveController {
     public ArrayList<Reservation> rList;
@@ -132,14 +133,22 @@ public class RetrieveController {
 
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        RetrieveController retrieveController = fxmlLoader.getController();
+        Scene scene = loadScene();
+        RetrieveController retrieveController = getLoader().getController();
         retrieveController.showRetrieve();
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    public Scene loadScene() throws IOException {
+        FXMLLoader fxmlLoader = getLoader();
+        return new Scene(fxmlLoader.load(), 1200, 800);
+    }
+
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
     }
 
     public void mouseClick(MouseEvent mouseEvent) {

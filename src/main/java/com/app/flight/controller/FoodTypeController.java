@@ -18,7 +18,7 @@ import java.io.IOException;
  * This code is used to select the food type.
  *
  * @author HuangHong
- * @version 0.1
+ * @version 2.1
  * @date 2022.3.31
  */
 public class FoodTypeController {
@@ -65,9 +65,10 @@ public class FoodTypeController {
         System.out.println(type);
 
         Platform.runLater(() -> {
+            Stage stage = (Stage) next.getScene().getWindow();
             try {
-                new ResultController().start(new Stage());
-                ((Stage) (next.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new ResultController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -78,12 +79,15 @@ public class FoodTypeController {
      * The code for other pages to open SelectFoodType.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
     }
 
 }
