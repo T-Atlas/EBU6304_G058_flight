@@ -16,23 +16,23 @@ import java.util.Map;
  * @author SongBo
  */
 public class Seat {
-    public static void generateSeatMap(String flightId, int columnSize) {
+    public static void generateSeatMap(String flightId, int rowSize) {
         Map<String, Boolean> rowMap = new HashMap<>(6);
-        String[] rowString = new String[]{"A", "B", "C", "D", "E", "F"};
-        for (String s : rowString) {
+        String[] columnString = new String[]{"A", "B", "C", "D", "E", "F"};
+        for (String s : columnString) {
             rowMap.put(s, true);
         }
-        Map<Integer, Map<String, Boolean>> seatMap = new HashMap<>(columnSize);
-        for (int i = 1; i < columnSize + 1; i++) {
+        Map<Integer, Map<String, Boolean>> seatMap = new HashMap<>(rowSize);
+        for (int i = 1; i < rowSize + 1; i++) {
             seatMap.put(i, rowMap);
         }
-        writeSeatMap(generateSeatFilePath(flightId), seatMap, rowString);
+        writeSeatMap(generateSeatFilePath(flightId), seatMap, columnString);
     }
 
-    public static void writeSeatMap(String filePath, Map<Integer, Map<String, Boolean>> seatMap, String[] rowString) {
+    public static void writeSeatMap(String filePath, Map<Integer, Map<String, Boolean>> seatMap, String[] columnString) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8))) {
             CsvWriter csvWriter = new CsvWriter(bufferedWriter, ',');
-            csvWriter.writeRecord(rowString);
+            csvWriter.writeRecord(columnString);
             for (Map<String, Boolean> rowSeat : seatMap.values()) {
                 Iterator<Map.Entry<String, Boolean>> iterator = rowSeat.entrySet().iterator();
                 String[] seatStatus = new String[rowSeat.size()];

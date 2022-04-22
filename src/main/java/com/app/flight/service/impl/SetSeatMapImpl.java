@@ -12,15 +12,15 @@ import java.util.Map;
  */
 public class SetSeatMapImpl implements SetSeatMap {
     @Override
-    public void updateSeatMap(String flightId, String row, int column) {
+    public void updateSeatMap(String flightId, String column, int row) {
         GetSeatMapImpl getSeatMap = new GetSeatMapImpl();
         Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
-        Map<String, Boolean> stringBooleanMap = seatMap.get(column);
-        Boolean status = stringBooleanMap.get(row);
+        Map<String, Boolean> stringBooleanMap = seatMap.get(row);
+        Boolean status = stringBooleanMap.get(column);
         status = !status;
-        stringBooleanMap.replace(row, status);
-        seatMap.replace(column, stringBooleanMap);
-        String[] rowString = new String[]{"A", "B", "C", "D", "E", "F"};
-        Seat.writeSeatMap(Seat.generateSeatFilePath(flightId), seatMap, rowString);
+        stringBooleanMap.replace(column, status);
+        seatMap.replace(row, stringBooleanMap);
+        String[] columnString = new String[]{"A", "B", "C", "D", "E", "F"};
+        Seat.writeSeatMap(Seat.generateSeatFilePath(flightId), seatMap, columnString);
     }
 }

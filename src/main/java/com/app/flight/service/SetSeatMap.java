@@ -10,8 +10,8 @@ public interface SetSeatMap {
      * Modify the Boolean value of a seat
      *
      * @param flightId flightId
-     * @param row      Modify the number of rows of seats
      * @param column   Modify the number of columns of seats
+     * @param row      Modify the number of rows of seats
      */
-    void updateSeatMap(String flightId, String row, int column);
+    void updateSeatMap(String flightId, String column, int row);
 }
