@@ -11,8 +11,7 @@ public interface GetBoardingPass {
     /**
      * Find the passenger's boarding pass
      *
-     * @param id passenger ID
      * @return passenger's boarding pass
      */
-    BoardingPass lookupBoardingPass(String id);
+    BoardingPass lookupBoardingPass();
 }
