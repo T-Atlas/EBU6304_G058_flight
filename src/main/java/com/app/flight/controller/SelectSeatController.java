@@ -91,12 +91,17 @@ public class SelectSeatController {
      */
     public void start(Stage stage, Map<Integer, Map<String, Boolean>> seatMap, String flightId) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
-
+        SelectSeatController selectSeatController = fxmlLoader.getController();
+        selectSeatController.flightId = flightId;
+        selectSeatController.showSeatMap(seatMap, selectSeatController);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Please Select Your Seat");
 
-        SelectSeatController selectSeatController = fxmlLoader.getController();
-        selectSeatController.flightId = flightId;
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap, SelectSeatController selectSeatController) {
 
         for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
             selectSeatController.gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
@@ -132,9 +137,6 @@ public class SelectSeatController {
                 GridPane.setMargin(button, new Insets(18));
             }
         }
-
-        stage.setScene(scene);
-        stage.show();
     }
 
     public FXMLLoader getLoader() {
