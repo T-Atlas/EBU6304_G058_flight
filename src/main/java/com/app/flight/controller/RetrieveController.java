@@ -3,8 +3,10 @@ package com.app.flight.controller;
 import com.app.flight.Main;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
+import com.app.flight.service.GetFlight;
 import com.app.flight.service.GetReservation;
 import com.app.flight.service.GetSeatMap;
+import com.app.flight.service.impl.GetFlightImpl;
 import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.service.impl.GetSeatMapImpl;
 import javafx.application.Platform;
@@ -47,8 +49,8 @@ public class RetrieveController {
     private Button next;
     @FXML
     private TableView<Reservation> tableView;
-    private IntegerProperty fontSize = new SimpleIntegerProperty((int) Font.getDefault().getSize());
-    private StringProperty style = new SimpleStringProperty();
+
+    GetFlight getFlight = new GetFlightImpl();
 
 
     public void showRetrieve(Passenger p) {
@@ -170,6 +172,6 @@ public class RetrieveController {
 
     public void mouseClick(MouseEvent mouseEvent) {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
-        System.out.println(selectedRow.getFlight().getFlightId());
+        getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
     }
 }
