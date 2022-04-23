@@ -16,6 +16,7 @@ import java.io.IOException;
 /**
  * @author LianJunhong
  * @author HuangHong
+ * @version 2.1
  */
 public class InfoConfirmController {
     @FXML
@@ -34,7 +35,7 @@ public class InfoConfirmController {
 
     public void start(Stage stage, Passenger p) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InfoConfirm.fxml"));
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         InfoConfirmController i = fxmlLoader.getController();
         i.showNum(p);
@@ -43,25 +44,33 @@ public class InfoConfirmController {
         stage.setScene(scene);
         stage.show();
 
+    }
 
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/InfoConfirm.fxml"));
     }
 
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) next.getScene().getWindow();
             try {
-                new RetrieveController().start(new Stage(), pRetrieve);
-                ((Stage) (next.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new RetrieveController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                RetrieveController retrieveController = fxmlLoader.getController();
+                retrieveController.showRetrieve(pRetrieve);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
-    public void Return(ActionEvent actionEvent) {
+
+    public void returnButton(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) back.getScene().getWindow();
             try {
-                new InputNumberController().start(new Stage());
-                ((Stage) (back.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new InputNumberController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }

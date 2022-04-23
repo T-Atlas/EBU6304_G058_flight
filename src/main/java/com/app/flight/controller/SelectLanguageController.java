@@ -39,35 +39,40 @@ public class SelectLanguageController {
     @FXML
     public void loginButtonClick() {
         Platform.runLater(() -> {
+            Stage stage = (Stage) loginButton.getScene().getWindow();
             try {
-                new AdminLoginController().start(new Stage());
-                ((Stage) (loginButton.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new AdminLoginController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
-
     /**
      * The code to open SelectLanguage.fxml.
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Welcome!");
         stage.setScene(scene);
         stage.show();
     }
 
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
+    }
+
     public void onEnglishButtonClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) english.getScene().getWindow();
             try {
-                new AttentionNotesController().start(new Stage());
-                ((Stage) (english.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new AttentionNotesController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new RuntimeException(e);
             }
         });
     }

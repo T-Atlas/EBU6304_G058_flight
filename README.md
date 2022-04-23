@@ -123,18 +123,22 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ------
 
-   
-
 ## Iteration logs
 
-  ### 2.0 (April 17, 2022) Latest version
+### 2.1 RELEASE (April 20, 2022) Latest version
+
+- Several bugs fixed in this release.
+- New features added in this release.
+- New view of seat selection.
+
+### 2.0 Beta (April 17, 2022)
 
 - Further improve the basic functions of our page and realize the closed loop of basic operation logic.
 - Integrate the administrator login function page.
 - Implements the display of flight information (in the form of a list) and passenger selection of seats and meals.
 - Several bugs fixed in this release.
 
- ### 1.5 (April 12, 2022)
+### 1.5 (April 12, 2022)
 
 - Fix bugs and complete the iteration of the 1.0 version.
 - Finish the pages and complete the functions of booking and retrieve information.

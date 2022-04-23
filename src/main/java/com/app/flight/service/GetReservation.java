@@ -6,13 +6,15 @@ import java.util.ArrayList;
 
 /**
  * @author SongBo
+ * @version 1.0
+ * @date 2022.4.23
  */
 public interface GetReservation {
     /**
-     * 查找用户预定的航班信息
+     * Find information about passenger's scheduled flight
      *
-     * @param id
-     * @return
+     * @param id passenger ID
+     * @return Information on all scheduled flights
      */
     ArrayList<Reservation> lookupReservations(String id);
 }

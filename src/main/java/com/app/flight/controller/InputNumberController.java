@@ -19,9 +19,10 @@ import java.io.IOException;
 /**
  * @author LianJunhong
  * @author HuangHong
+ * @version 2.1
  */
 public class InputNumberController {
-    public static Passenger p;
+    public Passenger p;
     @FXML
     public TextField number;
     @FXML
@@ -33,13 +34,19 @@ public class InputNumberController {
         p = getPassenger.lookupPassenger(number.getText());
         System.out.println(p);
         Platform.runLater(() -> {
+            Stage stage = (Stage) clean.getScene().getWindow();
             try {
+                FXMLLoader fxmlLoader;
                 if (p != null) {
-                    new InfoConfirmController().start(new Stage(), p);
-                    ((Stage) (clean.getScene().getWindow())).close();
+                    fxmlLoader = new InfoConfirmController().getLoader();
+
                 } else {
-                    new ComingSoonController().start(new Stage());
+                    fxmlLoader = new ComingSoonController().getLoader();
                 }
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                InfoConfirmController i = fxmlLoader.getController();
+                i.showNum(p);
+                i.pRetrieve = p;
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -50,8 +57,7 @@ public class InputNumberController {
      * The code for other pages to open InputNumber.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
@@ -60,5 +66,9 @@ public class InputNumberController {
 
     public void clean(ActionEvent actionEvent) {
         number.setText("");
+    }
+
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
     }
 }

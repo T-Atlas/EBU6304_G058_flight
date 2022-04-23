@@ -33,9 +33,11 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * @author HuangHong
+ * @version 2.1
  */
 public class RetrieveController {
     public ArrayList<Reservation> rList;
@@ -132,11 +134,18 @@ public class RetrieveController {
 
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) next.getScene().getWindow();
             try {
                 Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
                 String flightId = selectedRow.getFlight().getFlightId();
-                new SelectSeatController().start(new Stage(), getSeatMap.lookupSeatMap(flightId), flightId);//need to be change
-                ((Stage) (next.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new SelectSeatController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                stage.setTitle("Please Select Your Seat");
+                Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
+                SelectSeatController selectSeatController = fxmlLoader.getController();
+                selectSeatController.flightId = flightId;
+                selectSeatController.showSeatMap(seatMap, selectSeatController);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -145,7 +154,7 @@ public class RetrieveController {
 
     public void start(Stage stage, Passenger pRetrieve) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         RetrieveController retrieveController = fxmlLoader.getController();
         retrieveController.showRetrieve(pRetrieve);
@@ -153,6 +162,10 @@ public class RetrieveController {
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
     }
 
     public void mouseClick(MouseEvent mouseEvent) {
