@@ -10,10 +10,7 @@ import com.app.flight.service.impl.GetFlightImpl;
 import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.service.impl.GetSeatMapImpl;
 import javafx.application.Platform;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,13 +19,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -106,15 +100,10 @@ public class RetrieveController {
             baggage.setStyle("-fx-font-size:20px");
 
             for (int i = 0; i < list2.size(); i++) {
-                check.setCellFactory(new Callback<TableColumn<Reservation, Boolean>, TableCell<Reservation, Boolean>>() {
-                    @Override
-                    public TableCell<Reservation, Boolean> call(TableColumn<Reservation, Boolean> param) {
-                        //make checkbox editable
-                        CheckBoxTableCell<Reservation, Boolean> cell = new CheckBoxTableCell<Reservation, Boolean>();
-                        return cell;
-                    }
-
-                });
+//                check.setCellFactory((Callback<TableColumn<Reservation, Boolean>, TableCell<Reservation, Boolean>>) param -> {
+//                    //make checkbox editable
+//                    return new CheckBoxTableCell<>();
+//                });
                 flightId.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getFlightId()));
                 departure.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDeparture()));
                 destination.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDestination()));
@@ -123,7 +112,7 @@ public class RetrieveController {
                 checkedBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("checkedBaggageNum"));
             }
 
-            tableView.getColumns().add(check);
+            //tableView.getColumns().add(check);
             tableView.getColumns().add(flightId);
             tableView.getColumns().add(departure);
             tableView.getColumns().add(destination);
@@ -139,14 +128,16 @@ public class RetrieveController {
             Stage stage = (Stage) next.getScene().getWindow();
             try {
                 Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
-                String flightId = selectedRow.getFlight().getFlightId();
-                FXMLLoader fxmlLoader = new SelectSeatController().getLoader();
-                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                stage.setTitle("Please Select Your Seat");
-                Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
-                SelectSeatController selectSeatController = fxmlLoader.getController();
-                selectSeatController.flightId = flightId;
-                selectSeatController.showSeatMap(seatMap, selectSeatController);
+                if (selectedRow != null) {
+                    String flightId = selectedRow.getFlight().getFlightId();
+                    FXMLLoader fxmlLoader = new SelectSeatController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    stage.setTitle("Please Select Your Seat");
+                    Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
+                    SelectSeatController selectSeatController = fxmlLoader.getController();
+                    selectSeatController.flightId = flightId;
+                    selectSeatController.showSeatMap(seatMap, selectSeatController);
+                }
 
             } catch (IOException e) {
                 e.printStackTrace();
