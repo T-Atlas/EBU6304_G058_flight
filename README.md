@@ -116,7 +116,7 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ## Documentation
 
-   Coming soon…
+Coming soon…
 
 
 
@@ -125,7 +125,20 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ## Iteration logs
 
-### 2.1 RELEASE (April 20, 2022) Latest version
+### 3.0 Beta (April 24, 2022) Latest version
+
+- Several bugs fixed and new features added in this release.
+- Fixed scene switching. Now the scene can be switched in the same window.
+- Fixed the bug that the application will crash when the user select nothing but submit.
+- The showSeatMap function has been refactored to reduce coupling.
+- The interface logic of searching user information according to function selection is realized.
+- The function of finding user interface is reconstructed.
+- Updated CSV file to generate corresponding flight seating map based on flight ID.
+- Added the ability to automatically generate passenger boarding cards.
+- Improved front and back seating map compatibility.
+- Many unit tests have been added to test our main functions.
+
+### 2.1 RELEASE (April 20, 2022)
 
 - Several bugs fixed in this release.
 - New features added in this release.
