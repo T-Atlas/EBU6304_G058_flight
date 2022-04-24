@@ -41,14 +41,15 @@ public class InputNumberController {
                 FXMLLoader fxmlLoader;
                 if (p != null) {
                     fxmlLoader = new InfoConfirmController().getLoader();
-
                 } else {
                     fxmlLoader = new ComingSoonController().getLoader();
                 }
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                InfoConfirmController i = fxmlLoader.getController();
-                i.showNum(p);
-                i.pRetrieve = p;
+                if (p != null) {
+                    InfoConfirmController i = fxmlLoader.getController();
+                    i.showNum(p);
+                    i.pRetrieve = p;
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
