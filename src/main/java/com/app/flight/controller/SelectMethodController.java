@@ -51,14 +51,29 @@ public class SelectMethodController {
         bookingNum.setUserData("booking");
         scan.setUserData("scan");
 
+        Stage stage = (Stage) next.getScene().getWindow();
         //send selected method to next controller depending on which radiobutton is selected
-        if (method.getSelectedToggle() == bookingNum) {
+        if (bookingNum.isSelected() || idNum.isSelected()) {
             Platform.runLater(() -> {
-                Stage stage = (Stage) next.getScene().getWindow();
                 try {
-
                     FXMLLoader fxmlLoader = new InputNumberController().getLoader();//需要修改成页面展示的controller
-                    //TODO:call labelText and sent userdata to next page
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    InputNumberController inputNumberController = fxmlLoader.getController();
+                    inputNumberController.type = (String) method.getSelectedToggle().getUserData();
+                    if (inputNumberController.type.equals("id")) {
+                        inputNumberController.annotation.setText("--> Please input your ID number:");
+                    } else if (inputNumberController.type.equals("booking")) {
+                        inputNumberController.annotation.setText("--> Please input your booking number:");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } else {
+            System.out.println("数据查找失败");
+            Platform.runLater(() -> {
+                try {
+                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();//需要修改成页面展示的controller
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                 } catch (IOException e) {
                     e.printStackTrace();

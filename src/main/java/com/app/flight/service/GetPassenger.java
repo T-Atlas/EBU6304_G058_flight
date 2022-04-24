@@ -7,10 +7,14 @@ import com.app.flight.entity.Passenger;
  */
 public interface GetPassenger {
     /**
-     * apple
-     *
      * @param id id
      * @return Passenger
      */
-    Passenger lookupPassenger(String id);
+    Passenger lookupPassengerById(String id);
+
+    /**
+     * @param bookNumber id
+     * @return Passenger
+     */
+    Passenger lookupPassengerByBookingNumber(String bookNumber);
 }

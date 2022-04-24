@@ -28,10 +28,12 @@ public class InputNumberController {
     @FXML
     public Label annotation;
     public Button clean;
+
+    protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {
-        p = getPassenger.lookupPassenger(number.getText());
+        p = getPassengerInfo(type, number.getText());
         System.out.println(p);
         Platform.runLater(() -> {
             Stage stage = (Stage) clean.getScene().getWindow();
@@ -39,19 +41,33 @@ public class InputNumberController {
                 FXMLLoader fxmlLoader;
                 if (p != null) {
                     fxmlLoader = new InfoConfirmController().getLoader();
-
                 } else {
                     fxmlLoader = new ComingSoonController().getLoader();
                 }
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                InfoConfirmController i = fxmlLoader.getController();
-                i.showNum(p);
-                i.pRetrieve = p;
+                if (p != null) {
+                    InfoConfirmController i = fxmlLoader.getController();
+                    i.showNum(p);
+                    i.pRetrieve = p;
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
+
+    protected Passenger getPassengerInfo(String type, String text) {
+        Passenger passenger;
+        if (type.equals("id")) {
+            passenger = getPassenger.lookupPassengerById(text);
+        } else if (type.equals("booking")) {
+            passenger = getPassenger.lookupPassengerByBookingNumber(text);
+        } else {
+            passenger = null;
+        }
+        return passenger;
+    }
+
 
     /**
      * The code for other pages to open InputNumber.fxml
