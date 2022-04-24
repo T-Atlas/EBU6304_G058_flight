@@ -20,10 +20,10 @@ public class GetPassengerImpl implements GetPassenger {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Passenger.json";
     @Override
-    public Passenger lookupPassengerById(String id) {
+    public Passenger lookupPassengerById(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
         for (String[] csvData : csvList) {
-            if (csvData[0].equals(id)) {
+            if (csvData[0].equals(passengerId)) {
                 String[] passengerData = csvData.clone();
                 Passenger passenger = new Passenger();
                 passenger.setPassengerId(passengerData[0]);

@@ -9,8 +9,10 @@ import com.app.flight.entity.Flight;
 public interface GetFlight {
 
     /**
-     * @param id
-     * @return
+     * Find flights by flight name
+     *
+     * @param flightId flight ID
+     * @return flight information
      */
-    Flight lookupFlight(String id);
+    Flight lookupFlight(String flightId);
 }
