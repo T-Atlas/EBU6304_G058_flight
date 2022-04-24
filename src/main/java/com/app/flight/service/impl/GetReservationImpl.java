@@ -57,7 +57,7 @@ public class GetReservationImpl implements GetReservation {
                 passenger.setPassengerId(reservationData[1]);
                 String pId = passenger.getPassengerId();
                 GetPassengerImpl getPassenger = new GetPassengerImpl();
-                passenger = getPassenger.lookupPassenger(pId);
+                passenger = getPassenger.lookupPassengerById(pId);
                 reservation.setPassenger(passenger);
 
                 Flight flight = new Flight();

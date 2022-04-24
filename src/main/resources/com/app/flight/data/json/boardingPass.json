@@ -1,23 +1,23 @@
 {
-	"passenger":{
-		"passengerId":"123456",
-		"firstName":"Jun",
-		"lastName":"Test",
-		"age":22,
-		"telephone":"13104368848"
-	},
-	"seatNo":"15F",
-	"flight":{
-		"flightId":"MH8633",
-		"departure":"Beijing",
-		"destination":"Hainan",
-		"boardingGate":"B10",
-		"boardingTime":"2022-05-11 18:25",
-		"departureTime":"2022-05-11 18:55",
-		"arrivalTime":"2022-05-11 20:55"
-	},
-	"food":{
-		"foodName":"STANDARD",
-		"foodPrice":30.0
-	}
+  "passenger": {
+    "passengerId": "123456",
+    "firstName": "Jun",
+    "lastName": "Test",
+    "age": 22,
+    "telephone": "13104368848"
+  },
+  "seatNo": "5F",
+  "flight": {
+    "flightId": "MH1234",
+    "departure": "Beijing",
+    "destination": "Shanghai",
+    "boardingGate": "C10",
+    "boardingTime": "2022-05-25 11:25",
+    "departureTime": "2022-05-25 11:55",
+    "arrivalTime": "2022-05-25 16:55"
+  },
+  "food": {
+    "foodName": "HALAL",
+    "foodPrice": 50.0
+  }
 }
