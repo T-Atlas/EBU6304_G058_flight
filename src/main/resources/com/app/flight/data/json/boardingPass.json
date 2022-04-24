@@ -1,0 +1,23 @@
+{
+  "passenger": {
+    "passengerId": "123456",
+    "firstName": "Jun",
+    "lastName": "Test",
+    "age": 22,
+    "telephone": "13104368848"
+  },
+  "seatNo": "1E",
+  "flight": {
+    "flightId": "MH8633",
+    "departure": "Beijing",
+    "destination": "Hainan",
+    "boardingGate": "B10",
+    "boardingTime": "2022-05-11 18:25",
+    "departureTime": "2022-05-11 18:55",
+    "arrivalTime": "2022-05-11 20:55"
+  },
+  "food": {
+    "foodName": "HALAL",
+    "foodPrice": 50.0
+  }
+}

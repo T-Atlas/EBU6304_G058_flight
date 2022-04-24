@@ -21,13 +21,12 @@ public class GetFoodImpl implements GetFood {
     public static void main(String[] args) {
 
         GetFoodImpl getFood = new GetFoodImpl();
-        Food food = getFood.getFood(Food.foodType.HALAL);
+        Food food = getFood.lookupFood(Food.foodType.HALAL);
         System.out.println(food);
-
     }
 
     @Override
-    public Food getFood(Food.foodType foodName) {
+    public Food lookupFood(Food.foodType foodName) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
         Food food = new Food();
         boolean flag = false;

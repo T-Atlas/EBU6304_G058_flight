@@ -1,12 +1,10 @@
 package com.app.flight.util;
 
-import cn.hutool.core.lang.Snowflake;
-import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.app.flight.entity.*;
+import com.app.flight.entity.Admin;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
@@ -15,22 +13,23 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
 /**
  * @author SongBo
+ * @version 2.0
+ * @date 2022.4.16
  */
 public class Csv {
     /**
-     * 添加一行csv数据
+     * Add a row of csv data
      *
-     * @param entity   添加数据对应的实体
-     * @param filePath 添加数据的文件目录
-     * @param unique   该实体是否有唯一字段
-     * @return 是否添加成功
+     * @param entity   Add the entity corresponding to the data
+     * @param filePath File directory for adding data
+     * @param unique   Does the entity have a unique field
+     * @return Whether added successfully or not
      */
     public static boolean addCsv(Object entity, String filePath, boolean unique) {
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
@@ -43,7 +42,7 @@ public class Csv {
                 for (String[] csvRowData : csvData) {
                     for (int j = 0; j < csvData.size(); j++) {
                         if (csvRowData[0].equals(jsonObj.getString(csvHeaders[0]))) {
-                            System.out.println("数据重复添加");
+                            System.out.println("Duplicate data addition");
                             return false;
                         }
                     }
@@ -54,7 +53,7 @@ public class Csv {
             CsvWriter csvWriter = new CsvWriter(bufferedWriter, ',');
             //csvWriter.writeRecord(csvHeaders);
             csvWriter.writeRecord(csvContents);
-            System.out.println("添加csv成功");
+            System.out.println("CSV added successfully");
             csvWriter.close();
             bufferedWriter.close();
         } catch (IOException e) {
@@ -65,10 +64,10 @@ public class Csv {
     }
 
     /**
-     * 读取所有csv数据
+     * Read all csv data
      *
-     * @param filePath 读取csv数据的文件目录
-     * @return 读取到的数据集
+     * @param filePath Directory of files for reading csv data
+     * @return Retrieved data sets
      */
     public static ArrayList<String[]> readCsv(String filePath) {
         ArrayList<String[]> csvList = new ArrayList<>();
@@ -86,32 +85,32 @@ public class Csv {
     }
 
     /**
-     * 更新某一行csv数据并且该实体必须有唯一字段
+     * Update a row of csv data and the entity must have a unique field
      *
-     * @param entity   更新数据对应的实体
-     * @param filePath 更新数据的文件目录
-     * @return 是否更新成功
+     * @param entity   Update the entity corresponding to the data
+     * @param filePath File directory for updating data
+     * @return Whether updated successfully or not
      */
     public static boolean updateCsv(Object entity, String filePath) {
         if (!deleteCsv(entity, filePath, true)) {
-            System.out.println("数据不存在");
+            System.out.println("Data does not exist");
         } else {
             if (addCsv(entity, filePath, false)) {
-                System.out.println("数据更新成功");
+                System.out.println("Data update succeeded");
                 return true;
             }
         }
-        System.out.println("数据更新失败");
+        System.out.println("Data update failed");
         return false;
     }
 
     /**
-     * 删除某一行csv数据
+     * Delete a row of csv data
      *
-     * @param entity   删除数据对应的实体
-     * @param filePath 删除数据的文件目录
-     * @param unique   该实体是否有唯一字段
-     * @return 是否删除成功
+     * @param entity   Delete the entity corresponding to the data
+     * @param filePath File directory for deleted data
+     * @param unique   Does the entity have a unique field
+     * @return Whether deleted successfully or not
      */
     public static boolean deleteCsv(Object entity, String filePath, boolean unique) {
         String data = JSON.toJSONString(entity, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNonStringValueAsString);
@@ -139,7 +138,7 @@ public class Csv {
             }
             i++;
         }
-        System.out.println("数据移除失败");
+        System.out.println("Data removed failed");
         return false;
     }
 
@@ -172,7 +171,7 @@ public class Csv {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("数据移除成功");
+        System.out.println("Data removed successfully");
         return true;
     }
 
@@ -182,81 +181,6 @@ public class Csv {
         } else {
             return new Admin();
         }
-    }
-
-    public static void main(String[] args) {
-        Passenger passenger = new Passenger();
-        passenger.setPassengerId("220802200005217774");
-        passenger.setFirstName("Test");
-        passenger.setLastName("Lian");
-        passenger.setTelephone("13104368888");
-        passenger.setAge(18);
-
-        Flight flight = new Flight();
-        flight.setFlightId("MU1234");
-        flight.setDeparture("Beijing");
-        flight.setDestination("Hainan");
-        flight.setBoardingGate("A10");
-        flight.setBoardingTime(LocalDateTime.of(2022, 1, 23, 11, 25));
-        flight.setDepartureTime(LocalDateTime.of(2022, 1, 23, 11, 55));
-        flight.setArrivalTime(LocalDateTime.of(2022, 1, 23, 16, 55));
-
-
-        Flight flight1 = new Flight();
-        flight1.setFlightId("MU1122");
-        flight1.setDeparture("Shanghai");
-        flight1.setDestination("Beijing");
-        flight1.setBoardingGate("D20");
-        flight1.setBoardingTime(LocalDateTime.of(2022, 4, 11, 12, 25));
-        flight1.setDepartureTime(LocalDateTime.of(2022, 4, 11, 12, 55));
-        flight1.setArrivalTime(LocalDateTime.of(2022, 4, 11, 14, 55));
-
-        String filePath2 = "src/main/resources/com/app/flight/data/csv/Flight.csv";
-        Csv.addCsv(flight1, filePath2, true);
-
-
-        Snowflake snowflake = IdUtil.getSnowflake(1, 1);
-        String id = snowflake.nextIdStr();
-
-        Reservation reservation = new Reservation();
-        reservation.setReservationId(id);
-        reservation.setPassenger(passenger);
-        reservation.setCheckedBaggageNum(2);
-        reservation.setHandBaggageNum(1);
-        reservation.setMealsAvailable(true);
-        reservation.setSeatLevel(Reservation.seatClass.BUSINESS_CLASS);
-        reservation.setFlight(flight);
-
-        //String filePath = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
-        //Csv.addCsv(reservation, filePath,true);
-        //Csv.deleteCsv(reservation, filePath,false);
-        //Csv.updateCsv(passenger, filePath);
-
-        Snowflake snowflake1 = new Snowflake(1, 1);
-        String id1 = snowflake1.nextIdStr();
-        Reservation reservation1 = new Reservation();
-        reservation1.setReservationId(id1);
-        reservation1.setPassenger(passenger);
-        reservation1.setCheckedBaggageNum(1);
-        reservation1.setHandBaggageNum(1);
-        reservation1.setMealsAvailable(false);
-        reservation1.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
-        reservation1.setFlight(flight1);
-
-        //Csv.addCsv(reservation1,filePath,true);
-
-        Food food1 = new Food();
-        food1.setFoodName(Food.foodType.STANDARD);
-        food1.setFoodPrice(Double.parseDouble("2"));
-        /*String filePath = "src/main/resources/com/app/flight/data/csv/Food.csv";
-        Csv.addCsv(food1, filePath,true);*/
-
-        Food food2 = new Food();
-        food2.setFoodName(Food.foodType.HALAL);
-        food1.setFoodPrice(Double.parseDouble("10"));
-        String filePath = "src/main/resources/com/app/flight/data/csv/Food.csv";
-        Csv.addCsv(food2, filePath, true);
-
     }
 }
 

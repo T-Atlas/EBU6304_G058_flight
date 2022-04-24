@@ -10,8 +10,8 @@ public interface GetFood {
     /**
      * Method to get food
      *
-     * @param foodName
-     * @return
+     * @param foodName food type
+     * @return food information
      */
-    Food getFood(Food.foodType foodName);
+    Food lookupFood(Food.foodType foodName);
 }

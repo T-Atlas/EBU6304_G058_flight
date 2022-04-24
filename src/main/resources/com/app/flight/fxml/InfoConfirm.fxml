@@ -124,7 +124,7 @@
                         <Font size="25.0"/>
                     </font>
                 </Button>
-                <Button fx:id="back" layoutX="525.0" layoutY="34.0" mnemonicParsing="false" onAction="#Return"
+                <Button fx:id="back" layoutX="525.0" layoutY="34.0" mnemonicParsing="false" onAction="#returnButton"
                         prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: grey; -fx-font-weight: bold;"
                         text="Return" textFill="WHITE">
                     <font>
