@@ -13,8 +13,8 @@ public interface GetReservation {
     /**
      * Find information about passenger's scheduled flight
      *
-     * @param id passenger ID
+     * @param passengerId passenger ID
      * @return Information on all scheduled flights
      */
-    ArrayList<Reservation> lookupReservations(String id);
+    ArrayList<Reservation> lookupReservations(String passengerId);
 }

@@ -21,20 +21,15 @@ import java.util.ArrayList;
 public class GetFlightImpl implements GetFlight {
     private static final String CSV_PATH = "src/main/resources/com/app/flight/data/csv/Flight.csv";
     private static final String JSON_PATH = "src/main/resources/com/app/flight/data/json/Flight.json";
-    /**
-     * 通过航班号查找航班信息
-     *
-     * @param id
-     * @return
-     */
+
     @Override
-    public Flight lookupFlight(String id) {
+    public Flight lookupFlight(String flightId) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
         Flight flight = new Flight();
         //ArrayList<Flight> flights = new ArrayList<>();
         boolean flag = false;
         for (String[] csvData : csvList) {
-            if (csvData[0].equals(id)) {
+            if (csvData[0].equals(flightId)) {
                 flag = true;
                 String[] flightData = csvData.clone();
                 //Flight flight = new Flight();

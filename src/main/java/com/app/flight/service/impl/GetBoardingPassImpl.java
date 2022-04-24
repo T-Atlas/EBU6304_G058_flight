@@ -24,7 +24,6 @@ public class GetBoardingPassImpl implements GetBoardingPass {
     private static final String FLIGHT_JSON_PATH = "src/main/resources/com/app/flight/data/json/Flight.json";
     private static final String FOOD_JSON_PATH = "src/main/resources/com/app/flight/data/json/Food.json";
     private static final String SEAT_JSON_PATH = "src/main/resources/com/app/flight/data/json/Seat.json";
-
     private static final String BOARDING_PASS_JSON_PATH = "src/main/resources/com/app/flight/data/json/boardingPass.json";
 
     private static String nioMethod(File file) {

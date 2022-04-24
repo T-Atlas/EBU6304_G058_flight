@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class GetReservationImplTemp implements GetReservation {
 
     @Override
-    public ArrayList<Reservation> lookupReservations(String id) {
+    public ArrayList<Reservation> lookupReservations(String passengerId) {
 
         Passenger passenger = new Passenger();
-        passenger.setPassengerId(id);
+        passenger.setPassengerId(passengerId);
         passenger.setFirstName("Jun");
         passenger.setLastName("Lian");
         passenger.setTelephone("13104368888");

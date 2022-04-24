@@ -7,13 +7,13 @@ import com.app.flight.service.GetPassenger;
  */
 public class GetPassengerImplTemp implements GetPassenger {
     /**
-     * @param id id
+     * @param passengerId id
      * @return Passenger
      */
     @Override
-    public Passenger lookupPassengerById(String id) {
+    public Passenger lookupPassengerById(String passengerId) {
         Passenger passenger = new Passenger();
-        passenger.setPassengerId(id);
+        passenger.setPassengerId(passengerId);
         passenger.setFirstName("Jun");
         passenger.setLastName("Lian");
         passenger.setTelephone("13104368888");
