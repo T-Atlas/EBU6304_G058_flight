@@ -1,7 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
-import com.app.flight.entity.*;
+import com.app.flight.entity.BoardingPass;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
 import javafx.application.Platform;
@@ -11,7 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -68,10 +67,14 @@ public class ResultController {
             try {
                 FXMLLoader fxmlLoader = new PrintTagsController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                PrintTagsController printTagsController = fxmlLoader.getController();
+                Thread thread = new Thread(printTagsController);
+                thread.start();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
+
     }
 
     public FXMLLoader getLoader() {
