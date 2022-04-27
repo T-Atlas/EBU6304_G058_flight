@@ -2,11 +2,14 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
+import com.app.flight.service.GetFood;
+import com.app.flight.service.impl.GetFoodImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -18,7 +21,7 @@ import java.io.IOException;
  * This code is used to select the food type.
  *
  * @author HuangHong
- * @version 0.1
+ * @version 2.1
  * @date 2022.3.31
  */
 public class FoodTypeController {
@@ -34,8 +37,8 @@ public class FoodTypeController {
     @FXML
     private RadioButton r3;
 
-
     private String type = null;
+    GetFood getFood = new GetFoodImpl();
 
 
     /**
@@ -49,7 +52,12 @@ public class FoodTypeController {
         r2.setUserData(Food.foodType.VEGETARIAN);
         r3.setUserData(Food.foodType.HALAL);
 
-        type = tg.getSelectedToggle().getUserData().toString();
+        if (tg.getSelectedToggle() == null ){
+            type = null;
+        }else{
+            type = tg.getSelectedToggle().getUserData().toString();
+        }
+
         return type;
 
     }
@@ -62,28 +70,40 @@ public class FoodTypeController {
 
         //invoke foodType() method to get the user's choice of food type
         type = foodType();
-        System.out.println(type);
 
-        Platform.runLater(() -> {
-            try {
-                new ResultController().start(new Stage());
-                ((Stage) (next.getScene().getWindow())).close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        if (type != null) {
+            getFood.lookupFood(Food.foodType.valueOf(type));
+            Platform.runLater(() -> {
+                Stage stage = (Stage) next.getScene().getWindow();
+                try {
+                    FXMLLoader fxmlLoader = new ResultController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    ResultController resultController = fxmlLoader.getController();
+                    resultController.showBoardingPass();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Please select the food type you prefer!");
+            alert.showAndWait();
+        }
     }
 
     /**
      * The code for other pages to open SelectFoodType.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
     }
 
 }

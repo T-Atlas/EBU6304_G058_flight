@@ -12,26 +12,34 @@ import java.io.IOException;
 
 /**
  * @author LianJunhong
+ * @version 2.1
  */
 public class ComingSoonController {
     public Button homeButton;
 
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/ComingSoon.fxml"));
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
 
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/ComingSoon.fxml"));
+    }
+
     public void home(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) (homeButton.getScene().getWindow());
             try {
-                new SelectLanguageController().start(new Stage());
-                ((Stage) (homeButton.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new SelectLanguageController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new RuntimeException(e);
             }
+
         });
     }
 }

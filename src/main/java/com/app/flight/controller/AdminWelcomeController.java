@@ -13,6 +13,7 @@ import java.io.IOException;
 
 /**
  * @author Zheng Han
+ * @version 2.1
  */
 public class AdminWelcomeController {
 
@@ -31,9 +32,10 @@ public class AdminWelcomeController {
      */
     public void logoutButtonClick() {
         Platform.runLater(() -> {
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
             try {
-                new SelectLanguageController().start(new Stage());
-                ((Stage) (logoutButton.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new SelectLanguageController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -41,13 +43,16 @@ public class AdminWelcomeController {
     }
 
     public void start(Stage stage, String meg) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle(meg);
         AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
         adminWelcomeController.setWelcomeMeg(meg);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
     }
 }

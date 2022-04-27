@@ -38,16 +38,16 @@ public class GetReservationImpl implements GetReservation {
     /**
      * 通过身份证查找用户预定航班
      *
-     * @param id id
+     * @param passengerId id
      * @return ArrayList<Reservation>
      */
     @Override
-    public ArrayList<Reservation> lookupReservations(String id) {
+    public ArrayList<Reservation> lookupReservations(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(CSV_PATH);
         ArrayList<Reservation> reservations = new ArrayList<>();
         boolean flag = false;
         for (String[] csvData : csvList) {
-            if (csvData[1].equals(id)) {
+            if (csvData[1].equals(passengerId)) {
                 flag = true;
                 String[] reservationData = csvData.clone();
                 Reservation reservation = new Reservation();
@@ -57,7 +57,7 @@ public class GetReservationImpl implements GetReservation {
                 passenger.setPassengerId(reservationData[1]);
                 String pId = passenger.getPassengerId();
                 GetPassengerImpl getPassenger = new GetPassengerImpl();
-                passenger = getPassenger.lookupPassenger(pId);
+                passenger = getPassenger.lookupPassengerById(pId);
                 reservation.setPassenger(passenger);
 
                 Flight flight = new Flight();

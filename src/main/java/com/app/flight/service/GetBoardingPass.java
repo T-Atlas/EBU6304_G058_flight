@@ -8,5 +8,10 @@ import com.app.flight.entity.BoardingPass;
  * @date 2022.4.22
  */
 public interface GetBoardingPass {
-    BoardingPass lookupBoardingPass(String id);
+    /**
+     * Find the passenger's boarding pass
+     *
+     * @return passenger's boarding pass
+     */
+    BoardingPass lookupBoardingPass();
 }

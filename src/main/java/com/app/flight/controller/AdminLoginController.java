@@ -19,7 +19,7 @@ import java.io.IOException;
  * This code is used to finish all the steps of check-in.
  *
  * @author Huanghong
- * @version 0.1
+ * @version 2.1
  * @date 2022.3.30
  */
 public class AdminLoginController {
@@ -63,9 +63,10 @@ public class AdminLoginController {
      */
     public void backButtonClick() {
         Platform.runLater(() -> {
+            Stage stage = (Stage) backButton.getScene().getWindow();
             try {
-                new SelectLanguageController().start(new Stage());
-                ((Stage) (backButton.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new SelectLanguageController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -76,11 +77,14 @@ public class AdminLoginController {
      * The code for other pages to open AdminLogin.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminLogin.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Admin Login");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/AdminLogin.fxml"));
     }
 }
