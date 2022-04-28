@@ -51,6 +51,7 @@ public class RetrieveController {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations(p.getPassengerId());
         tableView.setEditable(false);
+        next.setDisable(true);
 
         if (rList == null) {
             Platform.runLater(() -> {
@@ -168,6 +169,9 @@ public class RetrieveController {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         if (selectedRow != null) {
             getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+            next.setDisable(false);
+        } else {
+            next.setDisable(true);
         }
 
     }
