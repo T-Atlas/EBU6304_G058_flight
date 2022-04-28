@@ -96,6 +96,9 @@ public class PrintTagsController implements Runnable {
             //thread sleep for 0.5s
             try {
                 progressBar.setProgress(percent / 100.0);
+                Platform.runLater(() -> {
+                    percentage.setText(percent + " %");
+                });
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -103,7 +106,7 @@ public class PrintTagsController implements Runnable {
         }
         Platform.runLater(() -> {
             try {
-                Thread.sleep(50);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
