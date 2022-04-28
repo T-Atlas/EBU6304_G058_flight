@@ -69,7 +69,7 @@ public class InfoConfirmController {
         Platform.runLater(() -> {
             Stage stage = (Stage) back.getScene().getWindow();
             try {
-                FXMLLoader fxmlLoader = new InputNumberController().getLoader();
+                FXMLLoader fxmlLoader = new SelectMethodController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
