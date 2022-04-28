@@ -5,8 +5,9 @@ module com.app.flight {
     requires javacsv;
     requires lombok;
     requires hutool.all;
+    requires javafx.media;
 
-    opens com.app.flight to javafx.fxml;
+    opens com.app.flight to javafx.fxml, javafx.media;
     exports com.app.flight;
     exports com.app.flight.controller;
     opens com.app.flight.controller to javafx.fxml;
