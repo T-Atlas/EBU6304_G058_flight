@@ -1,23 +1,23 @@
 {
   "flight": {
-	  "arrivalTime": "2022-05-25T16:55:00",
-	  "boardingGate": "C10",
-	  "boardingTime": "2022-05-25T11:25:00",
-	  "departure": "Beijing",
-	  "departureTime": "2022-05-25T11:55:00",
-	  "destination": "Shanghai",
-	  "flightId": "MH1234"
+    "arrivalTime": "2022-05-11T14:55:00",
+    "boardingGate": "D20",
+    "boardingTime": "2022-05-11T12:25:00",
+    "departure": "Shanghai",
+    "departureTime": "2022-05-11T12:55:00",
+    "destination": "Beijing",
+    "flightId": "MU1122"
   },
-	"food": {
-		"foodName": "STANDARD",
-		"foodPrice": 30.0
-	},
-	"passenger": {
-		"age": 22,
-		"firstName": "Jun",
-		"lastName": "Test",
-		"passengerId": "123456",
-		"telephone": "13104368848"
-	},
-	"seatNo": "6F"
+  "food": {
+    "foodName": "HALAL",
+    "foodPrice": 50.0
+  },
+  "passenger": {
+    "age": 18,
+    "firstName": "Lian",
+    "lastName": "Test",
+    "passengerId": "220802200005217774",
+    "telephone": "13104367774"
+  },
+  "seatNo": "1C"
 }

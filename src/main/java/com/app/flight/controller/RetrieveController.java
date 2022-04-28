@@ -51,6 +51,7 @@ public class RetrieveController {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations(p.getPassengerId());
         tableView.setEditable(false);
+        next.setDisable(true);
 
         if (rList == null) {
             Platform.runLater(() -> {
@@ -81,9 +82,9 @@ public class RetrieveController {
             baggage.getColumns().add(checkedBaggage);
 
             //Set the size of column
-            flightId.setMinWidth(170);
-            departure.setMinWidth(194);
-            destination.setMinWidth(194);
+            flightId.setMinWidth(162);
+            departure.setMinWidth(190);
+            destination.setMinWidth(190);
             time.setMinWidth(270);
             handBaggage.setMinWidth(120);
             checkedBaggage.setMinWidth(120);
@@ -168,6 +169,9 @@ public class RetrieveController {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         if (selectedRow != null) {
             getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+            next.setDisable(false);
+        } else {
+            next.setDisable(true);
         }
 
     }

@@ -1,7 +1,8 @@
 package utilTest;
 
 import com.app.flight.util.Seat;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 public class SeatTest {
     @Test

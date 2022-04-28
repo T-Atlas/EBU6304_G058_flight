@@ -7,7 +7,7 @@ import com.app.flight.entity.Food;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
 import com.app.flight.util.Csv;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
