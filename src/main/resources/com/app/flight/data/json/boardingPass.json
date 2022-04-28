@@ -1,23 +1,23 @@
 {
   "flight": {
-	  "arrivalTime": "2022-05-25T16:55:00",
-	  "boardingGate": "C10",
-	  "boardingTime": "2022-05-25T11:25:00",
-	  "departure": "Beijing",
-	  "departureTime": "2022-05-25T11:55:00",
-	  "destination": "Shanghai",
-	  "flightId": "MH1234"
+    "arrivalTime": "2022-05-25T16:55:00",
+    "boardingGate": "C10",
+    "boardingTime": "2022-05-25T11:25:00",
+    "departure": "Beijing",
+    "departureTime": "2022-05-25T11:55:00",
+    "destination": "Shanghai",
+    "flightId": "MH1234"
   },
-	"food": {
-		"foodName": "STANDARD",
-		"foodPrice": 30.0
-	},
-	"passenger": {
-		"age": 22,
-		"firstName": "Jun",
-		"lastName": "Test",
-		"passengerId": "123456",
-		"telephone": "13104368848"
-	},
-	"seatNo": "6F"
+  "food": {
+    "foodName": "VEGETARIAN",
+    "foodPrice": 20.0
+  },
+  "passenger": {
+    "age": 22,
+    "firstName": "Jun",
+    "lastName": "Test",
+    "passengerId": "123456",
+    "telephone": "13104368848"
+  },
+  "seatNo": "3F"
 }
