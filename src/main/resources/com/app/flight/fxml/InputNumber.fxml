@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18"
           fx:controller="com.app.flight.controller.InputNumberController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
@@ -140,6 +140,9 @@
             <GridPane.margin>
                 <Insets bottom="100.0" left="350.0" right="400.0" top="-30.0"/>
             </GridPane.margin>
+            <font>
+                <Font size="25.0"/>
+            </font>
         </TextField>
         <Button fx:id="clean" mnemonicParsing="false" onAction="#clean" prefHeight="50.0" prefWidth="50.0"
                 style="-fx-background-color: #8d8d8d; -fx-font-weight: bold;" text="X" textFill="WHITE"

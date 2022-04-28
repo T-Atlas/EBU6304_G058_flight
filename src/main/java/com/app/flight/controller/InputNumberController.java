@@ -28,6 +28,7 @@ public class InputNumberController {
     @FXML
     public Label annotation;
     public Button clean;
+    public Button next;
 
     protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
@@ -82,6 +83,7 @@ public class InputNumberController {
 
     public void clean(ActionEvent actionEvent) {
         number.setText("");
+        next.setDisable(true);
     }
 
     public FXMLLoader getLoader() {

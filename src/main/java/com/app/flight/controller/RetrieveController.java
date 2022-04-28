@@ -82,9 +82,9 @@ public class RetrieveController {
             baggage.getColumns().add(checkedBaggage);
 
             //Set the size of column
-            flightId.setMinWidth(170);
-            departure.setMinWidth(194);
-            destination.setMinWidth(194);
+            flightId.setMinWidth(162);
+            departure.setMinWidth(190);
+            destination.setMinWidth(190);
             time.setMinWidth(270);
             handBaggage.setMinWidth(120);
             checkedBaggage.setMinWidth(120);

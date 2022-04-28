@@ -1,48 +1,25 @@
 [
   {
-    "checkedBaggageNum": 1,
+    "checkedBaggageNum": 2,
     "flight": {
-      "arrivalTime": "2022-05-11T20:55:00",
-      "boardingGate": "B10",
-      "boardingTime": "2022-05-11T18:25:00",
-      "departure": "Beijing",
-      "departureTime": "2022-05-11T18:55:00",
-      "destination": "Hainan",
-      "flightId": "MH8633"
-    },
-    "handBaggageNum": 0,
-    "mealsAvailable": true,
-    "passenger": {
-      "age": 22,
-      "firstName": "Jun",
-      "lastName": "Test",
-      "passengerId": "123456",
-      "telephone": "13104368848"
-    },
-    "reservationId": "1517539047050973184",
-    "seatLevel": "FIRST_CLASS"
-  },
-  {
-    "checkedBaggageNum": 0,
-    "flight": {
-      "arrivalTime": "2022-05-25T16:55:00",
-      "boardingGate": "C10",
-      "boardingTime": "2022-05-25T11:25:00",
-      "departure": "Beijing",
-      "departureTime": "2022-05-25T11:55:00",
-      "destination": "Shanghai",
-      "flightId": "MH1234"
+      "arrivalTime": "2022-05-11T14:55:00",
+      "boardingGate": "D20",
+      "boardingTime": "2022-05-11T12:25:00",
+      "departure": "Shanghai",
+      "departureTime": "2022-05-11T12:55:00",
+      "destination": "Beijing",
+      "flightId": "MU1122"
     },
     "handBaggageNum": 1,
     "mealsAvailable": true,
     "passenger": {
-      "age": 22,
-      "firstName": "Jun",
+      "age": 18,
+      "firstName": "Lian",
       "lastName": "Test",
-      "passengerId": "123456",
-      "telephone": "13104368848"
+      "passengerId": "220802200005217774",
+      "telephone": "13104367774"
     },
-    "reservationId": "1517540042405449728",
-    "seatLevel": "ECONOMY_CLASS"
+    "reservationId": "1513362048673779712",
+    "seatLevel": "BUSINESS_CLASS"
   }
 ]
