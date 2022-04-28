@@ -60,6 +60,10 @@ public class SelectMethodController {
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     InputNumberController inputNumberController = fxmlLoader.getController();
                     inputNumberController.type = (String) method.getSelectedToggle().getUserData();
+                    inputNumberController.next.setDisable(true);
+                    inputNumberController.number.textProperty().addListener(changeListener -> {
+                        inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);
+                    });
                     if (inputNumberController.type.equals("id")) {
                         inputNumberController.annotation.setText("--> Please input your ID number:");
                     } else if (inputNumberController.type.equals("booking")) {
