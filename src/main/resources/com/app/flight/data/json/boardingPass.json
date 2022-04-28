@@ -6,7 +6,7 @@
     "age": 22,
     "telephone": "13104368848"
   },
-  "seatNo": "2D",
+  "seatNo": "1D",
   "flight": {
     "flightId": "MH8633",
     "departure": "Beijing",
@@ -17,7 +17,7 @@
     "arrivalTime": "2022-05-11T20:55:00"
   },
   "food": {
-    "foodName": 2,
-    "foodPrice": 20.0
+    "foodName": 0,
+    "foodPrice": 30.0
   }
 }

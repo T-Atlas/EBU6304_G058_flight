@@ -10,5 +10,8 @@ public class GetPassengerTest {
         String id = "220802200005217748";
         GetPassenger getPassenger = new GetPassengerImpl();
         System.out.println(getPassenger.lookupPassengerById(id));
+
+        String bookNumber = "1517539047050973184";
+        System.out.println(getPassenger.lookupPassengerByBookingNumber(bookNumber));
     }
 }

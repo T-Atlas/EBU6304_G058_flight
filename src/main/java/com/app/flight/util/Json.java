@@ -14,9 +14,9 @@ import java.io.PrintWriter;
  */
 public class Json {
     public static boolean writeJson(String jsonFilePath, Object obj) {
-        try (FileWriter passengerJson = new FileWriter(jsonFilePath); PrintWriter out = new PrintWriter(passengerJson)) {
-            String passengerString = JSON.toJSONString(obj, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue);
-            out.write(passengerString);
+        try (FileWriter jsonWriter = new FileWriter(jsonFilePath); PrintWriter out = new PrintWriter(jsonWriter)) {
+            String objString = JSON.toJSONString(obj, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue);
+            out.write(objString);
             return true;
         } catch (IOException e) {
             e.printStackTrace();
