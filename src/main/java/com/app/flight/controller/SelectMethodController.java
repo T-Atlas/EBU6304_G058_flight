@@ -28,6 +28,7 @@ public class SelectMethodController {
     @FXML
     public ToggleGroup method;
     public Button next;
+    public Button help;
 
 
     public void start(Stage stage) throws IOException {
@@ -89,5 +90,18 @@ public class SelectMethodController {
 
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectMethod.fxml"));
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
