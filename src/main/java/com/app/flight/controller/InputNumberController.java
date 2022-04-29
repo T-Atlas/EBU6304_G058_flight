@@ -29,6 +29,7 @@ public class InputNumberController {
     public Label annotation;
     public Button clean;
     public Button next;
+    public Button help;
 
     protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
@@ -88,5 +89,18 @@ public class InputNumberController {
 
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
