@@ -26,6 +26,7 @@ public class Csv {
     public static final String FOOD_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Food.csv";
     public static final String PASSENGER_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
     public static final String RESERVATION_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
+    public static final String BOARDING_PASS_CSV_PATH = "src/main/resources/com/app/flight/data/csv/BoardingPass.csv";
 
     /**
      * Add a row of csv data
@@ -36,7 +37,7 @@ public class Csv {
      * @return Whether added successfully or not
      */
     public static boolean addCsv(Object entity, String filePath, boolean unique) {
-        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString);
+        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString, JSONWriter.Feature.WriteEnumsUsingName);
         JSONObject jsonObj = JSON.parseObject(data);
         String[] csvHeaders = Obj.generateObjAttr(entity);
         int i = 0;
