@@ -1,9 +1,9 @@
 {
-  "arrivalTime": "2022-05-11T14:55:00",
-  "boardingGate": "D20",
-  "boardingTime": "2022-05-11T12:25:00",
-  "departure": "Shanghai",
-  "departureTime": "2022-05-11T12:55:00",
-  "destination": "Beijing",
-  "flightId": "MU1122"
+  "flightId": "MH1234",
+  "departure": "Beijing",
+  "destination": "Shanghai",
+  "boardingGate": "C10",
+  "boardingTime": "2022-05-25T11:25:00",
+  "departureTime": "2022-05-25T11:55:00",
+  "arrivalTime": "2022-05-25T16:55:00"
 }

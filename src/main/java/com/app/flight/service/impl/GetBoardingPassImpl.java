@@ -1,5 +1,7 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSONPath;
+import com.alibaba.fastjson2.JSONReader;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Food;
@@ -21,7 +23,7 @@ import static com.alibaba.fastjson2.JSON.parseObject;
  */
 public class GetBoardingPassImpl implements GetBoardingPass {
 
-    private static String nioMethod(File file) {
+    private static String extractJsonData(File file) {
         String jsonString = null;
         try {
             jsonString = new String(Files.readAllBytes(Paths.get(file.getPath())));
@@ -35,25 +37,30 @@ public class GetBoardingPassImpl implements GetBoardingPass {
     public BoardingPass lookupBoardingPass() {
         BoardingPass boardingPass = new BoardingPass();
         File passengerFile = new File(Json.PASSENGER_JSON_PATH);
-        String passengerString = nioMethod(passengerFile);
+        String passengerString = extractJsonData(passengerFile);
         Passenger passenger = parseObject(passengerString, Passenger.class);
         boardingPass.setPassenger(passenger);
 
         File flightFile = new File(Json.FLIGHT_JSON_PATH);
-        String flightString = nioMethod(flightFile);
+        String flightString = extractJsonData(flightFile);
         Flight flight = parseObject(flightString, Flight.class);
         boardingPass.setFlight(flight);
 
         File foodFile = new File(Json.FOOD_JSON_PATH);
-        String foodString = nioMethod(foodFile);
+        String foodString = extractJsonData(foodFile);
         Food food = parseObject(foodString, Food.class);
         boardingPass.setFood(food);
 
         File seatFile = new File(Json.SEAT_JSON_PATH);
-        String seatString = nioMethod(seatFile);
-        String replace = seatString.replace("]", "");
-        String[] split = replace.split(",");
-        boardingPass.setSeatNo(split[2].replaceAll("\"", "") + split[1].replaceAll("\"", ""));
+        String seatString = extractJsonData(seatFile);
+        JSONPath rowPath = JSONPath.of("$.row");
+        JSONPath colPath = JSONPath.of("$.column");
+        JSONReader rowParser = JSONReader.of(seatString);
+        String row = (String) rowPath.extract(rowParser);
+        JSONReader colParser = JSONReader.of(seatString);
+        String col = (String) colPath.extract(colParser);
+        boardingPass.setSeatNo(row + col);
+
         Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass);
         return boardingPass;
     }
