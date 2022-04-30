@@ -7,6 +7,7 @@ import com.app.flight.entity.Flight;
 import com.app.flight.entity.Food;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetBoardingPass;
+import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 
 import java.io.File;
@@ -61,7 +62,11 @@ public class GetBoardingPassImpl implements GetBoardingPass {
         String col = (String) colPath.extract(colParser);
         boardingPass.setSeatNo(row + col);
 
-        Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass);
-        return boardingPass;
+        if (Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass) && Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, false)) {
+            return boardingPass;
+        } else {
+            return null;
+        }
+
     }
 }
