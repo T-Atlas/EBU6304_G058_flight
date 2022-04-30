@@ -49,8 +49,7 @@ public class GetReservationImpl implements GetReservation {
                 reservations.add(reservation);
             }
         }
-        if (flag) {
-            Json.writeJson(Json.RESERVATION_JSON_PATH, reservations);
+        if (flag && Json.writeJson(Json.RESERVATION_JSON_PATH, reservations)) {
             System.out.println("reservation数据查找成功");
             return reservations;
         } else {

@@ -15,7 +15,6 @@ import java.util.ArrayList;
  * @date 2022.4.11
  */
 public class GetFlightImpl implements GetFlight {
-
     @Override
     public Flight lookupFlight(String flightId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.FLIGHT_CSV_PATH);
@@ -46,8 +45,7 @@ public class GetFlightImpl implements GetFlight {
                 flight.setArrivalTime(localDateTime3);
             }
         }
-        if (flag) {
-            Json.writeJson(Json.FLIGHT_JSON_PATH, flight);
+        if (flag && Json.writeJson(Json.FLIGHT_JSON_PATH, flight)) {
             System.out.println("flight数据查找成功");
             return flight;
         } else {

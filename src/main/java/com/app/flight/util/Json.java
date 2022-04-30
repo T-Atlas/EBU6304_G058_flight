@@ -22,8 +22,7 @@ public class Json {
 
     public static boolean writeJson(String jsonFilePath, Object obj) {
         try (FileWriter jsonWriter = new FileWriter(jsonFilePath); PrintWriter out = new PrintWriter(jsonWriter)) {
-            String objString = JSON.toJSONString(obj, JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.FieldBased,
-                    JSONWriter.Feature.WriteEnumsUsingName);
+            String objString = JSON.toJSONString(obj, JSONWriter.Feature.PrettyFormat, JSONWriter.Feature.WriteEnumsUsingName);
             out.write(objString);
             out.close();
             jsonWriter.close();
@@ -33,5 +32,4 @@ public class Json {
             return false;
         }
     }
-
 }

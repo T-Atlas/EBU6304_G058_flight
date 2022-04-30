@@ -1,6 +1,5 @@
 package com.app.flight.service.impl;
 
-import com.alibaba.fastjson2.JSON;
 import com.app.flight.service.SetSeatMap;
 import com.app.flight.util.Json;
 import com.app.flight.util.Seat;
@@ -28,16 +27,15 @@ public class SetSeatMapImpl implements SetSeatMap {
         String[] columnString = new String[]{"A", "B", "C", "D", "E", "F"};
         Seat.writeSeatMap(Seat.generateSeatFilePath(flightId), seatMap, columnString);
 
-        try (FileWriter passengerJson = new FileWriter(Json.SEAT_JSON_PATH); PrintWriter out = new PrintWriter(passengerJson)) {
-            String[] seatInfo = new String[3];
-            seatInfo[0] = flightId;
-            seatInfo[1] = column;
-            seatInfo[2] = String.valueOf(row);
-            String passengerString = JSON.toJSONString(seatInfo);
-            out.write(passengerString);
+        try (FileWriter seatJson = new FileWriter(Json.SEAT_JSON_PATH); PrintWriter out = new PrintWriter(seatJson)) {
+            String seatInfo = "{\n" +
+                    "\t\"flightId\":\"" + flightId + "\",\n" +
+                    "\t\"column\":\"" + column + "\",\n" +
+                    "\t\"row\":\"" + row + "\"\n" +
+                    "}";
+            out.write(seatInfo);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
