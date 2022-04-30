@@ -21,6 +21,7 @@ import java.io.IOException;
  */
 public class ResultController {
 
+    public Button help;
     @FXML
     private Button next;
     @FXML
@@ -79,5 +80,18 @@ public class ResultController {
 
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/CheckInResult.fxml"));
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

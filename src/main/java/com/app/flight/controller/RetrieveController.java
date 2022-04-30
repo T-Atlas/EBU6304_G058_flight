@@ -37,6 +37,7 @@ import java.util.Map;
  */
 public class RetrieveController {
     public ArrayList<Reservation> rList;
+    public Button help;
     GetReservation getReservation = new GetReservationImpl();
     GetSeatMap getSeatMap = new GetSeatMapImpl();
     @FXML
@@ -174,5 +175,18 @@ public class RetrieveController {
             next.setDisable(true);
         }
 
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

@@ -23,6 +23,7 @@ import java.io.IOException;
  */
 public class PrintTagsController implements Runnable {
 
+    public Button help;
     @FXML
     protected ProgressBar progressBar;
     @FXML
@@ -132,5 +133,18 @@ public class PrintTagsController implements Runnable {
      */
     public void setPercent(int percent) {
         this.percent = percent;
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
