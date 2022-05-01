@@ -7,7 +7,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
-import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * @author LianJunhong
@@ -23,7 +22,6 @@ public class Printer {
     }
 
     public Boolean print(ProgressBar progressBar, Label percentage) throws InterruptedException {
-        AtomicReference<Boolean> result = new AtomicReference<>(false);
         int percent = 0;
         Thread.sleep(50);
         MediaPlayer mediaPlayer = sound();
@@ -45,8 +43,7 @@ public class Printer {
             }
             mediaPlayer.stop();
             percentage.setText("Success!");
-            result.set(true);
         });
-        return result.get();
+        return true;
     }
 }

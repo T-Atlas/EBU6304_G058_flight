@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * @author SongBo
@@ -150,17 +148,17 @@ public class Csv {
     private static String[] getCsvContents(JSONObject jsonObj, String[] csvHeaders, int i) {
         String[] csvContent = new String[csvHeaders.length];
         //TODO:BUG FIX HERE
-        for (Map.Entry<String, Object> entry : jsonObj.entrySet()) {
-            if (entry.getValue() instanceof String) {
-                csvContent[i] = (String) entry.getValue();
-            } else {
-                //TODO:Check the update of fastjson2 2.0.2
-                JSONObject innerJsonObj = jsonObj.getJSONObject(entry.getKey());
-                Iterator<Map.Entry<String, Object>> iterator = innerJsonObj.entrySet().iterator();
-                csvContent[i] = (String) iterator.next().getValue();
-            }
-            i++;
-        }
+//        for (Map.Entry<String, Object> entry : jsonObj.entrySet()) {
+//            if (entry.getValue() instanceof String) {
+//                csvContent[i] = (String) entry.getValue();
+//            } else {
+//                //TODO:Check the update of fastjson2 2.0.2
+//                JSONObject innerJsonObj = jsonObj.getJSONObject(entry.getKey());
+//                Iterator<Map.Entry<String, Object>> iterator = innerJsonObj.entrySet().iterator();
+//                csvContent[i] = (String) iterator.next().getValue();
+//            }
+//            i++;
+//        }
         return csvContent;
     }
 
