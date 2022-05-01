@@ -2,12 +2,14 @@ package com.app.flight.service.temp;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.annotation.JSONField;
+import com.app.flight.util.Json;
 import lombok.Data;
 
 /**
  * @author Mason
  */
 public class OrdinalTest {
+    public static final String PEOPLE_JSON_PATH = "src/main/resources/com/app/flight/data/json/People.json";
     public static void main(String[] args) {
         ordinalTest();
     }
@@ -21,6 +23,7 @@ public class OrdinalTest {
         people.setHeight(185.5f);
         String peopleStr = JSON.toJSONString(people);
         System.out.println(peopleStr);
+        Json.writeJson(PEOPLE_JSON_PATH, people);
     }
 
     @Data
@@ -40,6 +43,5 @@ public class OrdinalTest {
 
         @JSONField(ordinal = 1)
         public float height;
-
     }
 }
