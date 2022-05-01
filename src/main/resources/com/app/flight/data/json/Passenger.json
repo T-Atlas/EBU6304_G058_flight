@@ -1,7 +1,7 @@
 {
-  "age": 18,
-  "firstName": "Lian",
+  "passengerId": "123456",
+  "firstName": "Jun",
   "lastName": "Test",
-  "passengerId": "220802200005217774",
-  "telephone": "13104367774"
+  "age": 22,
+  "telephone": "13104368848"
 }
