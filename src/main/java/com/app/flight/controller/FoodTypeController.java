@@ -2,8 +2,8 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
-import com.app.flight.service.GetFood;
-import com.app.flight.service.impl.GetFoodImpl;
+import com.app.flight.service.SetFood;
+import com.app.flight.service.impl.SetFoodImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +28,7 @@ public class FoodTypeController {
 
     @FXML
     public ToggleGroup tg;
+    public Button help;
     @FXML
     private Button next;
     @FXML
@@ -38,7 +39,7 @@ public class FoodTypeController {
     private RadioButton r3;
 
     private String type = null;
-    GetFood getFood = new GetFoodImpl();
+    SetFood setFood = new SetFoodImpl();
 
 
     /**
@@ -72,7 +73,7 @@ public class FoodTypeController {
         type = foodType();
 
         if (type != null) {
-            getFood.lookupFood(Food.foodType.valueOf(type));
+            setFood.setFood(Food.foodType.valueOf(type));
             Platform.runLater(() -> {
                 Stage stage = (Stage) next.getScene().getWindow();
                 try {
@@ -106,4 +107,16 @@ public class FoodTypeController {
         return new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
     }
 
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
 }

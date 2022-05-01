@@ -37,6 +37,7 @@ import java.util.Map;
  */
 public class RetrieveController {
     public ArrayList<Reservation> rList;
+    public Button help;
     GetReservation getReservation = new GetReservationImpl();
     GetSeatMap getSeatMap = new GetSeatMapImpl();
     @FXML
@@ -50,7 +51,8 @@ public class RetrieveController {
     public void showRetrieve(Passenger p) {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations(p.getPassengerId());
-        tableView.isEditable();
+        tableView.setEditable(false);
+        next.setDisable(true);
 
         if (rList == null) {
             Platform.runLater(() -> {
@@ -81,13 +83,12 @@ public class RetrieveController {
             baggage.getColumns().add(checkedBaggage);
 
             //Set the size of column
-            check.setPrefWidth(36);
-            flightId.setPrefWidth(170);
-            departure.setPrefWidth(170);
-            destination.setPrefWidth(170);
-            time.setPrefWidth(270);
-            handBaggage.setPrefWidth(117);
-            checkedBaggage.setPrefWidth(117);
+            flightId.setMinWidth(162);
+            departure.setMinWidth(190);
+            destination.setMinWidth(190);
+            time.setMinWidth(270);
+            handBaggage.setMinWidth(120);
+            checkedBaggage.setMinWidth(120);
 
             //the style of font size
             check.setStyle("-fx-font-size:15px;-fx-alignment: center");
@@ -99,11 +100,16 @@ public class RetrieveController {
             checkedBaggage.setStyle("-fx-font-size:20px;-fx-alignment: center");
             baggage.setStyle("-fx-font-size:20px");
 
+            //set the columns can't sortable
+            check.setSortable(false);
+            flightId.setSortable(false);
+            departure.setSortable(false);
+            destination.setSortable(false);
+            time.setSortable(false);
+            handBaggage.setSortable(false);
+            checkedBaggage.setSortable(false);
+
             for (int i = 0; i < list2.size(); i++) {
-//                check.setCellFactory((Callback<TableColumn<Reservation, Boolean>, TableCell<Reservation, Boolean>>) param -> {
-//                    //make checkbox editable
-//                    return new CheckBoxTableCell<>();
-//                });
                 flightId.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getFlightId()));
                 departure.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDeparture()));
                 destination.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDestination()));
@@ -112,7 +118,6 @@ public class RetrieveController {
                 checkedBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("checkedBaggageNum"));
             }
 
-            //tableView.getColumns().add(check);
             tableView.getColumns().add(flightId);
             tableView.getColumns().add(departure);
             tableView.getColumns().add(destination);
@@ -163,6 +168,25 @@ public class RetrieveController {
 
     public void mouseClick(MouseEvent mouseEvent) {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
-        getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+        if (selectedRow != null) {
+            getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+            next.setDisable(false);
+        } else {
+            next.setDisable(true);
+        }
+
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

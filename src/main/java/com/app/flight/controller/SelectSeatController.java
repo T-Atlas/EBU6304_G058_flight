@@ -70,20 +70,15 @@ public class SelectSeatController {
 
     @FXML
     public void helpClick(ActionEvent actionEvent) {
-//        gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
-//        Text rowNo = new Text(String.valueOf(r));
-//        gridPane.add(rowNo, 0, r);
-//        GridPane.setMargin(rowNo, new Insets(24));
-//        int[] columnNo = {1, 2, 3, 5, 6, 7};
-//        for(int c: columnNo) {
-//            Button button = new Button("1D");
-//            button.setMinWidth(80);
-//            button.setStyle("-fx-font-size: 25;");
-//            button.setStyle("-fx-background-color: LIGHTGREY");
-//            gridPane.add(button, c, r);
-//            GridPane.setMargin(button, new Insets(18));
-//        }
-//        r++;
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     /**

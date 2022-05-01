@@ -28,6 +28,7 @@ public class SelectMethodController {
     @FXML
     public ToggleGroup method;
     public Button next;
+    public Button help;
 
 
     public void start(Stage stage) throws IOException {
@@ -60,6 +61,10 @@ public class SelectMethodController {
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     InputNumberController inputNumberController = fxmlLoader.getController();
                     inputNumberController.type = (String) method.getSelectedToggle().getUserData();
+                    inputNumberController.next.setDisable(true);
+                    inputNumberController.number.textProperty().addListener(changeListener -> {
+                        inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);
+                    });
                     if (inputNumberController.type.equals("id")) {
                         inputNumberController.annotation.setText("--> Please input your ID number:");
                     } else if (inputNumberController.type.equals("booking")) {
@@ -85,5 +90,18 @@ public class SelectMethodController {
 
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectMethod.fxml"));
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

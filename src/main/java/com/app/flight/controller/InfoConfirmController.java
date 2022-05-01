@@ -27,6 +27,7 @@ public class InfoConfirmController {
     public Button back;
 
     public Passenger pRetrieve;
+    public Button help;
 
 
     public void showNum(Passenger p) {
@@ -69,10 +70,23 @@ public class InfoConfirmController {
         Platform.runLater(() -> {
             Stage stage = (Stage) back.getScene().getWindow();
             try {
-                FXMLLoader fxmlLoader = new InputNumberController().getLoader();
+                FXMLLoader fxmlLoader = new SelectMethodController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        });
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         });
     }

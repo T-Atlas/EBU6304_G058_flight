@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18"
           fx:controller="com.app.flight.controller.RetrieveController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
@@ -128,11 +128,9 @@
                         <Font size="30.0"/>
                     </font>
                 </Text>
-                <TableView fx:id="tableView" editable="true" onMouseClicked="#mouseClick" prefHeight="431.0"
-                           prefWidth="1067.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-
+                <TableView fx:id="tableView" onMouseClicked="#mouseClick" prefHeight="431.0" prefWidth="1067.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1">
                 </TableView>
-
             </children>
         </GridPane>
         <GridPane GridPane.rowIndex="2">
@@ -146,7 +144,8 @@
             <children>
                 <Pane>
                     <children>
-                        <Button fx:id="help" layoutX="1.0" layoutY="44.0" mnemonicParsing="false" prefHeight="64.0"
+                        <Button fx:id="help" onAction="#helpClick" layoutX="1.0" layoutY="44.0" mnemonicParsing="false"
+                                prefHeight="64.0"
                                 prefWidth="179.0"
                                 style="-fx-background-color: #D9001B; -fx-font-weight: bold; -fx-font-size: 25px;"
                                 text="Help" textAlignment="CENTER" textFill="WHITE">

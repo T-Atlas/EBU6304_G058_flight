@@ -1,10 +1,13 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSONPath;
+import com.alibaba.fastjson2.JSONReader;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Food;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetBoardingPass;
+import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 
 import java.io.File;
@@ -12,7 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static com.alibaba.fastjson.JSON.parseObject;
+import static com.alibaba.fastjson2.JSON.parseObject;
 
 /**
  * @author SongBo
@@ -20,13 +23,8 @@ import static com.alibaba.fastjson.JSON.parseObject;
  * @date 2022.4.22
  */
 public class GetBoardingPassImpl implements GetBoardingPass {
-    private static final String PASSENGER_JSON_PATH = "src/main/resources/com/app/flight/data/json/Passenger.json";
-    private static final String FLIGHT_JSON_PATH = "src/main/resources/com/app/flight/data/json/Flight.json";
-    private static final String FOOD_JSON_PATH = "src/main/resources/com/app/flight/data/json/Food.json";
-    private static final String SEAT_JSON_PATH = "src/main/resources/com/app/flight/data/json/Seat.json";
-    private static final String BOARDING_PASS_JSON_PATH = "src/main/resources/com/app/flight/data/json/boardingPass.json";
 
-    private static String nioMethod(File file) {
+    private static String extractJsonData(File file) {
         String jsonString = null;
         try {
             jsonString = new String(Files.readAllBytes(Paths.get(file.getPath())));
@@ -39,27 +37,36 @@ public class GetBoardingPassImpl implements GetBoardingPass {
     @Override
     public BoardingPass lookupBoardingPass() {
         BoardingPass boardingPass = new BoardingPass();
-        File passengerFile = new File(PASSENGER_JSON_PATH);
-        String passengerString = nioMethod(passengerFile);
+        File passengerFile = new File(Json.PASSENGER_JSON_PATH);
+        String passengerString = extractJsonData(passengerFile);
         Passenger passenger = parseObject(passengerString, Passenger.class);
         boardingPass.setPassenger(passenger);
 
-        File flightFile = new File(FLIGHT_JSON_PATH);
-        String flightString = nioMethod(flightFile);
+        File flightFile = new File(Json.FLIGHT_JSON_PATH);
+        String flightString = extractJsonData(flightFile);
         Flight flight = parseObject(flightString, Flight.class);
         boardingPass.setFlight(flight);
 
-        File foodFile = new File(FOOD_JSON_PATH);
-        String foodString = nioMethod(foodFile);
+        File foodFile = new File(Json.FOOD_JSON_PATH);
+        String foodString = extractJsonData(foodFile);
         Food food = parseObject(foodString, Food.class);
         boardingPass.setFood(food);
 
-        File seatFile = new File(SEAT_JSON_PATH);
-        String seatString = nioMethod(seatFile);
-        String replace = seatString.replace("]", "");
-        String[] split = replace.split(",");
-        boardingPass.setSeatNo(split[2].replaceAll("\"", "") + split[1].replaceAll("\"", ""));
-        Json.writeJson(BOARDING_PASS_JSON_PATH, boardingPass);
-        return boardingPass;
+        File seatFile = new File(Json.SEAT_JSON_PATH);
+        String seatString = extractJsonData(seatFile);
+        JSONPath rowPath = JSONPath.of("$.row");
+        JSONPath colPath = JSONPath.of("$.column");
+        JSONReader rowParser = JSONReader.of(seatString);
+        String row = (String) rowPath.extract(rowParser);
+        JSONReader colParser = JSONReader.of(seatString);
+        String col = (String) colPath.extract(colParser);
+        boardingPass.setSeatNo(row + col);
+
+        if (Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass) && Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, false)) {
+            return boardingPass;
+        } else {
+            return null;
+        }
+
     }
 }
