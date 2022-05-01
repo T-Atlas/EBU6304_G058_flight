@@ -33,13 +33,13 @@ public class Reservation {
     /**
      * It is represented by three aircraft class enumeration constants.
      */
-    @JSONField(ordinal = 4)
+    @JSONField(ordinal = 5)
     private seatClass seatLevel;
 
     /**
      * Determine whether meals are included in the scheduled flight.
      */
-    @JSONField(ordinal = 5)
+    @JSONField(ordinal = 4)
     private boolean mealsAvailable;
 
     /**
