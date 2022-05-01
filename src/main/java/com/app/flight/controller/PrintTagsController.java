@@ -1,6 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
+import com.app.flight.service.external.Printer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,17 +10,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
  * @author HuangHong
  * @author Zheng Han
- * @version 2.1
+ * @author LianJunhong
+ * @version 3.5
  */
 public class PrintTagsController implements Runnable {
 
@@ -78,43 +77,19 @@ public class PrintTagsController implements Runnable {
     @Override
     public void run() {
         next.setDisable(true);
-
-        String path = "src/main/resources/com/app/flight/audio/printer.mp3";
-        Media sound = new Media(new File(path).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setVolume(0.5);
-
+        Printer printer = new Printer();
+        Boolean result = false;
         try {
-            Thread.sleep(50);
+            result = printer.print(progressBar, percentage);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-        mediaPlayer.setAutoPlay(true);
-
-        for (int i = 0; i <= 100; i++) {
-            percent = i;
-            //thread sleep for 0.5s
-            try {
-                progressBar.setProgress(percent / 100.0);
-                Platform.runLater(() -> {
-                    percentage.setText(percent + " %");
-                });
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+        if (result) {
+            next.setDisable(false);
+        } else {
+            percentage.setText("Printing failed");
+            System.out.println("Failed to print");
         }
-        Platform.runLater(() -> {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            mediaPlayer.stop();
-            percentage.setText("Success!");
-        });
-        next.setDisable(false);
     }
 
     /**

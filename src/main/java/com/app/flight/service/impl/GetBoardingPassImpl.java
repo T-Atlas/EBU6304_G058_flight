@@ -56,10 +56,8 @@ public class GetBoardingPassImpl implements GetBoardingPass {
         String seatString = extractJsonData(seatFile);
         JSONPath rowPath = JSONPath.of("$.row");
         JSONPath colPath = JSONPath.of("$.column");
-        JSONReader rowParser = JSONReader.of(seatString);
-        String row = (String) rowPath.extract(rowParser);
-        JSONReader colParser = JSONReader.of(seatString);
-        String col = (String) colPath.extract(colParser);
+        String row = (String) rowPath.extract(JSONReader.of(seatString));
+        String col = (String) colPath.extract(JSONReader.of(seatString));
         boardingPass.setSeatNo(row + col);
 
         if (Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass) && Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, false)) {

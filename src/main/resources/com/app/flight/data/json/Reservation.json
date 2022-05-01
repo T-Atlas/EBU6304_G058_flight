@@ -1,6 +1,5 @@
 [
   {
-    "mealsAvailable": true,
     "reservationId": "1517539047050973184",
     "passenger": {
       "passengerId": "123456",
@@ -19,11 +18,11 @@
       "arrivalTime": "2022-05-11T20:55:00"
     },
     "seatLevel": "FIRST_CLASS",
+    "mealsAvailable": true,
     "handBaggageNum": 0,
     "checkedBaggageNum": 1
   },
   {
-    "mealsAvailable": true,
     "reservationId": "1517540042405449728",
     "passenger": {
       "passengerId": "123456",
@@ -42,6 +41,7 @@
       "arrivalTime": "2022-05-25T16:55:00"
     },
     "seatLevel": "ECONOMY_CLASS",
+    "mealsAvailable": true,
     "handBaggageNum": 1,
     "checkedBaggageNum": 0
   }
