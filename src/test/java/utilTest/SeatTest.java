@@ -21,9 +21,8 @@ public class SeatTest {
                 "}";
         JSONPath rowPath = JSONPath.of("$.row");
         JSONPath colPath = JSONPath.of("$.column");
-        JSONReader parser = JSONReader.of(seatString);
-        String row = (String) rowPath.extract(parser);
-        String col = (String) colPath.extract(parser);
+        String row = (String) rowPath.extract(JSONReader.of(seatString));
+        String col = (String) colPath.extract(JSONReader.of(seatString));
         System.out.println(row);
         System.out.println(col);
     }
