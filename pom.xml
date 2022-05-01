@@ -129,7 +129,7 @@
                         <configuration>
                             <mainClass>com.app.flight/com.app.flight.Main</mainClass>
                             <launcher>launcher</launcher>
-                            <jlinkZipName>appzip</jlinkZipName>
+                            <jlinkZipName>appZip</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
