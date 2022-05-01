@@ -2,6 +2,7 @@ package serviceTest;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONWriter;
+
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.service.impl.GetPassengerImpl;
@@ -13,6 +14,7 @@ public class GetPassengerTest {
         String id = "220802200005217748";
         GetPassenger getPassenger = new GetPassengerImpl();
         Passenger passenger = getPassenger.lookupPassengerById(id);
+
         System.out.println(passenger);
 
         String bookNumber = "1517539047050973184";
