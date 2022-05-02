@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18"
+          fx:controller="com.app.flight.controller.SelectPaymentController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="123.33333587646484" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="518.0" minHeight="10.0" prefHeight="75.86666412353514" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="549.0" minHeight="10.0" prefHeight="453.6666778564453" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="309.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="55.20000686645508" minHeight="10.0" prefHeight="45.60001220703125"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="93.60000000000001" minHeight="10.0" prefHeight="76.79998779296875"
+                                valignment="CENTER" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <FlowPane style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Check Identity"
+                              textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="235.0">
+                            <font>
+                                <Font name="System Bold" size="25.0"/>
+                            </font>
+                            <FlowPane.margin>
+                                <Insets top="20.0"/>
+                            </FlowPane.margin>
+                        </Text>
+                    </children>
+                </FlowPane>
+                <FlowPane style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrieve information"
+                              textAlignment="CENTER" wrappingWidth="235.0">
+                            <font>
+                                <Font name="System Bold" size="25.0"/>
+                            </font>
+                            <FlowPane.margin>
+                                <Insets top="5.0"/>
+                            </FlowPane.margin>
+                        </Text>
+                    </children>
+                </FlowPane>
+                <FlowPane style="-fx-background-color: GREEN; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Check-in" textAlignment="CENTER"
+                              wrappingWidth="235.0">
+                            <font>
+                                <Font name="System Bold" size="25.0"/>
+                            </font>
+                            <FlowPane.margin>
+                                <Insets top="20.0"/>
+                            </FlowPane.margin>
+                        </Text>
+                    </children>
+                </FlowPane>
+                <FlowPane style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Print" textAlignment="CENTER"
+                              wrappingWidth="235.0">
+                            <font>
+                                <Font name="System Bold" size="25.0"/>
+                            </font>
+                            <FlowPane.margin>
+                                <Insets top="20.0"/>
+                            </FlowPane.margin>
+                        </Text>
+                    </children>
+                </FlowPane>
+                <FlowPane style="-fx-background-color: #D7D7D7; -fx-border-color: WHITE; -fx-border-width: 2;"
+                          GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Finish" textAlignment="CENTER"
+                              wrappingWidth="235.0">
+                            <font>
+                                <Font name="System Bold" size="25.0"/>
+                            </font>
+                            <FlowPane.margin>
+                                <Insets top="20.0"/>
+                            </FlowPane.margin>
+                        </Text>
+                    </children>
+                </FlowPane>
+            </children>
+        </GridPane>
+        <GridPane GridPane.rowIndex="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Pane prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: LIGHTGREY;">
+                    <GridPane.margin>
+                        <Insets bottom="50.0" left="100.0" right="25.0" top="50.0"/>
+                    </GridPane.margin>
+                    <children>
+                        <GridPane prefHeight="338.0" prefWidth="300.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0"
+                                                prefHeight="80.4000015258789" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0"
+                                                prefHeight="209.19999847412112" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0"
+                                                vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <ImageView fitHeight="170.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                                           GridPane.valignment="CENTER">
+                                    <image>
+                                        <Image url="@../ico/paypal_grey.png"/>
+                                    </image>
+                                </ImageView>
+                                <RadioButton fx:id="paypal" graphicTextGap="10.0" mnemonicParsing="false"
+                                             onAction="#check" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                             GridPane.valignment="CENTER">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="method"/>
+                                    </toggleGroup>
+                                    <font>
+                                        <Font size="20.0"/>
+                                    </font>
+                                </RadioButton>
+                                <Label alignment="CENTER" prefHeight="46.0" prefWidth="228.0" text="PayPal"
+                                       textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="25.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </GridPane>
+                    </children>
+                </Pane>
+                <Pane prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: LIGHTGREY;"
+                      GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="50.0" left="25.0" right="25.0" top="50.0"/>
+                    </GridPane.margin>
+                    <children>
+                        <GridPane prefHeight="338.0" prefWidth="300.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0"
+                                                prefHeight="80.4000015258789" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="208.19999847412106"
+                                                prefHeight="208.19999847412106" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="50.0"
+                                                vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <ImageView fitHeight="145.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                                           GridPane.valignment="CENTER">
+                                    <image>
+                                        <Image url="@../ico/AlibabaPay_grey.png"/>
+                                    </image>
+                                </ImageView>
+                                <RadioButton fx:id="alipay" graphicTextGap="10.0" mnemonicParsing="false"
+                                             onAction="#check" toggleGroup="$method" GridPane.halignment="CENTER"
+                                             GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font size="20.0"/>
+                                    </font>
+                                </RadioButton>
+                                <Label alignment="CENTER" prefHeight="46.0" prefWidth="225.0" text="Alipay"
+                                       textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="25.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </GridPane>
+                    </children>
+                </Pane>
+                <Pane prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: LIGHTGREY;"
+                      GridPane.columnIndex="2">
+                    <GridPane.margin>
+                        <Insets bottom="50.0" left="25.0" right="100.0" top="50.0"/>
+                    </GridPane.margin>
+                    <children>
+                        <GridPane prefHeight="338.0" prefWidth="300.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0"
+                                                prefHeight="80.4000015258789" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0"
+                                                prefHeight="205.93331146240234" vgrow="SOMETIMES"/>
+                                <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="50.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER" prefHeight="45.0" prefWidth="200.0" text="VISA"
+                                       textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="25.0"/>
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true"
+                                           GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                                           GridPane.valignment="CENTER">
+                                    <image>
+                                        <Image url="@../ico/visa_grey.png"/>
+                                    </image>
+                                </ImageView>
+                                <RadioButton fx:id="visa" mnemonicParsing="false" onAction="#check"
+                                             toggleGroup="$method" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                             GridPane.valignment="CENTER">
+                                    <font>
+                                        <Font size="20.0"/>
+                                    </font>
+                                </RadioButton>
+                            </children>
+                        </GridPane>
+                    </children>
+                </Pane>
+            </children>
+        </GridPane>
+        <AnchorPane prefHeight="168.0" prefWidth="1200.0" GridPane.rowIndex="3">
+            <children>
+                <Button fx:id="help" layoutX="1.0" layoutY="30.0" mnemonicParsing="false" onAction="#helpClick"
+                        prefHeight="64.0" prefWidth="179.0" style="-fx-background-color: red; -fx-font-weight: bold;"
+                        text="Help" textFill="WHITE">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="next" disable="true" layoutX="1019.0" layoutY="30.0" mnemonicParsing="false"
+                        onAction="#nextClick" prefHeight="64.0" prefWidth="179.0"
+                        style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Label prefHeight="75.0" prefWidth="966.0" text="--&gt; Select the payment method you want to apply"
+               textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <font>
+                <Font name="System Bold" size="30.0"/>
+            </font>
+            <GridPane.margin>
+                <Insets top="80.0"/>
+            </GridPane.margin>
+        </Label>
+    </children>
+</GridPane>
