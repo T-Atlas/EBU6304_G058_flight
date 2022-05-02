@@ -1,10 +1,17 @@
 package com.app.flight.service.external;
 
+import com.app.flight.entity.Passenger;
+
 /**
  * @author LianJunhong
  */
 public class Scanner {
-    public Object scan(String text) {
-        return "";
+    private void readConfig() {
+
+    }
+
+    public Passenger scan(String text) {
+        Passenger passenger = new Passenger();
+        return passenger;
     }
 }

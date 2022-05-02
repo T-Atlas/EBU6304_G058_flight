@@ -160,26 +160,6 @@ public class Csv {
             }
             i++;
         }
-
-        /*for (; i<csvHeaders.length; i++) {
-            if (jsonObj.get(csvHeaders[i]) instanceof String) {
-                System.out.println(jsonObj.get(csvHeaders[i]));
-                csvContent[i] = (String) jsonObj.get(csvHeaders[i]);
-            } else if (jsonObj.get(csvHeaders[i]) instanceof Boolean) {
-                System.out.println(jsonObj.get(csvHeaders[i]));
-                csvContent[i] = String.valueOf(jsonObj.get(csvHeaders[i]));
-            } else if (jsonObj.get(csvHeaders[i]) instanceof Double) {
-                System.out.println(jsonObj.get(csvHeaders[i]));
-                csvContent[i] = String.valueOf(jsonObj.get(csvHeaders[i]));
-            }
-            else {
-                JSONObject innerJsonObj = jsonObj.getJSONObject(csvHeaders[i]);
-                System.out.println(csvHeaders[i]);
-                System.out.println(innerJsonObj);
-                Iterator<Map.Entry<String, Object>> iterator = innerJsonObj.entrySet().iterator();
-                csvContent[i] = (String) iterator.next().getValue();
-            }
-        }*/
         return csvContent;
     }
 

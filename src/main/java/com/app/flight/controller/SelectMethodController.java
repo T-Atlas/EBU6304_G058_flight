@@ -75,7 +75,7 @@ public class SelectMethodController {
                 }
             });
         } else {
-            System.out.println("数据查找失败");
+            System.out.println("Data lookup failed");
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new ComingSoonController().getLoader();//需要修改成页面展示的controller
