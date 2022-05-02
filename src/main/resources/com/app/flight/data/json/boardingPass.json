@@ -7,15 +7,15 @@
     "telephone": "13104368848"
   },
   "flight": {
-    "flightId": "MH1234",
+    "flightId": "MU1234",
     "departure": "Beijing",
-    "destination": "Shanghai",
-    "boardingGate": "C10",
-    "boardingTime": "2022-05-25T11:25:00",
-    "departureTime": "2022-05-25T11:55:00",
-    "arrivalTime": "2022-05-25T16:55:00"
+    "destination": "Hainan",
+    "boardingGate": "A10",
+    "boardingTime": "2022-04-29T11:25:00",
+    "departureTime": "2022-04-29T11:55:00",
+    "arrivalTime": "2022-04-29T16:55:00"
   },
-  "seatNo": "5E",
+  "seatNo": "1A",
   "food": {
     "foodName": "VEGETARIAN",
     "foodPrice": 20.0
