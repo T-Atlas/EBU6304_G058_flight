@@ -3,7 +3,7 @@
 
 EBU6304 – Software Engineering Group Project
 
-**Last Modified Date: 2022-04-16.**
+**Last Modified Date: 2022-04-24.**
 
 ## Table of Contents
 
@@ -116,25 +116,42 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ## Documentation
 
-   Coming soon…
+Coming soon…
 
 
 
 
 ------
 
-   
-
 ## Iteration logs
 
-  ### 2.0 (April 17, 2022) Latest version
+### 3.0 Beta (April 24, 2022) Latest version
+
+- Several bugs fixed and new features added in this release.
+- Fixed scene switching. Now the scene can be switched in the same window.
+- Fixed the bug that the application will crash when the user select nothing but submit.
+- The showSeatMap function has been refactored to reduce coupling.
+- The interface logic of searching user information according to function selection is realized.
+- The function of finding user interface is reconstructed.
+- Updated CSV file to generate corresponding flight seating map based on flight ID.
+- Added the ability to automatically generate passenger boarding cards.
+- Improved front and back seating map compatibility.
+- Many unit tests have been added to test our main functions.
+
+### 2.1 RELEASE (April 20, 2022)
+
+- Several bugs fixed in this release.
+- New features added in this release.
+- New view of seat selection.
+
+### 2.0 Beta (April 17, 2022)
 
 - Further improve the basic functions of our page and realize the closed loop of basic operation logic.
 - Integrate the administrator login function page.
 - Implements the display of flight information (in the form of a list) and passenger selection of seats and meals.
 - Several bugs fixed in this release.
 
- ### 1.5 (April 12, 2022)
+### 1.5 (April 12, 2022)
 
 - Fix bugs and complete the iteration of the 1.0 version.
 - Finish the pages and complete the functions of booking and retrieve information.

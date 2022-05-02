@@ -33,8 +33,12 @@
                                 <Image url="@../ico/OneworldLogo.png"/>
                             </image>
                         </ImageView>
-                        <Button fx:id="loginButton" onAction="#loginButtonClick" layoutX="1098.0" layoutY="39.0"
-                                mnemonicParsing="false" text="Login"/>
+                        <Button fx:id="loginButton" onAction="#loginButtonClick" layoutX="1091.0" layoutY="44.0"
+                                mnemonicParsing="false" style="-fx-background-color: LIGHTGREY;" text="Login">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                        </Button>
                     </children>
                 </AnchorPane>
                 <GridPane prefHeight="0.0" prefWidth="1200.0" GridPane.rowIndex="2">

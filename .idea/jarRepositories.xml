@@ -2,9 +2,24 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="fastjson" />
+      <option name="name" value="fastjson" />
+      <option name="url" value="https://maven.aliyun.com/repository/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="c82c7e19-13ee-42f6-95cc-bc5230819916" />
+      <option name="name" value="c82c7e19-13ee-42f6-95cc-bc5230819916" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="fastjson2" />
+      <option name="name" value="fastjson2" />
+      <option name="url" value="https://maven.aliyun.com/repository/public" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />

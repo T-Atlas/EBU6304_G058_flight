@@ -1,5 +1,6 @@
 package com.app.flight.entity;
 
+import com.alibaba.fastjson2.annotation.JSONField;
 import lombok.Data;
 
 /**
@@ -10,31 +11,29 @@ import lombok.Data;
  */
 @Data
 public class BoardingPass {
-
-    /**
-     * Serial number of the boarding pass.
-     */
-    private String boardingNo;
-
-    /**
-     * Seat number with a total of three characters.
-     * The first two characters are numbers and the last character is letters.
-     */
-    private String seatNo;
-
     /**
      * The passenger for the boarding pass.
      */
+    @JSONField(ordinal = 1)
     private Passenger passenger;
 
     /**
      * The flight information for the boarding pass.
      */
+    @JSONField(ordinal = 2)
     private Flight flight;
+
+    /**
+     * Seat number with a total of three characters.
+     * The first two characters are numbers and the last character is letters.
+     */
+    @JSONField(ordinal = 3)
+    private String seatNo;
 
     /**
      * The food information for the boarding pass.
      */
+    @JSONField(ordinal = 4)
     private Food food;
 
 }

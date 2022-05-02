@@ -5,13 +5,12 @@ import com.app.flight.entity.Food;
 /**
  * @author 贾博然
  */
-public interface GetFood {
+public interface SetFood {
 
     /**
      * Method to get food
      *
-     * @param foodName
-     * @return
+     * @param foodName food type
      */
-    Food getFood(Food.foodType foodName);
+    void setFood(Food.foodType foodName);
 }

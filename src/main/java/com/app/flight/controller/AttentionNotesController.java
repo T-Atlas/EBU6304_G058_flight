@@ -14,6 +14,7 @@ import java.io.IOException;
 
 /**
  * @author LianJunhong
+ * @version 2.1
  */
 public class AttentionNotesController {
     @FXML
@@ -37,9 +38,10 @@ public class AttentionNotesController {
     public void nextClick(ActionEvent actionEvent) {
 
         Platform.runLater(() -> {
+            Stage stage = (Stage) next.getScene().getWindow();
             try {
-                new SelectMethodController().start(new Stage());//需要修改成页面展示的controller
-                ((Stage) (next.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new SelectMethodController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -50,12 +52,14 @@ public class AttentionNotesController {
      * The code for other pages to open InputNumber.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
 
+    public FXMLLoader getLoader() throws IOException {
+        return new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
+    }
 }

@@ -19,26 +19,38 @@ import java.io.IOException;
 /**
  * @author LianJunhong
  * @author HuangHong
+ * @version 2.1
  */
 public class InputNumberController {
-    public static Passenger p;
+    public Passenger p;
     @FXML
     public TextField number;
     @FXML
     public Label annotation;
     public Button clean;
+    public Button next;
+    public Button help;
+
+    protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {
-        p = getPassenger.lookupPassenger(number.getText());
+        p = getPassengerInfo(type, number.getText());
         System.out.println(p);
         Platform.runLater(() -> {
+            Stage stage = (Stage) clean.getScene().getWindow();
             try {
+                FXMLLoader fxmlLoader;
                 if (p != null) {
-                    new InfoConfirmController().start(new Stage(), p);
-                    ((Stage) (clean.getScene().getWindow())).close();
+                    fxmlLoader = new InfoConfirmController().getLoader();
                 } else {
-                    new ComingSoonController().start(new Stage());
+                    fxmlLoader = new ComingSoonController().getLoader();
+                }
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                if (p != null) {
+                    InfoConfirmController i = fxmlLoader.getController();
+                    i.showNum(p);
+                    i.pRetrieve = p;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -46,12 +58,24 @@ public class InputNumberController {
         });
     }
 
+    protected Passenger getPassengerInfo(String type, String text) {
+        Passenger passenger;
+        if (type.equals("id")) {
+            passenger = getPassenger.lookupPassengerById(text);
+        } else if (type.equals("booking")) {
+            passenger = getPassenger.lookupPassengerByBookingNumber(text);
+        } else {
+            passenger = null;
+        }
+        return passenger;
+    }
+
+
     /**
      * The code for other pages to open InputNumber.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
@@ -60,5 +84,23 @@ public class InputNumberController {
 
     public void clean(ActionEvent actionEvent) {
         number.setText("");
+        next.setDisable(true);
+    }
+
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }

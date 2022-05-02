@@ -1,12 +1,15 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
+import com.app.flight.service.external.Printer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,11 +17,20 @@ import java.io.IOException;
 /**
  * @author HuangHong
  * @author Zheng Han
+ * @author LianJunhong
+ * @version 3.5
  */
-public class PrintTagsController {
+public class PrintTagsController implements Runnable {
 
+    public Button help;
+    @FXML
+    protected ProgressBar progressBar;
+    @FXML
+    protected Label percentage;
     @FXML
     private Button next;
+
+    private int percent;
 
     /**
      * The code for button "next" in printTags.fxml
@@ -26,9 +38,10 @@ public class PrintTagsController {
      */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
+            Stage stage = (Stage) next.getScene().getWindow();
             try {
-                new FinishController().start(new Stage());
-                ((Stage) (next.getScene().getWindow())).close();
+                FXMLLoader fxmlLoader = new FinishController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -39,12 +52,76 @@ public class PrintTagsController {
      * The code for other pages to open printTags.fxml
      */
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/printTags.fxml"));
-
+        FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
 
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/printTags.fxml"));
+    }
+
+    /**
+     * When an object implementing interface {@code Runnable} is used
+     * to create a thread, starting the thread causes the object's
+     * {@code run} method to be called in that separately executing
+     * thread.
+     * <p>
+     * The general contract of the method {@code run} is that it may
+     * take any action whatsoever.
+     *
+     * @see Thread#run()
+     */
+    @Override
+    public void run() {
+        next.setDisable(true);
+        Printer printer = new Printer();
+        Boolean result = false;
+        try {
+            result = printer.print(progressBar, percentage);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        if (result) {
+            next.setDisable(false);
+        } else {
+            Platform.runLater(() -> {
+                percentage.setText("Printing failed");
+                System.out.println("Failed to print");
+            });
+        }
+    }
+
+    /**
+     * Get the percentage of the progress bar
+     *
+     * @return the percentage of the progress bar
+     */
+    public int getPercent() {
+        return percent;
+    }
+
+    /**
+     * Set the percentage of the progress bar
+     *
+     * @param percent the percentage of the progress bar
+     */
+    public void setPercent(int percent) {
+        this.percent = percent;
+    }
+
+    @FXML
+    public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
 }

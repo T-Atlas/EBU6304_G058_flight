@@ -7,10 +7,18 @@ import com.app.flight.entity.Passenger;
  */
 public interface GetPassenger {
     /**
-     * apple
+     * Find passengers by ID
      *
-     * @param id id
+     * @param passengerId id
      * @return Passenger
      */
-    Passenger lookupPassenger(String id);
+    Passenger lookupPassengerById(String passengerId);
+
+    /**
+     * Find passengers by reservation number
+     *
+     * @param bookNumber id
+     * @return Passenger
+     */
+    Passenger lookupPassengerByBookingNumber(String bookNumber);
 }
