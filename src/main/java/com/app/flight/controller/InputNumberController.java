@@ -65,6 +65,7 @@ public class InputNumberController {
         } else if (type.equals("booking")) {
             passenger = getPassenger.lookupPassengerByBookingNumber(text);
         } else {
+            //new Scanner()
             passenger = null;
         }
         return passenger;
@@ -100,6 +101,18 @@ public class InputNumberController {
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            }
+        });
+    }
+
+    public void returnButton(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new SelectMethodController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }
