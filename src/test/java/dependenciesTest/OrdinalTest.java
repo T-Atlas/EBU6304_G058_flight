@@ -56,6 +56,6 @@ public class OrdinalTest {
         OrdinalTestInit();
         String reservationStr = Json.toJSONString(reservation);
         System.out.println(reservationStr);
-        assertEquals("{\"reservationId\":\"1517539047050973184\",\"passenger\":{\"passengerId\":\"123456\",\"firstName\":\"Mason\",\"lastName\":\"Test\",\"age\":20,\"telephone\":\"13104368848\"},\"flight\":{\"flightId\":\"MU1234\",\"departure\":\"Beijing\",\"destination\":\"Hainan\",\"boardingGate\":\"A10\",\"boardingTime\":\"2022-04-29T11:25:00\",\"departureTime\":\"2022-04-29T11:55:00\",\"arrivalTime\":\"2022-04-29T16:55:00\"},\"mealsAvailable\":true,\"seatLevel\":\"FIRST_CLASS\",\"handBaggageNum\":0,\"checkedBaggageNum\":1}", reservationStr);
+        assertEquals("{\"reservationId\":\"1517539047050973184\",\"passenger\":{\"passengerId\":\"123456\",\"firstName\":\"Mason\",\"lastName\":\"Test\",\"age\":20,\"telephone\":\"13104368848\"},\"flight\":{\"flightId\":\"MU1234\",\"departure\":\"Beijing\",\"destination\":\"Hainan\",\"boardingGate\":\"A10\",\"boardingTime\":\"2022-04-29T11:25:00\",\"departureTime\":\"2022-04-29T11:55:00\",\"arrivalTime\":\"2022-04-29T16:55:00\"},\"seatLevel\":\"FIRST_CLASS\",\"mealsAvailable\":true,\"handBaggageNum\":0,\"checkedBaggageNum\":1}", reservationStr);
     }
 }
