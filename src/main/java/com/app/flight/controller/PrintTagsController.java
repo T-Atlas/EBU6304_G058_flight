@@ -87,8 +87,10 @@ public class PrintTagsController implements Runnable {
         if (result) {
             next.setDisable(false);
         } else {
-            percentage.setText("Printing failed");
-            System.out.println("Failed to print");
+            Platform.runLater(() -> {
+                percentage.setText("Printing failed");
+                System.out.println("Failed to print");
+            });
         }
     }
 

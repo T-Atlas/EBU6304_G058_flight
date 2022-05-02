@@ -149,12 +149,10 @@ public class Csv {
 
     private static String[] getCsvContents(JSONObject jsonObj, String[] csvHeaders, int i) {
         String[] csvContent = new String[csvHeaders.length];
-        //TODO:BUG FIX HERE
         for (Map.Entry<String, Object> entry : jsonObj.entrySet()) {
             if (entry.getValue() instanceof String) {
                 csvContent[i] = (String) entry.getValue();
             } else {
-                //TODO:Check the update of fastjson2 2.0.2
                 JSONObject innerJsonObj = jsonObj.getJSONObject(entry.getKey());
                 System.out.println(entry.getKey());
                 Iterator<Map.Entry<String, Object>> iterator = innerJsonObj.entrySet().iterator();
