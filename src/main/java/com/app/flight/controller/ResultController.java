@@ -22,6 +22,8 @@ import java.io.IOException;
 public class ResultController {
 
     public Button help;
+    public BoardingPass boardingPass;
+    GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
     @FXML
     private Button next;
     @FXML
@@ -39,10 +41,7 @@ public class ResultController {
     @FXML
     private Label checkBaggage;
 
-    public BoardingPass boardingPass;
-    GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
-
-    public void showBoardingPass (){
+    public void showBoardingPass() {
         boardingPass = getBoardingPass.lookupBoardingPass();
         name.setText(boardingPass.getPassenger().getFirstName() + boardingPass.getPassenger().getLastName());
         departure.setText(boardingPass.getFlight().getDeparture());
@@ -62,6 +61,7 @@ public class ResultController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
