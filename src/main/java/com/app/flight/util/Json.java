@@ -32,4 +32,8 @@ public class Json {
             return false;
         }
     }
+
+    public static String toJSONString(Object obj) {
+        return JSON.toJSONString(obj, JSONWriter.Feature.WriteEnumsUsingName);
+    }
 }

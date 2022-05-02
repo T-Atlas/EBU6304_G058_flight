@@ -40,13 +40,11 @@ public class RetrieveController {
     public Button help;
     GetReservation getReservation = new GetReservationImpl();
     GetSeatMap getSeatMap = new GetSeatMapImpl();
+    GetFlight getFlight = new GetFlightImpl();
     @FXML
     private Button next;
     @FXML
     private TableView<Reservation> tableView;
-
-    GetFlight getFlight = new GetFlightImpl();
-
 
     public void showRetrieve(Passenger p) {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
