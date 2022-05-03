@@ -13,7 +13,6 @@ import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 
 /**
@@ -27,10 +26,7 @@ public class ScanInstructionController {
         return new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
     }
 
-    public void listenConsole() {
-        Scanner consoleScanner = new Scanner(System.in);
-        String idNumber;
-        idNumber = consoleScanner.nextLine();
+    public void checkIdNumber(String idNumber) {
         GetPassenger getPassenger = new GetPassengerImpl();
         Passenger passenger = getPassenger.lookupPassengerById(idNumber);
 

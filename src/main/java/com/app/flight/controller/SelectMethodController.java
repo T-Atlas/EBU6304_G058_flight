@@ -1,6 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
+import com.app.flight.service.external.ConsoleListener;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -78,7 +79,7 @@ public class SelectMethodController {
                 }
             });
         } else {
-            System.out.println("Data lookup failed");
+//            System.out.println("Data lookup failed");
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new ScanInstructionController().getLoader();
@@ -92,7 +93,8 @@ public class SelectMethodController {
                     mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
                     scanInstructionController.mediaView.setMediaPlayer(mediaPlayer);
 
-                    Platform.runLater(scanInstructionController::listenConsole);
+                    Thread consoleListener = new ConsoleListener(stage, scanInstructionController);
+                    consoleListener.start();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
