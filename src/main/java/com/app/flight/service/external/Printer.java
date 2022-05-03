@@ -1,5 +1,6 @@
 package com.app.flight.service.external;
 
+import cn.hutool.core.thread.ThreadUtil;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -21,9 +22,9 @@ public class Printer {
         return mediaPlayer;
     }
 
-    public Boolean print(ProgressBar progressBar, Label percentage) throws InterruptedException {
+    public Boolean print(ProgressBar progressBar, Label percentage) {
         int percent = 0;
-        Thread.sleep(50);
+        ThreadUtil.sleep(50);
         MediaPlayer mediaPlayer = sound();
         for (int i = 0; i <= 100; i++) {
             percent = i;
@@ -32,15 +33,11 @@ public class Printer {
             Platform.runLater(() -> {
                 percentage.setText(finalPercent + " %");
             });
-            Thread.sleep(50);
+            ThreadUtil.sleep(50);
         }
 
         Platform.runLater(() -> {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            ThreadUtil.sleep(100);
             mediaPlayer.stop();
             percentage.setText("Success!");
         });

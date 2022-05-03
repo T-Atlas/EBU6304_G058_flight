@@ -78,6 +78,7 @@ public class SelectMethodController {
                 }
             });
         } else {
+            System.out.println("Data lookup failed");
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new ScanInstructionController().getLoader();
