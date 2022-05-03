@@ -9,8 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -75,17 +78,25 @@ public class SelectMethodController {
                 }
             });
         } else {
-            System.out.println("数据查找失败");
             Platform.runLater(() -> {
                 try {
-                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();//需要修改成页面展示的controller
+                    FXMLLoader fxmlLoader = new ScanInstructionController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    ScanInstructionController scanInstructionController = fxmlLoader.getController();
+
+                    File file = new File("src/main/resources/com/app/flight/video/scan.mp4");
+                    Media media = new Media(file.getAbsoluteFile().toURI().toString());
+                    MediaPlayer mediaPlayer = new MediaPlayer(media);
+                    mediaPlayer.setAutoPlay(true);
+                    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                    scanInstructionController.mediaView.setMediaPlayer(mediaPlayer);
+
+                    Platform.runLater(scanInstructionController::listenConsole);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         }
-
     }
 
     public FXMLLoader getLoader() {

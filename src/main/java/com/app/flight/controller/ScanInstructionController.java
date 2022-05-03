@@ -1,11 +1,73 @@
 package com.app.flight.controller;
 
+import com.app.flight.Main;
+import com.app.flight.entity.Passenger;
+import com.app.flight.service.GetPassenger;
+import com.app.flight.service.impl.GetPassengerImpl;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+
 /**
  * @author LianJunhong
  */
 public class ScanInstructionController {
-    //TODO: 狗郑瀚，这里需要在用户点击Scan那个按钮后，调用一个界面展示扫描只是视频，视频在video目录下。然后用户可以选择跳过或者在视频播放完毕以后再次播放。
-    //TODO：然后进入下一个控制类，模拟一个进度条，然后调用Scanner方法模拟读取用户扫描数据。最后回到InfoConfirmController类。
+    @FXML
+    public MediaView mediaView;
 
+    public FXMLLoader getLoader() {
+        return new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
+    }
 
+    public void listenConsole() {
+        Scanner consoleScanner = new Scanner(System.in);
+        String idNumber;
+        idNumber = consoleScanner.nextLine();
+        GetPassenger getPassenger = new GetPassengerImpl();
+        Passenger passenger = getPassenger.lookupPassengerById(idNumber);
+
+        Platform.runLater(() -> {
+            Stage stage = (Stage) mediaView.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader;
+                if (passenger != null) {
+                    fxmlLoader = new InfoConfirmController().getLoader();
+                } else {
+                    fxmlLoader = new ComingSoonController().getLoader();
+                }
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                if (passenger != null) {
+                    InfoConfirmController i = fxmlLoader.getController();
+                    i.showNum(passenger);
+                    i.pRetrieve = passenger;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public void helpClick(ActionEvent actionEvent) {
+
+    }
+
+    public void back(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) mediaView.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new SelectMethodController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
 }
