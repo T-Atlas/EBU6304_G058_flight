@@ -38,12 +38,12 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                     <children>
-                        <Button fx:id="next" onAction="#nextClick" disable="true" layoutX="1027.0" layoutY="89.0"
-                                mnemonicParsing="false" prefHeight="48.0" prefWidth="136.0"
+                        <Button fx:id="next" disable="true" layoutX="1007.0" layoutY="63.0" mnemonicParsing="false"
+                                onAction="#nextClick" prefHeight="64.0" prefWidth="179.0"
                                 style="-fx-background-color: #169BD5;-fx-font-weight: bold;" text="Next"
                                 textFill="WHITE">
                             <font>
-                                <Font size="16.0"/>
+                                <Font size="25.0"/>
                             </font>
                         </Button>
                         <CheckBox fx:id="confirm" alignment="CENTER" contentDisplay="CENTER" layoutX="470.0"
