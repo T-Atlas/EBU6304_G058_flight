@@ -102,6 +102,9 @@ public class ResultController {
             try {
                 FXMLLoader fxmlLoader = new NavigationMapController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                NavigationMapController navigationMapController = fxmlLoader.getController();
+                String gateName = boardingPass.getFlight().getBoardingGate();
+                navigationMapController.setMap(gateName);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
