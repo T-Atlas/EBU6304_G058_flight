@@ -44,6 +44,9 @@ public class GetBoardingPassImpl implements GetBoardingPass {
         JSONPath colPath = JSONPath.of("$.column");
         String row = (String) rowPath.extract(JSONReader.of(seatString));
         String col = (String) colPath.extract(JSONReader.of(seatString));
+        if (row.length() == 1) {
+            row = "0" + row;
+        }
         boardingPass.setSeatNo(row + col);
 
         if (Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass) && Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, false)) {

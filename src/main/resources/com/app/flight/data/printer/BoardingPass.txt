@@ -3,10 +3,11 @@
 |   |                            |.
  \__|                            |.
     |  DATE:11MAY                |.
-    |  FLIGHT:MH8633             |.
+    |  FLIGHT:MH8633            |.
     |  NAME:Jun Test             |.
     |  SEAT:3B                   |.
     |  GATE:B10                  |.
+    |  GATE:B10                 |.
     |  BD TIME:18:25             |.
     |  DEST:Hainan               |.
     |                            |.
