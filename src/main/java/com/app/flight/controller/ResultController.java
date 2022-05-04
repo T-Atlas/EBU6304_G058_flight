@@ -4,6 +4,7 @@ import com.app.flight.Main;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
+import com.app.flight.util.Csv;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,14 +43,16 @@ public class ResultController {
     @FXML
     private Label checkBaggage;
 
-    public void showBoardingPass() {
+    public void showBoardingPass(boolean addCsv) {
         boardingPass = getBoardingPass.lookupBoardingPass();
         name.setText(boardingPass.getPassenger().getFirstName() + boardingPass.getPassenger().getLastName());
         departure.setText(boardingPass.getFlight().getDeparture());
         destination.setText(boardingPass.getFlight().getDestination());
         seat.setText(boardingPass.getSeatNo());
         foodType.setText(String.valueOf(boardingPass.getFood().getFoodName()));
-
+        if (addCsv) {
+            Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, false);
+        }
     }
 
     /**
