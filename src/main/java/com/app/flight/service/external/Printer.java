@@ -1,5 +1,6 @@
 package com.app.flight.service.external;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
@@ -74,13 +75,9 @@ public class Printer {
         }
     }
 
-    public static void main(String[] args) {
-        printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
-    }
-
-    public Boolean print(ProgressBar progressBar, Label percentage) throws InterruptedException {
-        int percent;
-        Thread.sleep(50);
+    public Boolean print(ProgressBar progressBar, Label percentage) {
+        int percent = 0;
+        ThreadUtil.sleep(50);
         MediaPlayer mediaPlayer = sound();
         for (int i = 0; i <= 100; i++) {
             percent = i;
@@ -89,15 +86,11 @@ public class Printer {
             Platform.runLater(() -> {
                 percentage.setText(finalPercent + " %");
             });
-            Thread.sleep(50);
+            ThreadUtil.sleep(50);
         }
 
         Platform.runLater(() -> {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            ThreadUtil.sleep(100);
             mediaPlayer.stop();
             percentage.setText("Success!");
         });

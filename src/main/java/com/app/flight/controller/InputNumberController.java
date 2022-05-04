@@ -30,6 +30,7 @@ public class InputNumberController {
     public Button clean;
     public Button next;
     public Button help;
+    public Button back;
 
     protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
