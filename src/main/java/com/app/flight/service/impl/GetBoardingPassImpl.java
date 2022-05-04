@@ -11,9 +11,6 @@ import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static com.alibaba.fastjson2.JSON.parseObject;
 
@@ -23,37 +20,26 @@ import static com.alibaba.fastjson2.JSON.parseObject;
  * @date 2022.4.22
  */
 public class GetBoardingPassImpl implements GetBoardingPass {
-
-    private static String extractJsonData(File file) {
-        String jsonString = null;
-        try {
-            jsonString = new String(Files.readAllBytes(Paths.get(file.getPath())));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return jsonString;
-    }
-
     @Override
     public BoardingPass lookupBoardingPass() {
         BoardingPass boardingPass = new BoardingPass();
         File passengerFile = new File(Json.PASSENGER_JSON_PATH);
-        String passengerString = extractJsonData(passengerFile);
+        String passengerString = Json.extractJsonData(passengerFile);
         Passenger passenger = parseObject(passengerString, Passenger.class);
         boardingPass.setPassenger(passenger);
 
         File flightFile = new File(Json.FLIGHT_JSON_PATH);
-        String flightString = extractJsonData(flightFile);
+        String flightString = Json.extractJsonData(flightFile);
         Flight flight = parseObject(flightString, Flight.class);
         boardingPass.setFlight(flight);
 
         File foodFile = new File(Json.FOOD_JSON_PATH);
-        String foodString = extractJsonData(foodFile);
+        String foodString = Json.extractJsonData(foodFile);
         Food food = parseObject(foodString, Food.class);
         boardingPass.setFood(food);
 
         File seatFile = new File(Json.SEAT_JSON_PATH);
-        String seatString = extractJsonData(seatFile);
+        String seatString = Json.extractJsonData(seatFile);
         JSONPath rowPath = JSONPath.of("$.row");
         JSONPath colPath = JSONPath.of("$.column");
         String row = (String) rowPath.extract(JSONReader.of(seatString));
