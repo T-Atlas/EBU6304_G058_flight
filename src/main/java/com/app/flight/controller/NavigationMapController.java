@@ -34,7 +34,7 @@ public class NavigationMapController {
                 FXMLLoader fxmlLoader = new ResultController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                 ResultController resultController = fxmlLoader.getController();
-                resultController.showBoardingPass();
+                resultController.showBoardingPass(false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
