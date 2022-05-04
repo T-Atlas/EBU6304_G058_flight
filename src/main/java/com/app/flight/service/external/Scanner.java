@@ -10,7 +10,7 @@ public class Scanner {
 
     }
 
-    public Passenger scan(String text) {
+    public static Passenger scan(String text) {
         Passenger passenger = new Passenger();
         return passenger;
     }
