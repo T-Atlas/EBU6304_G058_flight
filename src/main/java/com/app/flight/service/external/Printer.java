@@ -32,6 +32,7 @@ public class Printer {
         return mediaPlayer;
     }
 
+
     public static void printBoardingPass(String jsonFilePath, String boardingPassFile) {
         File jsonFile = new File(jsonFilePath);
         String jsonData = Json.extractJsonData(jsonFile);
@@ -47,7 +48,7 @@ public class Printer {
         int minute = boardingTime.getMinute();
         String destination = flight.getDestination();
         StringBuilder dateSpaces = new StringBuilder();
-        dateSpaces.append(" ".repeat(20 - dayOfMonth - month.name().length()));
+        dateSpaces.append(" ".repeat(19 - String.valueOf(dayOfMonth).length() - month.name().length()));
         StringBuilder nameSpaces = new StringBuilder();
         nameSpaces.append(" ".repeat(19 - firstName.length() - lastName.length()));
         StringBuilder destSpaces = new StringBuilder();
@@ -56,22 +57,22 @@ public class Printer {
         try {
             out = new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream(boardingPassFile)));
-            out.write("   ________BOARDING_PASS_________\n" +
-                    " / \\                             \\.\n" +
-                    "|   |                            |.\n" +
-                    " \\__|                            |.\n" +
-                    "    |  DATE:" + dayOfMonth + month + dateSpaces + "|.\n" +
+            out.write("   ________BOARDING_PASS________\n" +
+                    " / \\                            \\.\n" +
+                    "|   |                           |.\n" +
+                    " \\__|                           |.\n" +
+                    "    |  DATE:" + dayOfMonth + " " + month + dateSpaces + "|.\n" +
                     "    |  FLIGHT:" + flight.getFlightId() + "\t\t\t|.\n" +
                     "    |  NAME:" + firstName + " " + lastName + nameSpaces + "|.\n" +
                     "    |  SEAT:" + boardingPass.getSeatNo() + "\t\t\t\t\t|.\n" +
                     "    |  GATE:" + flight.getBoardingGate() + "\t\t\t\t\t|.\n" +
                     "    |  BD TIME:" + hour + ":" + minute + "\t\t\t|.\n" +
                     "    |  DEST:" + destination + destSpaces + "|.\n" +
-                    "    |                            |.\n" +
-                    "    |                            |.\n" +
-                    "    |   _________________________|___\n" +
+                    "    |                           |.\n" +
+                    "    |                           |.\n" +
+                    "    |   ________________________|____\n" +
                     "    |  /                            /.\n" +
-                    "    \\_/group58______________________/.");
+                    "    \\_/Group58_____________________/.");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -82,10 +83,6 @@ public class Printer {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
     }
 
     public Boolean print(ProgressBar progressBar, Label percentage) {

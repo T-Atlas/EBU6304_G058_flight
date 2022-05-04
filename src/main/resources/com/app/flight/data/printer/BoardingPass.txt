@@ -1,17 +1,16 @@
-   ________BOARDING_PASS_________
- / \                             \.
-|   |                            |.
- \__|                            |.
-    |  DATE:11MAY                |.
-    |  FLIGHT:MH8633            |.
-    |  NAME:Jun Test             |.
-    |  SEAT:2C                   |.
-    |  GATE:B10                  |.
-    |  GATE:B10                 |.
-    |  BD TIME:18:25             |.
-    |  DEST:Hainan               |.
-    |                            |.
-    |                            |.
-    |   _________________________|___
+   ________BOARDING_PASS________
+ / \                            \.
+|   |                           |.
+ \__|                           |.
+    |  DATE:29 APRIL            |.
+    |  FLIGHT:MU1234			|.
+    |  NAME:Lian Test           |.
+    |  SEAT:18C					|.
+    |  GATE:A10					|.
+    |  BD TIME:11:25			|.
+    |  DEST:Hainan              |.
+    |                           |.
+    |                           |.
+    |   ________________________|____
     |  /                            /.
-    \_/group58______________________/.
+    \_/group58_____________________/.
