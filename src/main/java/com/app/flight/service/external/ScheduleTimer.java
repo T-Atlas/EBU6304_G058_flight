@@ -9,8 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -25,8 +23,15 @@ public class ScheduleTimer implements Schedule {
 
     static Label timerLabel;
     static ProgressBar timerProgressBar;
-    @Getter
-    @Setter
+
+    public static int getSeconds() {
+        return seconds;
+    }
+
+    public static void setSeconds(int seconds) {
+        ScheduleTimer.seconds = seconds;
+    }
+
     static private int seconds;
 
     private static void init() {
