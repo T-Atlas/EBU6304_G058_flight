@@ -15,10 +15,8 @@ import java.util.Map;
 
 /**
  * @author SongBo
- * @author SongBo
  * @author LianJunhong
  * @version 1.1
- * @date 2022.4.21
  * @date 2022.4.22
  */
 public class SeatMapImpl implements SetSeatMap, GetSeatMap {
