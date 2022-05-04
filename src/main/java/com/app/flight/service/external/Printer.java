@@ -1,11 +1,11 @@
 package com.app.flight.service.external;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.util.Json;
-import cn.hutool.core.thread.ThreadUtil;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -73,10 +73,6 @@ public class Printer {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void main(String[] args) {
-        printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
     }
 
     public Boolean print(ProgressBar progressBar, Label percentage) {
