@@ -79,6 +79,7 @@ public class Printer {
         int percent = 0;
         ThreadUtil.sleep(50);
         MediaPlayer mediaPlayer = sound();
+        printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
         for (int i = 0; i <= 100; i++) {
             percent = i;
             progressBar.setProgress(percent / 100.0);

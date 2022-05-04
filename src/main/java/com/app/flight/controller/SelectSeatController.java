@@ -2,7 +2,7 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import com.app.flight.service.SetSeatMap;
-import com.app.flight.service.impl.SetSeatMapImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import com.app.flight.util.DataParser;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -57,7 +57,7 @@ public class SelectSeatController {
             Platform.runLater(() -> {
                 Stage stage = (Stage) next.getScene().getWindow();
                 try {
-                    SetSeatMap setSeatMap = new SetSeatMapImpl();
+                    SetSeatMap setSeatMap = new SeatMapImpl();
                     setSeatMap.updateSeatMap(flightId, choiceColumn, choiceRow);
                     FXMLLoader fxmlLoader = new FoodTypeController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
