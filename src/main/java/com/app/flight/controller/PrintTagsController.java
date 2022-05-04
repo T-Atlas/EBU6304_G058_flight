@@ -78,12 +78,8 @@ public class PrintTagsController implements Runnable {
     public void run() {
         next.setDisable(true);
         Printer printer = new Printer();
-        Boolean result = false;
-        try {
-            result = printer.print(progressBar, percentage);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        Boolean result;
+        result = printer.print(progressBar, percentage);
         if (result) {
             next.setDisable(false);
         } else {
