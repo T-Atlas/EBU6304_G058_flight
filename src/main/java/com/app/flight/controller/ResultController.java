@@ -3,6 +3,7 @@ package com.app.flight.controller;
 import com.app.flight.Main;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.service.GetBoardingPass;
+import com.app.flight.service.GetNavigationPicture;
 import com.app.flight.service.impl.GetBoardingPassImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -102,6 +103,9 @@ public class ResultController {
             try {
                 FXMLLoader fxmlLoader = new NavigationMapController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                NavigationMapController navigationMapController = fxmlLoader.getController();
+                //TODO:111
+                navigationMapController.setMap(GetNavigationPicture.gateType.GATE_B);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
