@@ -1,7 +1,8 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.app.flight.Main;
-import com.app.flight.service.external.ConsoleListener;
+import com.app.flight.service.external.Scanner;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,11 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -79,22 +77,15 @@ public class SelectMethodController {
                 }
             });
         } else {
-//            System.out.println("Data lookup failed");
+            Scanner scanner = new Scanner();
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new ScanInstructionController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     ScanInstructionController scanInstructionController = fxmlLoader.getController();
-
-                    File file = new File("src/main/resources/com/app/flight/video/scan.mp4");
-                    Media media = new Media(file.getAbsoluteFile().toURI().toString());
-                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-                    mediaPlayer.setAutoPlay(true);
-                    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-                    scanInstructionController.mediaView.setMediaPlayer(mediaPlayer);
-
-                    Thread consoleListener = new ConsoleListener(stage, scanInstructionController);
-                    consoleListener.start();
+                    scanInstructionController.mediaView.setMediaPlayer(scanner.playVideo());
+                    scanner.ConsoleScanner(stage, scanInstructionController);
+                    ThreadUtil.execute(scanner);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
