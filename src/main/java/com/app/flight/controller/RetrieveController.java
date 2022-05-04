@@ -8,7 +8,7 @@ import com.app.flight.service.GetReservation;
 import com.app.flight.service.GetSeatMap;
 import com.app.flight.service.impl.GetFlightImpl;
 import com.app.flight.service.impl.GetReservationImpl;
-import com.app.flight.service.impl.GetSeatMapImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -39,7 +39,7 @@ public class RetrieveController {
     public ArrayList<Reservation> rList;
     public Button help;
     GetReservation getReservation = new GetReservationImpl();
-    GetSeatMap getSeatMap = new GetSeatMapImpl();
+    GetSeatMap getSeatMap = new SeatMapImpl();
     GetFlight getFlight = new GetFlightImpl();
     @FXML
     private Button next;
