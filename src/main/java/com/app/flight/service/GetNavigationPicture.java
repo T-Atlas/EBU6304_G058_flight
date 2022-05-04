@@ -5,6 +5,10 @@ import javafx.scene.image.Image;
 public interface GetNavigationPicture {
     Image getNavigationPicture(gateType type);
 
+    Image getNavigationPicture(String gateName);
+
+    gateType convertStringToGateType(String type);
+
     enum gateType {
         /**
          * 4 types of gate

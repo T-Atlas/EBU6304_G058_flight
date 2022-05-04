@@ -1,5 +1,6 @@
 package com.app.flight.service.impl;
 
+import cn.hutool.core.util.StrUtil;
 import com.app.flight.service.GetNavigationPicture;
 import javafx.scene.image.Image;
 
@@ -30,6 +31,44 @@ public class NavigationPictureImpl implements GetNavigationPicture {
             default -> {
                 return null;
             }
+        }
+    }
+
+    /**
+     * @param gateName
+     * @return
+     */
+    @Override
+    public Image getNavigationPicture(String gateName) {
+        return getNavigationPicture(convertStringToGateType(gateName));
+    }
+
+    /**
+     * @param gateName
+     * @return
+     */
+    @Override
+    public gateType convertStringToGateType(String gateName) {
+        if (!StrUtil.isBlank(gateName)) {
+            switch (gateName.substring(0, 1).toUpperCase()) {
+                case "A" -> {
+                    return gateType.GATE_A;
+                }
+                case "B" -> {
+                    return gateType.GATE_B;
+                }
+                case "C" -> {
+                    return gateType.GATE_C;
+                }
+                case "D" -> {
+                    return gateType.GATE_D;
+                }
+                default -> {
+                    return null;
+                }
+            }
+        } else {
+            return null;
         }
     }
 }
