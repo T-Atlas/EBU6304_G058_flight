@@ -2,15 +2,15 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE:29 APRIL            |.
-    |  FLIGHT:MU1234			|.
-    |  NAME:Lian Test           |.
-    |  SEAT:18C					|.
-    |  GATE:A10					|.
-    |  BD TIME:11:25			|.
-    |  DEST:Hainan              |.
+    |  DATE: 11 SEPTEMBER       |.
+    |  FLIGHT: MH8633           |.
+    |  NAME: Jun Test           |.
+    |  SEAT: 7D                 |.
+    |  GATE: B8                 |.
+    |  BD TIME: 07:05           |.
+    |  DEST: Hainan             |.
     |                           |.
     |                           |.
     |   ________________________|____
     |  /                            /.
-    \_/group58_____________________/.
+    \_/Group58_____________________/.
