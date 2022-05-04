@@ -42,17 +42,31 @@ public class Printer {
         LocalDateTime boardingTime = flight.getBoardingTime();
         String firstName = passenger.getFirstName();
         String lastName = passenger.getLastName();
+        String seatNo = boardingPass.getSeatNo();
+        if (seatNo.length() == 2) {
+            seatNo = seatNo + " ";
+        }
+        String boardingGate = flight.getBoardingGate();
+        if (boardingGate.length() == 2) {
+            boardingGate = boardingGate + " ";
+        }
         int dayOfMonth = boardingTime.getDayOfMonth();
         Month month = boardingTime.getMonth();
-        int hour = boardingTime.getHour();
-        int minute = boardingTime.getMinute();
+        String hour = String.valueOf(boardingTime.getHour());
+        if (hour.length() == 1) {
+            hour = "0" + hour;
+        }
+        String minute = String.valueOf(boardingTime.getMinute());
+        if (minute.length() == 1) {
+            minute = "0" + minute;
+        }
         String destination = flight.getDestination();
         StringBuilder dateSpaces = new StringBuilder();
-        dateSpaces.append(" ".repeat(19 - String.valueOf(dayOfMonth).length() - month.name().length()));
+        dateSpaces.append(" ".repeat(18 - String.valueOf(dayOfMonth).length() - month.name().length()));
         StringBuilder nameSpaces = new StringBuilder();
-        nameSpaces.append(" ".repeat(19 - firstName.length() - lastName.length()));
+        nameSpaces.append(" ".repeat(Math.max(0, 18 - firstName.length() - lastName.length())));
         StringBuilder destSpaces = new StringBuilder();
-        destSpaces.append(" ".repeat(20 - destination.length()));
+        destSpaces.append(" ".repeat(Math.max(0, 19 - destination.length())));
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new OutputStreamWriter(
@@ -61,13 +75,13 @@ public class Printer {
                     " / \\                            \\.\n" +
                     "|   |                           |.\n" +
                     " \\__|                           |.\n" +
-                    "    |  DATE:" + dayOfMonth + " " + month + dateSpaces + "|.\n" +
-                    "    |  FLIGHT:" + flight.getFlightId() + "\t\t\t|.\n" +
-                    "    |  NAME:" + firstName + " " + lastName + nameSpaces + "|.\n" +
-                    "    |  SEAT:" + boardingPass.getSeatNo() + "\t\t\t\t\t|.\n" +
-                    "    |  GATE:" + flight.getBoardingGate() + "\t\t\t\t\t|.\n" +
-                    "    |  BD TIME:" + hour + ":" + minute + "\t\t\t|.\n" +
-                    "    |  DEST:" + destination + destSpaces + "|.\n" +
+                    "    |  DATE: " + dayOfMonth + " " + month + dateSpaces + "|.\n" +
+                    "    |  FLIGHT: " + flight.getFlightId() + "           |.\n" +
+                    "    |  NAME: " + firstName + " " + lastName + nameSpaces + "|.\n" +
+                    "    |  SEAT: " + seatNo + "                |.\n" +
+                    "    |  GATE: " + boardingGate + "                |.\n" +
+                    "    |  BD TIME: " + hour + ":" + minute + "           |.\n" +
+                    "    |  DEST: " + destination + destSpaces + "|.\n" +
                     "    |                           |.\n" +
                     "    |                           |.\n" +
                     "    |   ________________________|____\n" +
