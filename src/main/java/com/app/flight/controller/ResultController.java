@@ -23,6 +23,7 @@ public class ResultController {
 
     public Button help;
     public BoardingPass boardingPass;
+    public Button detail;
     GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
     @FXML
     private Button next;
@@ -88,6 +89,18 @@ public class ResultController {
             Stage stage = (Stage) help.getScene().getWindow();
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    public void showMap(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new NavigationMapController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 throw new RuntimeException(e);

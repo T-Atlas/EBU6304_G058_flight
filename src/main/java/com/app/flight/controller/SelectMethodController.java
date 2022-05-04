@@ -1,6 +1,8 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.app.flight.Main;
+import com.app.flight.service.external.Scanner;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -75,17 +77,20 @@ public class SelectMethodController {
                 }
             });
         } else {
-            System.out.println("Data lookup failed");
+            Scanner scanner = new Scanner();
             Platform.runLater(() -> {
                 try {
-                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();//需要修改成页面展示的controller
+                    FXMLLoader fxmlLoader = new ScanInstructionController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    ScanInstructionController scanInstructionController = fxmlLoader.getController();
+                    scanInstructionController.mediaView.setMediaPlayer(scanner.playVideo());
+                    scanner.ConsoleScanner(stage, scanInstructionController);
+                    ThreadUtil.execute(scanner);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         }
-
     }
 
     public FXMLLoader getLoader() {
