@@ -100,6 +100,8 @@ public class InputNumberController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

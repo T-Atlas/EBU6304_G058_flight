@@ -40,7 +40,7 @@ public class FinishController {
 
 
     /**
-     * The code for other pages to open finished.fxml
+     * The code for other pages to open Ffinished.fxml
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -51,6 +51,6 @@ public class FinishController {
     }
 
     public FXMLLoader getLoader() throws IOException {
-        return new FXMLLoader(Main.class.getResource("fxml/finished.fxml"));
+        return new FXMLLoader(Main.class.getResource("fxml/Finished.fxml"));
     }
 }
