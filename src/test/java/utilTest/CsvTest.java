@@ -24,8 +24,7 @@ public class CsvTest {
         passenger.setLastName("Jun");
         passenger.setTelephone("13104368848");
         passenger.setAge(22);
-        String filePath1 = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
-        //Csv.addCsv(passenger, filePath1, true);
+        Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
 
         flight = new Flight();
         flight.setFlightId("MH1234");
@@ -35,9 +34,7 @@ public class CsvTest {
         flight.setBoardingTime(LocalDateTime.of(2022, 5, 25, 11, 25));
         flight.setDepartureTime(LocalDateTime.of(2022, 5, 25, 11, 55));
         flight.setArrivalTime(LocalDateTime.of(2022, 5, 25, 14, 55));
-
-        String filePath2 = "src/main/resources/com/app/flight/data/csv/Flight.csv";
-        //Csv.addCsv(flight, filePath2, true);
+        Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
 
         Snowflake snowflake = IdUtil.getSnowflake(1, 1);
         String id = snowflake.nextIdStr();
@@ -47,12 +44,9 @@ public class CsvTest {
         reservation.setCheckedBaggageNum(0);
         reservation.setHandBaggageNum(1);
         reservation.setMealsAvailable(true);
-        reservation.setSeatLevel(Reservation.seatClass.ECONOMY_CLASS);
+        reservation.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
         reservation.setFlight(flight);
-
-        String filePath3 = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
-        Csv.addCsv(reservation, filePath3, true);
-        //Csv.deleteCsv(reservation, filePath, false);
+        Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, true);
     }
 
     @Test
