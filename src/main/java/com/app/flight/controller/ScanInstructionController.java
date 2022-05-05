@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
@@ -21,6 +22,7 @@ import java.io.IOException;
 public class ScanInstructionController {
     @FXML
     public MediaView mediaView;
+    public Button help;
 
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
@@ -52,6 +54,17 @@ public class ScanInstructionController {
     }
 
     public void helpClick(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new HelpController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 

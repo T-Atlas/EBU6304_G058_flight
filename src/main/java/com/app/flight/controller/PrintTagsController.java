@@ -33,8 +33,8 @@ public class PrintTagsController implements Runnable {
     private int percent;
 
     /**
-     * The code for button "next" in printTags.fxml
-     * When click the button, change to finished.fxml
+     * The code for button "next" in PrintTags.fxml
+     * When click the button, change to Finished.fxml
      */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -49,7 +49,7 @@ public class PrintTagsController implements Runnable {
     }
 
     /**
-     * The code for other pages to open printTags.fxml
+     * The code for other pages to open PrintTags.fxml
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -60,7 +60,7 @@ public class PrintTagsController implements Runnable {
     }
 
     public FXMLLoader getLoader() {
-        return new FXMLLoader(Main.class.getResource("fxml/printTags.fxml"));
+        return new FXMLLoader(Main.class.getResource("fxml/PrintTags.fxml"));
     }
 
     /**
@@ -115,6 +115,8 @@ public class PrintTagsController implements Runnable {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
