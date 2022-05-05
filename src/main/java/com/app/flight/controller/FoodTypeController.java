@@ -78,7 +78,7 @@ public class FoodTypeController {
                     FXMLLoader fxmlLoader = new ResultController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     ResultController resultController = fxmlLoader.getController();
-                    resultController.showBoardingPass();
+                    resultController.showBoardingPass(true);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

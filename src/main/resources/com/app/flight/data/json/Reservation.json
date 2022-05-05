@@ -1,48 +1,48 @@
 [
   {
-    "reservationId": "1517539047050973184",
-    "passenger": {
-      "passengerId": "123456",
-      "firstName": "Jun",
-      "lastName": "Test",
-      "age": 22,
-      "telephone": "13104368848"
-    },
-    "flight": {
-      "flightId": "MH8633",
-      "departure": "Beijing",
-      "destination": "Hainan",
-      "boardingGate": "B10",
-      "boardingTime": "2022-05-11T18:25:00",
-      "departureTime": "2022-05-11T18:55:00",
-      "arrivalTime": "2022-05-11T20:55:00"
-    },
-    "seatLevel": "FIRST_CLASS",
-    "mealsAvailable": true,
-    "handBaggageNum": 0,
-    "checkedBaggageNum": 1
+	  "reservationId": "1517539047050973184",
+	  "passenger": {
+		  "passengerId": "123456",
+		  "firstName": "Jun",
+		  "lastName": "Test",
+		  "age": 22,
+		  "telephone": "13104368848"
+	  },
+	  "flight": {
+		  "flightId": "MH8633",
+		  "departure": "Beijing",
+		  "destination": "Hainan",
+		  "boardingGate": "B8",
+		  "boardingTime": "2022-09-11T07:05:00",
+		  "departureTime": "2022-05-11T09:55:00",
+		  "arrivalTime": "2022-05-11T12:55:00"
+	  },
+	  "seatLevel": "FIRST_CLASS",
+	  "mealsAvailable": true,
+	  "handBaggageNum": 0,
+	  "checkedBaggageNum": 1
   },
-  {
-    "reservationId": "1517540042405449728",
-    "passenger": {
-      "passengerId": "123456",
-      "firstName": "Jun",
-      "lastName": "Test",
-      "age": 22,
-      "telephone": "13104368848"
-    },
-    "flight": {
-      "flightId": "MH1234",
-      "departure": "Beijing",
-      "destination": "Shanghai",
-      "boardingGate": "C10",
-      "boardingTime": "2022-05-25T11:25:00",
-      "departureTime": "2022-05-25T11:55:00",
-      "arrivalTime": "2022-05-25T16:55:00"
-    },
-    "seatLevel": "ECONOMY_CLASS",
-    "mealsAvailable": true,
-    "handBaggageNum": 1,
-    "checkedBaggageNum": 0
-  }
+	{
+		"reservationId": "1517540042405449728",
+		"passenger": {
+			"passengerId": "123456",
+			"firstName": "Jun",
+			"lastName": "Test",
+			"age": 22,
+			"telephone": "13104368848"
+		},
+		"flight": {
+			"flightId": "MH1234",
+			"departure": "Beijing",
+			"destination": "Shanghai",
+			"boardingGate": "C10",
+			"boardingTime": "2022-05-25T11:25:00",
+			"departureTime": "2022-05-25T11:55:00",
+			"arrivalTime": "2022-05-25T16:55:00"
+		},
+		"seatLevel": "ECONOMY_CLASS",
+		"mealsAvailable": true,
+		"handBaggageNum": 1,
+		"checkedBaggageNum": 0
+	}
 ]

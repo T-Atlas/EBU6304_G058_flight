@@ -21,7 +21,7 @@ import java.time.Month;
  * @author SongBo
  */
 public class Printer {
-    public static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
+    private static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
 
     private MediaPlayer sound() {
         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
@@ -32,6 +32,7 @@ public class Printer {
         return mediaPlayer;
     }
 
+
     public static void printBoardingPass(String jsonFilePath, String boardingPassFile) {
         File jsonFile = new File(jsonFilePath);
         String jsonData = Json.extractJsonData(jsonFile);
@@ -39,30 +40,53 @@ public class Printer {
         Flight flight = boardingPass.getFlight();
         Passenger passenger = boardingPass.getPassenger();
         LocalDateTime boardingTime = flight.getBoardingTime();
+        String firstName = passenger.getFirstName();
+        String lastName = passenger.getLastName();
+        String seatNo = boardingPass.getSeatNo();
+        if (seatNo.length() == 2) {
+            seatNo = seatNo + " ";
+        }
+        String boardingGate = flight.getBoardingGate();
+        if (boardingGate.length() == 2) {
+            boardingGate = boardingGate + " ";
+        }
         int dayOfMonth = boardingTime.getDayOfMonth();
         Month month = boardingTime.getMonth();
-        int hour = boardingTime.getHour();
-        int minute = boardingTime.getMinute();
+        String hour = String.valueOf(boardingTime.getHour());
+        if (hour.length() == 1) {
+            hour = "0" + hour;
+        }
+        String minute = String.valueOf(boardingTime.getMinute());
+        if (minute.length() == 1) {
+            minute = "0" + minute;
+        }
+        String destination = flight.getDestination();
+        StringBuilder dateSpaces = new StringBuilder();
+        dateSpaces.append(" ".repeat(18 - String.valueOf(dayOfMonth).length() - month.name().length()));
+        StringBuilder nameSpaces = new StringBuilder();
+        nameSpaces.append(" ".repeat(Math.max(0, 18 - firstName.length() - lastName.length())));
+        StringBuilder destSpaces = new StringBuilder();
+        destSpaces.append(" ".repeat(Math.max(0, 19 - destination.length())));
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream(boardingPassFile)));
-            out.write("   ________BOARDING_PASS_________\n" +
-                    " / \\                             \\.\n" +
-                    "|   |                            |.\n" +
-                    " \\__|                            |.\n" +
-                    "    |  DATE:" + dayOfMonth + month + "                |.\n" +
-                    "    |  FLIGHT:" + flight.getFlightId() + "             |.\n" +
-                    "    |  NAME:" + passenger.getFirstName() + " " + passenger.getLastName() + "             |.\n" +
-                    "    |  SEAT:" + boardingPass.getSeatNo() + "                   |.\n" +
-                    "    |  GATE:" + flight.getBoardingGate() + "                  |.\n" +
-                    "    |  BD TIME:" + hour + ":" + minute + "             |.\n" +
-                    "    |  DEST:" + flight.getDestination() + "               |.\n" +
-                    "    |                            |.\n" +
-                    "    |                            |.\n" +
-                    "    |   _________________________|___\n" +
+            out.write("   ________BOARDING_PASS________\n" +
+                    " / \\                            \\.\n" +
+                    "|   |                           |.\n" +
+                    " \\__|                           |.\n" +
+                    "    |  DATE: " + dayOfMonth + " " + month + dateSpaces + "|.\n" +
+                    "    |  FLIGHT: " + flight.getFlightId() + "           |.\n" +
+                    "    |  NAME: " + firstName + " " + lastName + nameSpaces + "|.\n" +
+                    "    |  SEAT: " + seatNo + "                |.\n" +
+                    "    |  GATE: " + boardingGate + "                |.\n" +
+                    "    |  BD TIME: " + hour + ":" + minute + "           |.\n" +
+                    "    |  DEST: " + destination + destSpaces + "|.\n" +
+                    "    |                           |.\n" +
+                    "    |                           |.\n" +
+                    "    |   ________________________|____\n" +
                     "    |  /                            /.\n" +
-                    "    \\_/group58______________________/.");
+                    "    \\_/Group58_____________________/.");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
