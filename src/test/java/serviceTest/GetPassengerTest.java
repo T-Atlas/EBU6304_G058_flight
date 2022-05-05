@@ -2,7 +2,6 @@ package serviceTest;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONWriter;
-
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.service.impl.GetPassengerImpl;

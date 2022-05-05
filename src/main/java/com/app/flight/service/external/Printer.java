@@ -23,15 +23,6 @@ import java.time.Month;
 public class Printer {
     public static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
 
-    private MediaPlayer sound() {
-        String path = "src/main/resources/com/app/flight/audio/printer.mp3";
-        Media sound = new Media(new File(path).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setVolume(0.5);
-        mediaPlayer.play();
-        return mediaPlayer;
-    }
-
     public static void printBoardingPass(String jsonFilePath, String boardingPassFile) {
         File jsonFile = new File(jsonFilePath);
         String jsonData = Json.extractJsonData(jsonFile);
@@ -73,6 +64,15 @@ public class Printer {
                 e.printStackTrace();
             }
         }
+    }
+
+    private MediaPlayer sound() {
+        String path = "src/main/resources/com/app/flight/audio/printer.mp3";
+        Media sound = new Media(new File(path).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setVolume(0.5);
+        mediaPlayer.play();
+        return mediaPlayer;
     }
 
     public Boolean print(ProgressBar progressBar, Label percentage) {

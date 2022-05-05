@@ -23,6 +23,7 @@ public class ScheduleTimer implements Schedule {
 
     static Label timerLabel;
     static ProgressBar timerProgressBar;
+    static private int seconds;
 
     public static int getSeconds() {
         return seconds;
@@ -31,8 +32,6 @@ public class ScheduleTimer implements Schedule {
     public static void setSeconds(int seconds) {
         ScheduleTimer.seconds = seconds;
     }
-
-    static private int seconds;
 
     private static void init() {
         timerProgressBar = new ProgressBar();

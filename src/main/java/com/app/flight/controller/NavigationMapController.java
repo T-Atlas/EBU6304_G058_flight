@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NavigationMapController {
-    GetNavigationPicture navigationPicture = new NavigationPictureImpl();
     public ImageView map;
     public Button back;
+    GetNavigationPicture navigationPicture = new NavigationPictureImpl();
 
     public void setMap(String gateName) {
         map.setImage(navigationPicture.getNavigationPicture(gateName));
