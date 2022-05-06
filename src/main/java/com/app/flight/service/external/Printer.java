@@ -2,9 +2,12 @@ package com.app.flight.service.external;
 
 import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONPath;
+import com.alibaba.fastjson2.JSONReader;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
+import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
@@ -15,6 +18,7 @@ import javafx.scene.media.MediaPlayer;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.ArrayList;
 
 /**
  * @author LianJunhong
@@ -22,10 +26,11 @@ import java.time.Month;
  */
 public class Printer {
     private static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
+    private static final String TAG_TXT_PATH = "src/main/resources/com/app/flight/data/printer/Tag.txt";
 
-    public static void printBoardingPass(String jsonFilePath, String boardingPassFile) {
-        File jsonFile = new File(jsonFilePath);
-        String jsonData = Json.extractJsonData(jsonFile);
+
+    public static void printBoardingPass(String jsonFilePath, String boardingPassFilePath) {
+        String jsonData = Json.extractJsonData(jsonFilePath);
         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
         Flight flight = boardingPass.getFlight();
         Passenger passenger = boardingPass.getPassenger();
@@ -60,7 +65,7 @@ public class Printer {
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(boardingPassFile)));
+                    new FileOutputStream(boardingPassFilePath)));
             out.write("   ________BOARDING_PASS________\n" +
                     " / \\                            \\.\n" +
                     "|   |                           |.\n" +
@@ -89,6 +94,63 @@ public class Printer {
         }
     }
 
+    public static void printTag(String jsonFilePath, String tagFilePath) {
+
+        String jsonData = Json.extractJsonData(jsonFilePath);
+        JSONPath passengerPath = JSONPath.of("$.passengerId");
+        JSONPath flightPath = JSONPath.of("$.flightId");
+        String flightId = (String) flightPath.extract(JSONReader.of(jsonData));
+        String passengerId = (String) passengerPath.extract(JSONReader.of(jsonData));
+        ArrayList<String[]> resCsvData = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
+        System.out.println(flightId);
+        System.out.println(passengerId);
+        System.out.println(resCsvData);
+        String[] reservation = new String[6];
+        for (String[] resStr : resCsvData) {
+            if (resStr[1].equals(passengerId) && resStr[2].equals(flightId)) {
+                reservation = resStr.clone();
+            }
+        }
+        if (!reservation[5].equals("0")) {
+            ArrayList<String[]> boardingPassData = Csv.readCsv(Csv.BOARDING_PASS_CSV_PATH);
+            int tagNo = 0;
+            for (String[] boardingPassStr : boardingPassData) {
+                if (boardingPassStr[1].equals(flightId)) {
+                    tagNo++;
+                }
+            }
+            BufferedWriter out = null;
+            try {
+                out = new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream(tagFilePath)));
+                out.write("   _____________TAG_____________\n" +
+                        " / \\                            \\.\n" +
+                        "|   |                           |.\n" +
+                        " \\__|                           |.\n" +
+                        "    |                           |.\n" +
+                        "    |  NO." + tagNo + "                  |.\n" +
+                        "    |  HAND BAGGAGE: " + reservation[5] + "               |.\n" +
+                        "    |                           |.\n" +
+                        "    |   ________________________|____\n" +
+                        "    |  /                            /.\n" +
+                        "    \\_/Group58_____________________/.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    assert out != null;
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);
+    }
+
     private MediaPlayer sound() {
         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
         Media sound = new Media(new File(path).toURI().toString());
@@ -99,10 +161,11 @@ public class Printer {
     }
 
     public Boolean print(ProgressBar progressBar, Label percentage) {
-        int percent = 0;
+        int percent;
         ThreadUtil.sleep(50);
         MediaPlayer mediaPlayer = sound();
         printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
+        printTag(Json.RESERVATION_JSON_PATH, TAG_TXT_PATH);
         for (int i = 0; i <= 100; i++) {
             percent = i;
             progressBar.setProgress(percent / 100.0);

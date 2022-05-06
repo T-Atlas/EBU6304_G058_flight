@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @date 2022.4.23
  */
 public interface GetReservation {
+
     /**
      * Find information about passenger's scheduled flight
      *

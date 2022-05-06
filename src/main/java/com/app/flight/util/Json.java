@@ -3,12 +3,11 @@ package com.app.flight.util;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONWriter;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
 /**
  * @author SongBo
@@ -36,10 +35,10 @@ public class Json {
         }
     }
 
-    public static String extractJsonData(File file) {
+    public static String extractJsonData(String jsonFilePath) {
         String jsonString = null;
         try {
-            jsonString = new String(Files.readAllBytes(Paths.get(file.getPath())));
+            jsonString = new String(Files.readAllBytes(Path.of(jsonFilePath)));
         } catch (IOException e) {
             e.printStackTrace();
         }

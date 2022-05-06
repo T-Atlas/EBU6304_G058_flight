@@ -1,5 +1,6 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
@@ -9,9 +10,11 @@ import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @author Jia Boran
+ * @author JiaBoran
+ * @author SongBo
  * @version 1.1
  * @date 2022.4.11
  */
@@ -54,6 +57,16 @@ public class GetReservationImpl implements GetReservation {
             return reservations;
         } else {
             System.out.println("reservation数据查找失败");
+            return null;
+        }
+    }
+
+    public static ArrayList<Reservation> lookupReservations() {
+        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
+        if (reservationStr != null) {
+            List<Reservation> reservations = JSON.parseArray(reservationStr, Reservation.class);
+            return (ArrayList<Reservation>) reservations;
+        } else {
             return null;
         }
     }

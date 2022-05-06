@@ -1,5 +1,6 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Flight;
 import com.app.flight.service.GetFlight;
 import com.app.flight.util.Csv;
@@ -50,6 +51,15 @@ public class GetFlightImpl implements GetFlight {
             return flight;
         } else {
             System.out.println("flight数据查找失败");
+            return null;
+        }
+    }
+
+    public static Flight lookupFlight() {
+        String flightStr = Json.extractJsonData(Json.FLIGHT_JSON_PATH);
+        if (flightStr != null) {
+            return JSON.parseObject(flightStr, Flight.class);
+        } else {
             return null;
         }
     }
