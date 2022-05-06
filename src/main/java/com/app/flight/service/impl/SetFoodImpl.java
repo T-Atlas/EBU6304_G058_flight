@@ -1,5 +1,6 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Food;
 import com.app.flight.service.SetFood;
 import com.app.flight.util.Csv;
@@ -26,5 +27,14 @@ public class SetFoodImpl implements SetFood {
             }
         }
         System.out.println("food数据查找失败");
+    }
+
+    public static Food lookupFood() {
+        String foodStr = Json.extractJsonData(Json.FOOD_JSON_PATH);
+        if (foodStr != null) {
+            return JSON.parseObject(foodStr, Food.class);
+        } else {
+            return null;
+        }
     }
 }
