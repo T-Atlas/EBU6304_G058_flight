@@ -50,6 +50,5 @@ public class GetBoardingPassImpl implements GetBoardingPass {
         } else {
             return null;
         }
-
     }
 }

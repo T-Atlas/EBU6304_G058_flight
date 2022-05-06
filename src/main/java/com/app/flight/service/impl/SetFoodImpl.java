@@ -7,9 +7,6 @@ import com.app.flight.util.Json;
 
 import java.util.ArrayList;
 
-/**
- * @author 贾博然
- */
 public class SetFoodImpl implements SetFood {
     @Override
     public void setFood(Food.foodType foodName) {
