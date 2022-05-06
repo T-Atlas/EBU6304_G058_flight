@@ -46,7 +46,7 @@ public class RetrieveController {
     @FXML
     private TableView<Reservation> tableView;
 
-    private Reservation selectedRow;
+    private Reservation preSelectedRow;
 
     public void showRetrieve(Passenger p) {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
@@ -167,15 +167,16 @@ public class RetrieveController {
     }
 
     public void mouseClick(MouseEvent mouseEvent) {
-        if (tableView.getSelectionModel().getSelectedItem() != null && tableView.getSelectionModel().getSelectedItem() != selectedRow) {
-            selectedRow = tableView.getSelectionModel().getSelectedItem();
-            getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+        Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
+        if (selectedRow != null) {
+            if (selectedRow != preSelectedRow) {
+                getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+            }
             next.setDisable(false);
         } else {
-            selectedRow = tableView.getSelectionModel().getSelectedItem();
             next.setDisable(true);
         }
-
+        preSelectedRow = selectedRow;
     }
 
     @FXML

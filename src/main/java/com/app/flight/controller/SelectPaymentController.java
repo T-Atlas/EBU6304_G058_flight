@@ -44,7 +44,6 @@ public class SelectPaymentController {
         String payment = method.getSelectedToggle().getUserData().toString();
         if (payment != null) {
             next.setDisable(false);
-            System.out.println(payment);
         }
         return payment;
     }
