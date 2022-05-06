@@ -2,8 +2,6 @@ package com.app.flight.service.external;
 
 import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONPath;
-import com.alibaba.fastjson2.JSONReader;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
@@ -95,22 +93,18 @@ public class Printer {
     }
 
     public static void printTag(String jsonFilePath, String tagFilePath) {
-
         String jsonData = Json.extractJsonData(jsonFilePath);
-        JSONPath passengerPath = JSONPath.of("$.passengerId");
-        JSONPath flightPath = JSONPath.of("$.flightId");
-        String flightId = (String) flightPath.extract(JSONReader.of(jsonData));
-        String passengerId = (String) passengerPath.extract(JSONReader.of(jsonData));
+        BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
+        String flightId = boardingPass.getFlight().getFlightId();
+        String passengerId = boardingPass.getPassenger().getPassengerId();
         ArrayList<String[]> resCsvData = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
-        System.out.println(flightId);
-        System.out.println(passengerId);
-        System.out.println(resCsvData);
         String[] reservation = new String[6];
         for (String[] resStr : resCsvData) {
             if (resStr[1].equals(passengerId) && resStr[2].equals(flightId)) {
                 reservation = resStr.clone();
             }
         }
+        BufferedWriter out;
         if (!reservation[5].equals("0")) {
             ArrayList<String[]> boardingPassData = Csv.readCsv(Csv.BOARDING_PASS_CSV_PATH);
             int tagNo = 0;
@@ -119,7 +113,8 @@ public class Printer {
                     tagNo++;
                 }
             }
-            BufferedWriter out = null;
+            StringBuilder no = new StringBuilder(String.valueOf(tagNo));
+            no.append(" ".repeat(Math.max(0, 3 - String.valueOf(tagNo).length())));
             try {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath)));
@@ -127,22 +122,24 @@ public class Printer {
                         " / \\                            \\.\n" +
                         "|   |                           |.\n" +
                         " \\__|                           |.\n" +
-                        "    |                           |.\n" +
-                        "    |  NO." + tagNo + "                  |.\n" +
-                        "    |  HAND BAGGAGE: " + reservation[5] + "               |.\n" +
+                        "    |  NO." + no + "                   |.\n" +
+                        "    |  HAND BAGGAGE: " + reservation[5] + "          |.\n" +
                         "    |                           |.\n" +
                         "    |   ________________________|____\n" +
                         "    |  /                            /.\n" +
                         "    \\_/Group58_____________________/.");
-            } catch (Exception e) {
+                out.close();
+            } catch (IOException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    assert out != null;
-                    out.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            }
+        } else {
+            try {
+                out = new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream(tagFilePath)));
+                out.write("You don't have hand baggage");
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -150,7 +147,6 @@ public class Printer {
     public static void main(String[] args) {
         printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);
     }
-
     private MediaPlayer sound() {
         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
         Media sound = new Media(new File(path).toURI().toString());
@@ -165,7 +161,7 @@ public class Printer {
         ThreadUtil.sleep(50);
         MediaPlayer mediaPlayer = sound();
         printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
-        printTag(Json.RESERVATION_JSON_PATH, TAG_TXT_PATH);
+        printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);
         for (int i = 0; i <= 100; i++) {
             percent = i;
             progressBar.setProgress(percent / 100.0);
