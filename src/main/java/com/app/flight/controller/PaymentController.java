@@ -1,5 +1,6 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
@@ -23,7 +24,7 @@ import java.io.IOException;
 public class PaymentController {
 
     @FXML
-    public Button next;
+    public Button finish;
     public Button help;
     @FXML
     private ImageView code;
@@ -76,7 +77,7 @@ public class PaymentController {
             whetherPayment = true;
         }
         if (whetherPayment) {
-            Stage stage = (Stage) next.getScene().getWindow();
+            Stage stage = (Stage) finish.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Pay successfully!");
             alert.showAndWait();
@@ -85,8 +86,7 @@ public class PaymentController {
                     FXMLLoader fxmlLoader = new PrintTagsController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     PrintTagsController printTagsController = fxmlLoader.getController();
-                    Thread thread = new Thread(printTagsController);
-                    thread.start();
+                    ThreadUtil.execute(printTagsController);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
