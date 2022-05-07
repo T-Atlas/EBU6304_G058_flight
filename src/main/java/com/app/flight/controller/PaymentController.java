@@ -25,13 +25,13 @@ public class PaymentController {
     @FXML
     public Button next;
     public Button help;
+    public Boolean whetherPayment = false;
     @FXML
     private ImageView code;
     @FXML
     private TextField textField;
     @FXML
     private Button clean;
-    public Boolean whetherPayment = false;
     @FXML
     private Label annotation;
     @FXML

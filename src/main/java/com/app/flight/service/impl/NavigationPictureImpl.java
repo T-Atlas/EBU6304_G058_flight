@@ -6,6 +6,11 @@ import javafx.scene.image.Image;
 
 import java.io.File;
 
+/**
+ * @author LianJunhong
+ * @version 1.0
+ * @date 2022.5.5
+ */
 public class NavigationPictureImpl implements GetNavigationPicture {
     private final String PATH = "src/main/resources/com/app/flight/image/maps/";
 

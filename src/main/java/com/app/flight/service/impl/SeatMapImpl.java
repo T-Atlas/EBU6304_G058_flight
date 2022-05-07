@@ -22,6 +22,21 @@ import java.util.Map;
  * @date 2022.4.22
  */
 public class SeatMapImpl implements SetSeatMap, GetSeatMap {
+    public static Map<Integer, String> lookupSeat() {
+        String seatStr = Json.extractJsonData(Json.SEAT_JSON_PATH);
+        if (seatStr != null) {
+            JSONPath rowPath = JSONPath.of("$.row");
+            JSONPath colPath = JSONPath.of("$.column");
+            int row = (int) rowPath.extract(JSONReader.of(seatStr));
+            String col = (String) colPath.extract(JSONReader.of(seatStr));
+            Map<Integer, String> seatMap = new HashMap<>();
+            seatMap.put(row, col);
+            return seatMap;
+        } else {
+            return null;
+        }
+    }
+
     @Override
     public void updateSeatMap(String flightId, String column, int row) {
         Map<Integer, Map<String, Boolean>> seatMap = lookupSeatMap(flightId);
@@ -60,20 +75,5 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
             j++;
         }
         return seatMap;
-    }
-
-    public static Map<Integer, String> lookupSeat() {
-        String seatStr = Json.extractJsonData(Json.SEAT_JSON_PATH);
-        if (seatStr != null) {
-            JSONPath rowPath = JSONPath.of("$.row");
-            JSONPath colPath = JSONPath.of("$.column");
-            int row = (int) rowPath.extract(JSONReader.of(seatStr));
-            String col = (String) colPath.extract(JSONReader.of(seatStr));
-            Map<Integer, String> seatMap = new HashMap<>();
-            seatMap.put(row, col);
-            return seatMap;
-        } else {
-            return null;
-        }
     }
 }

@@ -9,9 +9,18 @@ import com.app.flight.util.Json;
 import java.util.ArrayList;
 
 /**
- * @author 贾博然
+ * @author JiaBoran
  */
 public class SetFoodImpl implements SetFood {
+    public static Food lookupFood() {
+        String foodStr = Json.extractJsonData(Json.FOOD_JSON_PATH);
+        if (foodStr != null) {
+            return JSON.parseObject(foodStr, Food.class);
+        } else {
+            return null;
+        }
+    }
+
     @Override
     public void setFood(Food.foodType foodName) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.FOOD_CSV_PATH);
@@ -27,14 +36,5 @@ public class SetFoodImpl implements SetFood {
             }
         }
         System.out.println("food数据查找失败");
-    }
-
-    public static Food lookupFood() {
-        String foodStr = Json.extractJsonData(Json.FOOD_JSON_PATH);
-        if (foodStr != null) {
-            return JSON.parseObject(foodStr, Food.class);
-        } else {
-            return null;
-        }
     }
 }
