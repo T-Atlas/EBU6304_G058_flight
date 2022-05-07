@@ -46,7 +46,6 @@ public class PaymentController {
         clean.setVisible(false);
 
         File file = new File(Json.FOOD_JSON_PATH);
-        //TODO:Check here
         String foodString = Json.extractJsonData(String.valueOf(file));
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
@@ -110,6 +109,8 @@ public class PaymentController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

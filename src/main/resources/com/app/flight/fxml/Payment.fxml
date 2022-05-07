@@ -121,7 +121,7 @@
                 </Button>
                 <Button fx:id="finish" layoutX="1020.0" layoutY="33.0" mnemonicParsing="false" onAction="#nextClick"
                         prefHeight="64.0" prefWidth="179.0"
-                        style="-fx-background-color: #000080; -fx-font-weight: bold;" text="Finish" textFill="WHITE">
+                        style="-fx-background-color: #000080; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="25.0"/>
                     </font>

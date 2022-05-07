@@ -3,7 +3,7 @@
 
 EBU6304 – Software Engineering Group Project
 
-**Last Modified Date: 2022-04-24.**
+**Last Modified Date: 2022-05-08.**
 
 ## Table of Contents
 
@@ -125,7 +125,7 @@ Coming soon…
 
 ## Iteration logs
 
-### 4.0 Beta (May 8, 2022) Latest version
+### 4.0 Beta (May 8, 2022) The Latest version
 
 - Several bugs fixed and new features added in this release.
 - Separated printing function and created scanning function.
@@ -137,7 +137,7 @@ Coming soon…
 - Improved Scanner to ues Runnable and Thread pool.
 - Refactor SeatMapImpl with GetSeatMapImpl and SetSeatMapImpl.
 
-### 3.5 Beta (May 1, 2022)
+### 3.5 RELEASE (May 1, 2022)
 
 - Several bugs fixed and new features added in this release.
 - Fixed the bug of showing the retrieve information and beautify the page.

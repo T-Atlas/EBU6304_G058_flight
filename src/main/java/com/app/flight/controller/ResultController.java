@@ -72,7 +72,6 @@ public class ResultController {
             try {
                 FXMLLoader fxmlLoader = new SelectPaymentController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                SelectPaymentController selectPaymentController = fxmlLoader.getController();
             } catch (IOException e) {
                 e.printStackTrace();
             }
