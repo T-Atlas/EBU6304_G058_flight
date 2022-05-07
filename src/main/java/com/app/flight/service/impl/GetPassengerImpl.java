@@ -15,6 +15,15 @@ import java.util.ArrayList;
  */
 public class GetPassengerImpl implements GetPassenger {
 
+    public static Passenger lookupPassenger() {
+        String passengerStr = Json.extractJsonData(Json.PASSENGER_JSON_PATH);
+        if (passengerStr != null) {
+            return JSON.parseObject(passengerStr, Passenger.class);
+        } else {
+            return null;
+        }
+    }
+
     @Override
     public Passenger lookupPassengerById(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.PASSENGER_CSV_PATH);
@@ -47,14 +56,5 @@ public class GetPassengerImpl implements GetPassenger {
         }
         System.out.println("passenger数据查找失败");
         return null;
-    }
-
-    public static Passenger lookupPassenger() {
-        String passengerStr = Json.extractJsonData(Json.PASSENGER_JSON_PATH);
-        if (passengerStr != null) {
-            return JSON.parseObject(passengerStr, Passenger.class);
-        } else {
-            return null;
-        }
     }
 }

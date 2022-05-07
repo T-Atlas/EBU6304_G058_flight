@@ -25,13 +25,13 @@ public class PaymentController {
     @FXML
     public Button next;
     public Button help;
+    public Boolean whetherPayment = false;
     @FXML
     private ImageView code;
     @FXML
     private TextField textField;
     @FXML
     private Button clean;
-    public Boolean whetherPayment = false;
     @FXML
     private Label annotation;
     @FXML
@@ -45,7 +45,8 @@ public class PaymentController {
         clean.setVisible(false);
 
         File file = new File(Json.FOOD_JSON_PATH);
-        String foodString = Json.extractJsonData(file);
+        //TODO:Check here
+        String foodString = Json.extractJsonData(String.valueOf(file));
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
 

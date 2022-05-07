@@ -19,6 +19,16 @@ import java.util.List;
  * @date 2022.4.11
  */
 public class GetReservationImpl implements GetReservation {
+    public static ArrayList<Reservation> lookupReservations() {
+        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
+        if (reservationStr != null) {
+            List<Reservation> reservations = JSON.parseArray(reservationStr, Reservation.class);
+            return (ArrayList<Reservation>) reservations;
+        } else {
+            return null;
+        }
+    }
+
     @Override
     public ArrayList<Reservation> lookupReservations(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
@@ -57,16 +67,6 @@ public class GetReservationImpl implements GetReservation {
             return reservations;
         } else {
             System.out.println("reservation数据查找失败");
-            return null;
-        }
-    }
-
-    public static ArrayList<Reservation> lookupReservations() {
-        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
-        if (reservationStr != null) {
-            List<Reservation> reservations = JSON.parseArray(reservationStr, Reservation.class);
-            return (ArrayList<Reservation>) reservations;
-        } else {
             return null;
         }
     }
