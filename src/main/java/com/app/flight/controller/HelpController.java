@@ -87,6 +87,10 @@ public class HelpController {
                         fxmlLoader = new SelectMethodController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
+                    case "SelectPaymentController" -> {
+                        fxmlLoader = new SelectPaymentController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    }
                     case "SelectSeatController" -> {
                         fxmlLoader = new SelectSeatController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
@@ -102,9 +106,11 @@ public class HelpController {
                         fxmlLoader = new InputNumberController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
-                    case "SelectPaymentController" -> {
-                        fxmlLoader = new SelectPaymentController().getLoader();
+                    case "PaymentController" -> {
+                        fxmlLoader = new PaymentController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        PaymentController paymentController = fxmlLoader.getController();
+                        //paymentController.pay(check());
                     }
                     case "ScanInstructionController" -> {
                         fxmlLoader = new ScanInstructionController().getLoader();
@@ -130,12 +136,11 @@ public class HelpController {
                     case "PrintTagsController" -> {
                         fxmlLoader = new PrintTagsController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                    }
-                    case "PaymentController" -> {
-                        fxmlLoader = new PaymentController().getLoader();
-                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                        PaymentController paymentController = fxmlLoader.getController();
-                        //paymentController.pay(check());
+                        PrintTagsController printTagsController = fxmlLoader.getController();
+                        printTagsController.progressBar.setProgress(1);
+                        printTagsController.percentage.setText("Success!");
+                        printTagsController.next.setDisable(false);
+                        printTagsController.help.setVisible(true);
                     }
                     default -> {
                         fxmlLoader = new ComingSoonController().getLoader();
