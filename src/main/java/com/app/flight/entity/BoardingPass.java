@@ -24,7 +24,7 @@ public class BoardingPass {
     private Flight flight;
 
     /**
-     * Seat number with a total of three characters.
+     * SeatUtil number with a total of three characters.
      * The first two characters are numbers and the last character is letters.
      */
     @JSONField(ordinal = 3)

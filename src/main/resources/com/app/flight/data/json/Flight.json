@@ -1,9 +1,9 @@
 {
-  "flightId": "CH4993",
+  "flightId": "MH1234",
   "departure": "Beijing",
-  "destination": "New York",
-  "boardingGate": "A01",
-  "boardingTime": "2022-06-01T12:25:00",
-  "departureTime": "2022-06-01T12:55:00",
-  "arrivalTime": "2022-06-01T15:30:00"
+  "destination": "Shanghai",
+  "boardingGate": "C10",
+  "boardingTime": "2022-05-25T11:25:00",
+  "departureTime": "2022-05-25T11:55:00",
+  "arrivalTime": "2022-05-25T16:55:00"
 }

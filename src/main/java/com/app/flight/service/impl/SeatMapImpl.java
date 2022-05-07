@@ -6,7 +6,7 @@ import com.app.flight.service.GetSeatMap;
 import com.app.flight.service.SetSeatMap;
 import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
-import com.app.flight.util.Seat;
+import com.app.flight.util.SeatUtil;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
         stringBooleanMap.replace(column, status);
         seatMap.replace(row, stringBooleanMap);
         String[] columnString = new String[]{"A", "B", "C", "D", "E", "F"};
-        Seat.writeSeatMap(Seat.generateSeatFilePath(flightId), seatMap, columnString);
+        SeatUtil.writeSeatMap(SeatUtil.generateSeatFilePath(flightId), seatMap, columnString);
 
         try (FileWriter seatJson = new FileWriter(Json.SEAT_JSON_PATH); PrintWriter out = new PrintWriter(seatJson)) {
             String seatInfo = "{\n" +
@@ -62,7 +62,7 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
 
     @Override
     public Map<Integer, Map<String, Boolean>> lookupSeatMap(String flightId) {
-        ArrayList<String[]> seatData = Csv.readCsv(Seat.generateSeatFilePath(flightId));
+        ArrayList<String[]> seatData = Csv.readCsv(SeatUtil.generateSeatFilePath(flightId));
         Map<Integer, Map<String, Boolean>> seatMap = new HashMap<>(seatData.size());
         String[] columnString = new String[]{"A", "B", "C", "D", "E", "F"};
         int j = 1;
