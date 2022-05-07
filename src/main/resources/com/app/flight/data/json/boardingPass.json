@@ -1,23 +1,23 @@
 {
   "passenger": {
-    "passengerId": "510103199810019323",
-    "firstName": "Zen",
-    "lastName": "Ding",
-    "age": 25,
-    "telephone": "15892039444"
+	  "passengerId": "510103199810019323",
+	  "firstName": "Zen",
+	  "lastName": "Ding",
+	  "age": 25,
+	  "telephone": "15892039444"
   },
-  "flight": {
-    "flightId": "CH4993",
-    "departure": "Beijing",
-    "destination": "New York",
-    "boardingGate": "A01",
-    "boardingTime": "2022-06-01T12:25:00",
-    "departureTime": "2022-06-01T12:55:00",
-    "arrivalTime": "2022-06-01T15:30:00"
-  },
-  "seatNo": "5D",
-  "food": {
-    "foodName": "STANDARD",
-    "foodPrice": 30.0
-  }
+	"flight": {
+		"flightId": "CH4993",
+		"departure": "Beijing",
+		"destination": "New York",
+		"boardingGate": "A01",
+		"boardingTime": "2022-06-01T12:25:00",
+		"departureTime": "2022-06-01T12:55:00",
+		"arrivalTime": "2022-06-01T15:30:00"
+	},
+	"seatNo": "5D",
+	"food": {
+		"foodName": "STANDARD",
+		"foodPrice": 30.0
+	}
 }
