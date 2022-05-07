@@ -7,6 +7,7 @@ import com.app.flight.service.external.Scanner;
 import com.app.flight.service.impl.GetFlightImpl;
 import com.app.flight.service.impl.GetPassengerImpl;
 import com.app.flight.service.impl.SeatMapImpl;
+import com.app.flight.util.Obj;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -105,12 +106,23 @@ public class HelpController {
                     case "InputNumberController" -> {
                         fxmlLoader = new InputNumberController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        InputNumberController inputNumberController = fxmlLoader.getController();
+                        inputNumberController.type = Obj.getSelectType();
+                        inputNumberController.next.setDisable(true);
+                        inputNumberController.number.textProperty().addListener(changeListener -> {
+                            inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);
+                        });
+                        if (inputNumberController.type.equals("id")) {
+                            inputNumberController.annotation.setText("--> Please input your ID number:");
+                        } else if (inputNumberController.type.equals("booking")) {
+                            inputNumberController.annotation.setText("--> Please input your booking number:");
+                        }
                     }
                     case "PaymentController" -> {
                         fxmlLoader = new PaymentController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                         PaymentController paymentController = fxmlLoader.getController();
-                        //paymentController.pay(check());
+                        paymentController.pay(Objects.requireNonNull(Obj.getSelectType()));
                     }
                     case "ScanInstructionController" -> {
                         fxmlLoader = new ScanInstructionController().getLoader();
