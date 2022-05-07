@@ -95,7 +95,7 @@ public class HelpController {
                         fxmlLoader = new SelectSeatController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                         String flightId = Objects.requireNonNull(GetFlightImpl.lookupFlight()).getFlightId();
-                        stage.setTitle("Please Select Your Seat");
+                        stage.setTitle("Please Select Your SeatUtil");
                         SeatMapImpl getSeatMap = new SeatMapImpl();
                         Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
                         SelectSeatController selectSeatController = fxmlLoader.getController();
