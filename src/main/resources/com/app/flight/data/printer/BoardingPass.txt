@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 25 MAY             |.
-    |  FLIGHT: MH1234           |.
-    |  NAME: Jun Test           |.
-    |  SEAT: 7A                 |.
-    |  GATE: C10                |.
-    |  BD TIME: 11:25           |.
-    |  DEST: Shanghai           |.
+    |  DATE: 1 JUNE             |.
+    |  FLIGHT: CH4993           |.
+    |  NAME: Zen Ding           |.
+    |  SEAT: 5D                 |.
+    |  GATE: A01                |.
+    |  BD TIME: 12:25           |.
+    |  DEST: New York           |.
     |                           |.
     |                           |.
     |   ________________________|____

@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
+import com.app.flight.entity.Seat;
 import com.app.flight.service.GetFlight;
 import com.app.flight.service.GetReservation;
 import com.app.flight.util.Csv;
@@ -55,7 +56,7 @@ public class GetReservationImpl implements GetReservation {
                 flight = getFlight.lookupFlight(fId);
                 reservation.setFlight(flight);
 
-                reservation.setSeatLevel(Reservation.seatClass.valueOf(reservationData[3]));
+                reservation.setSeatLevel(Seat.valueOf(reservationData[3]));
                 reservation.setMealsAvailable(Boolean.parseBoolean(reservationData[4]));
                 reservation.setHandBaggageNum(Integer.parseInt(reservationData[5]));
                 reservation.setCheckedBaggageNum(Integer.parseInt(reservationData[6]));
