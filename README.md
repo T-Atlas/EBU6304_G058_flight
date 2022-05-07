@@ -137,7 +137,7 @@ Coming soon…
 - Improved Scanner to ues Runnable and Thread pool.
 - Refactor SeatMapImpl with GetSeatMapImpl and SetSeatMapImpl.
 
-### 3.5 Beta (May 1, 2022)
+### 3.5 RELEASE (May 1, 2022)
 
 - Several bugs fixed and new features added in this release.
 - Fixed the bug of showing the retrieve information and beautify the page.

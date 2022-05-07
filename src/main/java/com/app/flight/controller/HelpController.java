@@ -60,7 +60,6 @@ public class HelpController {
     }
 
     public void backButton(ActionEvent actionEvent) {
-        //TODO:Unfinished
         Platform.runLater(() -> {
             Stage stage = (Stage) back.getScene().getWindow();
             try {
