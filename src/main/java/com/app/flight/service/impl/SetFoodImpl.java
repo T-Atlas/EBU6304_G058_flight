@@ -8,6 +8,9 @@ import com.app.flight.util.Json;
 
 import java.util.ArrayList;
 
+/**
+ * @author JiaBoran
+ */
 public class SetFoodImpl implements SetFood {
     public static Food lookupFood() {
         String foodStr = Json.extractJsonData(Json.FOOD_JSON_PATH);

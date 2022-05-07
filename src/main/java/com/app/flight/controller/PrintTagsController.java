@@ -28,7 +28,7 @@ public class PrintTagsController implements Runnable {
     @FXML
     protected Label percentage;
     @FXML
-    private Button next;
+    Button next;
 
     private int percent;
 
@@ -77,11 +77,13 @@ public class PrintTagsController implements Runnable {
     @Override
     public void run() {
         next.setDisable(true);
+        help.setVisible(false);
         Printer printer = new Printer();
         Boolean result;
         result = printer.print(progressBar, percentage);
         if (result) {
             next.setDisable(false);
+            help.setVisible(true);
         } else {
             Platform.runLater(() -> {
                 percentage.setText("Printing failed");
