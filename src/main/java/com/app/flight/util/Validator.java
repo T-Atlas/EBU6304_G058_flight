@@ -65,11 +65,11 @@ public class Validator {
         if (id == null || (id.length() != 15 && id.length() != 18))
             return false;
         final char[] cs = id.toUpperCase().toCharArray();
-        //校验位数 check bit
+        //check bit
         int power = 0;
         for (int i = 0; i < cs.length; i++) {
             if (i == cs.length - 1 && cs[i] == 'X')
-                break;//最后一位可以 是X或x
+                break;//The last digit can be X or x
             if (cs[i] < '0' || cs[i] > '9')
                 return false;
             if (i < cs.length - 1) {
@@ -77,34 +77,34 @@ public class Validator {
             }
         }
 
-        //校验区位码check zoneNum
+        //check zoneNum
         if (!zoneNum.containsKey(Integer.valueOf(id.substring(0, 2)))) {
             return false;
         }
 
-        //校验年份 check year
+        //check year
         String year = null;
         year = id.length() == 15 ? getIdCardCalendar(id) : id.substring(6, 10);
 
 
         final int iYear = Integer.parseInt(year);
         if (iYear < 1900 || iYear > Calendar.getInstance().get(Calendar.YEAR))
-            return false;//1900年的PASS，超过今年的PASS
+            return false;//pass year before 1900 and after this year
 
-        //校验月份 check month
+        //check month
         String month = id.length() == 15 ? id.substring(8, 10) : id.substring(10, 12);
         final int iMonth = Integer.parseInt(month);
         if (iMonth < 1 || iMonth > 12) {
             return false;
         }
 
-        //校验天数 check day
+        //check day
         String day = id.length() == 15 ? id.substring(10, 12) : id.substring(12, 14);
         final int iDay = Integer.parseInt(day);
         if (iDay < 1 || iDay > 31)
             return false;
 
-        //校验"校验码" check PARITY_BIT
+        //check PARITY_BIT
         if (id.length() == 15)
             return true;
         return cs[cs.length - 1] == PARITY_BIT[power % 11];
@@ -115,7 +115,7 @@ public class Validator {
      * @return year
      */
     private static String getIdCardCalendar(String id) {
-        // 获取出生年月日 Get birth year,month, day
+        //Get birth year,month, day
         String birthday = id.substring(6, 12);
         SimpleDateFormat ft = new SimpleDateFormat("yyMMdd");
         Date birthdate = null;
@@ -173,6 +173,12 @@ public class Validator {
         return false;
     }
 
+    /**
+     * Check whether the char is digit
+     *
+     * @param string string
+     * @return
+     */
     public static boolean isDigit(String string) {
         for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) < 48 || string.charAt(i) > 57) {
@@ -182,6 +188,12 @@ public class Validator {
         return true;
     }
 
+    /**
+     * Check whether the char is UpperCase
+     *
+     * @param string string
+     * @return
+     */
     public static boolean isUpperCase(String string) {
         for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) < 65 || string.charAt(i) > 90) {
