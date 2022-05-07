@@ -9,7 +9,7 @@ import com.app.flight.util.Json;
 import java.util.ArrayList;
 
 /**
- * @author 贾博然
+ * @author JiaBoran
  */
 public class SetFoodImpl implements SetFood {
     public static Food lookupFood() {
