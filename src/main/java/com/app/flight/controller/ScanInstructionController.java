@@ -23,17 +23,18 @@ public class ScanInstructionController {
     @FXML
     public MediaView mediaView;
     public Button help;
+    public Button back;
 
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
     }
 
-    public void checkIdNumber(String idNumber) {
+    public void checkIdNumber(String idNumber, Stage stage) {
         GetPassenger getPassenger = new GetPassengerImpl();
         Passenger passenger = getPassenger.lookupPassengerById(idNumber);
 
         Platform.runLater(() -> {
-            Stage stage = (Stage) mediaView.getScene().getWindow();
+            //Stage stage = (Stage) back.getScene().getWindow();
             try {
                 FXMLLoader fxmlLoader;
                 if (passenger != null) {

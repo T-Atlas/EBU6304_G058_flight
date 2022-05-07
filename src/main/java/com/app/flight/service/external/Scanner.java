@@ -14,9 +14,8 @@ import java.io.File;
 public class Scanner implements Runnable {
 
 
-    public Stage stage;
-
     public ScanInstructionController scanInstructionController;
+    public Stage stage;
 
     public MediaPlayer playVideo() {
         File file = new File("src/main/resources/com/app/flight/video/scan.mp4");
@@ -41,13 +40,12 @@ public class Scanner implements Runnable {
     @Override
     public void run() {
         java.util.Scanner consoleScanner = new java.util.Scanner(System.in);
-        String idNumber;
-        idNumber = consoleScanner.nextLine();
-        this.scanInstructionController.checkIdNumber(idNumber);
+        String idNumber = consoleScanner.nextLine();
+        this.scanInstructionController.checkIdNumber(idNumber, this.stage);
     }
 
-    public void ConsoleScanner(Stage stage, ScanInstructionController scanInstructionController) {
-        this.stage = stage;
+    public void ConsoleScanner(ScanInstructionController scanInstructionController, Stage stage) {
         this.scanInstructionController = scanInstructionController;
+        this.stage = stage;
     }
 }

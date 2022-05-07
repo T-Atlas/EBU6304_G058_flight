@@ -84,7 +84,7 @@ public class SelectMethodController {
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     ScanInstructionController scanInstructionController = fxmlLoader.getController();
                     scanInstructionController.mediaView.setMediaPlayer(scanner.playVideo());
-                    scanner.ConsoleScanner(stage, scanInstructionController);
+                    scanner.ConsoleScanner(scanInstructionController, stage);
                     ThreadUtil.execute(scanner);
                 } catch (IOException e) {
                     e.printStackTrace();

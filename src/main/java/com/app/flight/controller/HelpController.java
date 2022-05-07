@@ -1,6 +1,12 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.app.flight.Main;
+import com.app.flight.entity.Passenger;
+import com.app.flight.service.external.Scanner;
+import com.app.flight.service.impl.GetFlightImpl;
+import com.app.flight.service.impl.GetPassengerImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +17,9 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.Objects;
+
 
 /**
  * @author LianJunhong
@@ -58,37 +67,81 @@ public class HelpController {
                 switch (controllerName) {
                     case "FoodTypeController" -> {
                         fxmlLoader = new FoodTypeController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
                     case "InfoConfirmController" -> {
-                        fxmlLoader = new InfoConfirmController().getLoader();
+                        Passenger p = GetPassengerImpl.lookupPassenger();
+                        if (p != null) {
+                            fxmlLoader = new InfoConfirmController().getLoader();
+                        } else {
+                            fxmlLoader = new ComingSoonController().getLoader();
+                        }
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        if (p != null) {
+                            InfoConfirmController i = fxmlLoader.getController();
+                            i.showNum(p);
+                            i.pRetrieve = p;
+                        }
                     }
                     case "SelectMethodController" -> {
                         fxmlLoader = new SelectMethodController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
                     case "SelectSeatController" -> {
                         fxmlLoader = new SelectSeatController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        String flightId = Objects.requireNonNull(GetFlightImpl.lookupFlight()).getFlightId();
+                        stage.setTitle("Please Select Your Seat");
+                        SeatMapImpl getSeatMap = new SeatMapImpl();
+                        Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
+                        SelectSeatController selectSeatController = fxmlLoader.getController();
+                        selectSeatController.flightId = flightId;
+                        selectSeatController.showSeatMap(seatMap, selectSeatController);
                     }
                     case "InputNumberController" -> {
                         fxmlLoader = new InputNumberController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
                     case "SelectPaymentController" -> {
                         fxmlLoader = new SelectPaymentController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
                     case "ScanInstructionController" -> {
                         fxmlLoader = new ScanInstructionController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        Scanner scanner = new Scanner();
+                        ScanInstructionController scanInstructionController = fxmlLoader.getController();
+                        scanInstructionController.mediaView.setMediaPlayer(scanner.playVideo());
+                        scanner.ConsoleScanner(scanInstructionController, stage);
+                        ThreadUtil.execute(scanner);
                     }
                     case "RetrieveController" -> {
                         fxmlLoader = new RetrieveController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        RetrieveController retrieveController = fxmlLoader.getController();
+                        retrieveController.showRetrieve(Objects.requireNonNull(GetPassengerImpl.lookupPassenger()));
                     }
                     case "ResultController" -> {
                         fxmlLoader = new ResultController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        ResultController resultController = fxmlLoader.getController();
+                        resultController.showBoardingPass(false);
                     }
                     case "PrintTagsController" -> {
                         fxmlLoader = new PrintTagsController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     }
-                    default -> fxmlLoader = new ComingSoonController().getLoader();
+                    case "PaymentController" -> {
+                        fxmlLoader = new PaymentController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                        PaymentController paymentController = fxmlLoader.getController();
+                        //paymentController.pay(check());
+                    }
+                    default -> {
+                        fxmlLoader = new ComingSoonController().getLoader();
+                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    }
                 }
-                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
