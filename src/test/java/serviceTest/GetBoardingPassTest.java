@@ -6,10 +6,14 @@ import com.app.flight.service.impl.GetBoardingPassImpl;
 import org.junit.jupiter.api.Test;
 
 public class GetBoardingPassTest {
+    GetBoardingPass getBoardingPass;
+    BoardingPass boardingPass;
+
     @Test
     public void lookupBoardingPassTest() {
-        GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
-        BoardingPass boardingPass = getBoardingPass.lookupBoardingPass();
-        System.out.println(boardingPass);
+        getBoardingPass = new GetBoardingPassImpl();
+        //assertEquals(,getBoardingPass.lookupBoardingPass());
     }
 }
+
+

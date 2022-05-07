@@ -1,5 +1,6 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
@@ -23,7 +24,7 @@ import java.io.IOException;
 public class PaymentController {
 
     @FXML
-    public Button next;
+    public Button finish;
     public Button help;
     public Boolean whetherPayment = false;
     @FXML
@@ -45,7 +46,6 @@ public class PaymentController {
         clean.setVisible(false);
 
         File file = new File(Json.FOOD_JSON_PATH);
-        //TODO:Check here
         String foodString = Json.extractJsonData(String.valueOf(file));
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
@@ -77,7 +77,7 @@ public class PaymentController {
             whetherPayment = true;
         }
         if (whetherPayment) {
-            Stage stage = (Stage) next.getScene().getWindow();
+            Stage stage = (Stage) finish.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Pay successfully!");
             alert.showAndWait();
@@ -86,8 +86,7 @@ public class PaymentController {
                     FXMLLoader fxmlLoader = new PrintTagsController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     PrintTagsController printTagsController = fxmlLoader.getController();
-                    Thread thread = new Thread(printTagsController);
-                    thread.start();
+                    ThreadUtil.execute(printTagsController);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -110,6 +109,8 @@ public class PaymentController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
