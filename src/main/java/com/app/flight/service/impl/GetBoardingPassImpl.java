@@ -9,8 +9,6 @@ import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.util.Json;
 
-import java.io.File;
-
 import static com.alibaba.fastjson2.JSON.parseObject;
 
 /**
@@ -22,23 +20,19 @@ public class GetBoardingPassImpl implements GetBoardingPass {
     @Override
     public BoardingPass lookupBoardingPass() {
         BoardingPass boardingPass = new BoardingPass();
-        File passengerFile = new File(Json.PASSENGER_JSON_PATH);
-        String passengerString = Json.extractJsonData(passengerFile);
+        String passengerString = Json.extractJsonData(Json.PASSENGER_JSON_PATH);
         Passenger passenger = parseObject(passengerString, Passenger.class);
         boardingPass.setPassenger(passenger);
 
-        File flightFile = new File(Json.FLIGHT_JSON_PATH);
-        String flightString = Json.extractJsonData(flightFile);
+        String flightString = Json.extractJsonData(Json.FLIGHT_JSON_PATH);
         Flight flight = parseObject(flightString, Flight.class);
         boardingPass.setFlight(flight);
 
-        File foodFile = new File(Json.FOOD_JSON_PATH);
-        String foodString = Json.extractJsonData(foodFile);
+        String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = parseObject(foodString, Food.class);
         boardingPass.setFood(food);
 
-        File seatFile = new File(Json.SEAT_JSON_PATH);
-        String seatString = Json.extractJsonData(seatFile);
+        String seatString = Json.extractJsonData(Json.SEAT_JSON_PATH);
         JSONPath rowPath = JSONPath.of("$.row");
         JSONPath colPath = JSONPath.of("$.column");
         String row = (String) rowPath.extract(JSONReader.of(seatString));

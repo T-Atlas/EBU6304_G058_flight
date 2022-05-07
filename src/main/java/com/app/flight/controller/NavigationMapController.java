@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NavigationMapController {
-    GetNavigationPicture navigationPicture = new NavigationPictureImpl();
     public ImageView map;
     public Button back;
+    GetNavigationPicture navigationPicture = new NavigationPictureImpl();
 
     public void setMap(String gateName) {
         map.setImage(navigationPicture.getNavigationPicture(gateName));
@@ -30,7 +30,6 @@ public class NavigationMapController {
         Platform.runLater(() -> {
             Stage stage = (Stage) back.getScene().getWindow();
             try {
-                //TODO: 重复添加csv bug
                 FXMLLoader fxmlLoader = new ResultController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                 ResultController resultController = fxmlLoader.getController();

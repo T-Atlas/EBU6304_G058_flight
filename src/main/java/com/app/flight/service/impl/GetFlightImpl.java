@@ -1,5 +1,6 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Flight;
 import com.app.flight.service.GetFlight;
 import com.app.flight.util.Csv;
@@ -15,6 +16,15 @@ import java.util.ArrayList;
  * @date 2022.4.11
  */
 public class GetFlightImpl implements GetFlight {
+    public static Flight lookupFlight() {
+        String flightStr = Json.extractJsonData(Json.FLIGHT_JSON_PATH);
+        if (flightStr != null) {
+            return JSON.parseObject(flightStr, Flight.class);
+        } else {
+            return null;
+        }
+    }
+
     @Override
     public Flight lookupFlight(String flightId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.FLIGHT_CSV_PATH);

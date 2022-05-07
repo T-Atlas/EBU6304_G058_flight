@@ -160,6 +160,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
                 <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
                 <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center; -fx-font-weight: bold;"
@@ -212,36 +213,49 @@
                     </font>
                 </Label>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seat:" GridPane.columnIndex="1"
-                      GridPane.rowIndex="4">
+                      GridPane.rowIndex="5">
                     <font>
                         <Font size="25.0"/>
                     </font>
                 </Text>
                 <Label fx:id="seat" minHeight="50.0" minWidth="390.0"
                        style="-fx-border-color: #bfbfbf; -fx-background-color: white;" GridPane.columnIndex="2"
-                       GridPane.rowIndex="4">
+                       GridPane.rowIndex="5">
                     <font>
                         <Font size="25.0"/>
                     </font>
                 </Label>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FoodType:" GridPane.columnIndex="1"
-                      GridPane.rowIndex="5">
+                      GridPane.rowIndex="6">
                     <font>
                         <Font size="25.0"/>
                     </font>
                 </Text>
                 <Label fx:id="foodType" minHeight="50.0" minWidth="390.0"
                        style="-fx-border-color: #bfbfbf; -fx-background-color: white;" GridPane.columnIndex="2"
-                       GridPane.rowIndex="5">
+                       GridPane.rowIndex="6">
                     <font>
                         <Font size="25.0"/>
                     </font>
                 </Label>
-                <Button fx:id="detail" alignment="CENTER" contentDisplay="CENTER"
+                <Button fx:id="detail" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                        onAction="#showMap" prefHeight="48.0" prefWidth="63.0"
                         style="-fx-background-color: #7b7d7e; -fx-font-weight: bold; -fx-font-size: 12px;"
-                        mnemonicParsing="false" onAction="#showMap" prefHeight="48.0" prefWidth="63.0" text="Details"
-                        textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="3" textFill="WHITE"
-                        GridPane.rowIndex="2"/>
+                        text="Details" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS"
+                        GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BoardingGate:" GridPane.columnIndex="1"
+                      GridPane.rowIndex="4">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Text>
+                <Label fx:id="boardingGate" minHeight="50.0" minWidth="390.0"
+                       style="-fx-border-color: #bfbfbf; -fx-background-color: white;" GridPane.columnIndex="2"
+                       GridPane.rowIndex="4">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Label>
             </children>
         </GridPane>
     </children>

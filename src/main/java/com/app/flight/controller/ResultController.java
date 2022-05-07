@@ -35,19 +35,19 @@ public class ResultController {
     @FXML
     private Label destination;
     @FXML
+    private Label boardingGate;
+    @FXML
     private Label seat;
     @FXML
     private Label foodType;
-    @FXML
-    private Label carryBaggage;
-    @FXML
-    private Label checkBaggage;
+
 
     public void showBoardingPass(boolean addCsv) {
         boardingPass = getBoardingPass.lookupBoardingPass();
         name.setText(boardingPass.getPassenger().getFirstName() + boardingPass.getPassenger().getLastName());
         departure.setText(boardingPass.getFlight().getDeparture());
         destination.setText(boardingPass.getFlight().getDestination());
+        boardingGate.setText(boardingPass.getFlight().getBoardingGate());
         seat.setText(boardingPass.getSeatNo());
         foodType.setText(String.valueOf(boardingPass.getFood().getFoodName()));
         if (addCsv) {
@@ -70,11 +70,9 @@ public class ResultController {
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
             try {
-                FXMLLoader fxmlLoader = new PrintTagsController().getLoader();
+                FXMLLoader fxmlLoader = new SelectPaymentController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                PrintTagsController printTagsController = fxmlLoader.getController();
-                Thread thread = new Thread(printTagsController);
-                thread.start();
+                SelectPaymentController selectPaymentController = fxmlLoader.getController();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -93,6 +91,8 @@ public class ResultController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
