@@ -6,18 +6,18 @@
     "age": 22,
     "telephone": "13104368848"
   },
-  "flight": {
-    "flightId": "MH8633",
-    "departure": "Beijing",
-    "destination": "Hainan",
-    "boardingGate": "B8",
-    "boardingTime": "2022-09-11T07:05:00",
-    "departureTime": "2022-05-11T09:55:00",
-    "arrivalTime": "2022-05-11T12:55:00"
-  },
-  "seatNo": "7D",
-  "food": {
-    "foodName": "HALAL",
-    "foodPrice": 50.0
-  }
+	"flight": {
+		"flightId": "MH8633",
+		"departure": "Beijing",
+		"destination": "Hainan",
+		"boardingGate": "B8",
+		"boardingTime": "2022-09-11T07:05:00",
+		"departureTime": "2022-05-11T09:55:00",
+		"arrivalTime": "2022-05-11T12:55:00"
+	},
+	"seatNo": "7D",
+	"food": {
+		"foodName": "HALAL",
+		"foodPrice": 50.0
+	}
 }
