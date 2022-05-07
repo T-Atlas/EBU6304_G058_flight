@@ -125,7 +125,7 @@ Coming soon…
 
 ## Iteration logs
 
-### 4.0 Beta (May 8, 2022) Latest version
+### 4.0 Beta (May 8, 2022) The Latest version
 
 - Several bugs fixed and new features added in this release.
 - Separated printing function and created scanning function.
