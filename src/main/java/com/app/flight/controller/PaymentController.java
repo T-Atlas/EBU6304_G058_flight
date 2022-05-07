@@ -24,7 +24,7 @@ import java.io.IOException;
 public class PaymentController {
 
     @FXML
-    public Button next;
+    public Button finish;
     public Button help;
     public Boolean whetherPayment = false;
     @FXML
@@ -77,7 +77,7 @@ public class PaymentController {
             whetherPayment = true;
         }
         if (whetherPayment) {
-            Stage stage = (Stage) next.getScene().getWindow();
+            Stage stage = (Stage) finish.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Pay successfully!");
             alert.showAndWait();

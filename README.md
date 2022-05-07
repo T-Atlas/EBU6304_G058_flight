@@ -125,7 +125,36 @@ Coming soon…
 
 ## Iteration logs
 
-### 3.0 Beta (April 24, 2022) Latest version
+### 4.0 Beta (May 8, 2022) Latest version
+
+- Several bugs fixed and new features added in this release.
+- Separated printing function and created scanning function.
+- Updated the help function and fastjson snapshot.
+- Fixed bugs of Printer and Scanner.
+- Update fastjson 2.0.2 fulling test of new dependency.
+- Added the navigation map and showed the boarding gate in page.
+- Improved the ScanInstructionController and show the video how to scan ID card to users.
+- Improved Scanner to ues Runnable and Thread pool.
+- Refactor SeatMapImpl with GetSeatMapImpl and SetSeatMapImpl.
+
+### 3.5 Beta (May 1, 2022)
+
+- Several bugs fixed and new features added in this release.
+- Fixed the bug of showing the retrieve information and beautify the page.
+- Improved the interface of selecting food type.
+- The interface logic of searching user information according to function selection is realized.
+- The function of finding user interface is reconstructed.
+- Fixed RetrieveController select passenger flight bugs.
+- Improved the implementation of the interfaces.
+- Adjust the effect of printing boarding pass progress bar and added printer sound.
+- Optimized thread synchronization.
+- Fix percentage showing during processing print the tags.
+- Updated the Json and CSV files.
+- Refactor to update fastjson1 to fastjson2 and fixed bugs.
+- Added help page.
+- Added several test units.
+
+### 3.0 Beta (April 24, 2022)
 
 - Several bugs fixed and new features added in this release.
 - Fixed scene switching. Now the scene can be switched in the same window.
