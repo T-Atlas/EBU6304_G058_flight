@@ -1,5 +1,6 @@
 package com.app.flight.service.impl;
 
+import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.util.Csv;
@@ -13,6 +14,15 @@ import java.util.ArrayList;
  * @date 2022.4.6
  */
 public class GetPassengerImpl implements GetPassenger {
+
+    public static Passenger lookupPassenger() {
+        String passengerStr = Json.extractJsonData(Json.PASSENGER_JSON_PATH);
+        if (passengerStr != null) {
+            return JSON.parseObject(passengerStr, Passenger.class);
+        } else {
+            return null;
+        }
+    }
 
     @Override
     public Passenger lookupPassengerById(String passengerId) {

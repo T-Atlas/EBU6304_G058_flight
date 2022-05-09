@@ -34,7 +34,7 @@ public class Reservation {
      * It is represented by three aircraft class enumeration constants.
      */
     @JSONField(ordinal = 4)
-    private seatClass seatLevel;
+    private Seat seatLevel;
 
     /**
      * Determine whether meals are included in the scheduled flight.
@@ -54,11 +54,5 @@ public class Reservation {
     @JSONField(ordinal = 7)
     private int checkedBaggageNum;
 
-    public enum seatClass {
-        /**
-         * Three types of aircraft accommodation
-         */
-        ECONOMY_CLASS, BUSINESS_CLASS, FIRST_CLASS
-    }
 
 }

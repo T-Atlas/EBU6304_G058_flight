@@ -1,6 +1,9 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.app.flight.Main;
+import com.app.flight.service.external.Scanner;
+import com.app.flight.util.Obj;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,6 +55,7 @@ public class SelectMethodController {
         bookingNum.setUserData("booking");
         scan.setUserData("scan");
 
+        Obj.setSelectType((String) method.getSelectedToggle().getUserData());
         Stage stage = (Stage) next.getScene().getWindow();
         //send selected method to next controller depending on which radiobutton is selected
         if (bookingNum.isSelected() || idNum.isSelected()) {
@@ -75,17 +79,20 @@ public class SelectMethodController {
                 }
             });
         } else {
-            System.out.println("数据查找失败");
+            Scanner scanner = new Scanner();
             Platform.runLater(() -> {
                 try {
-                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();//需要修改成页面展示的controller
+                    FXMLLoader fxmlLoader = new ScanInstructionController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    ScanInstructionController scanInstructionController = fxmlLoader.getController();
+                    scanInstructionController.mediaView.setMediaPlayer(scanner.playVideo());
+                    scanner.ConsoleScanner(scanInstructionController, stage);
+                    ThreadUtil.execute(scanner);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         }
-
     }
 
     public FXMLLoader getLoader() {
@@ -99,6 +106,8 @@ public class SelectMethodController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

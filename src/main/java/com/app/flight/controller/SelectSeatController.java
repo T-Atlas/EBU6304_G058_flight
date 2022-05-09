@@ -2,7 +2,7 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import com.app.flight.service.SetSeatMap;
-import com.app.flight.service.impl.SetSeatMapImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import com.app.flight.util.DataParser;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -51,13 +51,13 @@ public class SelectSeatController {
     public void nextClick(ActionEvent actionEvent) {
         if (this.choiceColumn != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Your Selected Seat: " + this.choiceRow + this.choiceColumn);
+            alert.setHeaderText("Your Selected SeatUtil: " + this.choiceRow + this.choiceColumn);
             alert.setContentText("Please continue your check-in");
             alert.showAndWait();
             Platform.runLater(() -> {
                 Stage stage = (Stage) next.getScene().getWindow();
                 try {
-                    SetSeatMap setSeatMap = new SetSeatMapImpl();
+                    SetSeatMap setSeatMap = new SeatMapImpl();
                     setSeatMap.updateSeatMap(flightId, choiceColumn, choiceRow);
                     FXMLLoader fxmlLoader = new FoodTypeController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
@@ -75,6 +75,8 @@ public class SelectSeatController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -90,7 +92,7 @@ public class SelectSeatController {
         selectSeatController.flightId = flightId;
         selectSeatController.showSeatMap(seatMap, selectSeatController);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        stage.setTitle("Please Select Your Seat");
+        stage.setTitle("Please Select Your SeatUtil");
 
         stage.setScene(scene);
         stage.show();

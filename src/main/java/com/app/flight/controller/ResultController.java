@@ -4,6 +4,7 @@ import com.app.flight.Main;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
+import com.app.flight.util.Csv;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,9 @@ import java.io.IOException;
 public class ResultController {
 
     public Button help;
+    public BoardingPass boardingPass;
+    public Button detail;
+    GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
     @FXML
     private Button next;
     @FXML
@@ -31,25 +35,24 @@ public class ResultController {
     @FXML
     private Label destination;
     @FXML
+    private Label boardingGate;
+    @FXML
     private Label seat;
     @FXML
     private Label foodType;
-    @FXML
-    private Label carryBaggage;
-    @FXML
-    private Label checkBaggage;
 
-    public BoardingPass boardingPass;
-    GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
 
-    public void showBoardingPass (){
+    public void showBoardingPass(boolean addCsv) {
         boardingPass = getBoardingPass.lookupBoardingPass();
         name.setText(boardingPass.getPassenger().getFirstName() + boardingPass.getPassenger().getLastName());
         departure.setText(boardingPass.getFlight().getDeparture());
         destination.setText(boardingPass.getFlight().getDestination());
+        boardingGate.setText(boardingPass.getFlight().getBoardingGate());
         seat.setText(boardingPass.getSeatNo());
         foodType.setText(String.valueOf(boardingPass.getFood().getFoodName()));
-
+        if (addCsv) {
+            Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, false);
+        }
     }
 
     /**
@@ -62,15 +65,13 @@ public class ResultController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
             try {
-                FXMLLoader fxmlLoader = new PrintTagsController().getLoader();
+                FXMLLoader fxmlLoader = new SelectPaymentController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                PrintTagsController printTagsController = fxmlLoader.getController();
-                Thread thread = new Thread(printTagsController);
-                thread.start();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -89,6 +90,23 @@ public class ResultController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    public void showMap(ActionEvent actionEvent) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) help.getScene().getWindow();
+            try {
+                FXMLLoader fxmlLoader = new NavigationMapController().getLoader();
+                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                NavigationMapController navigationMapController = fxmlLoader.getController();
+                String gateName = boardingPass.getFlight().getBoardingGate();
+                navigationMapController.setMap(gateName);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -8,7 +8,7 @@ import com.app.flight.service.GetReservation;
 import com.app.flight.service.GetSeatMap;
 import com.app.flight.service.impl.GetFlightImpl;
 import com.app.flight.service.impl.GetReservationImpl;
-import com.app.flight.service.impl.GetSeatMapImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -39,14 +39,14 @@ public class RetrieveController {
     public ArrayList<Reservation> rList;
     public Button help;
     GetReservation getReservation = new GetReservationImpl();
-    GetSeatMap getSeatMap = new GetSeatMapImpl();
+    GetSeatMap getSeatMap = new SeatMapImpl();
+    GetFlight getFlight = new GetFlightImpl();
     @FXML
     private Button next;
     @FXML
     private TableView<Reservation> tableView;
 
-    GetFlight getFlight = new GetFlightImpl();
-
+    private Reservation preSelectedRow;
 
     public void showRetrieve(Passenger p) {
         ObservableList<Reservation> list2 = FXCollections.observableArrayList();
@@ -137,7 +137,7 @@ public class RetrieveController {
                     String flightId = selectedRow.getFlight().getFlightId();
                     FXMLLoader fxmlLoader = new SelectSeatController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                    stage.setTitle("Please Select Your Seat");
+                    stage.setTitle("Please Select Your SeatUtil");
                     Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
                     SelectSeatController selectSeatController = fxmlLoader.getController();
                     selectSeatController.flightId = flightId;
@@ -169,12 +169,14 @@ public class RetrieveController {
     public void mouseClick(MouseEvent mouseEvent) {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         if (selectedRow != null) {
-            getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+            if (selectedRow != preSelectedRow) {
+                getFlight.lookupFlight(selectedRow.getFlight().getFlightId());
+            }
             next.setDisable(false);
         } else {
             next.setDisable(true);
         }
-
+        preSelectedRow = selectedRow;
     }
 
     @FXML
@@ -184,6 +186,8 @@ public class RetrieveController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -17,7 +17,7 @@ import java.util.Map;
  * @version 1.0
  * @date 2022.4.22
  */
-public class Seat {
+public class SeatUtil {
     public static void generateSeatMap(String flightId, int rowSize) {
         Map<String, Boolean> rowMap = new HashMap<>(6);
         String[] columnString = new String[]{"A", "B", "C", "D", "E", "F"};

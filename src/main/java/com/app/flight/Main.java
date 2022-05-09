@@ -27,6 +27,7 @@ public class Main extends Application {
         stage.setTitle("Welcome!");
         stage.getIcons().add(new Image(String.valueOf(Main.class.getResource("ico/OneworldLogo.png"))));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }

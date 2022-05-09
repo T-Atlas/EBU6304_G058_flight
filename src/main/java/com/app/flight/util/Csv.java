@@ -153,8 +153,8 @@ public class Csv {
             if (entry.getValue() instanceof String) {
                 csvContent[i] = (String) entry.getValue();
             } else {
-                //TODO:Check the update of fastjson2 2.0.2
                 JSONObject innerJsonObj = jsonObj.getJSONObject(entry.getKey());
+                System.out.println(entry.getKey());
                 Iterator<Map.Entry<String, Object>> iterator = innerJsonObj.entrySet().iterator();
                 csvContent[i] = (String) iterator.next().getValue();
             }

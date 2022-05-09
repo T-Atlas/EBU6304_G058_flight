@@ -2,14 +2,14 @@ package utilTest;
 
 import com.alibaba.fastjson2.JSONPath;
 import com.alibaba.fastjson2.JSONReader;
-import com.app.flight.util.Seat;
+import com.app.flight.util.SeatUtil;
 import org.junit.jupiter.api.Test;
 
 
-public class SeatTest {
+public class SeatUtilTest {
     @Test
     public void generateSeatMapTest() {
-        Seat.generateSeatMap("MH8633", 20);
+        SeatUtil.generateSeatMap("MH8633", 20);
     }
 
     @Test
@@ -21,9 +21,8 @@ public class SeatTest {
                 "}";
         JSONPath rowPath = JSONPath.of("$.row");
         JSONPath colPath = JSONPath.of("$.column");
-        JSONReader parser = JSONReader.of(seatString);
-        String row = (String) rowPath.extract(parser);
-        String col = (String) colPath.extract(parser);
+        String row = (String) rowPath.extract(JSONReader.of(seatString));
+        String col = (String) colPath.extract(JSONReader.of(seatString));
         System.out.println(row);
         System.out.println(col);
     }

@@ -29,6 +29,7 @@ public class FoodTypeController {
     @FXML
     public ToggleGroup tg;
     public Button help;
+    SetFood setFood = new SetFoodImpl();
     @FXML
     private Button next;
     @FXML
@@ -37,10 +38,7 @@ public class FoodTypeController {
     private RadioButton r2;
     @FXML
     private RadioButton r3;
-
     private String type = null;
-    SetFood setFood = new SetFoodImpl();
-
 
     /**
      * To judge which food type is the passenger selected
@@ -53,9 +51,9 @@ public class FoodTypeController {
         r2.setUserData(Food.foodType.VEGETARIAN);
         r3.setUserData(Food.foodType.HALAL);
 
-        if (tg.getSelectedToggle() == null ){
+        if (tg.getSelectedToggle() == null) {
             type = null;
-        }else{
+        } else {
             type = tg.getSelectedToggle().getUserData().toString();
         }
 
@@ -80,12 +78,12 @@ public class FoodTypeController {
                     FXMLLoader fxmlLoader = new ResultController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     ResultController resultController = fxmlLoader.getController();
-                    resultController.showBoardingPass();
+                    resultController.showBoardingPass(true);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
-        } else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("Please select the food type you prefer!");
             alert.showAndWait();
@@ -114,6 +112,8 @@ public class FoodTypeController {
             try {
                 FXMLLoader fxmlLoader = new HelpController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                HelpController helpController = fxmlLoader.getController();
+                helpController.setControllerName(this.getClass().getSimpleName());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
