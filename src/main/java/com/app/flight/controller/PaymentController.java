@@ -29,11 +29,11 @@ import java.io.IOException;
 
 public class PaymentController {
 
-    public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/QR.jpg";
-    public static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
-    public static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
-    public static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
-    public static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
+    private static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/QR.jpg";
+    private static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
+    private static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
+    private static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
+    private static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
     @FXML
     public Button finish;
     public Button help;
@@ -52,7 +52,7 @@ public class PaymentController {
     private Label foodPrice;
 
     private void generateQRCode(String url, String path) {
-        QrConfig config = new QrConfig(300, 300);
+        QrConfig config = new QrConfig(600, 600);
         config.setErrorCorrection(ErrorCorrectionLevel.H);
         config.setMargin(1);
         config.setImg(new File(path));
