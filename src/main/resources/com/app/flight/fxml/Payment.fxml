@@ -190,10 +190,10 @@
                         <Insets left="550.0" top="70.0"/>
                     </GridPane.margin>
                 </Button>
-                <ImageView fx:id="code" fitHeight="237.0" fitWidth="305.0" pickOnBounds="true" preserveRatio="true"
+                <ImageView fx:id="code" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true"
                            GridPane.columnIndex="5" GridPane.rowIndex="2">
                     <GridPane.margin>
-                        <Insets left="100.0" top="70.0"/>
+                        <Insets left="100.0" top="120.0"/>
                     </GridPane.margin>
                 </ImageView>
                 <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7;"
