@@ -8,6 +8,6 @@ public class SetSeatMapTestUtil {
     @Test
     public void updateSeatMapTest() {
         SetSeatMap setSeatMap = new SeatMapImpl();
-        setSeatMap.updateSeatMap("MU1122", "A", 1);
+        setSeatMap.updateSeatMap("MU1122", "A", 1, 100);
     }
 }
