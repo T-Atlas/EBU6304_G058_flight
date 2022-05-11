@@ -15,9 +15,9 @@
     "departureTime": "2022-05-11T09:55:00",
     "arrivalTime": "2022-05-11T12:55:00"
   },
-  "seatNo": "7D",
+  "seatNo": "6C",
   "food": {
-    "foodName": "HALAL",
-    "foodPrice": 50.0
+    "foodName": "VEGETARIAN",
+    "foodPrice": 20.0
   }
 }
