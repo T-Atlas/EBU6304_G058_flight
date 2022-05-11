@@ -29,6 +29,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
     <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.8.0.M4" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:core:3.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.javacsv:javacsv:2.0" level="project" />

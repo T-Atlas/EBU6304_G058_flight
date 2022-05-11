@@ -1,0 +1,32 @@
+package com.app.flight.entity;
+
+public enum Seat {
+    /**
+     * Three types of aircraft accommodation
+     */
+    ECONOMY_CLASS(100, 15), BUSINESS_CLASS(200, 3), FIRST_CLASS(400, 2);
+
+    private int price;
+    private int row;
+
+    Seat(int price, int row) {
+        this.price = price;
+        this.row = row;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+}

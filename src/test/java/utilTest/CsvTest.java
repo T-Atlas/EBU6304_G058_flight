@@ -2,10 +2,7 @@ package utilTest;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
-import com.app.flight.entity.Flight;
-import com.app.flight.entity.Food;
-import com.app.flight.entity.Passenger;
-import com.app.flight.entity.Reservation;
+import com.app.flight.entity.*;
 import com.app.flight.util.Csv;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +31,7 @@ public class CsvTest {
         flight.setBoardingTime(LocalDateTime.of(2022, 5, 25, 11, 25));
         flight.setDepartureTime(LocalDateTime.of(2022, 5, 25, 11, 55));
         flight.setArrivalTime(LocalDateTime.of(2022, 5, 25, 14, 55));
-        Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
+        //Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
 
         Snowflake snowflake = IdUtil.getSnowflake(1, 1);
         String id = snowflake.nextIdStr();
@@ -44,7 +41,7 @@ public class CsvTest {
         reservation.setCheckedBaggageNum(0);
         reservation.setHandBaggageNum(1);
         reservation.setMealsAvailable(true);
-        reservation.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
+        reservation.setSeatLevel(Seat.FIRST_CLASS);
         reservation.setFlight(flight);
         Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, true);
     }

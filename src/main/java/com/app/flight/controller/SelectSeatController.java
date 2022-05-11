@@ -51,7 +51,7 @@ public class SelectSeatController {
     public void nextClick(ActionEvent actionEvent) {
         if (this.choiceColumn != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Your Selected Seat: " + this.choiceRow + this.choiceColumn);
+            alert.setHeaderText("Your Selected SeatUtil: " + this.choiceRow + this.choiceColumn);
             alert.setContentText("Please continue your check-in");
             alert.showAndWait();
             Platform.runLater(() -> {
@@ -92,7 +92,7 @@ public class SelectSeatController {
         selectSeatController.flightId = flightId;
         selectSeatController.showSeatMap(seatMap, selectSeatController);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        stage.setTitle("Please Select Your Seat");
+        stage.setTitle("Please Select Your SeatUtil");
 
         stage.setScene(scene);
         stage.show();
