@@ -4,6 +4,7 @@ import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
+import com.app.flight.entity.Reservation;
 import com.app.flight.util.Json;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -18,7 +19,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 public class PaymentController {
@@ -45,11 +45,12 @@ public class PaymentController {
         textField.setVisible(false);
         clean.setVisible(false);
 
-        File file = new File(Json.FOOD_JSON_PATH);
-        String foodString = Json.extractJsonData(String.valueOf(file));
+        String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
-
+        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
+        Reservation reservation = JSON.parseObject(reservationStr, Reservation.class);
+        //int price = reservation.getSeatLevel().getPrice();
         seatPrice.setText("None");
         foodPrice.setText("￡" + String.valueOf(fPrice));
 
