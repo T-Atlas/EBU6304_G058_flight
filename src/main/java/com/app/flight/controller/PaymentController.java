@@ -7,7 +7,6 @@ import cn.hutool.extra.qrcode.QrConfig;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
-import com.app.flight.entity.Reservation;
 import com.app.flight.util.Json;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import javafx.application.Platform;
@@ -28,6 +27,11 @@ import java.io.IOException;
 
 public class PaymentController {
 
+    public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/QR.jpg";
+    public static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
+    public static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
+    public static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
+    public static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
     @FXML
     public Button finish;
     public Button help;
@@ -45,18 +49,13 @@ public class PaymentController {
     @FXML
     private Label foodPrice;
 
-    public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/QR.jpg";
-    public static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
-    public static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
-    public static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
-    public static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
-
-
     private void generateQRCode(String url, String path) {
         QrConfig config = new QrConfig(300, 300);
         config.setErrorCorrection(ErrorCorrectionLevel.H);
+        config.setMargin(1);
         config.setImg(new File(path));
-        QrCodeUtil.generate(//
+        config.setRatio(8);
+        QrCodeUtil.generate(
                 url, //二维码内容
                 config,//附带logo
                 FileUtil.newFile(QR_CODE_PATH)//写出到的文件
@@ -71,9 +70,9 @@ public class PaymentController {
         String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
-        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
-        Reservation reservation = JSON.parseObject(reservationStr, Reservation.class);
-        //int price = reservation.getSeatLevel().getPrice();
+//        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
+//        Reservation reservation = JSON.parseObject(reservationStr, Reservation.class);
+//        int price = reservation.getSeatLevel().getPrice();
         seatPrice.setText("None");
         foodPrice.setText("￡" + fPrice);
 
