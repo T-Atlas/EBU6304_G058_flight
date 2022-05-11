@@ -1,3 +1,5 @@
+package validatorTest;
+
 import com.app.flight.entity.Reservation;
 import org.junit.jupiter.api.Test;
 
