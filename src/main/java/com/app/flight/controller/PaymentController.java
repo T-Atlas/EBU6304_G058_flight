@@ -71,13 +71,14 @@ public class PaymentController {
 
         String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = JSON.parseObject(foodString, Food.class);
-        double fPrice = food.getFoodPrice();
+        double foodPrice = food.getFoodPrice();
+        double seatPrice = 0;
         Reservation reservation = GetReservationImpl.lookupReservation();
         if (reservation != null) {
-            int price = reservation.getSeatLevel().getPrice();
+            seatPrice = reservation.getSeatLevel().getPrice();
         }
-        seatPrice.setText("None");
-        foodPrice.setText("￡" + fPrice);
+        this.seatPrice.setText("￡" + seatPrice);
+        this.foodPrice.setText("￡" + foodPrice);
 
         if (paymentMethod.equals("paypal") || paymentMethod.equals("alipay")) {
             whetherPayment = true;
