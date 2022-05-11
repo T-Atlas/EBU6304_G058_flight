@@ -4,7 +4,7 @@ public enum Seat {
     /**
      * Three types of aircraft accommodation
      */
-    ECONOMY_CLASS(100, 10), BUSINESS_CLASS(200, 5), FIRST_CLASS(400, 5);
+    ECONOMY_CLASS(100, 15), BUSINESS_CLASS(200, 3), FIRST_CLASS(400, 2);
 
     private int price;
     private int row;
