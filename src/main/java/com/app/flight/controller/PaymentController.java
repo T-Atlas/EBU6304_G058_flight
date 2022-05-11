@@ -29,7 +29,7 @@ import java.io.IOException;
 
 public class PaymentController {
 
-    private static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/QR.jpg";
+    private static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/";
     private static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
     private static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
     private static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
@@ -60,7 +60,7 @@ public class PaymentController {
         QrCodeUtil.generate(
                 url, //二维码内容
                 config,//附带logo
-                FileUtil.newFile(QR_CODE_PATH)//写出到的文件
+                FileUtil.newFile(QR_CODE_PATH + "QR.jpg")//写出到的文件
         );
     }
 

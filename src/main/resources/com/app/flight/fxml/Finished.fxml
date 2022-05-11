@@ -2,11 +2,10 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18"
           fx:controller="com.app.flight.controller.FinishController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
@@ -108,43 +107,71 @@
         </GridPane>
         <GridPane prefHeight="337.0" prefWidth="1200.0" GridPane.rowIndex="2">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="828.0" minWidth="10.0" prefWidth="814.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.20001220703125" minWidth="10.0"
+                                   prefWidth="262.20001220703125"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="828.0" minWidth="10.0" prefWidth="638.7333862304688"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0666137695313" minWidth="10.0"
+                                   prefWidth="300.0666137695313"/>
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;"
-                      text="Please check all are printed:" wrappingWidth="368.1398468017578" GridPane.columnIndex="1">
-                    <font>
-                        <Font size="25.0"/>
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1) the boarding pass" wrappingWidth="346.21875"
-                      GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <font>
-                        <Font size="22.0"/>
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="2) a tag that needs to be attached to the carry-on baggage"
-                      wrappingWidth="652.8187866210938" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                    <font>
-                        <Font size="22.0"/>
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="3) a ticket with the number of the assigned bag drop counter where the passenger needs to go to drop his/her check-in baggage"
-                      wrappingWidth="717.4188232421875" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                    <font>
-                        <Font size="22.0"/>
-                    </font>
-                </Text>
+                <GridPane prefWidth="690.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;"
+                              text="Please check all are printed:" wrappingWidth="368.1398468017578">
+                            <font>
+                                <Font size="25.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1) the boarding pass"
+                              wrappingWidth="346.21875" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="22.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="2) a tag that needs to be attached to the carry-on baggage"
+                              wrappingWidth="652.8187866210938" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="22.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="3) a ticket with the number of the assigned bag drop counter where the passenger needs to go to drop his/her check-in baggage"
+                              textAlignment="JUSTIFY" wrappingWidth="631.018798828125" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="22.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                    <children>
+                        <ImageView fx:id="boardingPassCode" fitHeight="150.0" fitWidth="150.0" layoutX="75.0"
+                                   layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/QR_Code/QR.jpg"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="tagCode" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="180.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/QR_Code/QR.jpg"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
             </children>
         </GridPane>
         <Button fx:id="finish" mnemonicParsing="false" onAction="#finishClick" prefHeight="59.0" prefWidth="170.0"

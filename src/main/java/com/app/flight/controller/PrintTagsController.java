@@ -42,6 +42,9 @@ public class PrintTagsController implements Runnable {
             try {
                 FXMLLoader fxmlLoader = new FinishController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                FinishController finishController = fxmlLoader.getController();
+                finishController.generateQRCode(FinishController.TAG_TXT, FinishController.TAG_IMAGE_PATH, "Tag");
+                finishController.generateQRCode(FinishController.BOARDING_TXT, FinishController.BOARDING_IMAGE_PATH, "BoardingPass");
             } catch (IOException e) {
                 e.printStackTrace();
             }
