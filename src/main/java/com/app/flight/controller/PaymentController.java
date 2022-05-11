@@ -1,10 +1,15 @@
 package com.app.flight.controller;
 
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
+import cn.hutool.extra.qrcode.QrCodeUtil;
+import cn.hutool.extra.qrcode.QrConfig;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
+import com.app.flight.entity.Reservation;
 import com.app.flight.util.Json;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,23 +45,47 @@ public class PaymentController {
     @FXML
     private Label foodPrice;
 
+    public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/QR.jpg";
+    public static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
+    public static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
+    public static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
+    public static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
+
+
+    private void generateQRCode(String url, String path) {
+        QrConfig config = new QrConfig(300, 300);
+        config.setErrorCorrection(ErrorCorrectionLevel.H);
+        config.setImg(new File(path));
+        QrCodeUtil.generate(//
+                url, //二维码内容
+                config,//附带logo
+                FileUtil.newFile(QR_CODE_PATH)//写出到的文件
+        );
+    }
+
     public void pay(String paymentMethod) {
         code.setVisible(false);
         textField.setVisible(false);
         clean.setVisible(false);
 
-        File file = new File(Json.FOOD_JSON_PATH);
-        String foodString = Json.extractJsonData(String.valueOf(file));
+        String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
-
+        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
+        Reservation reservation = JSON.parseObject(reservationStr, Reservation.class);
+        //int price = reservation.getSeatLevel().getPrice();
         seatPrice.setText("None");
-        foodPrice.setText("￡" + String.valueOf(fPrice));
+        foodPrice.setText("￡" + fPrice);
 
         if (paymentMethod.equals("paypal") || paymentMethod.equals("alipay")) {
             whetherPayment = true;
             code.setVisible(true);
-            code.setImage(new Image(String.valueOf(Main.class.getResource("image/QR.jpg"))));
+            if (paymentMethod.equals("paypal")) {
+                generateQRCode(PAYPAL_SITE, PAYPAL_IMAGE_PATH);
+            } else {
+                generateQRCode(ALIPAY_SITE, ALIPAY_IMAGE_PATH);
+            }
+            code.setImage(new Image(new File(QR_CODE_PATH).toURI().toString()));
         } else if (paymentMethod.equals("visa")) {
             annotation.setText("--> Please input your VISA card number:");
             textField.setVisible(true);
