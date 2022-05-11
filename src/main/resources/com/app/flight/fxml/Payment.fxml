@@ -178,7 +178,7 @@
                         <Font name="System Bold" size="30.0"/>
                     </font>
                     <GridPane.margin>
-                        <Insets top="30.0"/>
+                        <Insets/>
                     </GridPane.margin>
                 </Label>
                 <Button fx:id="clean" mnemonicParsing="false" onAction="#clean" text="X" GridPane.columnIndex="5"
