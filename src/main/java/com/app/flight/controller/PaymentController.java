@@ -70,9 +70,9 @@ public class PaymentController {
         String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = JSON.parseObject(foodString, Food.class);
         double fPrice = food.getFoodPrice();
-//        String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
-//        Reservation reservation = JSON.parseObject(reservationStr, Reservation.class);
-//        int price = reservation.getSeatLevel().getPrice();
+        /*String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
+        Reservation reservation = JSON.parseObject(reservationStr, Reservation.class);
+        int price = reservation.getSeatLevel().getPrice();*/
         seatPrice.setText("None");
         foodPrice.setText("￡" + fPrice);
 
