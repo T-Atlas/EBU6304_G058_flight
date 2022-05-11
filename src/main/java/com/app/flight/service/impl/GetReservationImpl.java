@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
+import com.app.flight.entity.Seat;
 import com.app.flight.service.GetFlight;
 import com.app.flight.service.GetReservation;
 import com.app.flight.util.Csv;
@@ -19,14 +20,18 @@ import java.util.List;
  * @date 2022.4.11
  */
 public class GetReservationImpl implements GetReservation {
-    public static ArrayList<Reservation> lookupReservations() {
+    public static Reservation lookupReservation() {
         String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
         if (reservationStr != null) {
             List<Reservation> reservations = JSON.parseArray(reservationStr, Reservation.class);
-            return (ArrayList<Reservation>) reservations;
-        } else {
-            return null;
+            Flight flight = GetFlightImpl.lookupFlight();
+            for (Reservation reservation : reservations) {
+                if (flight != null && reservation.getFlight().getFlightId().equals(flight.getFlightId())) {
+                    return reservation;
+                }
+            }
         }
+        return null;
     }
 
     @Override
@@ -55,7 +60,7 @@ public class GetReservationImpl implements GetReservation {
                 flight = getFlight.lookupFlight(fId);
                 reservation.setFlight(flight);
 
-                reservation.setSeatLevel(Reservation.seatClass.valueOf(reservationData[3]));
+                reservation.setSeatLevel(Seat.valueOf(reservationData[3]));
                 reservation.setMealsAvailable(Boolean.parseBoolean(reservationData[4]));
                 reservation.setHandBaggageNum(Integer.parseInt(reservationData[5]));
                 reservation.setCheckedBaggageNum(Integer.parseInt(reservationData[6]));

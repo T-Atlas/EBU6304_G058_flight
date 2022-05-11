@@ -6,6 +6,7 @@ module com.app.flight {
     requires lombok;
     requires hutool.all;
     requires javafx.media;
+    requires com.google.zxing;
 
     opens com.app.flight to javafx.fxml, javafx.media, com.alibaba.fastjson2, lombok;
     exports com.app.flight;

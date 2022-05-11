@@ -1,3 +1,5 @@
+package validatorTest;
+
 import com.app.flight.entity.Passenger;
 import org.junit.jupiter.api.Test;
 

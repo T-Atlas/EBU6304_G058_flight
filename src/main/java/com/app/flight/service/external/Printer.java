@@ -144,10 +144,6 @@ public class Printer {
         }
     }
 
-//    public static void main(String[] args) {
-//        printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);
-//    }
-
     private MediaPlayer sound() {
         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
         Media sound = new Media(new File(path).toURI().toString());

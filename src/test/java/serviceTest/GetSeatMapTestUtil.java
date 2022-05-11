@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-public class GetSeatMapTest {
+public class GetSeatMapTestUtil {
     @Test
     public void getSeatMapTest() {
         GetSeatMap getSeatMap = new SeatMapImpl();

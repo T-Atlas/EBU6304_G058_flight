@@ -2,14 +2,14 @@ package utilTest;
 
 import com.alibaba.fastjson2.JSONPath;
 import com.alibaba.fastjson2.JSONReader;
-import com.app.flight.util.Seat;
+import com.app.flight.util.SeatUtil;
 import org.junit.jupiter.api.Test;
 
 
-public class SeatTest {
+public class SeatUtilTest {
     @Test
     public void generateSeatMapTest() {
-        Seat.generateSeatMap("MH8633", 20);
+        SeatUtil.generateSeatMap("MH8633", 20);
     }
 
     @Test
