@@ -20,14 +20,18 @@ import java.util.List;
  * @date 2022.4.11
  */
 public class GetReservationImpl implements GetReservation {
-    public static ArrayList<Reservation> lookupReservations() {
+    public static Reservation lookupReservation() {
         String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
         if (reservationStr != null) {
             List<Reservation> reservations = JSON.parseArray(reservationStr, Reservation.class);
-            return (ArrayList<Reservation>) reservations;
-        } else {
-            return null;
+            Flight flight = GetFlightImpl.lookupFlight();
+            for (Reservation reservation : reservations) {
+                if (flight != null && reservation.getFlight().getFlightId().equals(flight.getFlightId())) {
+                    return reservation;
+                }
+            }
         }
+        return null;
     }
 
     @Override
