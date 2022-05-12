@@ -176,23 +176,23 @@
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                     <children>
                         <ImageView fx:id="boardingPassCode" fitHeight="150.0" fitWidth="150.0" layoutX="15.0"
-                                   layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+                                   layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../image/QR_Code/QR.jpg"/>
                             </image>
                         </ImageView>
-                        <Label layoutX="25.0" layoutY="250.0" text="BoardingPass">
+                        <Label layoutX="25.0" layoutY="240.0" text="BoardingPass">
                             <font>
                                 <Font size="20.0"/>
                             </font>
                         </Label>
-                        <ImageView fx:id="tagCode" fitHeight="150.0" fitWidth="150.0" layoutX="15.0" layoutY="310.0"
+                        <ImageView fx:id="tagCode" fitHeight="150.0" fitWidth="150.0" layoutX="15.0" layoutY="320.0"
                                    pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../image/QR_Code/QR.jpg"/>
                             </image>
                         </ImageView>
-                        <Label layoutX="75.0" layoutY="460.0" text="Tag">
+                        <Label layoutX="75.0" layoutY="470.0" text="Tag">
                             <font>
                                 <Font size="20.0"/>
                             </font>
