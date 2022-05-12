@@ -4,6 +4,7 @@ import com.app.flight.Main;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.service.impl.GetPassengerImpl;
+import com.app.flight.util.Validator;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,12 +62,12 @@ public class InputNumberController {
 
     protected Passenger getPassengerInfo(String type, String text) {
         Passenger passenger;
-        if (type.equals("id")) {
+        if (type.equals("id") && (Validator.idValidator(text) || text.equals("123456"))) {
             passenger = getPassenger.lookupPassengerById(text);
-        } else if (type.equals("booking")) {
+        } else if (type.equals("booking") && Validator.reservationIdValidator(text)) {
             passenger = getPassenger.lookupPassengerByBookingNumber(text);
         } else {
-            //new Scanner()
+            //TODO:页面提示输入错误
             passenger = null;
         }
         return passenger;
