@@ -1,0 +1,70 @@
+package com.app.flight.service.external;
+
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.extra.qrcode.QrCodeUtil;
+import cn.hutool.extra.qrcode.QrConfig;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+
+import java.io.File;
+
+public class QRCodeGenerator {
+    public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/";
+    private static final String TAG_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/TagLogo.png";
+    private static final String TAG_TXT = "src/main/resources/com/app/flight/data/printer/Tag.txt";
+    private static final String BOARDING_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/BoardingPassLogo.png";
+    private static final String BOARDING_TXT = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
+    private static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
+    private static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
+    private static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
+    private static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
+    private static String url = "";
+    private static String path = "";
+
+    public static void generatePayCode(String type) {
+        if (type.equals("paypal")) {
+            url = PAYPAL_SITE;
+            path = PAYPAL_IMAGE_PATH;
+        } else if (type.equals("alipay")) {
+            url = ALIPAY_SITE;
+            path = ALIPAY_IMAGE_PATH;
+        }
+        QrConfig config = new QrConfig(600, 600);
+        config.setErrorCorrection(ErrorCorrectionLevel.H);
+        config.setMargin(1);
+        config.setImg(new File(path));
+        config.setRatio(8);
+        QrCodeUtil.generate(
+                url, //二维码内容
+                config,//附带logo
+                FileUtil.newFile(QR_CODE_PATH + "QR.jpg")//写出到的文件
+        );
+    }
+
+    public static void generateBoardingPassCode() {
+        url = FileUtil.readUtf8String(FileUtil.newFile(BOARDING_TXT));
+        path = BOARDING_IMAGE_PATH;
+        QrConfig config = new QrConfig(600, 600);
+        config.setImg(new File(path));
+        config.setMargin(0);
+        config.setRatio(6);
+        QrCodeUtil.generate(
+                url, //二维码内容
+                config,//附带logo
+                FileUtil.newFile(QR_CODE_PATH + "BoardingPassQR.jpg")//写出到的文件
+        );
+    }
+
+    public static void generateTagCode() {
+        url = FileUtil.readUtf8String(FileUtil.newFile(TAG_TXT));
+        path = TAG_IMAGE_PATH;
+        QrConfig config = new QrConfig(600, 600);
+        config.setImg(new File(path));
+        config.setMargin(0);
+        config.setRatio(5);
+        QrCodeUtil.generate(
+                url, //二维码内容
+                config,//附带logo
+                FileUtil.newFile(QR_CODE_PATH + "TagQR.jpg")//写出到的文件
+        );
+    }
+}
