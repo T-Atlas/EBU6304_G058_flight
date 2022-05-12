@@ -8,6 +8,7 @@ import com.app.flight.entity.Reservation;
 import com.app.flight.service.external.QRCodeGenerator;
 import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.util.Json;
+import com.app.flight.util.Validator;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,7 +83,7 @@ public class PaymentController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
-        if (!textField.getText().equals("")) {
+        if ((!textField.getText().equals("")) && Validator.visaIdValidator(textField.getText())) {
             whetherPayment = true;
         }
         if (whetherPayment) {
