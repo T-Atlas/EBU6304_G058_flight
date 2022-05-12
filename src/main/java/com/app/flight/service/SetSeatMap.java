@@ -14,5 +14,5 @@ public interface SetSeatMap {
      * @param row      Modify the number of rows of seats
      * @param price    Modify the price of the selected seat
      */
-    void updateSeatMap(String flightId, String column, int row, int price);
+    void updateSeatMap(String flightId, String column, int row, double price);
 }

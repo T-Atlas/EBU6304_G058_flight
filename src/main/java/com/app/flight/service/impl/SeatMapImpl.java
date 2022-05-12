@@ -38,7 +38,7 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
     }
 
     @Override
-    public void updateSeatMap(String flightId, String column, int row, int price) {
+    public void updateSeatMap(String flightId, String column, int row, double price) {
         Map<Integer, Map<String, Boolean>> seatMap = lookupSeatMap(flightId);
         Map<String, Boolean> stringBooleanMap = seatMap.get(row);
         Boolean status = stringBooleanMap.get(column);

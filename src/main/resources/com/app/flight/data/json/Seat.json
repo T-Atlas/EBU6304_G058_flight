@@ -1,5 +1,6 @@
 {
-  "flightId": "MH8633",
-  "column": "E",
-  "row": "9"
+  "flightId": "MH1234",
+  "column": "B",
+  "row": "3",
+  "price": "100.0"
 }

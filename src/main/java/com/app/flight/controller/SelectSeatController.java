@@ -46,7 +46,7 @@ public class SelectSeatController {
 
     public String choiceColumn;
 
-    public int choicePrice;
+    public double choicePrice;
 
     public String flightId;
 
@@ -160,7 +160,7 @@ public class SelectSeatController {
         return "-fx-background-color: " + color;
     }
 
-    public int getSeatPrice(int rowNo) {
+    public double getSeatPrice(int rowNo) {
         int firstClassLimit = Seat.FIRST_CLASS.getRow();
         int businessClassLimit = Seat.BUSINESS_CLASS.getRow();
 //        int economyClassLimit = Seat.ECONOMY_CLASS.getRow();
