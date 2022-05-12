@@ -202,7 +202,7 @@
             </children>
         </GridPane>
         <Button fx:id="finish" mnemonicParsing="false" onAction="#finishClick" prefHeight="59.0" prefWidth="170.0"
-                style="-fx-background-color: grey; -fx-font-weight: bold; -fx-font-size: 25px;" text="Finish"
+                style="-fx-background-color: #001b72; -fx-font-weight: bold; -fx-font-size: 25px;" text="Finish"
                 textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2"
                 GridPane.valignment="CENTER">
             <font>
