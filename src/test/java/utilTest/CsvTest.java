@@ -2,26 +2,35 @@ package utilTest;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
-import com.app.flight.entity.*;
+import com.app.flight.entity.Flight;
+import com.app.flight.entity.Food;
+import com.app.flight.entity.Passenger;
+import com.app.flight.entity.Reservation;
 import com.app.flight.util.Csv;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CsvTest {
     Passenger passenger;
     Flight flight;
     Reservation reservation;
 
+    /**
+     * Test for adding data to csv
+     */
     @Test
-    public void csvTest() {
+    public void addCsvTest() {
         passenger = new Passenger();
-        passenger.setPassengerId("220802200005217777");
-        passenger.setFirstName("NonStringTest");
-        passenger.setLastName("Jun");
+        passenger.setPassengerId("210122196110070924");
+        passenger.setFirstName("p1");
+        passenger.setLastName("test");
         passenger.setTelephone("13104368848");
         passenger.setAge(22);
         Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
+        assertEquals(passenger, );
 
         flight = new Flight();
         flight.setFlightId("MH1234");
@@ -31,7 +40,8 @@ public class CsvTest {
         flight.setBoardingTime(LocalDateTime.of(2022, 5, 25, 11, 25));
         flight.setDepartureTime(LocalDateTime.of(2022, 5, 25, 11, 55));
         flight.setArrivalTime(LocalDateTime.of(2022, 5, 25, 14, 55));
-        //Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
+        Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
+        assertEquals(flight, Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false));
 
         Snowflake snowflake = IdUtil.getSnowflake(1, 1);
         String id = snowflake.nextIdStr();
@@ -41,9 +51,34 @@ public class CsvTest {
         reservation.setCheckedBaggageNum(0);
         reservation.setHandBaggageNum(1);
         reservation.setMealsAvailable(true);
-        reservation.setSeatLevel(Seat.FIRST_CLASS);
+        reservation.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
         reservation.setFlight(flight);
         Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, true);
+        assertEquals(reservation, Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, true));
+    }
+
+    /**
+     * Test for reading csv data
+     */
+    @Test
+    public void readCsvTest() {
+
+    }
+
+    /**
+     * Test for updating csv
+     */
+    @Test
+    public void updateCsvTest() {
+
+    }
+
+    /**
+     * Test for deleting csv
+     */
+    @Test
+    public void deleteCsvTest() {
+
     }
 
     @Test
