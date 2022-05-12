@@ -30,7 +30,7 @@ public class CsvTest {
         passenger.setTelephone("13104368848");
         passenger.setAge(22);
         Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
-        assertEquals(passenger, );
+        //assertEquals(passenger, );
 
         flight = new Flight();
         flight.setFlightId("MH1234");
@@ -51,7 +51,7 @@ public class CsvTest {
         reservation.setCheckedBaggageNum(0);
         reservation.setHandBaggageNum(1);
         reservation.setMealsAvailable(true);
-        reservation.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
+        //reservation.setSeatLevel(Reservation.seatClass.FIRST_CLASS);
         reservation.setFlight(flight);
         Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, true);
         assertEquals(reservation, Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, true));

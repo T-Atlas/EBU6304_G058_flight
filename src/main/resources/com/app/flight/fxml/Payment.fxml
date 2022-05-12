@@ -121,7 +121,7 @@
                 </Button>
                 <Button fx:id="finish" layoutX="1020.0" layoutY="33.0" mnemonicParsing="false" onAction="#nextClick"
                         prefHeight="64.0" prefWidth="179.0"
-                        style="-fx-background-color: #000080; -fx-font-weight: bold;" text="Next" textFill="WHITE">
+                        style="-fx-background-color: #169BD5; -fx-font-weight: bold;" text="Next" textFill="WHITE">
                     <font>
                         <Font size="25.0"/>
                     </font>
@@ -193,7 +193,7 @@
                 <ImageView fx:id="code" fitHeight="275.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true"
                            GridPane.columnIndex="5" GridPane.rowIndex="2">
                     <GridPane.margin>
-                        <Insets left="100.0" top="100.0"/>
+                        <Insets left="100.0" top="120.0"/>
                     </GridPane.margin>
                 </ImageView>
                 <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D7D7D7;"
