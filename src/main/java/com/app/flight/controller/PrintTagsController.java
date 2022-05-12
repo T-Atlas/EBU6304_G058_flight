@@ -2,6 +2,7 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import com.app.flight.service.external.Printer;
+import com.app.flight.service.external.QRCodeGenerator;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,8 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -42,6 +45,11 @@ public class PrintTagsController implements Runnable {
             try {
                 FXMLLoader fxmlLoader = new FinishController().getLoader();
                 stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                QRCodeGenerator.generateTagCode();
+                QRCodeGenerator.generateBoardingPassCode();
+                FinishController finishController = fxmlLoader.getController();
+                finishController.tagCode.setImage(new Image(new File(QRCodeGenerator.QR_CODE_PATH + "TagQR.jpg").toURI().toString()));
+                finishController.boardingPassCode.setImage(new Image(new File(QRCodeGenerator.QR_CODE_PATH + "BoardingPassQR.jpg").toURI().toString()));
             } catch (IOException e) {
                 e.printStackTrace();
             }
