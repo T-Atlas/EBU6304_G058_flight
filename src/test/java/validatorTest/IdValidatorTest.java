@@ -3,7 +3,7 @@ package validatorTest;
 import com.app.flight.entity.Passenger;
 import org.junit.jupiter.api.Test;
 
-import static com.app.flight.util.Validator.idValidator;
+import static cn.hutool.core.util.IdcardUtil.isValidCard;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -17,6 +17,6 @@ public class IdValidatorTest {
     public void testId() {
         Passenger passenger1 = new Passenger();
         passenger1.setPassengerId("210122196110070924");
-        assertTrue(idValidator(passenger1.getPassengerId()));
+        assertTrue(isValidCard(passenger1.getPassengerId()));
     }
 }
