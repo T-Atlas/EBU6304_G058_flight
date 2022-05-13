@@ -41,14 +41,18 @@ public class SelectSeatController {
     public GridPane gridPane;
 
     public Button choiceButton;
+    private final int firstClassLimit = Seat.FIRST_CLASS.getRow();
 
     public int choiceRow;
+    private final int businessClassLimit = Seat.BUSINESS_CLASS.getRow();
 
     public String choiceColumn;
 
     public double choicePrice;
 
     public String flightId;
+    public Button previousChoiceButton;
+    public int previousChoiceRow;
 
     @FXML
     public void nextClick(ActionEvent actionEvent) {
@@ -113,14 +117,20 @@ public class SelectSeatController {
                 button.setMinWidth(80);
                 if (seats.getValue()) {
                     button.setStyle(getSeatButtonColor(rowMap.getKey()));
-                    selectSeatController.choicePrice = getSeatPrice(rowMap.getKey());
-                    selectSeatController.choiceButton = button;
+                    //selectSeatController.choiceButton = button;
 
                     button.setOnAction(actionEvent -> {
-                        selectSeatController.choiceButton.setStyle(getSeatButtonColor(selectSeatController.choiceRow));
+                        selectSeatController.previousChoiceButton = selectSeatController.choiceButton;
+                        selectSeatController.choiceButton = button;
+                        selectSeatController.previousChoiceRow = selectSeatController.choiceRow;
+                        selectSeatController.choiceRow = rowMap.getKey();
+                        if (selectSeatController.previousChoiceButton != null) {
+                            selectSeatController.previousChoiceButton.setStyle(getSeatButtonColor(selectSeatController.previousChoiceRow));
+                        }
                         selectSeatController.choiceRow = rowMap.getKey();
                         selectSeatController.choiceColumn = String.valueOf(seats.getKey());
                         selectSeatController.choiceButton = button;
+                        selectSeatController.choicePrice = getSeatPrice(selectSeatController.choiceRow);
                         button.setStyle("-fx-background-color: #008ef3");
                     });
                 } else {
@@ -141,39 +151,29 @@ public class SelectSeatController {
 
     public String getSeatButtonColor(int rowNo) {
         String color;
-        int firstClassLimit = Seat.FIRST_CLASS.getRow();
-        int businessClassLimit = Seat.BUSINESS_CLASS.getRow();
-//        int economyClassLimit = Seat.ECONOMY_CLASS.getRow();
-        if (rowNo > firstClassLimit) {
-            if (rowNo > firstClassLimit + businessClassLimit) {
-                // ECONOMY_CLASS
-                color = "#81cbf5";
-            } else {
-                // BUSINESS_CLASS
-                color = "#e0d995";
-            }
-        } else {
+        if (rowNo > 0 && rowNo <= firstClassLimit) {
             // FIRST_CLASS
             color = "#9dd39a";
+        } else if (rowNo > firstClassLimit && rowNo <= firstClassLimit + businessClassLimit) {
+            // BUSINESS_CLASS
+            color = "#e0d995";
+        } else {
+            // ECONOMY_CLASS
+            color = "#81cbf5";
         }
         return "-fx-background-color: " + color;
     }
 
     public double getSeatPrice(int rowNo) {
-        int firstClassLimit = Seat.FIRST_CLASS.getRow();
-        int businessClassLimit = Seat.BUSINESS_CLASS.getRow();
-//        int economyClassLimit = Seat.ECONOMY_CLASS.getRow();
-        if (rowNo > firstClassLimit) {
-            if (rowNo > firstClassLimit + businessClassLimit) {
-                // ECONOMY_CLASS
-                return Seat.ECONOMY_CLASS.getPrice();
-            } else {
-                // BUSINESS_CLASS
-                return Seat.BUSINESS_CLASS.getPrice();
-            }
-        } else {
+        if (rowNo > 0 && rowNo <= firstClassLimit) {
             // FIRST_CLASS
             return Seat.FIRST_CLASS.getPrice();
+        } else if (rowNo > firstClassLimit && rowNo <= firstClassLimit + businessClassLimit) {
+            // BUSINESS_CLASS
+            return Seat.BUSINESS_CLASS.getPrice();
+        } else {
+            // ECONOMY_CLASS
+            return Seat.ECONOMY_CLASS.getPrice();
         }
     }
 

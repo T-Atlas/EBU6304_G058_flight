@@ -63,6 +63,7 @@ public class Printer {
         StringBuilder destSpaces = new StringBuilder();
         destSpaces.append(" ".repeat(Math.max(0, 19 - destination.length())));
         BufferedWriter out = null;
+        boardingPassData.delete(0, boardingPassData.length());
         boardingPassData.append("DATE: ").append(dayOfMonth).append(" ").append(month).append("\n")
                 .append("FLIGHT: ").append(flight.getFlightId()).append("\n")
                 .append("NAME: ").append(firstName).append(" ").append(lastName).append("\n")
@@ -123,6 +124,7 @@ public class Printer {
         }
         StringBuilder no = new StringBuilder(String.valueOf(tagNo));
         no.append(" ".repeat(Math.max(0, 3 - String.valueOf(tagNo).length())));
+        tagData.delete(0, tagData.length());
         if (!reservation[5].equals("0")) {
             tagData.append("NO.").append(no).append("\n")
                     .append("HAND BAGGAGE: ").append(reservation[5]).append("\n\n");

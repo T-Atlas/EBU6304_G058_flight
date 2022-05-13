@@ -5,7 +5,7 @@
     |  DATE: 25 MAY             |.
     |  FLIGHT: MH1234           |.
     |  NAME: Jun Test           |.
-    |  SEAT: 2F                 |.
+    |  SEAT: 3A                 |.
     |  GATE: C10                |.
     |  BD TIME: 11:25           |.
     |  DEST: Shanghai           |.
