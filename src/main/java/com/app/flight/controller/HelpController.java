@@ -100,7 +100,7 @@ public class HelpController {
                         Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
                         SelectSeatController selectSeatController = fxmlLoader.getController();
                         selectSeatController.flightId = flightId;
-                        selectSeatController.showSeatMap(seatMap, selectSeatController);
+                        selectSeatController.showSeatMap(seatMap);
                     }
                     case "InputNumberController" -> {
                         fxmlLoader = new InputNumberController().getLoader();
