@@ -48,7 +48,7 @@ public class QRCodeGenerator {
         config.setMargin(0);
         config.setRatio(6);
         QrCodeUtil.generate(
-                url, //二维码内容
+                String.valueOf(Printer.boardingPassData), //二维码内容
                 config,//附带logo
                 FileUtil.newFile(QR_CODE_PATH + "BoardingPassQR.jpg")//写出到的文件
         );
@@ -62,7 +62,7 @@ public class QRCodeGenerator {
         config.setMargin(0);
         config.setRatio(5);
         QrCodeUtil.generate(
-                url, //二维码内容
+                String.valueOf(Printer.tagData), //二维码内容
                 config,//附带logo
                 FileUtil.newFile(QR_CODE_PATH + "TagQR.jpg")//写出到的文件
         );
