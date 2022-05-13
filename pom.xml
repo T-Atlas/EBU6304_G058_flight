@@ -58,6 +58,12 @@
             <version>5.8.0.M4</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -97,6 +103,7 @@
             <version>4.0.16-alpha</version>
             <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 

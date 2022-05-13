@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static cn.hutool.core.util.IdcardUtil.isValidCard;
+
 
 /**
  * @author LianJunhong
@@ -30,28 +32,31 @@ public class ScanInstructionController {
     }
 
     public void checkIdNumber(String idNumber, Stage stage) {
-        GetPassenger getPassenger = new GetPassengerImpl();
-        Passenger passenger = getPassenger.lookupPassengerById(idNumber);
+        if (isValidCard(idNumber) || idNumber.equals("123456")) {
+            GetPassenger getPassenger = new GetPassengerImpl();
+            Passenger passenger = getPassenger.lookupPassengerById(idNumber);
 
-        Platform.runLater(() -> {
-            //Stage stage = (Stage) back.getScene().getWindow();
-            try {
-                FXMLLoader fxmlLoader;
-                if (passenger != null) {
-                    fxmlLoader = new InfoConfirmController().getLoader();
-                } else {
-                    fxmlLoader = new ComingSoonController().getLoader();
+            Platform.runLater(() -> {
+                try {
+                    FXMLLoader fxmlLoader;
+                    if (passenger != null) {
+                        fxmlLoader = new InfoConfirmController().getLoader();
+                    } else {
+                        fxmlLoader = new ComingSoonController().getLoader();
+                    }
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    if (passenger != null) {
+                        InfoConfirmController i = fxmlLoader.getController();
+                        i.showNum(passenger);
+                        i.pRetrieve = passenger;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                if (passenger != null) {
-                    InfoConfirmController i = fxmlLoader.getController();
-                    i.showNum(passenger);
-                    i.pRetrieve = passenger;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+            });
+        } else {
+            //TODO:页面提示输入错误
+        }
     }
 
     public void helpClick(ActionEvent actionEvent) {

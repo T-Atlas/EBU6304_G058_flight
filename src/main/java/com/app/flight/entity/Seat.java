@@ -4,21 +4,21 @@ public enum Seat {
     /**
      * Three types of aircraft accommodation
      */
-    ECONOMY_CLASS(100, 10), BUSINESS_CLASS(200, 5), FIRST_CLASS(400, 5);
+    ECONOMY_CLASS(100, 15), BUSINESS_CLASS(200, 3), FIRST_CLASS(400, 2);
 
-    private int price;
+    private double price;
     private int row;
 
-    Seat(int price, int row) {
+    Seat(double price, int row) {
         this.price = price;
         this.row = row;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

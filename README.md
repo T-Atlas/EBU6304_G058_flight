@@ -125,7 +125,18 @@ Coming soon…
 
 ## Iteration logs
 
-### 4.0 Beta (May 8, 2022) The Latest version
+### 4.5 Beta (May 13, 2022) The Latest version
+
+- Updated the seat price and get the price in Payment page.
+- Updated the pay QR code.
+- Added the boarding pass code and tag code in the last page.
+- Fixed the bugs in implements.
+- Improved the pages design.
+- Fixed the bugs of codes and selecting seat.
+- Updated validators.
+- Added test units.
+
+### 4.0 Beta (May 8, 2022)
 
 - Several bugs fixed and new features added in this release.
 - Separated printing function and created scanning function.

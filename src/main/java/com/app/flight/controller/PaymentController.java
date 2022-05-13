@@ -4,7 +4,12 @@ import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.fastjson2.JSON;
 import com.app.flight.Main;
 import com.app.flight.entity.Food;
+import com.app.flight.entity.Reservation;
+import com.app.flight.service.external.QRCodeGenerator;
+import com.app.flight.service.impl.GetReservationImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import com.app.flight.util.Json;
+import com.app.flight.util.Validator;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +28,7 @@ import java.io.IOException;
 
 public class PaymentController {
 
+
     @FXML
     public Button finish;
     public Button help;
@@ -40,23 +46,28 @@ public class PaymentController {
     @FXML
     private Label foodPrice;
 
+
     public void pay(String paymentMethod) {
         code.setVisible(false);
         textField.setVisible(false);
         clean.setVisible(false);
 
-        File file = new File(Json.FOOD_JSON_PATH);
-        String foodString = Json.extractJsonData(String.valueOf(file));
+        String foodString = Json.extractJsonData(Json.FOOD_JSON_PATH);
         Food food = JSON.parseObject(foodString, Food.class);
-        double fPrice = food.getFoodPrice();
-
-        seatPrice.setText("None");
-        foodPrice.setText("￡" + String.valueOf(fPrice));
+        double foodPrice = food.getFoodPrice();
+        double seatPrice = 0;
+        Reservation reservation = GetReservationImpl.lookupReservation();
+        if (reservation != null) {
+            seatPrice = SeatMapImpl.lookupSeatPrice();
+        }
+        this.seatPrice.setText("￡" + seatPrice);
+        this.foodPrice.setText("￡" + foodPrice);
 
         if (paymentMethod.equals("paypal") || paymentMethod.equals("alipay")) {
             whetherPayment = true;
             code.setVisible(true);
-            code.setImage(new Image(String.valueOf(Main.class.getResource("image/QR.jpg"))));
+            QRCodeGenerator.generatePayCode(paymentMethod);
+            code.setImage(new Image(new File(QRCodeGenerator.QR_CODE_PATH + "QR.jpg").toURI().toString()));
         } else if (paymentMethod.equals("visa")) {
             annotation.setText("--> Please input your VISA card number:");
             textField.setVisible(true);
@@ -73,7 +84,7 @@ public class PaymentController {
     }
 
     public void nextClick(ActionEvent actionEvent) {
-        if (!textField.getText().equals("")) {
+        if ((!textField.getText().equals("")) && Validator.visaIdValidator(textField.getText())) {
             whetherPayment = true;
         }
         if (whetherPayment) {

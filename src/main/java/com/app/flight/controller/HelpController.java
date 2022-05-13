@@ -100,7 +100,7 @@ public class HelpController {
                         Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);
                         SelectSeatController selectSeatController = fxmlLoader.getController();
                         selectSeatController.flightId = flightId;
-                        selectSeatController.showSeatMap(seatMap, selectSeatController);
+                        selectSeatController.showSeatMap(seatMap);
                     }
                     case "InputNumberController" -> {
                         fxmlLoader = new InputNumberController().getLoader();
@@ -112,9 +112,14 @@ public class HelpController {
                             inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);
                         });
                         if (inputNumberController.type.equals("id")) {
-                            inputNumberController.annotation.setText("--> Please input your ID number:");
+                            inputNumberController.annotation.setText("--> Please input your ID number and surname:");
+                            inputNumberController.numLabel.setText("ID Number:");
+                            inputNumberController.nameLabel.setText("Surname:");
                         } else if (inputNumberController.type.equals("booking")) {
                             inputNumberController.annotation.setText("--> Please input your booking number:");
+                            inputNumberController.nameClean.setVisible(false);
+                            inputNumberController.nameClean.setVisible(false);
+                            inputNumberController.surName.setVisible(false);
                         }
                     }
                     case "PaymentController" -> {

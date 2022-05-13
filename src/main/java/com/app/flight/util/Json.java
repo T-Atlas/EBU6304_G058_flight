@@ -20,7 +20,7 @@ public class Json {
     public static final String FOOD_JSON_PATH = "src/main/resources/com/app/flight/data/json/Food.json";
     public static final String PASSENGER_JSON_PATH = "src/main/resources/com/app/flight/data/json/Passenger.json";
     public static final String RESERVATION_JSON_PATH = "src/main/resources/com/app/flight/data/json/Reservation.json";
-    public static final String SEAT_JSON_PATH = "src/main/resources/com/app/flight/data/json/SeatUtil.json";
+    public static final String SEAT_JSON_PATH = "src/main/resources/com/app/flight/data/json/Seat.json";
     public static final String TYPE_JSON_PATH = "src/main/resources/com/app/flight/data/json/Type.json";
 
     public static boolean writeJson(String jsonFilePath, Object obj) {

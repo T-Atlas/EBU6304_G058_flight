@@ -22,23 +22,18 @@ import java.util.Map;
  * @date 2022.4.22
  */
 public class SeatMapImpl implements SetSeatMap, GetSeatMap {
-    public static Map<Integer, String> lookupSeat() {
+    public static double lookupSeatPrice() {
         String seatStr = Json.extractJsonData(Json.SEAT_JSON_PATH);
         if (seatStr != null) {
-            JSONPath rowPath = JSONPath.of("$.row");
-            JSONPath colPath = JSONPath.of("$.column");
-            int row = (int) rowPath.extract(JSONReader.of(seatStr));
-            String col = (String) colPath.extract(JSONReader.of(seatStr));
-            Map<Integer, String> seatMap = new HashMap<>();
-            seatMap.put(row, col);
-            return seatMap;
+            JSONPath pricePath = JSONPath.of("$.price");
+            return Double.parseDouble((String) pricePath.extract(JSONReader.of(seatStr)));
         } else {
-            return null;
+            return 0.0;
         }
     }
 
     @Override
-    public void updateSeatMap(String flightId, String column, int row) {
+    public void updateSeatMap(String flightId, String column, int row, double price) {
         Map<Integer, Map<String, Boolean>> seatMap = lookupSeatMap(flightId);
         Map<String, Boolean> stringBooleanMap = seatMap.get(row);
         Boolean status = stringBooleanMap.get(column);
@@ -52,7 +47,8 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
             String seatInfo = "{\n" +
                     "\t\"flightId\":\"" + flightId + "\",\n" +
                     "\t\"column\":\"" + column + "\",\n" +
-                    "\t\"row\":\"" + row + "\"\n" +
+                    "\t\"row\":\"" + row + "\",\n" +
+                    "\t\"price\":\"" + price + "\"\n" +
                     "}";
             out.write(seatInfo);
         } catch (IOException e) {
