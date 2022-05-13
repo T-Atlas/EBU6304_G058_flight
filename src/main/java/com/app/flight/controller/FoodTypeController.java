@@ -62,8 +62,8 @@ public class FoodTypeController {
     }
 
     /**
-     * The code for button "next" in ” SelectFoodType.fxml“
-     * When click the button, change to “CheckInResult.fxml”
+     * The code for button "next" in "SelectFoodType.fxml"
+     * When click the button, change to "CheckInResult.fxml"
      */
     public void nextClick(ActionEvent actionEvent) {
 

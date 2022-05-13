@@ -97,7 +97,7 @@ public class SelectSeatController {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
         SelectSeatController selectSeatController = fxmlLoader.getController();
         selectSeatController.flightId = flightId;
-        selectSeatController.showSeatMap(seatMap, selectSeatController);
+        selectSeatController.showSeatMap(seatMap);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Please Select Your SeatUtil");
 
@@ -105,12 +105,12 @@ public class SelectSeatController {
         stage.show();
     }
 
-    public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap, SelectSeatController selectSeatController) {
+    public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap) {
         for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
-            selectSeatController.gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
+            this.gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
 
             Text rowText = new Text(String.valueOf(rowMap.getKey()));
-            selectSeatController.gridPane.add(rowText, 0, rowMap.getKey() - 1);
+            this.gridPane.add(rowText, 0, rowMap.getKey() - 1);
             GridPane.setMargin(rowText, new Insets(24));
             for (Map.Entry<String, Boolean> seats : rowMap.getValue().entrySet()) {
                 Button button = new Button(rowMap.getKey() + seats.getKey());
@@ -120,17 +120,17 @@ public class SelectSeatController {
                     //selectSeatController.choiceButton = button;
 
                     button.setOnAction(actionEvent -> {
-                        selectSeatController.previousChoiceButton = selectSeatController.choiceButton;
-                        selectSeatController.choiceButton = button;
-                        selectSeatController.previousChoiceRow = selectSeatController.choiceRow;
-                        selectSeatController.choiceRow = rowMap.getKey();
-                        if (selectSeatController.previousChoiceButton != null) {
-                            selectSeatController.previousChoiceButton.setStyle(getSeatButtonColor(selectSeatController.previousChoiceRow));
+                        this.previousChoiceButton = this.choiceButton;
+                        this.choiceButton = button;
+                        this.previousChoiceRow = this.choiceRow;
+                        this.choiceRow = rowMap.getKey();
+                        if (this.previousChoiceButton != null) {
+                            this.previousChoiceButton.setStyle(getSeatButtonColor(this.previousChoiceRow));
                         }
-                        selectSeatController.choiceRow = rowMap.getKey();
-                        selectSeatController.choiceColumn = String.valueOf(seats.getKey());
-                        selectSeatController.choiceButton = button;
-                        selectSeatController.choicePrice = getSeatPrice(selectSeatController.choiceRow);
+                        this.choiceRow = rowMap.getKey();
+                        this.choiceColumn = String.valueOf(seats.getKey());
+                        this.choiceButton = button;
+                        this.choicePrice = getSeatPrice(this.choiceRow);
                         button.setStyle("-fx-background-color: #008ef3");
                     });
                 } else {
@@ -143,7 +143,7 @@ public class SelectSeatController {
                         alert.showAndWait();
                     });
                 }
-                selectSeatController.gridPane.add(button, DataParser.stringToNo(seats.getKey()), rowMap.getKey() - 1);
+                this.gridPane.add(button, DataParser.stringToNo(seats.getKey()), rowMap.getKey() - 1);
                 GridPane.setMargin(button, new Insets(18));
             }
         }

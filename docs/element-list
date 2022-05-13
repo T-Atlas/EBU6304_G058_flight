@@ -1,0 +1,12 @@
+module:com.app.flight
+com.app.flight
+com.app.flight.controller
+com.app.flight.entity
+com.app.flight.service
+com.app.flight.service.external
+com.app.flight.service.impl
+com.app.flight.service.temp
+com.app.flight.util
+serviceTest
+utilTest
+validatorTest
