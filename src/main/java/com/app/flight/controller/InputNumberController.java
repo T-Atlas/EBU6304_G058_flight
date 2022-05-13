@@ -33,6 +33,11 @@ public class InputNumberController {
     public Button help;
     public Button back;
 
+    public Button numClean;
+    public Label nameLabel;
+    public Label numLabel;
+    public TextField surName;
+
     protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
 

@@ -70,9 +70,15 @@ public class SelectMethodController {
                         inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);
                     });
                     if (inputNumberController.type.equals("id")) {
-                        inputNumberController.annotation.setText("--> Please input your ID number:");
+                        inputNumberController.annotation.setText("--> Please input your Surname and ID number:");
+                        inputNumberController.numLabel.setText("ID Number:");
+                        inputNumberController.nameLabel.setText("Surname:");
+
                     } else if (inputNumberController.type.equals("booking")) {
                         inputNumberController.annotation.setText("--> Please input your booking number:");
+                        inputNumberController.numClean.setVisible(false);
+                        inputNumberController.numClean.setVisible(false);
+                        inputNumberController.surName.setVisible(false);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
