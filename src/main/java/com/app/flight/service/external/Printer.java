@@ -105,16 +105,16 @@ public class Printer {
             }
         }
         BufferedWriter out;
-        if (!reservation[5].equals("0")) {
-            ArrayList<String[]> boardingPassData = Csv.readCsv(Csv.BOARDING_PASS_CSV_PATH);
-            int tagNo = 0;
-            for (String[] boardingPassStr : boardingPassData) {
-                if (boardingPassStr[1].equals(flightId)) {
-                    tagNo++;
-                }
+        ArrayList<String[]> boardingPassData = Csv.readCsv(Csv.BOARDING_PASS_CSV_PATH);
+        int tagNo = 0;
+        for (String[] boardingPassStr : boardingPassData) {
+            if (boardingPassStr[1].equals(flightId)) {
+                tagNo++;
             }
-            StringBuilder no = new StringBuilder(String.valueOf(tagNo));
-            no.append(" ".repeat(Math.max(0, 3 - String.valueOf(tagNo).length())));
+        }
+        StringBuilder no = new StringBuilder(String.valueOf(tagNo));
+        no.append(" ".repeat(Math.max(0, 3 - String.valueOf(tagNo).length())));
+        if (!reservation[5].equals("0")) {
             try {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath)));
@@ -137,6 +137,41 @@ public class Printer {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath)));
                 out.write("You don't have hand baggage");
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (!reservation[6].equals("0")) {
+            String boardingGate = boardingPass.getFlight().getBoardingGate();
+            if (boardingGate.length() == 2) {
+                boardingGate = boardingGate + " ";
+            }
+            try {
+                out = new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream(tagFilePath, true)));
+                out.write("\n\n_______________________________________\n\n");
+                out.write("   ___________VOUCHER___________\n" +
+                        " / \\                            \\.\n" +
+                        "|   |                           |.\n" +
+                        " \\__|                           |.\n" +
+                        "    |  NO." + no + "                   |.\n" +
+                        "    |  COUNTER: " + boardingGate + "             |.\n" +
+                        "    |  CHECKED BAGGAGE: " + reservation[6] + "       |.\n" +
+                        "    |                           |.\n" +
+                        "    |   ________________________|____\n" +
+                        "    |  /                            /.\n" +
+                        "    \\_/Group58_____________________/.");
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                out = new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream(tagFilePath)));
+                out.write("You don't have checked baggage");
                 out.close();
             } catch (IOException e) {
                 e.printStackTrace();

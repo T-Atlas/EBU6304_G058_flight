@@ -1,0 +1,23 @@
+{
+  "passenger": {
+    "passengerId": "220802200004182117",
+    "firstName": "Lian",
+    "lastName": "Test",
+    "age": 18,
+    "telephone": "13104367774"
+  },
+  "flight": {
+    "flightId": "MU1234",
+    "departure": "Beijing",
+    "destination": "Hainan",
+    "boardingGate": "A10",
+    "boardingTime": "2022-04-29T11:25:00",
+    "departureTime": "2022-04-29T11:55:00",
+    "arrivalTime": "2022-04-29T16:55:00"
+  },
+  "seatNo": "1B",
+  "food": {
+    "foodName": "HALAL",
+    "foodPrice": 50.0
+  }
+}

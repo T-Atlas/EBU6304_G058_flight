@@ -106,4 +106,9 @@ public class Validator {
 
         return false;
     }
+
+    public static boolean visaIdValidator(String visaId) {
+        //TODO:验证银行卡号，自己编写规则
+        return true;
+    }
 }

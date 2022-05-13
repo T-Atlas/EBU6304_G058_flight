@@ -13,7 +13,6 @@ import java.io.File;
  */
 public class Scanner implements Runnable {
 
-
     public ScanInstructionController scanInstructionController;
     public Stage stage;
 
