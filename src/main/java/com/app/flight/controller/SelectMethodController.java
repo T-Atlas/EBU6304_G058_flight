@@ -61,7 +61,7 @@ public class SelectMethodController {
         if (bookingNum.isSelected() || idNum.isSelected()) {
             Platform.runLater(() -> {
                 try {
-                    FXMLLoader fxmlLoader = new InputNumberController().getLoader();//需要修改成页面展示的controller
+                    FXMLLoader fxmlLoader = new InputNumberController().getLoader();//Controller that needs to be modified for page display
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     InputNumberController inputNumberController = fxmlLoader.getController();
                     inputNumberController.type = (String) method.getSelectedToggle().getUserData();
