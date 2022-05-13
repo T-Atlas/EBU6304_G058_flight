@@ -113,7 +113,6 @@ public class SelectSeatController {
                 button.setMinWidth(80);
                 if (seats.getValue()) {
                     button.setStyle(getSeatButtonColor(rowMap.getKey()));
-                    selectSeatController.choicePrice = getSeatPrice(rowMap.getKey());
                     selectSeatController.choiceButton = button;
 
                     button.setOnAction(actionEvent -> {
@@ -121,6 +120,7 @@ public class SelectSeatController {
                         selectSeatController.choiceRow = rowMap.getKey();
                         selectSeatController.choiceColumn = String.valueOf(seats.getKey());
                         selectSeatController.choiceButton = button;
+                        selectSeatController.choicePrice = getSeatPrice(selectSeatController.choiceRow);
                         button.setStyle("-fx-background-color: #008ef3");
                     });
                 } else {
