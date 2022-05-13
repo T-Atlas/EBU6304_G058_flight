@@ -118,7 +118,6 @@ public class SelectSeatController {
 
                     button.setOnAction(actionEvent -> {
                         selectSeatController.choiceButton.setStyle(getSeatButtonColor(selectSeatController.choiceRow));
-
                         selectSeatController.choiceRow = rowMap.getKey();
                         selectSeatController.choiceColumn = String.valueOf(seats.getKey());
                         selectSeatController.choiceButton = button;
@@ -174,7 +173,7 @@ public class SelectSeatController {
             }
         } else {
             // FIRST_CLASS
-            return Seat.ECONOMY_CLASS.getPrice();
+            return Seat.FIRST_CLASS.getPrice();
         }
     }
 

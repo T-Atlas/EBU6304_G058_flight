@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 29 APRIL           |.
-    |  FLIGHT: MU1234           |.
-    |  NAME: Lian Test          |.
-    |  SEAT: 1B                 |.
-    |  GATE: A10                |.
+    |  DATE: 25 MAY             |.
+    |  FLIGHT: MH1234           |.
+    |  NAME: Jun Test           |.
+    |  SEAT: 2F                 |.
+    |  GATE: C10                |.
     |  BD TIME: 11:25           |.
-    |  DEST: Hainan             |.
+    |  DEST: Shanghai           |.
     |                           |.
     |                           |.
     |   ________________________|____
