@@ -45,6 +45,7 @@ public class QRCodeGenerator {
         path = BOARDING_IMAGE_PATH;
         QrConfig config = new QrConfig(600, 600);
         config.setImg(new File(path));
+        config.setErrorCorrection(ErrorCorrectionLevel.L);
         config.setMargin(0);
         config.setRatio(6);
         QrCodeUtil.generate(
@@ -59,6 +60,7 @@ public class QRCodeGenerator {
         path = TAG_IMAGE_PATH;
         QrConfig config = new QrConfig(600, 600);
         config.setImg(new File(path));
+        config.setErrorCorrection(ErrorCorrectionLevel.L);
         config.setMargin(0);
         config.setRatio(5);
         QrCodeUtil.generate(
