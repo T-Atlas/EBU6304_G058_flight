@@ -17,6 +17,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static cn.hutool.core.util.IdcardUtil.isValidCard;
+
 /**
  * @author LianJunhong
  * @author HuangHong
@@ -67,7 +69,7 @@ public class InputNumberController {
 
     protected Passenger getPassengerInfo(String type, String text) {
         Passenger passenger;
-        if (type.equals("id") && (Validator.idValidator(text) || text.equals("123456"))) {
+        if (type.equals("id") && (isValidCard(text) || text.equals("123456"))) {
             passenger = getPassenger.lookupPassengerById(text);
         } else if (type.equals("booking") && Validator.reservationIdValidator(text)) {
             passenger = getPassenger.lookupPassengerByBookingNumber(text);
