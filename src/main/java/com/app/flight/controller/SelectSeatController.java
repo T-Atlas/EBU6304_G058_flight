@@ -28,24 +28,18 @@ import java.util.Map;
  */
 public class SelectSeatController {
 
+    private final int firstClassLimit = Seat.FIRST_CLASS.getRow();
+    private final int businessClassLimit = Seat.BUSINESS_CLASS.getRow();
     @FXML
     public ChoiceBox<String> seat;
-
     @FXML
     public Button help;
-
     @FXML
     public Button next;
-
     @FXML
     public GridPane gridPane;
-
     public Button choiceButton;
-    private final int firstClassLimit = Seat.FIRST_CLASS.getRow();
-
     public int choiceRow;
-    private final int businessClassLimit = Seat.BUSINESS_CLASS.getRow();
-
     public String choiceColumn;
 
     public double choicePrice;

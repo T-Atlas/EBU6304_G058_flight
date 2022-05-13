@@ -171,13 +171,18 @@
                         <Font size="25.0"/>
                     </font>
                 </TextField>
-                <Button fx:id="numClean" layoutX="823.0" layoutY="126.0" mnemonicParsing="false" onAction="#clean"
+                <Button fx:id="nameClean" layoutX="823.0" layoutY="126.0" mnemonicParsing="false" onAction="#nameClean"
                         prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #8d8d8d; -fx-font-weight: bold;"
                         text="X" textFill="WHITE">
                     <font>
                         <Font size="16.0"/>
                     </font>
                 </Button>
+                <Label fx:id="attention" layoutX="387.0" layoutY="211.0" textFill="RED">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Label>
             </children>
         </AnchorPane>
     </children>

@@ -1,5 +1,7 @@
 package com.app.flight.util;
 
+import cn.hutool.core.util.IdcardUtil;
+
 import java.time.LocalDateTime;
 
 /**
@@ -110,5 +112,9 @@ public class Validator {
     public static boolean visaIdValidator(String visaId) {
         //TODO:验证银行卡号，自己编写规则
         return true;
+    }
+
+    public static boolean idValidator(String id) {
+        return IdcardUtil.isValidCard(id);
     }
 }
