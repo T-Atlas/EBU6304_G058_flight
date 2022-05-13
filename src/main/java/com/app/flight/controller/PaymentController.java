@@ -7,6 +7,7 @@ import com.app.flight.entity.Food;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.external.QRCodeGenerator;
 import com.app.flight.service.impl.GetReservationImpl;
+import com.app.flight.service.impl.SeatMapImpl;
 import com.app.flight.util.Json;
 import com.app.flight.util.Validator;
 import javafx.application.Platform;
@@ -57,7 +58,7 @@ public class PaymentController {
         double seatPrice = 0;
         Reservation reservation = GetReservationImpl.lookupReservation();
         if (reservation != null) {
-            seatPrice = reservation.getSeatLevel().getPrice();
+            seatPrice = SeatMapImpl.lookupSeatPrice();
         }
         this.seatPrice.setText("￡" + seatPrice);
         this.foodPrice.setText("￡" + foodPrice);

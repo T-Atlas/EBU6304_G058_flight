@@ -63,7 +63,7 @@ public class Printer {
         StringBuilder destSpaces = new StringBuilder();
         destSpaces.append(" ".repeat(Math.max(0, 19 - destination.length())));
         BufferedWriter out = null;
-        boardingPassData.append("DATE : ").append(dayOfMonth).append(" ").append(month).append("\n")
+        boardingPassData.append("DATE: ").append(dayOfMonth).append(" ").append(month).append("\n")
                 .append("FLIGHT: ").append(flight.getFlightId()).append("\n")
                 .append("NAME: ").append(firstName).append(" ").append(lastName).append("\n")
                 .append("SEAT: ").append(seatNo).append("\n")
