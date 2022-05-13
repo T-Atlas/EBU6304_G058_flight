@@ -4,7 +4,6 @@ import com.app.flight.Main;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetPassenger;
 import com.app.flight.service.impl.GetPassengerImpl;
-import com.app.flight.util.Validator;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +14,8 @@ import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static cn.hutool.core.util.IdcardUtil.isValidCard;
 
 
 /**
@@ -31,7 +32,7 @@ public class ScanInstructionController {
     }
 
     public void checkIdNumber(String idNumber, Stage stage) {
-        if (Validator.idValidator(idNumber) || idNumber.equals("123456")) {
+        if (isValidCard(idNumber) || idNumber.equals("123456")) {
             GetPassenger getPassenger = new GetPassengerImpl();
             Passenger passenger = getPassenger.lookupPassengerById(idNumber);
 

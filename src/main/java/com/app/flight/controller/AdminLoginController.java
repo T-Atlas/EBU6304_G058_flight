@@ -75,6 +75,7 @@ public class AdminLoginController {
 
     /**
      * The code for other pages to open AdminLogin.fxml
+     *
      * @param stage
      * @throws IOException
      */
