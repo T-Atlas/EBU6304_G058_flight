@@ -113,7 +113,9 @@ public class SelectSeatController {
                 button.setMinWidth(80);
                 if (seats.getValue()) {
                     button.setStyle(getSeatButtonColor(rowMap.getKey()));
+                    // Choice initialization
                     selectSeatController.choiceButton = button;
+                    selectSeatController.choiceRow = rowMap.getKey();
 
                     button.setOnAction(actionEvent -> {
                         selectSeatController.choiceButton.setStyle(getSeatButtonColor(selectSeatController.choiceRow));
