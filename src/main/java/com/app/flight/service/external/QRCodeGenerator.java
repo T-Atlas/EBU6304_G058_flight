@@ -45,10 +45,11 @@ public class QRCodeGenerator {
         path = BOARDING_IMAGE_PATH;
         QrConfig config = new QrConfig(600, 600);
         config.setImg(new File(path));
+        config.setErrorCorrection(ErrorCorrectionLevel.L);
         config.setMargin(0);
         config.setRatio(6);
         QrCodeUtil.generate(
-                url, //二维码内容
+                String.valueOf(Printer.boardingPassData), //二维码内容
                 config,//附带logo
                 FileUtil.newFile(QR_CODE_PATH + "BoardingPassQR.jpg")//写出到的文件
         );
@@ -59,10 +60,11 @@ public class QRCodeGenerator {
         path = TAG_IMAGE_PATH;
         QrConfig config = new QrConfig(600, 600);
         config.setImg(new File(path));
+        config.setErrorCorrection(ErrorCorrectionLevel.L);
         config.setMargin(0);
         config.setRatio(5);
         QrCodeUtil.generate(
-                url, //二维码内容
+                String.valueOf(Printer.tagData), //二维码内容
                 config,//附带logo
                 FileUtil.newFile(QR_CODE_PATH + "TagQR.jpg")//写出到的文件
         );

@@ -9,7 +9,7 @@ public enum Seat {
     private double price;
     private int row;
 
-    Seat(int price, int row) {
+    Seat(double price, int row) {
         this.price = price;
         this.row = row;
     }

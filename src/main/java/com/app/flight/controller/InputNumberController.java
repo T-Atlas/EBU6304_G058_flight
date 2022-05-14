@@ -17,8 +17,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static cn.hutool.core.util.IdcardUtil.isValidCard;
-
 /**
  * @author LianJunhong
  * @author HuangHong
@@ -35,11 +33,18 @@ public class InputNumberController {
     public Button help;
     public Button back;
 
+    public Button nameClean;
+    public Label nameLabel;
+    public Label numLabel;
+    public TextField surName;
+
+    public Label attention;
+
     protected String type;
     GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {
-        p = getPassengerInfo(type, number.getText());
+        p = getPassengerInfo(type, number.getText(), surName.getText());
         System.out.println(p);
         Platform.runLater(() -> {
             Stage stage = (Stage) clean.getScene().getWindow();
@@ -47,29 +52,36 @@ public class InputNumberController {
                 FXMLLoader fxmlLoader;
                 if (p != null) {
                     fxmlLoader = new InfoConfirmController().getLoader();
-                } else {
-                    fxmlLoader = new ComingSoonController().getLoader();
-                }
-                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
-                if (p != null) {
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     InfoConfirmController i = fxmlLoader.getController();
                     i.showNum(p);
                     i.pRetrieve = p;
+                } else {
+                    number.setText("");
+                    surName.setText("");
+                    next.setDisable(true);
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
 
-    protected Passenger getPassengerInfo(String type, String text) {
+    protected Passenger getPassengerInfo(String type, String id, String name) {
         Passenger passenger;
-        if (type.equals("id") && (isValidCard(text) || text.equals("123456"))) {
-            passenger = getPassenger.lookupPassengerById(text);
-        } else if (type.equals("booking") && Validator.reservationIdValidator(text)) {
-            passenger = getPassenger.lookupPassengerByBookingNumber(text);
+        if (type.equals("id") && (Validator.idValidator(id) || id.equals("123456"))) {
+            passenger = getPassenger.lookupPassengerById(id);
+            if (passenger == null) {
+                attention.setText("Passenger not found.");
+            } else if (!passenger.getLastName().equals(name)) {
+                attention.setText("Surname doesn't match the ID number.");
+                passenger = null;
+            }
+        } else if (type.equals("booking") && Validator.reservationIdValidator(id)) {
+            passenger = getPassenger.lookupPassengerByBookingNumber(id);
         } else {
-            //TODO:页面提示输入错误
+            attention.setText("Invalid number.");
             passenger = null;
         }
         return passenger;
@@ -89,6 +101,11 @@ public class InputNumberController {
 
     public void clean(ActionEvent actionEvent) {
         number.setText("");
+        next.setDisable(true);
+    }
+
+    public void nameClean(ActionEvent actionEvent) {
+        surName.setText("");
         next.setDisable(true);
     }
 

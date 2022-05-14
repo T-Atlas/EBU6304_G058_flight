@@ -25,6 +25,8 @@ import java.util.ArrayList;
 public class Printer {
     private static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
     private static final String TAG_TXT_PATH = "src/main/resources/com/app/flight/data/printer/Tag.txt";
+    public static StringBuilder boardingPassData = new StringBuilder();
+    public static StringBuilder tagData = new StringBuilder();
 
 
     public static void printBoardingPass(String jsonFilePath, String boardingPassFilePath) {
@@ -61,6 +63,14 @@ public class Printer {
         StringBuilder destSpaces = new StringBuilder();
         destSpaces.append(" ".repeat(Math.max(0, 19 - destination.length())));
         BufferedWriter out = null;
+        boardingPassData.delete(0, boardingPassData.length());
+        boardingPassData.append("DATE: ").append(dayOfMonth).append(" ").append(month).append("\n")
+                .append("FLIGHT: ").append(flight.getFlightId()).append("\n")
+                .append("NAME: ").append(firstName).append(" ").append(lastName).append("\n")
+                .append("SEAT: ").append(seatNo).append("\n")
+                .append("GATE: ").append(boardingGate).append("\n")
+                .append("BD TIME: ").append(hour).append(":").append(minute).append("\n")
+                .append("DEST: ").append(destination).append("\n");
         try {
             out = new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream(boardingPassFilePath)));
@@ -114,7 +124,10 @@ public class Printer {
         }
         StringBuilder no = new StringBuilder(String.valueOf(tagNo));
         no.append(" ".repeat(Math.max(0, 3 - String.valueOf(tagNo).length())));
+        tagData.delete(0, tagData.length());
         if (!reservation[5].equals("0")) {
+            tagData.append("NO.").append(no).append("\n")
+                    .append("HAND BAGGAGE: ").append(reservation[5]).append("\n\n");
             try {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath)));
@@ -136,6 +149,7 @@ public class Printer {
             try {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath)));
+                tagData.append("You don't have hand baggage\n\n");
                 out.write("You don't have hand baggage");
                 out.close();
             } catch (IOException e) {
@@ -148,6 +162,9 @@ public class Printer {
             if (boardingGate.length() == 2) {
                 boardingGate = boardingGate + " ";
             }
+            tagData.append("NO.").append(no).append("\n")
+                    .append("COUNTER: ").append(boardingGate).append("\n")
+                    .append("CHECKED BAGGAGE: ").append(reservation[6]).append("\n");
             try {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath, true)));
@@ -171,6 +188,7 @@ public class Printer {
             try {
                 out = new BufferedWriter(new OutputStreamWriter(
                         new FileOutputStream(tagFilePath)));
+                tagData.append("You don't have checked baggage\n");
                 out.write("You don't have checked baggage");
                 out.close();
             } catch (IOException e) {
