@@ -23,8 +23,8 @@ import java.util.ArrayList;
  * @author SongBo
  */
 public class Printer {
-    private static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
-    private static final String TAG_TXT_PATH = "src/main/resources/com/app/flight/data/printer/Tag.txt";
+    private static final String BOARDING_PASS_TXT_PATH = "data/printer/BoardingPass.txt";
+    private static final String TAG_TXT_PATH = "data/printer/Tag.txt";
     public static StringBuilder boardingPassData = new StringBuilder();
     public static StringBuilder tagData = new StringBuilder();
 

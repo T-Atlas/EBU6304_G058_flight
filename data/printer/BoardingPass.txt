@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 11 SEPTEMBER       |.
-    |  FLIGHT: MH8633           |.
-    |  NAME: Jun Test           |.
-    |  SEAT: 4F                 |.
-    |  GATE: B8                 |.
-    |  BD TIME: 07:05           |.
-    |  DEST: Hainan             |.
+    |  DATE: 24 DECEMBER        |.
+    |  FLIGHT: HH6324           |.
+    |  NAME: Lei Sui            |.
+    |  SEAT: 2C                 |.
+    |  GATE: B14                |.
+    |  BD TIME: 10:30           |.
+    |  DEST: Shenzhen           |.
     |                           |.
     |                           |.
     |   ________________________|____

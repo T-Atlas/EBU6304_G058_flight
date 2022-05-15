@@ -50,13 +50,13 @@ public class SeatUtil {
     }
 
     public static String generateSeatFilePath(String flightId) {
-        ArrayList<String[]> csvList = Csv.readCsv("src/main/resources/com/app/flight/data/csv/Flight.csv");
+        ArrayList<String[]> csvList = Csv.readCsv("data/csv/Flight.csv");
         String filePath = null;
         for (String[] csvData : csvList) {
             if (csvData[0].equals(flightId)) {
                 String[] flightData = csvData.clone();
                 String[] date = flightData[5].split(" ");
-                filePath = "src/main/resources/com/app/flight/data/csv/flightSeat/" + flightData[0] + "_" + date[0] + ".csv";
+                filePath = "data/csv/flightSeat/" + flightData[0] + "_" + date[0] + ".csv";
                 break;
             }
         }
