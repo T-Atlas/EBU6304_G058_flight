@@ -18,9 +18,7 @@ public class Validator {
      */
     public static boolean reservationIdValidator(String reservationId) {
         if (reservationId.length() == 19) {
-            if (isDigit(reservationId)) {
-                return true;
-            }
+            return isDigit(reservationId);
         }
         return false;
     }
