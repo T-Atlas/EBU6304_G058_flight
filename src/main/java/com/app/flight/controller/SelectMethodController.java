@@ -58,7 +58,7 @@ public class SelectMethodController {
         Obj.setSelectType((String) method.getSelectedToggle().getUserData());
         Stage stage = (Stage) next.getScene().getWindow();
         //send selected method to next controller depending on which radiobutton is selected
-        if (bookingNum.isSelected() || idNum.isSelected()) {
+        if (idNum.isSelected()) {
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new InputNumberController().getLoader();//Controller that needs to be modified for page display
@@ -72,17 +72,28 @@ public class SelectMethodController {
                     inputNumberController.surName.textProperty().addListener(changeListener -> {
                         inputNumberController.next.setDisable((inputNumberController.number.getText().length() <= 0) || (inputNumberController.surName.getText().length() <= 0));
                     });
-                    if (inputNumberController.type.equals("id")) {
-                        inputNumberController.annotation.setText("--> Please input your ID number and surname:");
-                        inputNumberController.numLabel.setText("ID Number:");
-                        inputNumberController.nameLabel.setText("Surname:");
-
-                    } else if (inputNumberController.type.equals("booking")) {
-                        inputNumberController.annotation.setText("--> Please input your booking number:");
-                        inputNumberController.nameClean.setVisible(false);
-                        inputNumberController.nameClean.setVisible(false);
-                        inputNumberController.surName.setVisible(false);
-                    }
+                    inputNumberController.annotation.setText("--> Please input your ID number and surname:");
+                    inputNumberController.numLabel.setText("ID Number:");
+                    inputNumberController.nameLabel.setText("Surname:");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } else if (bookingNum.isSelected()) {
+            Platform.runLater(() -> {
+                try {
+                    FXMLLoader fxmlLoader = new InputNumberController().getLoader();//Controller that needs to be modified for page display
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    InputNumberController inputNumberController = fxmlLoader.getController();
+                    inputNumberController.type = (String) method.getSelectedToggle().getUserData();
+                    inputNumberController.next.setDisable(true);
+                    inputNumberController.number.textProperty().addListener(changeListener -> {
+                        inputNumberController.next.setDisable((inputNumberController.number.getText().length() <= 0));
+                    });
+                    inputNumberController.annotation.setText("--> Please input your booking number:");
+                    inputNumberController.nameClean.setVisible(false);
+                    inputNumberController.nameClean.setVisible(false);
+                    inputNumberController.surName.setVisible(false);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
