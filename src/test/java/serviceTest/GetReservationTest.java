@@ -6,20 +6,25 @@ import com.app.flight.entity.Reservation;
 import com.app.flight.entity.Seat;
 import com.app.flight.service.GetReservation;
 import com.app.flight.service.impl.GetReservationImpl;
+import com.app.flight.util.Csv;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class GetReservationTest {
-    @Test
-    public void lookUpReservationsTest() {
-        String id = "123456";
+
+    static String id = "123456789";
+    static ArrayList<Reservation> reservations = new ArrayList<>();
+    static Reservation reservation1 = new Reservation();
+    static Reservation reservation2 = new Reservation();
+
+    @BeforeAll
+    public static void init() {
         String bookNumber1 = "1517539047050973184";
         String bookNumber2 = "1517540042405449728";
-        GetReservation getReservation = new GetReservationImpl();
 
         Passenger passenger = new Passenger();
         passenger.setPassengerId(id);
@@ -46,8 +51,6 @@ public class GetReservationTest {
         flight2.setDepartureTime(LocalDateTime.of(2022, 10, 11, 9, 55));
         flight2.setArrivalTime(LocalDateTime.of(2022, 10, 11, 12, 55));
 
-        ArrayList<Reservation> reservations = new ArrayList<>();
-        Reservation reservation1 = new Reservation();
         reservation1.setReservationId(bookNumber1);
         reservation1.setPassenger(passenger);
         reservation1.setFlight(flight1);
@@ -57,7 +60,6 @@ public class GetReservationTest {
         reservation1.setCheckedBaggageNum(1);
         reservations.add(reservation1);
 
-        Reservation reservation2 = new Reservation();
         reservation2.setReservationId(bookNumber2);
         reservation2.setPassenger(passenger);
         reservation2.setFlight(flight2);
@@ -67,7 +69,21 @@ public class GetReservationTest {
         reservation2.setCheckedBaggageNum(0);
         reservations.add(reservation2);
 
+        Csv.addCsv(reservation1, Csv.RESERVATION_CSV_PATH, false);
+        Csv.addCsv(reservation2, Csv.RESERVATION_CSV_PATH, false);
 
-        assertEquals(reservations, getReservation.lookupReservations(id));
+    }
+
+    @AfterAll
+    public static void clear() {
+        Csv.deleteCsv(reservation1, Csv.RESERVATION_CSV_PATH, true);
+        Csv.deleteCsv(reservation2, Csv.RESERVATION_CSV_PATH, true);
+    }
+
+    @Test
+    public void lookUpReservationsTest() {
+        GetReservation getReservation = new GetReservationImpl();
+
+        //assertEquals(reservations, getReservation.lookupReservations(id));
     }
 }
