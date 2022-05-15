@@ -61,7 +61,6 @@ public class GetBoardingPassTest {
     public void lookupBoardingPassTest() {
 
         GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
-
         assertEquals(boardingPass, getBoardingPass.lookupBoardingPass());
     }
 }
