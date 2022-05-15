@@ -4,10 +4,12 @@ import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
 import com.app.flight.entity.*;
 import com.app.flight.util.Csv;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
+import static com.app.flight.util.Csv.addCsv;
 import static com.app.flight.util.Csv.deleteCsv;
 
 public class CsvTest {
@@ -20,7 +22,8 @@ public class CsvTest {
      * Test for csv
      */
     @Test
-    public void CsvTest() {
+    @DisplayName("sd")
+    public void csvTest() {
         passenger = new Passenger();
         passenger.setPassengerId("210122196110070924");
         passenger.setFirstName("p1");
@@ -65,11 +68,11 @@ public class CsvTest {
 
         food = new Food();
         food.setFoodName(Food.foodType.STANDARD);
-        food.setFoodPrice(20.0);
-        assert Csv.addCsv(food, Csv.FOOD_CSV_PATH, false) : "Add food csv failed";
-        food.setFoodName(Food.foodType.HALAL);
-        //assert Csv.updateCsv(food,Csv.FOOD_CSV_PATH):"Update food csv failed";
+        food.setFoodPrice(40.0);
+        assert Csv.updateCsv(food, Csv.FOOD_CSV_PATH) : "Update food csv failed";
         Csv.readCsv(Csv.FOOD_CSV_PATH);
-        //assert deleteCsv(food,Csv.FOOD_CSV_PATH,true):"Delete food csv failed";
+        assert deleteCsv(food, Csv.FOOD_CSV_PATH, true) : "Delete food csv failed";
+        food.setFoodPrice(30.0);
+        assert addCsv(food, Csv.FOOD_CSV_PATH, false) : "Add food csv failed";
     }
 }

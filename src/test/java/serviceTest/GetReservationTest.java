@@ -14,9 +14,16 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class GetReservationTest {
 
-    static String id = "123456789";
+    static String id = "123456";
+    static Passenger passenger = new Passenger();
+
+    static Flight flight1 = new Flight();
+    static Flight flight2 = new Flight();
+
     static ArrayList<Reservation> reservations = new ArrayList<>();
     static Reservation reservation1 = new Reservation();
     static Reservation reservation2 = new Reservation();
@@ -26,14 +33,14 @@ public class GetReservationTest {
         String bookNumber1 = "1517539047050973184";
         String bookNumber2 = "1517540042405449728";
 
-        Passenger passenger = new Passenger();
         passenger.setPassengerId(id);
         passenger.setFirstName("Test");
         passenger.setLastName("Jun");
         passenger.setAge(22);
         passenger.setTelephone("13104368848");
 
-        Flight flight1 = new Flight();
+        Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
+
         flight1.setFlightId("MH8633");
         flight1.setDeparture("Beijing");
         flight1.setDestination("Hainan");
@@ -42,7 +49,6 @@ public class GetReservationTest {
         flight1.setDepartureTime(LocalDateTime.of(2022, 9, 11, 9, 55));
         flight1.setArrivalTime(LocalDateTime.of(2022, 9, 11, 12, 55));
 
-        Flight flight2 = new Flight();
         flight2.setFlightId("MH1234");
         flight2.setDeparture("Beijing");
         flight2.setDestination("Shanghai");
@@ -50,6 +56,9 @@ public class GetReservationTest {
         flight2.setBoardingTime(LocalDateTime.of(2022, 10, 11, 7, 5));
         flight2.setDepartureTime(LocalDateTime.of(2022, 10, 11, 9, 55));
         flight2.setArrivalTime(LocalDateTime.of(2022, 10, 11, 12, 55));
+
+        Csv.addCsv(flight1, Csv.FLIGHT_CSV_PATH, false);
+        Csv.addCsv(flight2, Csv.FLIGHT_CSV_PATH, false);
 
         reservation1.setReservationId(bookNumber1);
         reservation1.setPassenger(passenger);
@@ -76,6 +85,9 @@ public class GetReservationTest {
 
     @AfterAll
     public static void clear() {
+        Csv.deleteCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
+        Csv.deleteCsv(flight1, Csv.FLIGHT_CSV_PATH, true);
+        Csv.deleteCsv(flight2, Csv.FLIGHT_CSV_PATH, true);
         Csv.deleteCsv(reservation1, Csv.RESERVATION_CSV_PATH, true);
         Csv.deleteCsv(reservation2, Csv.RESERVATION_CSV_PATH, true);
     }
@@ -84,6 +96,6 @@ public class GetReservationTest {
     public void lookUpReservationsTest() {
         GetReservation getReservation = new GetReservationImpl();
 
-        //assertEquals(reservations, getReservation.lookupReservations(id));
+        assertEquals(reservations, getReservation.lookupReservations(id));
     }
 }

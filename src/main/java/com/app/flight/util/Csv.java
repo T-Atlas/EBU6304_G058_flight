@@ -118,7 +118,7 @@ public class Csv {
      * @return Whether deleted successfully or not
      */
     public static boolean deleteCsv(Object entity, String filePath, boolean unique) {
-        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString);
+        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString, JSONWriter.Feature.WriteEnumsUsingName);
         JSONObject jsonObj = JSON.parseObject(data);
         String[] csvHeaders = Obj.generateObjAttr(entity);
         ArrayList<String[]> csvData = readCsv(filePath);
