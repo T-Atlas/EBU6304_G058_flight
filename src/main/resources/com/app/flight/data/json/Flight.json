@@ -3,7 +3,7 @@
   "departure": "Beijing",
   "destination": "Hainan",
   "boardingGate": "B8",
-  "boardingTime": "2022-09-11T07:05:00",
-  "departureTime": "2022-05-11T09:55:00",
-  "arrivalTime": "2022-05-11T12:55:00"
+  "boardingTime": "2022-09-11 07:05",
+  "departureTime": "2022-05-11 09:55",
+  "arrivalTime": "2022-05-11 12:55"
 }

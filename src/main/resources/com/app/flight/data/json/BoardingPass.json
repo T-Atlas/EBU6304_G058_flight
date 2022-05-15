@@ -1,21 +1,21 @@
 {
   "passenger": {
     "passengerId": "123456",
-    "firstName": "Jun",
-    "lastName": "Test",
+    "firstName": "Test",
+    "lastName": "Jun",
     "age": 22,
     "telephone": "13104368848"
   },
   "flight": {
-    "flightId": "MH8633",
+    "flightId": "MH1234",
     "departure": "Beijing",
-    "destination": "Hainan",
-    "boardingGate": "B8",
-    "boardingTime": "2022-09-11T07:05:00",
-    "departureTime": "2022-05-11T09:55:00",
-    "arrivalTime": "2022-05-11T12:55:00"
+    "destination": "Shanghai",
+    "boardingGate": "A10",
+    "boardingTime": "2022-05-25 11:25",
+    "departureTime": "2022-05-25 11:55",
+    "arrivalTime": "2022-05-25 14:55"
   },
-  "seatNo": "4F",
+  "seatNo": "1A",
   "food": {
     "foodName": "VEGETARIAN",
     "foodPrice": 20.0
