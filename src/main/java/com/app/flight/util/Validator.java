@@ -101,9 +101,7 @@ public class Validator {
      */
     public static boolean visaIdValidator(String visaId) {
         if (visaId.length() == 19) {
-            if (isDigit(visaId)) {
-                return true;
-            }
+            return isDigit(visaId);
         }
         return false;
     }
