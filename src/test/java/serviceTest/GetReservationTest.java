@@ -67,6 +67,7 @@ public class GetReservationTest {
         reservation2.setCheckedBaggageNum(0);
         reservations.add(reservation2);
 
+
         assertEquals(reservations, getReservation.lookupReservations(id));
     }
 }

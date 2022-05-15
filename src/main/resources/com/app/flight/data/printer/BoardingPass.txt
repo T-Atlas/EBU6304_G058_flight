@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 11 SEPTEMBER       |.
-    |  FLIGHT: MH8633           |.
-    |  NAME: Jun Test           |.
-    |  SEAT: 4F                 |.
-    |  GATE: B8                 |.
-    |  BD TIME: 07:05           |.
-    |  DEST: Hainan             |.
+    |  DATE: 25 MAY             |.
+    |  FLIGHT: MH1234           |.
+    |  NAME: Test Jun           |.
+    |  SEAT: 9C                 |.
+    |  GATE: A10                |.
+    |  BD TIME: 11:25           |.
+    |  DEST: Shanghai           |.
     |                           |.
     |                           |.
     |   ________________________|____
