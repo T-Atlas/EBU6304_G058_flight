@@ -6,6 +6,9 @@ import com.app.flight.entity.Food;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
+import com.app.flight.service.impl.SeatMapImpl;
+import com.app.flight.util.Json;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -13,11 +16,11 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GetBoardingPassTest {
-    @Test
-    public void lookupBoardingPassTest() {
+    static BoardingPass boardingPass = new BoardingPass();
+
+    @BeforeAll
+    public static void initEnvironment() {
         String id = "123456";
-        String bookNumber = "1517539047050973184";
-        GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
 
         Passenger passenger = new Passenger();
         passenger.setPassengerId(id);
@@ -39,11 +42,26 @@ public class GetBoardingPassTest {
         food.setFoodName(Food.foodType.HALAL);
         food.setFoodPrice(50.0);
 
-        BoardingPass boardingPass = new BoardingPass();
+        SeatMapImpl seatMap = new SeatMapImpl();
+        seatMap.updateSeatMap(flight.getFlightId(), "B", 1, 400.0);
+
         boardingPass.setPassenger(passenger);
         boardingPass.setFlight(flight);
         boardingPass.setSeatNo("1B");
         boardingPass.setFood(food);
+
+        Json.writeJson(Json.FOOD_JSON_PATH, food);
+        Json.writeJson(Json.PASSENGER_JSON_PATH, passenger);
+        Json.writeJson(Json.FLIGHT_JSON_PATH, flight);
+        Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass);
+
+    }
+
+    @Test
+    public void lookupBoardingPassTest() {
+
+        GetBoardingPass getBoardingPass = new GetBoardingPassImpl();
+
         assertEquals(boardingPass, getBoardingPass.lookupBoardingPass());
     }
 }
