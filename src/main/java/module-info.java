@@ -1,5 +1,6 @@
 module com.app.flight {
     requires javafx.controls;
+    requires javafx.graphics;
     requires javafx.fxml;
     requires com.alibaba.fastjson2;
     requires javacsv;
