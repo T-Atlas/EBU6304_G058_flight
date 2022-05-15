@@ -11,6 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <junit.version>5.8.2</junit.version>
     </properties>
 
@@ -106,7 +107,6 @@
             <scope>test</scope>
         </dependency>
 
-
     </dependencies>
 
     <build>
@@ -136,7 +136,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.app.flight/com.app.flight.Main</mainClass>
+                            <mainClass>com.app.flight.Main</mainClass>
                             <launcher>launcher</launcher>
                             <jlinkZipName>appZip</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
