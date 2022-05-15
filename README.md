@@ -3,7 +3,7 @@
 
 EBU6304 – Software Engineering Group Project
 
-**Last Modified Date: 2022-05-08.**
+**Last Modified Date: 2022-05-16.**
 
 ## Table of Contents
 
@@ -98,7 +98,7 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 3. #### **Use Jar or executable file**
 
-   Coming soon…
+   click **EBU6304_G058_flight.jar** to run the application.
 
    
 
@@ -125,7 +125,11 @@ Coming soon…
 
 ## Iteration logs
 
-### 4.5 Beta (May 13, 2022) The Latest version
+### 4.5 RELEASE (May 16, 2022) The Latest version
+
+- Big gengxing, deng zhe huang hong lai xie.
+
+### 4.5 Beta (May 13, 2022)
 
 - Updated the seat price and get the price in Payment page.
 - Updated the pay QR code.

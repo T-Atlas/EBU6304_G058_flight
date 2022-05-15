@@ -1,0 +1,25 @@
+[
+  {
+    "reservationId": "1522521423007059968",
+    "passenger": {
+      "passengerId": "203993199708190934",
+      "firstName": "Lei",
+      "lastName": "Sui",
+      "age": 26,
+      "telephone": "15880234599"
+    },
+    "flight": {
+      "flightId": "HH6324",
+      "departure": "Shanghai",
+      "destination": "Shenzhen",
+      "boardingGate": "B14",
+      "boardingTime": "2022-12-24 10:30",
+      "departureTime": "2022-12-24 11:00",
+      "arrivalTime": "2022-12-24 13:50"
+    },
+    "seatLevel": "ECONOMY_CLASS",
+    "mealsAvailable": true,
+    "handBaggageNum": 1,
+    "checkedBaggageNum": 1
+  }
+]
