@@ -32,8 +32,8 @@ public class GetPassengerImpl implements GetPassenger {
                 String[] passengerData = csvData.clone();
                 Passenger passenger = new Passenger();
                 passenger.setPassengerId(passengerData[0]);
-                passenger.setLastName(passengerData[1]);
-                passenger.setFirstName(passengerData[2]);
+                passenger.setFirstName(passengerData[1]);
+                passenger.setLastName(passengerData[2]);
                 passenger.setAge(Integer.parseInt(passengerData[3]));
                 passenger.setTelephone(passengerData[4]);
                 if (Json.writeJson(Json.PASSENGER_JSON_PATH, passenger)) {
