@@ -17,7 +17,7 @@ public class ClickableButtonTest_JUnit5AssertJ {
     private Button button;
 
     /**
-     * Will be called with {@code @Before} semantics, i. e. before each test method.
+     * Will be called with {@code @Before} semantics, i.e. before each test method.
      *
      * @param stage - Will be injected by the test runner.
      */

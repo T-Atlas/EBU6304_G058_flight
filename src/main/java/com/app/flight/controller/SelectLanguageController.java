@@ -24,6 +24,7 @@ public class SelectLanguageController {
     public Button english;
     @FXML
     public Label coming;
+    public Button chinese;
 
     @FXML
     private Button loginButton;
