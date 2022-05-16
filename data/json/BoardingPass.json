@@ -1,21 +1,21 @@
 {
   "passenger": {
-    "passengerId": "203993199708190934",
-    "firstName": "Lei",
-    "lastName": "Sui",
-    "age": 26,
-    "telephone": "15880234599"
+    "passengerId": "123456",
+    "firstName": "Test",
+    "lastName": "Jun",
+    "age": 22,
+    "telephone": "13104368848"
   },
   "flight": {
-    "flightId": "HH6324",
-    "departure": "Shanghai",
-    "destination": "Shenzhen",
-    "boardingGate": "B14",
-    "boardingTime": "2022-12-24 10:30",
-    "departureTime": "2022-12-24 11:00",
-    "arrivalTime": "2022-12-24 13:50"
+    "flightId": "MH8633",
+    "departure": "Beijing",
+    "destination": "Hainan",
+    "boardingGate": "B08",
+    "boardingTime": "2022-09-11 07:05",
+    "departureTime": "2022-09-11 09:55",
+    "arrivalTime": "2022-09-11 12:55"
   },
-  "seatNo": "2C",
+  "seatNo": "7E",
   "food": {
     "foodName": "VEGETARIAN",
     "foodPrice": 20.0

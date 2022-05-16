@@ -127,7 +127,9 @@ Coming soon…
 
 ### 4.5 RELEASE (May 16, 2022) The Latest version
 
-- Big gengxing, deng zhe huang hong lai xie.
+- Fixed several bugs.
+- Added many test units.
+- New page design of inputIdNumber.
 
 ### 4.5 Beta (May 13, 2022)
 

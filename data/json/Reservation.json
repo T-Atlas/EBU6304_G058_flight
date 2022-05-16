@@ -1,25 +1,48 @@
 [
   {
-    "reservationId": "1522521423007059968",
+    "reservationId": "1517539047050973184",
     "passenger": {
-      "passengerId": "203993199708190934",
-      "firstName": "Lei",
-      "lastName": "Sui",
-      "age": 26,
-      "telephone": "15880234599"
+      "passengerId": "123456",
+      "firstName": "Test",
+      "lastName": "Jun",
+      "age": 22,
+      "telephone": "13104368848"
     },
     "flight": {
-      "flightId": "HH6324",
-      "departure": "Shanghai",
-      "destination": "Shenzhen",
-      "boardingGate": "B14",
-      "boardingTime": "2022-12-24 10:30",
-      "departureTime": "2022-12-24 11:00",
-      "arrivalTime": "2022-12-24 13:50"
+      "flightId": "MH8633",
+      "departure": "Beijing",
+      "destination": "Hainan",
+      "boardingGate": "B08",
+      "boardingTime": "2022-09-11 07:05",
+      "departureTime": "2022-09-11 09:55",
+      "arrivalTime": "2022-09-11 12:55"
+    },
+    "seatLevel": "FIRST_CLASS",
+    "mealsAvailable": true,
+    "handBaggageNum": 0,
+    "checkedBaggageNum": 1
+  },
+  {
+    "reservationId": "1517540042405449728",
+    "passenger": {
+      "passengerId": "123456",
+      "firstName": "Test",
+      "lastName": "Jun",
+      "age": 22,
+      "telephone": "13104368848"
+    },
+    "flight": {
+      "flightId": "MH1234",
+      "departure": "Beijing",
+      "destination": "Shanghai",
+      "boardingGate": "A10",
+      "boardingTime": "2022-05-25 11:25",
+      "departureTime": "2022-05-25 11:55",
+      "arrivalTime": "2022-05-25 14:55"
     },
     "seatLevel": "ECONOMY_CLASS",
     "mealsAvailable": true,
     "handBaggageNum": 1,
-    "checkedBaggageNum": 1
+    "checkedBaggageNum": 0
   }
 ]
