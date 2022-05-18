@@ -1,9 +1,9 @@
 {
-  "flightId": "HH6324",
-  "departure": "Shanghai",
-  "destination": "Shenzhen",
-  "boardingGate": "B14",
-  "boardingTime": "2022-12-24 10:30",
-  "departureTime": "2022-12-24 11:00",
-  "arrivalTime": "2022-12-24 13:50"
+  "flightId": "MH1234",
+  "departure": "Beijing",
+  "destination": "Shanghai",
+  "boardingGate": "D05",
+  "boardingTime": "2022-10-11 07:05",
+  "departureTime": "2022-10-11 09:55",
+  "arrivalTime": "2022-10-11 12:55"
 }

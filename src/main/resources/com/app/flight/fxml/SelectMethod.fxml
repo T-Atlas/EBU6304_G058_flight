@@ -265,7 +265,7 @@
                 </Button>
             </children>
         </AnchorPane>
-        <Label prefHeight="75.0" prefWidth="966.0"
+        <Label fx:id="selectMethod" prefHeight="75.0" prefWidth="966.0"
                text="--&gt; Select the method you want to retrieve your flight booking" textAlignment="CENTER"
                GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
             <font>

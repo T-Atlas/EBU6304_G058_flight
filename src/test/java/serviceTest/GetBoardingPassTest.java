@@ -32,7 +32,6 @@ public class GetBoardingPassTest {
         passenger.setLastName("Jun");
         passenger.setAge(22);
         passenger.setTelephone("13104368848");
-        Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
 
         flight.setFlightId("MH1234");
         flight.setDeparture("Beijing");
@@ -41,11 +40,9 @@ public class GetBoardingPassTest {
         flight.setBoardingTime(LocalDateTime.of(2022, 10, 11, 7, 5));
         flight.setDepartureTime(LocalDateTime.of(2022, 10, 11, 9, 55));
         flight.setArrivalTime(LocalDateTime.of(2022, 10, 11, 12, 55));
-        Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
 
         food.setFoodName(Food.foodType.HALAL);
         food.setFoodPrice(50.0);
-        Csv.addCsv(food, Csv.FOOD_CSV_PATH, false);
 
         SeatMapImpl seatMap = new SeatMapImpl();
         seatMap.updateSeatMap(flight.getFlightId(), "B", 1, 400.0);
