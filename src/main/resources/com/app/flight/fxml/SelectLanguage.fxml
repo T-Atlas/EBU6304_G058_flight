@@ -51,7 +51,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                     </rowConstraints>
                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                        <Button fx:id="chinese" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
                                 onAction="#onChineseButtonClick" prefHeight="100.0" prefWidth="250.0"
                                 styleClass="languageButton" text="Chinese" textAlignment="CENTER"
                                 GridPane.halignment="CENTER" GridPane.valignment="CENTER">

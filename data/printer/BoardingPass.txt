@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 24 DECEMBER        |.
-    |  FLIGHT: HH6324           |.
-    |  NAME: Lei Sui            |.
-    |  SEAT: 2C                 |.
-    |  GATE: B14                |.
-    |  BD TIME: 10:30           |.
-    |  DEST: Shenzhen           |.
+    |  DATE: 25 MAY             |.
+    |  FLIGHT: MH1234           |.
+    |  NAME: Test Jun           |.
+    |  SEAT: 7D                 |.
+    |  GATE: A10                |.
+    |  BD TIME: 11:25           |.
+    |  DEST: Shanghai           |.
     |                           |.
     |                           |.
     |   ________________________|____
