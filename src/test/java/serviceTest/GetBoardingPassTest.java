@@ -9,7 +9,6 @@ import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
 import com.app.flight.service.impl.SeatMapImpl;
 import com.app.flight.util.Csv;
-import com.app.flight.util.Json;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -32,6 +31,7 @@ public class GetBoardingPassTest {
         passenger.setLastName("Jun");
         passenger.setAge(22);
         passenger.setTelephone("13104368848");
+        Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
 
         flight.setFlightId("MH1234");
         flight.setDeparture("Beijing");
@@ -40,9 +40,11 @@ public class GetBoardingPassTest {
         flight.setBoardingTime(LocalDateTime.of(2022, 10, 11, 7, 5));
         flight.setDepartureTime(LocalDateTime.of(2022, 10, 11, 9, 55));
         flight.setArrivalTime(LocalDateTime.of(2022, 10, 11, 12, 55));
+        Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
 
         food.setFoodName(Food.foodType.HALAL);
         food.setFoodPrice(50.0);
+        Csv.addCsv(food, Csv.FOOD_CSV_PATH, false);
 
         SeatMapImpl seatMap = new SeatMapImpl();
         seatMap.updateSeatMap(flight.getFlightId(), "B", 1, 400.0);
@@ -51,12 +53,7 @@ public class GetBoardingPassTest {
         boardingPass.setFlight(flight);
         boardingPass.setSeatNo("1B");
         boardingPass.setFood(food);
-
-        Json.writeJson(Json.FOOD_JSON_PATH, food);
-        Json.writeJson(Json.PASSENGER_JSON_PATH, passenger);
-        Json.writeJson(Json.FLIGHT_JSON_PATH, flight);
-        Json.writeJson(Json.BOARDING_PASS_JSON_PATH, boardingPass);
-
+        Csv.addCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, true);
     }
 
     @AfterAll
@@ -64,6 +61,7 @@ public class GetBoardingPassTest {
         Csv.deleteCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
         Csv.deleteCsv(flight, Csv.FLIGHT_CSV_PATH, true);
         Csv.deleteCsv(food, Csv.FOOD_CSV_PATH, true);
+        Csv.deleteCsv(boardingPass, Csv.BOARDING_PASS_CSV_PATH, true);
     }
 
     @Test

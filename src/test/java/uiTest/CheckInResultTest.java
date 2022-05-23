@@ -1,6 +1,6 @@
 package uiTest;
 
-import com.app.flight.Main;
+import com.app.flight.controller.ResultController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,10 +19,14 @@ import java.io.IOException;
 public class CheckInResultTest {
     @Start
     private void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/CheckInResult.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+//        String gateName = boardingPass.getFlight().getBoardingGate();
+//        navigationMapController.setMap(gateName);
+
+        FXMLLoader fxmlLoader = new ResultController().getLoader();
+        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+        ResultController resultController = fxmlLoader.getController();
+        resultController.showBoardingPass(false);
         stage.setTitle("Smart flight check-in kiosk");
-        stage.setScene(scene);
         stage.show();
     }
 
