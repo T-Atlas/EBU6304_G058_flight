@@ -1,28 +1,5 @@
 [
   {
-    "reservationId": "1517539047050973184",
-    "passenger": {
-      "passengerId": "123456",
-      "firstName": "Test",
-      "lastName": "Jun",
-      "age": 22,
-      "telephone": "13104368848"
-    },
-    "flight": {
-      "flightId": "MH8633",
-      "departure": "Beijing",
-      "destination": "Hainan",
-      "boardingGate": "B08",
-      "boardingTime": "2022-09-11 07:05",
-      "departureTime": "2022-09-11 09:55",
-      "arrivalTime": "2022-09-11 12:55"
-    },
-    "seatLevel": "FIRST_CLASS",
-    "mealsAvailable": true,
-    "handBaggageNum": 0,
-    "checkedBaggageNum": 1
-  },
-  {
     "reservationId": "1517540042405449728",
     "passenger": {
       "passengerId": "123456",
@@ -43,6 +20,7 @@
     "seatLevel": "ECONOMY_CLASS",
     "mealsAvailable": true,
     "handBaggageNum": 1,
-    "checkedBaggageNum": 0
+    "checkedBaggageNum": 0,
+    "checked": false
   }
 ]

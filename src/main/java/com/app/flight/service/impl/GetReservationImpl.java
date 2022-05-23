@@ -7,6 +7,7 @@ import com.app.flight.entity.Reservation;
 import com.app.flight.entity.Seat;
 import com.app.flight.service.GetFlight;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.UpdateReservation;
 import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 
@@ -19,7 +20,7 @@ import java.util.List;
  * @version 1.1
  * @date 2022.4.11
  */
-public class GetReservationImpl implements GetReservation {
+public class GetReservationImpl implements GetReservation, UpdateReservation {
     public static Reservation lookupReservation() {
         String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
         if (reservationStr != null) {
@@ -40,7 +41,7 @@ public class GetReservationImpl implements GetReservation {
         ArrayList<Reservation> reservations = new ArrayList<>();
         boolean flag = false;
         for (String[] csvData : csvList) {
-            if (csvData[1].equals(passengerId)) {
+            if (csvData[1].equals(passengerId) && csvData[7].equals("false")) {
                 flag = true;
                 String[] reservationData = csvData.clone();
                 Reservation reservation = new Reservation();
@@ -73,6 +74,17 @@ public class GetReservationImpl implements GetReservation {
         } else {
             System.out.println("reservation数据查找失败");
             return null;
+        }
+    }
+
+    @Override
+    public boolean updateCheckedFlag() {
+        Reservation reservation = lookupReservation();
+        if (reservation != null) {
+            reservation.setChecked(true);
+            return Csv.updateCsv(reservation, Csv.RESERVATION_CSV_PATH);
+        } else {
+            return false;
         }
     }
 }
