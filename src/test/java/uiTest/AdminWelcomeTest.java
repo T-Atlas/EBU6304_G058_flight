@@ -1,9 +1,11 @@
 package uiTest;
 
 import com.app.flight.Main;
+import com.app.flight.controller.AdminWelcomeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,24 +17,22 @@ import org.testfx.framework.junit5.Start;
 import java.io.IOException;
 
 @ExtendWith(ApplicationExtension.class)
-public class HelpTest {
+public class AdminWelcomeTest {
     @Start
     private void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Help.fxml"));
+        String meg = "admin";
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
+        stage.setTitle(meg);
+        AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
+        adminWelcomeController.setWelcomeMeg(meg);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
     }
 
     @Test
     void containText(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#back").queryAs(Button.class)).hasText("Back");
-        Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
-    }
-
-    @Test
-    void onClickButton(FxRobot robot) {
-        robot.clickOn("#call");
+        Assertions.assertThat(robot.lookup("#welcomeMeg").queryAs(Label.class)).hasText("Welcome, Administrator admin!");
+        Assertions.assertThat(robot.lookup("#logoutButton").queryAs(Button.class)).hasText("Log out");
     }
 }

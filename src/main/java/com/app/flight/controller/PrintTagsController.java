@@ -29,8 +29,9 @@ public class PrintTagsController implements Runnable {
     @FXML
     protected ProgressBar progressBar;
     @FXML
-    protected Label percentage;
+    public Label percentage;
     @FXML
+    public
     Button next;
 
     private int percent;
