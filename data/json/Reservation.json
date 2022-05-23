@@ -6,7 +6,7 @@
       "firstName": "Test",
       "lastName": "Jun",
       "age": 22,
-      "telephone": "13104368848"
+      "telephone": "11111111111"
     },
     "flight": {
       "flightId": "MH8633",
@@ -29,16 +29,16 @@
       "firstName": "Test",
       "lastName": "Jun",
       "age": 22,
-      "telephone": "13104368848"
+      "telephone": "11111111111"
     },
     "flight": {
       "flightId": "MH1234",
       "departure": "Beijing",
       "destination": "Shanghai",
-      "boardingGate": "A10",
-      "boardingTime": "2022-05-25 11:25",
-      "departureTime": "2022-05-25 11:55",
-      "arrivalTime": "2022-05-25 14:55"
+      "boardingGate": "D05",
+      "boardingTime": "2022-10-11 07:05",
+      "departureTime": "2022-10-11 09:55",
+      "arrivalTime": "2022-10-11 12:55"
     },
     "seatLevel": "ECONOMY_CLASS",
     "mealsAvailable": true,

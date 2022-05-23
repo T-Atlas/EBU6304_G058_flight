@@ -1,7 +1,6 @@
 package uiTest;
 
 import com.app.flight.Main;
-import com.app.flight.entity.Passenger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,7 +17,7 @@ import java.io.IOException;
 @ExtendWith(ApplicationExtension.class)
 public class comingSoonTest {
     @Start
-    private void start(Stage stage, Passenger p) throws IOException {
+    private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/ComingSoon.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Smart flight check-in kiosk");
@@ -31,9 +30,8 @@ public class comingSoonTest {
         Assertions.assertThat(robot.lookup("#homeButton").queryAs(Button.class)).hasText("Go Back To Home");
     }
 
-    //@Test
-    /*void onClickButton(FxRobot robot){
+    @Test
+    void onClickButton(FxRobot robot) {
         robot.clickOn("#homeButton");
-        Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
-    }*/
+    }
 }

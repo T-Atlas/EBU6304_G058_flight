@@ -5,7 +5,6 @@ import com.app.flight.controller.InputNumberController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -21,8 +20,6 @@ import java.io.IOException;
 
 @ExtendWith(ApplicationExtension.class)
 public class InputNumberTest {
-
-
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
@@ -33,6 +30,7 @@ public class InputNumberTest {
         stage.show();
         InputNumberController inputNumberController = fxmlLoader.getController();
         inputNumberController.next.setDisable(true);
+        inputNumberController.type = "id";
         inputNumberController.number.textProperty().addListener(changeListener -> {
             inputNumberController.next.setDisable((inputNumberController.number.getText().length() <= 0) || (inputNumberController.surName.getText().length() <= 0));
         });
@@ -50,7 +48,6 @@ public class InputNumberTest {
         ;
         Assertions.assertThat(robot.lookup("#clean").queryAs(Button.class)).isVisible();
         Assertions.assertThat(robot.lookup("#nameClean").queryAs(Button.class)).isVisible();
-        //Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next");
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next").isDisabled();
     }
 
@@ -86,9 +83,5 @@ public class InputNumberTest {
 
         robot.clickOn("#surName");
         Assertions.assertThat(robot.write("Jun")).isNotNull();
-
-        robot.clickOn("#next");
-        Assertions.assertThat(robot.lookup("#num").queryAs(Label.class)).isVisible();
     }
-
 }

@@ -4,7 +4,7 @@
     "firstName": "Test",
     "lastName": "Jun",
     "age": 22,
-    "telephone": "13104368848"
+    "telephone": "11111111111"
   },
   "flight": {
     "flightId": "MH8633",
@@ -15,7 +15,7 @@
     "departureTime": "2022-09-11 09:55",
     "arrivalTime": "2022-09-11 12:55"
   },
-  "seatNo": "7E",
+  "seatNo": "4E",
   "food": {
     "foodName": "VEGETARIAN",
     "foodPrice": 20.0

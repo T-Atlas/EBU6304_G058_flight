@@ -33,8 +33,6 @@ public class HelpTest {
 
     @Test
     void onClickButton(FxRobot robot) {
-        //robot.clickOn("#back");
-        //Assertions.assertThat(robot.lookup("#selectMethod").queryAs(Label.class)).hasText("--&gt; Select the method you want to retrieve your flight booking");
         robot.clickOn("#call");
         Assertions.assertThat(robot.window("Success").getOnShowing());
     }
