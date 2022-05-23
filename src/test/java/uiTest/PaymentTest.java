@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -35,7 +36,7 @@ public class PaymentTest {
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#return").queryAs(Button.class)).hasText("Return");
         Assertions.assertThat(robot.lookup("#annotation").queryAs(Label.class)).hasText("--> Please scan the QR code:");
-
+        Assertions.assertThat(robot.lookup("#code").queryAs(ImageView.class)).isVisible();
         Assertions.assertThat(robot.lookup("#help").queryAs(Button.class)).hasText("Help");
         Assertions.assertThat(robot.lookup("#finish").queryAs(Button.class)).hasText("Next");
     }

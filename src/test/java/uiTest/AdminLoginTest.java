@@ -31,5 +31,11 @@ public class AdminLoginTest {
         Assertions.assertThat(robot.lookup("#idTextField").queryAs(TextField.class)).isVisible();
         Assertions.assertThat(robot.lookup("#passwordTextField").queryAs(TextField.class)).isVisible();
         Assertions.assertThat(robot.lookup("#loginButton").queryAs(Button.class)).hasText("Log in");
+        Assertions.assertThat(robot.lookup("#backButton").queryAs(Button.class)).hasText("Back");
+    }
+
+    @Test
+    void onClickBackButton(FxRobot robot) {
+        robot.clickOn("#backButton");
     }
 }

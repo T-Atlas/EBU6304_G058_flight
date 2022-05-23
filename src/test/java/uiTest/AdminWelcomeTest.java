@@ -1,7 +1,6 @@
 package uiTest;
 
 import com.app.flight.Main;
-import com.app.flight.controller.AdminWelcomeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -20,11 +19,11 @@ import java.io.IOException;
 public class AdminWelcomeTest {
     @Start
     private void start(Stage stage) throws IOException {
-        String meg = "admin";
+        //String meg = "admin";
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
-        stage.setTitle(meg);
-        AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
-        adminWelcomeController.setWelcomeMeg(meg);
+        //stage.setTitle(meg);
+        //AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
+        //adminWelcomeController.setWelcomeMeg(meg);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setScene(scene);
         stage.show();
@@ -32,7 +31,7 @@ public class AdminWelcomeTest {
 
     @Test
     void containText(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#welcomeMeg").queryAs(Label.class)).hasText("Welcome, Administrator admin!");
+        Assertions.assertThat(robot.lookup("#welcomeMeg").queryAs(Label.class)).hasText("Welcome, Administrator XXX!");
         Assertions.assertThat(robot.lookup("#logoutButton").queryAs(Button.class)).hasText("Log out");
     }
 }

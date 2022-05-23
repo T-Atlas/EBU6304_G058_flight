@@ -51,5 +51,4 @@ public class CheckInResultTest {
         robot.clickOn("#detail");
         Assertions.assertThat(robot.lookup("#back").queryAs(Button.class)).hasText("Return");
     }
-
 }

@@ -1,7 +1,6 @@
 package uiTest;
 
 import com.app.flight.Main;
-import com.app.flight.controller.RetrieveController;
 import com.app.flight.entity.Passenger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,8 +29,8 @@ public class RetrieveTest {
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
-        RetrieveController retrieveController = fxmlLoader.getController();
-        retrieveController.showRetrieve(pRetrieve);
+        /*RetrieveController retrieveController = fxmlLoader.getController();
+        retrieveController.showRetrieve(pRetrieve);*/
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();
@@ -39,9 +38,9 @@ public class RetrieveTest {
 
     @Test
     void containText(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#tableView").queryAs(TableView.class));
+        Assertions.assertThat(robot.lookup("#tableView").queryAs(TableView.class)).isVisible();
         Assertions.assertThat(robot.lookup("#help").queryAs(Button.class)).hasText("Help");
-        Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next").isDisabled();
+        Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next");
     }
 
     @Test

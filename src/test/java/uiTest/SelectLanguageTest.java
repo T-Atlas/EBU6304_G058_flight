@@ -51,10 +51,13 @@ public class SelectLanguageTest {
      * @param robot - Will be injected by the test runner.
      */
     @Test
-    void onChineseButtonClick(FxRobot robot) {
-        // when:
+    void onClickChineseButton(FxRobot robot) {
         robot.clickOn("#chinese");
         Assertions.assertThat(robot.lookup("#coming").queryAs(Label.class)).hasText("Coming soon!");
+    }
+
+    @Test
+    void onClickEnglishButton(FxRobot robot) {
         robot.clickOn("#english");
         Assertions.assertThat(robot.lookup("#confirm").queryAs(CheckBox.class)).hasText("I have read it.");
     }

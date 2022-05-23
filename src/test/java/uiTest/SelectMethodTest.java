@@ -28,7 +28,6 @@ public class SelectMethodTest {
     }
 
     @Test
-        //@TestMethodOrder()
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#bookingNum").queryAs(RadioButton.class)).isVisible();
         Assertions.assertThat(robot.lookup("#idNum").queryAs(RadioButton.class)).isVisible();
