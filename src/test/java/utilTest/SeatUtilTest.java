@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class SeatUtilTest {
     @Test
     public void generateSeatMapTest() {
-        SeatUtil.generateSeatMap("MH8633", 20);
+        SeatUtil.generateSeatMap("MH1234", 20);
     }
 
     @Test
