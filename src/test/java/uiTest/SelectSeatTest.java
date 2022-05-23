@@ -4,7 +4,6 @@ import com.app.flight.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,7 @@ public class SelectSeatTest {
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
-        stage.getIcons().add(new Image(String.valueOf(Main.class.getResource("ico/OneworldLogo.png"))));
+        //stage.getIcons().add(new Image(String.valueOf(Main.class.getResource("ico/OneworldLogo.png"))));
         /*SelectSeatController selectSeatController = fxmlLoader.getController();
         selectSeatController.flightId = "MH1234";
         Map<Integer, Map<String, Boolean>> seatMap = null;

@@ -5,7 +5,7 @@
     |  DATE: 11 SEPTEMBER       |.
     |  FLIGHT: MH8633           |.
     |  NAME: Test Jun           |.
-    |  SEAT: 1A                 |.
+    |  SEAT: 1B                 |.
     |  GATE: B08                |.
     |  BD TIME: 07:05           |.
     |  DEST: Hainan             |.

@@ -1,6 +1,6 @@
 package uiTest;
 
-import com.app.flight.Main;
+import com.app.flight.controller.PaymentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -24,10 +24,12 @@ import java.io.IOException;
 public class PaymentTest {
     @Start
     private void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Payment.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+
+        FXMLLoader fxmlLoader = new PaymentController().getLoader();
+        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+        PaymentController paymentController = fxmlLoader.getController();
+        paymentController.pay("alipay");
         stage.setTitle("Welcome!");
-        stage.setScene(scene);
         stage.show();
     }
 

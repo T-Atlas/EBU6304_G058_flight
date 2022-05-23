@@ -31,8 +31,9 @@ public class HelpTest {
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
-    @Test
-    void onClickButton(FxRobot robot) {
-        robot.clickOn("#call");
-    }
+//    @Test
+//    void onClickButton(FxRobot robot) {
+//        robot.clickOn("#call");
+//
+//    }
 }

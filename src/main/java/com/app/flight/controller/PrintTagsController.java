@@ -26,6 +26,11 @@ import java.io.IOException;
 public class PrintTagsController implements Runnable {
 
     public Button help;
+
+    public ProgressBar getProgressBar() {
+        return progressBar;
+    }
+
     @FXML
     protected ProgressBar progressBar;
     @FXML
