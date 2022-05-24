@@ -44,7 +44,7 @@ public class InfoConfirmTest {
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         InfoConfirmController i = fxmlLoader.getController();
         i.showNum(p);
-        i.pRetrieve = p;
+        i.setPassengerRetrieve(p);
         stage.setTitle("Smart flight check-in kiosk");
         stage.setScene(scene);
         stage.show();

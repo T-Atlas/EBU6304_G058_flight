@@ -48,7 +48,7 @@ public class ScanInstructionController {
                     if (passenger != null) {
                         InfoConfirmController i = fxmlLoader.getController();
                         i.showNum(passenger);
-                        i.pRetrieve = passenger;
+                        i.passengerRetrieve = passenger;
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
