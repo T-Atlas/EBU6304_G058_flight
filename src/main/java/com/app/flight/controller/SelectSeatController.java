@@ -48,6 +48,9 @@ public class SelectSeatController {
     public Button previousChoiceButton;
     public int previousChoiceRow;
 
+    /**
+     * The code for button "next" to go to "SelectFood.fxml"
+     */
     @FXML
     public void nextClick(ActionEvent actionEvent) {
         if (this.choiceColumn != null) {
@@ -69,6 +72,9 @@ public class SelectSeatController {
         }
     }
 
+    /**
+     * The code for button "help" to show the help message
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -99,6 +105,11 @@ public class SelectSeatController {
         stage.show();
     }
 
+    /**
+     * The method is used to show the seat map in the table view.
+     *
+     * @param seatMap
+     */
     public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap) {
         for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
             this.gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
@@ -143,6 +154,12 @@ public class SelectSeatController {
         }
     }
 
+    /**
+     * The method is used to show the different seat color.
+     *
+     * @param rowNo
+     * @return seat color
+     */
     public String getSeatButtonColor(int rowNo) {
         String color;
         if (rowNo > 0 && rowNo <= firstClassLimit) {
@@ -158,6 +175,12 @@ public class SelectSeatController {
         return "-fx-background-color: " + color;
     }
 
+    /**
+     * The method is used to get the seat price.
+     *
+     * @param rowNo
+     * @return seat price
+     */
     public double getSeatPrice(int rowNo) {
         if (rowNo > 0 && rowNo <= firstClassLimit) {
             // FIRST_CLASS
@@ -171,6 +194,11 @@ public class SelectSeatController {
         }
     }
 
+    /**
+     * This method is used to get the loader for the SelectSeat controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
     }
