@@ -16,6 +16,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author JiaBoran
+ * @version 2.0
+ * Test class for getting reservations
+ */
 public class GetReservationTest {
 
     static String id = "1234";
@@ -26,6 +31,9 @@ public class GetReservationTest {
     static ArrayList<Reservation> reservations = new ArrayList<>();
     static Reservation reservation1 = new Reservation();
 
+    /**
+     * Before all test initiation of creating new data and add to Csv
+     */
     @BeforeAll
     public static void init() {
         String bookNumber1 = "1511111111111111111";
@@ -46,7 +54,6 @@ public class GetReservationTest {
         flight1.setDepartureTime(LocalDateTime.of(2022, 9, 11, 9, 55));
         flight1.setArrivalTime(LocalDateTime.of(2022, 9, 11, 12, 55));
 
-
         Csv.addCsv(flight1, Csv.FLIGHT_CSV_PATH, false);
 
         reservation1.setReservationId(bookNumber1);
@@ -59,9 +66,11 @@ public class GetReservationTest {
         reservations.add(reservation1);
 
         Csv.addCsv(reservation1, Csv.RESERVATION_CSV_PATH, false);
-
     }
 
+    /**
+     * After all tests deleting all new data from Csv
+     */
     @AfterAll
     public static void clear() {
         Csv.deleteCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
@@ -69,10 +78,12 @@ public class GetReservationTest {
         Csv.deleteCsv(reservation1, Csv.RESERVATION_CSV_PATH, true);
     }
 
+    /**
+     * test lookupReservations by id function
+     */
     @Test
     public void lookUpReservationsTest() {
         GetReservation getReservation = new GetReservationImpl();
-
         assertEquals(reservations, getReservation.lookupReservations(id));
     }
 }
