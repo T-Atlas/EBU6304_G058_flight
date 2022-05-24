@@ -9,6 +9,7 @@ import com.app.flight.entity.Food;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
+
 import com.app.flight.util.Json;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
