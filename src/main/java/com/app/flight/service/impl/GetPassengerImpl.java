@@ -12,9 +12,15 @@ import java.util.ArrayList;
  * @author SongBo
  * @version 1.0
  * @date 2022.4.6
+ * Impl class for GetPassenger
  */
 public class GetPassengerImpl implements GetPassenger {
 
+    /**
+     * lookupPassenger from json
+     *
+     * @return passenger or null
+     */
     public static Passenger lookupPassenger() {
         String passengerStr = Json.extractJsonData(Json.PASSENGER_JSON_PATH);
         if (passengerStr != null) {
@@ -24,6 +30,12 @@ public class GetPassengerImpl implements GetPassenger {
         }
     }
 
+    /**
+     * lookupPassengerById form Csv by id
+     *
+     * @param passengerId id
+     * @return passenger or null
+     */
     @Override
     public Passenger lookupPassengerById(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.PASSENGER_CSV_PATH);
@@ -46,6 +58,12 @@ public class GetPassengerImpl implements GetPassenger {
         return null;
     }
 
+    /**
+     * lookupPassengerByBookingNumber by bookNumber from Csv
+     *
+     * @param bookNumber id
+     * @return passenger or null
+     */
     @Override
     public Passenger lookupPassengerByBookingNumber(String bookNumber) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.RESERVATION_CSV_PATH);

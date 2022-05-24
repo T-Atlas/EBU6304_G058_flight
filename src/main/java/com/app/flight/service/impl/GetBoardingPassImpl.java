@@ -15,8 +15,14 @@ import static com.alibaba.fastjson2.JSON.parseObject;
  * @author SongBo
  * @version 1.0
  * @date 2022.4.22
+ * Impl class for getBoardingPass
  */
 public class GetBoardingPassImpl implements GetBoardingPass {
+    /**
+     * lookupBoardingPass from json
+     *
+     * @return BoardingPass or null
+     */
     @Override
     public BoardingPass lookupBoardingPass() {
         BoardingPass boardingPass = new BoardingPass();
