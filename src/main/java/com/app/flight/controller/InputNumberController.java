@@ -40,7 +40,7 @@ public class InputNumberController {
 
     public Label attention;
 
-    protected String type;
+    public String type;
     GetPassenger getPassenger = new GetPassengerImpl();
 
     public void submit(ActionEvent actionEvent) {

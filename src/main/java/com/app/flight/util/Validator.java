@@ -113,8 +113,4 @@ public class Validator {
     public static boolean idValidator(String id) {
         return IdcardUtil.isValidCard(id);
     }
-
-    public static boolean timeValidator() {
-        return false;
-    }
 }
