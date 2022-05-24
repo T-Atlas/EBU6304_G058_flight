@@ -15,8 +15,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.2
+ * Test class for AdminLogin page
+ */
 @ExtendWith(ApplicationExtension.class)
 public class AdminLoginTest {
+    /**
+     * Before all test, initiation of uploading the fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminLogin.fxml"));
@@ -26,6 +37,11 @@ public class AdminLoginTest {
         stage.show();
     }
 
+    /**
+     * Test for contain elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#idTextField").queryAs(TextField.class)).isVisible();
@@ -34,6 +50,11 @@ public class AdminLoginTest {
         Assertions.assertThat(robot.lookup("#backButton").queryAs(Button.class)).hasText("Back");
     }
 
+    /**
+     * Test for clicking on Back button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickBackButton(FxRobot robot) {
         robot.clickOn("#backButton");

@@ -18,8 +18,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for InfoConfirm
+ */
 @ExtendWith(ApplicationExtension.class)
 public class InfoConfirmTest {
+    /**
+     * Before all tests initiation of uploading fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         Passenger p = new Passenger();
@@ -39,6 +50,11 @@ public class InfoConfirmTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#num").queryAs(Label.class)).isVisible();
@@ -48,12 +64,22 @@ public class InfoConfirmTest {
         ;
     }
 
+    /**
+     * test for clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test for clicking on return button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickReturnButton(FxRobot robot) {
         robot.clickOn("#back");

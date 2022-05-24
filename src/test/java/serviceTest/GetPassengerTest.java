@@ -15,6 +15,11 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for getting passenger
+ */
 public class GetPassengerTest {
     static String id = "123456";
     static String bookNumber = "1517539047050973184";
@@ -22,6 +27,9 @@ public class GetPassengerTest {
     static Flight flight = new Flight();
     static Reservation reservation = new Reservation();
 
+    /**
+     * Before all tests initiation of creating new data adding to Csv
+     */
     @BeforeAll
     public static void init() {
         passenger.setPassengerId(id);
@@ -50,6 +58,9 @@ public class GetPassengerTest {
         Csv.addCsv(reservation, Csv.RESERVATION_CSV_PATH, false);
     }
 
+    /**
+     * After all tests deleting all new data from Csv
+     */
     @AfterAll
     public static void clear() {
         Csv.deleteCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
@@ -57,11 +68,13 @@ public class GetPassengerTest {
         Csv.deleteCsv(reservation, Csv.RESERVATION_CSV_PATH, true);
     }
 
+    /**
+     * Testing lookupPassengerById and lookupPassengerByBookingNumber function
+     */
     @Test
     public void lookupPassengerTest() {
         GetPassenger getPassenger = new GetPassengerImpl();
         assertEquals(passenger, getPassenger.lookupPassengerById(id));
         assertEquals(reservation.getPassenger(), getPassenger.lookupPassengerByBookingNumber(bookNumber));
-
     }
 }

@@ -19,12 +19,22 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.3
+ * Test class for Payment
+ */
 @ExtendWith(ApplicationExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PaymentTest {
+    /**
+     * Beofore all tests initiation of uploading fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
-
         FXMLLoader fxmlLoader = new PaymentController().getLoader();
         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
         PaymentController paymentController = fxmlLoader.getController();
@@ -33,6 +43,11 @@ public class PaymentTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     @Order(1)
     void containText(FxRobot robot) {
@@ -43,7 +58,11 @@ public class PaymentTest {
         Assertions.assertThat(robot.lookup("#finish").queryAs(Button.class)).hasText("Next");
     }
 
-
+    /**
+     * test for clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     @Order(2)
     void onClickHelpButton(FxRobot robot) {
@@ -51,6 +70,11 @@ public class PaymentTest {
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test on clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     @Order(3)
     void onClickNextButton(FxRobot robot) {

@@ -16,8 +16,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.0
+ * Test class for AttentionNotes
+ */
 @ExtendWith(ApplicationExtension.class)
 public class AttentionNotesTest {
+    /**
+     * Before all tests, initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
@@ -27,12 +38,22 @@ public class AttentionNotesTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#confirm").queryAs(CheckBox.class)).hasText("I have read it.");
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next").isDisabled();
     }
 
+    /**
+     * test for clicking confirm checkbox
+     *
+     * @param robot robot
+     */
     @Test
     void onClickConfirmCheckBox(FxRobot robot) {
         robot.clickOn("#confirm");
