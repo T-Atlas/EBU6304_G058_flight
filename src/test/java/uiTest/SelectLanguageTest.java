@@ -4,6 +4,7 @@ import com.app.flight.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -34,7 +35,6 @@ public class SelectLanguageTest {
         stage.setResizable(false);
         stage.show();
         stage.toFront();
-
     }
 
     /**
@@ -44,17 +44,21 @@ public class SelectLanguageTest {
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#chinese").queryAs(Button.class)).hasText("Chinese");
         Assertions.assertThat(robot.lookup("#english").queryAs(Button.class)).hasText("English");
+        Assertions.assertThat(robot.lookup("#coming").queryAs(Label.class)).hasText("Select the language and you can check-in right now");
     }
 
     /**
      * @param robot - Will be injected by the test runner.
      */
     @Test
-    void onChineseButtonClick(FxRobot robot) {
-
-        Assertions.assertThat(robot.lookup("#coming").queryAs(Label.class)).hasText("Select the language and you can check-in right now");
-        // when:
+    void onClickChineseButton(FxRobot robot) {
         robot.clickOn("#chinese");
         Assertions.assertThat(robot.lookup("#coming").queryAs(Label.class)).hasText("Coming soon!");
+    }
+
+    @Test
+    void onClickEnglishButton(FxRobot robot) {
+        robot.clickOn("#english");
+        Assertions.assertThat(robot.lookup("#confirm").queryAs(CheckBox.class)).hasText("I have read it.");
     }
 }
