@@ -80,7 +80,7 @@ public class HelpController {
                         if (p != null) {
                             InfoConfirmController i = fxmlLoader.getController();
                             i.showNum(p);
-                            i.pRetrieve = p;
+                            i.passengerRetrieve = p;
                         }
                     }
                     case "SelectMethodController" -> {

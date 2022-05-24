@@ -30,11 +30,23 @@ public class NavigationMapController {
         map.setImage(navigationPicture.getNavigationPicture(gateName));
     }
 
+    /**
+     * This method is used to get the loader for the NavigationMap controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/NavigationMap.fxml"));
     }
 
-    public void returnButton(ActionEvent actionEvent) {
+    /**
+     * This method is called when the user clicks on the back button.
+     * And it allows the user to go back to the previous scene.
+     *
+     * @param actionEvent the event
+     */
+    @FXML
+    private void returnButton(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) back.getScene().getWindow();
             try {
