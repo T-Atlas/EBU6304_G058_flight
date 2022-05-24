@@ -5,6 +5,7 @@ import com.app.flight.service.GetNavigationPicture;
 import com.app.flight.service.impl.NavigationPictureImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,11 +15,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NavigationMapController {
-    public ImageView map;
-    public Button back;
-    GetNavigationPicture navigationPicture = new NavigationPictureImpl();
+    private final GetNavigationPicture navigationPicture = new NavigationPictureImpl();
+    @FXML
+    private ImageView map;
+    @FXML
+    private Button back;
 
-    public void setMap(String gateName) {
+    /**
+     * This method is called when the user clicks on the map.
+     *
+     * @param gateName the gate name
+     */
+    protected void setMap(String gateName) {
         map.setImage(navigationPicture.getNavigationPicture(gateName));
     }
 
