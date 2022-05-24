@@ -10,10 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author JiaBoran
  * @version 1.0
- * @date 2022.5.5
+ * Test class for BoardingGateValidator
  */
 public class BoardingGateValidatorTest {
 
+    /**
+     * test for BoardingGate using partition test
+     */
     @Test
     public void testBoardingGate() {
         Flight flight1 = new Flight();

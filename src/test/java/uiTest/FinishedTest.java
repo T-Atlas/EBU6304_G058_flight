@@ -15,8 +15,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.0
+ * Test class for Finished
+ */
 @ExtendWith(ApplicationExtension.class)
 public class FinishedTest {
+    /**
+     * Before all tests initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Finished.fxml"));
@@ -26,6 +37,11 @@ public class FinishedTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#finish").queryAs(Button.class)).hasText("Finish");
@@ -33,6 +49,11 @@ public class FinishedTest {
         Assertions.assertThat(robot.lookup("#tagCode").queryAs(ImageView.class)).isVisible();
     }
 
+    /**
+     * test for clicking on finish button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickFinishButton(FxRobot robot) {
         robot.clickOn("#finish");

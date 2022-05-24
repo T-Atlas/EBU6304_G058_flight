@@ -20,8 +20,10 @@ import java.io.IOException;
  */
 
 public class FinishController {
-    public ImageView boardingPassCode;
-    public ImageView tagCode;
+    @FXML
+    protected ImageView boardingPassCode;
+    @FXML
+    protected ImageView tagCode;
     @FXML
     private Button finish;
 
@@ -29,7 +31,8 @@ public class FinishController {
     /**
      * The code to close current page and open the first page
      */
-    public void finishClick() {
+    @FXML
+    private void finishClick() {
         Platform.runLater(() -> {
             Stage stage = (Stage) finish.getScene().getWindow();
             try {
@@ -44,6 +47,9 @@ public class FinishController {
 
     /**
      * The code for other pages to open Finished.fxml
+     *
+     * @param stage the stage to show the page
+     * @throws IOException if the file is not found
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -53,6 +59,12 @@ public class FinishController {
         stage.show();
     }
 
+    /**
+     * The code for get the loader of the page
+     *
+     * @return the loader of the page
+     * @throws IOException if the file is not found
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/Finished.fxml"));
     }

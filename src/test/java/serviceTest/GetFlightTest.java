@@ -12,10 +12,18 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author JiaBoran
+ * @version 2.0
+ * Test class for testing getting flight
+ */
 public class GetFlightTest {
     static String flightId = "MH8633";
     static Flight flight = new Flight();
 
+    /**
+     * Before all tests initiation of creating new data and add to Csv
+     */
     @BeforeAll
     public static void init() {
         flight.setFlightId(flightId);
@@ -28,11 +36,17 @@ public class GetFlightTest {
         Csv.addCsv(flight, Csv.FLIGHT_CSV_PATH, false);
     }
 
+    /**
+     * After tests deleting all the new data from Csv
+     */
     @AfterAll
     public static void clear() {
         Csv.deleteCsv(flight, Csv.FLIGHT_CSV_PATH, true);
     }
 
+    /**
+     * test for lookupFlight by flightId function
+     */
     @Test
     public void lookupFlightTest() {
         GetFlight getFlight = new GetFlightImpl();

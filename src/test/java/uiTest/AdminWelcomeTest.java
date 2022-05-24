@@ -15,20 +15,32 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for AdminWelcomeTest
+ */
 @ExtendWith(ApplicationExtension.class)
 public class AdminWelcomeTest {
+    /**
+     * Before all tests, initiation of uploading the fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
-        //String meg = "admin";
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
-        //stage.setTitle(meg);
-        //AdminWelcomeController adminWelcomeController = fxmlLoader.getController();
-        //adminWelcomeController.setWelcomeMeg(meg);
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * test of containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#welcomeMeg").queryAs(Label.class)).hasText("Welcome, Administrator XXX!");
