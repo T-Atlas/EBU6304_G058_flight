@@ -25,7 +25,7 @@ public class CsvTest {
     @DisplayName("sd")
     public void csvTest() {
         passenger = new Passenger();
-        passenger.setPassengerId("210122196110070924");
+        passenger.setPassengerId("130621200508296868");
         passenger.setFirstName("p1");
         passenger.setLastName("test");
         passenger.setTelephone("13104368848");
