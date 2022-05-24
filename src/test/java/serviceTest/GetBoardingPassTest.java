@@ -9,7 +9,6 @@ import com.app.flight.entity.Food;
 import com.app.flight.entity.Passenger;
 import com.app.flight.service.GetBoardingPass;
 import com.app.flight.service.impl.GetBoardingPassImpl;
-
 import com.app.flight.util.Json;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -17,13 +16,20 @@ import org.junit.jupiter.api.Test;
 import static com.alibaba.fastjson2.JSON.parseObject;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author JiaBoran
+ * @version 2.0
+ * Test class for getting BoardingPass from json file
+ */
 public class GetBoardingPassTest {
-    static String id = "123456";
     static BoardingPass boardingPass;
     static Passenger passenger;
     static Flight flight;
     static Food food;
 
+    /**
+     * Before all tests initiation of BoardingPass reading from json
+     */
     @BeforeAll
     public static void init() {
         boardingPass = new BoardingPass();
@@ -47,6 +53,9 @@ public class GetBoardingPassTest {
         boardingPass.setSeatNo(row + col);
     }
 
+    /**
+     * Test for lookupBoardingPass from json function
+     */
     @Test
     public void lookupBoardingPassTest() {
         GetBoardingPass getBoardingPass = new GetBoardingPassImpl();

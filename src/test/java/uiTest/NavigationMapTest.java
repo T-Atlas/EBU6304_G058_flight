@@ -15,8 +15,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for NavigationMap
+ */
 @ExtendWith(ApplicationExtension.class)
 public class NavigationMapTest {
+    /**
+     * Before all tests initiation of uploading fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/NavigationMap.fxml"));
@@ -26,12 +37,22 @@ public class NavigationMapTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#map").queryAs(ImageView.class)).isVisible();
         Assertions.assertThat(robot.lookup("#back").queryAs(Button.class)).hasText("Return");
     }
 
+    /**
+     * test for clicking on back button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickBackButton(FxRobot robot) {
         robot.clickOn("#back");

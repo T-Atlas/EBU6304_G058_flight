@@ -12,6 +12,11 @@ import java.time.LocalDateTime;
 import static com.app.flight.util.Csv.addCsv;
 import static com.app.flight.util.Csv.deleteCsv;
 
+/**
+ * @author JiaBoran
+ * @version 2.4
+ * Test class for Csv
+ */
 public class CsvTest {
     Passenger passenger;
     Flight flight;
@@ -19,7 +24,7 @@ public class CsvTest {
     Food food;
 
     /**
-     * Test for csv
+     * Test for csv: addCsv, updateCsv, deleteCsv, readCsv for passenger, flight, reservation, food
      */
     @Test
     @DisplayName("sd")

@@ -10,10 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author JiaBoran
  * @version 1.0
- * @date 2022.5.5
+ * Test class for ReservationIdValidator
  */
 public class ReservationIdValidatorTest {
 
+    /**
+     * test for reservationId using partition test
+     */
     @Test
     public void testReservationId() {
         Reservation reservation1 = new Reservation();
