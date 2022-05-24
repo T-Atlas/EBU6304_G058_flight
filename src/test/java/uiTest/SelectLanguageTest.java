@@ -17,13 +17,18 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.2
+ * Test class for SelectLanguage
+ */
 @ExtendWith(ApplicationExtension.class)
 public class SelectLanguageTest {
-
     /**
-     * Will be called with {@code @Before} semantics, i.e. before each test method.
+     * Before all tests initiation of uploading fxml pages
      *
-     * @param stage - Will be injected by the test runner.
+     * @param stage stage
+     * @throws IOException IOException
      */
     @Start
     private void start(Stage stage) throws IOException {
@@ -38,7 +43,8 @@ public class SelectLanguageTest {
     }
 
     /**
-     * @param robot - Will be injected by the test runner.
+     * test for containing elements in the page
+     * @param robot robot
      */
     @Test
     void containText(FxRobot robot) {
@@ -48,7 +54,9 @@ public class SelectLanguageTest {
     }
 
     /**
-     * @param robot - Will be injected by the test runner.
+     * test for clicking on chinese button
+     *
+     * @param robot robot
      */
     @Test
     void onClickChineseButton(FxRobot robot) {
@@ -56,6 +64,11 @@ public class SelectLanguageTest {
         Assertions.assertThat(robot.lookup("#coming").queryAs(Label.class)).hasText("Coming soon!");
     }
 
+    /**
+     * test for clicking on english button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickEnglishButton(FxRobot robot) {
         robot.clickOn("#english");

@@ -23,26 +23,39 @@ import java.io.IOException;
  * @version 2.1
  */
 public class InputNumberController {
-    public Passenger p;
     @FXML
     public TextField number;
+    private final GetPassenger getPassenger = new GetPassengerImpl();
     @FXML
-    public Label annotation;
-    public Button clean;
-    public Button next;
-    public Button help;
-    public Button back;
-
-    public Button nameClean;
-    public Label nameLabel;
-    public Label numLabel;
     public TextField surName;
-
-    public Label attention;
-
+    @FXML
     public String type;
-    GetPassenger getPassenger = new GetPassengerImpl();
+    @FXML
+    protected Label annotation;
+    @FXML
+    protected Button clean;
+    @FXML
+    protected Button next;
+    @FXML
+    protected Button help;
+    @FXML
+    protected Button back;
+    @FXML
+    protected Button nameClean;
+    @FXML
+    protected Label nameLabel;
+    @FXML
+    protected Label numLabel;
+    @FXML
+    private Label attention;
+    private Passenger p;
 
+    /**
+     * This method is used to check the input number.
+     * If the input number is valid, the next page will be opened.
+     *
+     * @param actionEvent the event of clicking the button
+     */
     public void submit(ActionEvent actionEvent) {
         p = getPassengerInfo(type, number.getText(), surName.getText());
         System.out.println(p);
@@ -55,7 +68,7 @@ public class InputNumberController {
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     InfoConfirmController i = fxmlLoader.getController();
                     i.showNum(p);
-                    i.pRetrieve = p;
+                    i.passengerRetrieve = p;
                 } else {
                     number.setText("");
                     surName.setText("");
@@ -68,7 +81,17 @@ public class InputNumberController {
         });
     }
 
-    protected Passenger getPassengerInfo(String type, String id, String name) {
+    /**
+     * This method is used to get the passenger information.
+     * It will check the input number and the passenger name are valid.
+     * And if the input number and the passenger name are valid, the passenger information will be searched by type.
+     *
+     * @param type the type of the method
+     * @param id   the passenger input number
+     * @param name the passenger name
+     * @return the passenger object with correspond information
+     */
+    private Passenger getPassengerInfo(String type, String id, String name) {
         Passenger passenger;
         if (type.equals("id") && (Validator.idValidator(id) || id.equals("123456"))) {
             passenger = getPassenger.lookupPassengerById(id);
@@ -90,6 +113,9 @@ public class InputNumberController {
 
     /**
      * The code for other pages to open InputNumber.fxml
+     *
+     * @param stage the stage of the page
+     * @throws IOException the exception to loading the page
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -99,22 +125,44 @@ public class InputNumberController {
         stage.show();
     }
 
-    public void clean(ActionEvent actionEvent) {
+    /**
+     * This method is used to clear the input number.
+     *
+     * @param actionEvent the event of clicking the button
+     */
+    @FXML
+    private void clean(ActionEvent actionEvent) {
         number.setText("");
         next.setDisable(true);
     }
 
-    public void nameClean(ActionEvent actionEvent) {
+    /**
+     * This method is used to clear the input name.
+     *
+     * @param actionEvent the event of clicking the button
+     */
+    @FXML
+    private void nameClean(ActionEvent actionEvent) {
         surName.setText("");
         next.setDisable(true);
     }
 
+    /**
+     * This method is used to get the loader of the page.
+     *
+     * @return the FXMLLoader of the page
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
     }
 
+    /**
+     * This method is used when help button is clicked.
+     *
+     * @param actionEvent the event of clicking the button
+     */
     @FXML
-    public void helpClick(ActionEvent actionEvent) {
+    private void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();
             try {
@@ -128,7 +176,14 @@ public class InputNumberController {
         });
     }
 
-    public void returnButton(ActionEvent actionEvent) {
+    /**
+     * This method is called when the user clicks on the back button.
+     * And it allows the user to go back to the previous scene.
+     *
+     * @param actionEvent the event
+     */
+    @FXML
+    private void returnButton(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();
             try {

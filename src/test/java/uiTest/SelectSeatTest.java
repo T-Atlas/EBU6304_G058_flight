@@ -15,24 +15,33 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for SelectSeat
+ */
 @ExtendWith(ApplicationExtension.class)
 public class SelectSeatTest {
+    /**
+     * Before all tests initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
-        //stage.getIcons().add(new Image(String.valueOf(Main.class.getResource("ico/OneworldLogo.png"))));
-        /*SelectSeatController selectSeatController = fxmlLoader.getController();
-        selectSeatController.flightId = "MH1234";
-        Map<Integer, Map<String, Boolean>> seatMap = null;
-        assert false;
-        selectSeatController.showSeatMap(seatMap);*/
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setTitle("Please Select Your SeatUtil");
-
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#gridPane").queryAs(GridPane.class)).isVisible();
@@ -40,6 +49,11 @@ public class SelectSeatTest {
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next");
     }
 
+    /**
+     * test for clicking on help button
+     *
+     * @param robot stage
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");

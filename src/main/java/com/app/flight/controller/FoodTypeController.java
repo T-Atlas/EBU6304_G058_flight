@@ -26,10 +26,9 @@ import java.io.IOException;
  */
 public class FoodTypeController {
 
+    private final SetFood setFood = new SetFoodImpl();
     @FXML
-    public ToggleGroup tg;
-    public Button help;
-    SetFood setFood = new SetFoodImpl();
+    private ToggleGroup tg;
     @FXML
     private Button next;
     @FXML
@@ -39,13 +38,16 @@ public class FoodTypeController {
     @FXML
     private RadioButton r3;
     private String type = null;
+    @FXML
+    private Button help;
 
     /**
-     * To judge which food type is the passenger selected
+     * To judge which food type is the passenger selected.
      *
-     * @return type
+     * @return food type
      */
-    public String foodType() {
+    @FXML
+    private String foodType() {
 
         r1.setUserData(Food.foodType.STANDARD);
         r2.setUserData(Food.foodType.VEGETARIAN);
@@ -58,14 +60,17 @@ public class FoodTypeController {
         }
 
         return type;
-
     }
 
+
     /**
-     * The code for button "next" in "SelectFoodType.fxml"
+     * The code for button "next" in "SelectFoodType.fxml".
      * When click the button, change to "CheckInResult.fxml"
+     *
+     * @param actionEvent the event of clicking the button
      */
-    public void nextClick(ActionEvent actionEvent) {
+    @FXML
+    private void nextClick(ActionEvent actionEvent) {
 
         //invoke foodType() method to get the user's choice of food type
         type = foodType();
@@ -90,8 +95,12 @@ public class FoodTypeController {
         }
     }
 
+
     /**
-     * The code for other pages to open SelectFoodType.fxml
+     * The code for other pages to open SelectFoodType.fxml.
+     *
+     * @param stage the stage of the page
+     * @throws IOException the exception to loading the page
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -101,12 +110,23 @@ public class FoodTypeController {
         stage.show();
     }
 
+    /**
+     * The code for get the loader of SelectFoodType.fxml.
+     *
+     * @return FXMLLoader of SelectFoodType
+     * @throws IOException the exception to loading the page
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
     }
 
+    /**
+     * The code for button "help" in "SelectFoodType.fxml".
+     *
+     * @param actionEvent the event of clicking the button
+     */
     @FXML
-    public void helpClick(ActionEvent actionEvent) {
+    private void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();
             try {

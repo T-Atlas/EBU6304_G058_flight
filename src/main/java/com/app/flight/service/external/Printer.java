@@ -30,6 +30,14 @@ public class Printer {
     public static StringBuilder tagData = new StringBuilder();
 
 
+    /**
+     * This method is used to print boarding pass.
+     * Will generate boarding pass data from json file.
+     * And print boarding pass data to txt file.
+     *
+     * @param jsonFilePath         json file path of boarding pass
+     * @param boardingPassFilePath txt file path of boarding pass
+     */
     public static void printBoardingPass(String jsonFilePath, String boardingPassFilePath) {
         String jsonData = Json.extractJsonData(jsonFilePath);
         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
@@ -103,6 +111,13 @@ public class Printer {
         }
     }
 
+    /**
+     * This method is used to generate the tag for the passenger.
+     * Will generate the tag for the passenger and write it to the file.
+     *
+     * @param jsonFilePath the path of the json file
+     * @param tagFilePath  the path of the tag file
+     */
     public static void printTag(String jsonFilePath, String tagFilePath) {
         String jsonData = Json.extractJsonData(jsonFilePath);
         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
@@ -198,6 +213,11 @@ public class Printer {
         }
     }
 
+    /**
+     * This method is used to generate the sound of printing the boarding pass.
+     *
+     * @return a MediaPlayer object
+     */
     private MediaPlayer sound() {
         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
         Media sound = new Media(new File(path).toURI().toString());
@@ -207,6 +227,13 @@ public class Printer {
         return mediaPlayer;
     }
 
+    /**
+     * This method is used to print the boarding pass.
+     *
+     * @param progressBar the progress bar
+     * @param percentage  the text percentage of the progress bar
+     * @return a boolean value,if print is successful,return true,else return false
+     */
     public Boolean print(ProgressBar progressBar, Label percentage) {
         int percent;
         ThreadUtil.sleep(50);

@@ -16,8 +16,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for ScanInstruction
+ */
 @ExtendWith(ApplicationExtension.class)
 public class ScanInstructionTest {
+    /**
+     * Before all tests initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
@@ -27,6 +38,11 @@ public class ScanInstructionTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#annotation").queryAs(Text.class)).hasText("--> Please scan your Id card as shown in the video");
@@ -35,12 +51,22 @@ public class ScanInstructionTest {
         Assertions.assertThat(robot.lookup("#back").queryAs(Button.class)).hasText("Back");
     }
 
+    /**
+     * test for clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test on clicking back button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickBackButton(FxRobot robot) {
         robot.clickOn("#back");

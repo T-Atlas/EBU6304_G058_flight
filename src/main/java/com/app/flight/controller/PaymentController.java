@@ -30,11 +30,12 @@ public class PaymentController {
 
 
     @FXML
-    public Button finish;
-    public Button help;
-    public Boolean whetherPayment = false;
+    private Button finish;
     @FXML
-    public ImageView code;
+    private Button help;
+    private Boolean whetherPayment = false;
+    @FXML
+    private ImageView code;
     @FXML
     private TextField textField;
     @FXML

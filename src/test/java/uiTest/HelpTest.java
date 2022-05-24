@@ -14,8 +14,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.0
+ * Test class for Help
+ */
 @ExtendWith(ApplicationExtension.class)
 public class HelpTest {
+    /**
+     * Before all tests initiation of uploading fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/Help.fxml"));
@@ -25,15 +36,14 @@ public class HelpTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#back").queryAs(Button.class)).hasText("Back");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
-
-//    @Test
-//    void onClickButton(FxRobot robot) {
-//        robot.clickOn("#call");
-//
-//    }
 }
