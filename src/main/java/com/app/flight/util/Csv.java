@@ -22,11 +22,11 @@ import java.util.Map;
  * @date 2022.4.16
  */
 public class Csv {
-    public static final String FLIGHT_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Flight.csv";
-    public static final String FOOD_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Food.csv";
-    public static final String PASSENGER_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
-    public static final String RESERVATION_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
-    public static final String BOARDING_PASS_CSV_PATH = "src/main/resources/com/app/flight/data/csv/BoardingPass.csv";
+    public static final String FLIGHT_CSV_PATH = "data/csv/Flight.csv";
+    public static final String FOOD_CSV_PATH = "data/csv/Food.csv";
+    public static final String PASSENGER_CSV_PATH = "data/csv/Passenger.csv";
+    public static final String RESERVATION_CSV_PATH = "data/csv/Reservation.csv";
+    public static final String BOARDING_PASS_CSV_PATH = "data/csv/BoardingPass.csv";
 
     /**
      * Add a row of csv data
@@ -118,7 +118,7 @@ public class Csv {
      * @return Whether deleted successfully or not
      */
     public static boolean deleteCsv(Object entity, String filePath, boolean unique) {
-        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString);
+        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString, JSONWriter.Feature.WriteEnumsUsingName);
         JSONObject jsonObj = JSON.parseObject(data);
         String[] csvHeaders = Obj.generateObjAttr(entity);
         ArrayList<String[]> csvData = readCsv(filePath);

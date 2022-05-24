@@ -1,0 +1,15 @@
+.content {
+    -fx-background-image: url("../image/background/1.jpg");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+.languageButton {
+    -fx-background-color: LIGHTGREY;
+    -fx-font-weight: bold;
+    -fx-text-fill: BLACK;
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-radius: 8px;
+
+}

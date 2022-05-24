@@ -5,6 +5,7 @@ import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
+import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 import javafx.application.Platform;
@@ -23,8 +24,8 @@ import java.util.ArrayList;
  * @author SongBo
  */
 public class Printer {
-    private static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
-    private static final String TAG_TXT_PATH = "src/main/resources/com/app/flight/data/printer/Tag.txt";
+    private static final String BOARDING_PASS_TXT_PATH = "data/printer/BoardingPass.txt";
+    private static final String TAG_TXT_PATH = "data/printer/Tag.txt";
     public static StringBuilder boardingPassData = new StringBuilder();
     public static StringBuilder tagData = new StringBuilder();
 
@@ -212,6 +213,10 @@ public class Printer {
         MediaPlayer mediaPlayer = sound();
         printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
         printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);
+        GetReservationImpl getReservation = new GetReservationImpl();
+        if (getReservation.updateCheckedFlag()) {
+            System.out.println("更新flag成功");
+        }
         for (int i = 0; i <= 100; i++) {
             percent = i;
             progressBar.setProgress(percent / 100.0);

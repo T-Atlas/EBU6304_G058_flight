@@ -34,7 +34,7 @@ public class PaymentController {
     public Button help;
     public Boolean whetherPayment = false;
     @FXML
-    private ImageView code;
+    public ImageView code;
     @FXML
     private TextField textField;
     @FXML

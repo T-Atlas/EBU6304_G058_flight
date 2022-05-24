@@ -54,5 +54,9 @@ public class Reservation {
     @JSONField(ordinal = 7)
     private int checkedBaggageNum;
 
-
+    /**
+     * Whether the reservation is checked.
+     */
+    @JSONField(ordinal = 8)
+    private boolean checked = false;
 }
