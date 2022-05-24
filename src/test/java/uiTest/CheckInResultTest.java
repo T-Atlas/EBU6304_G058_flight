@@ -15,13 +15,21 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for CheckInResult
+ */
 @ExtendWith(ApplicationExtension.class)
 public class CheckInResultTest {
+    /**
+     * Before all tests, initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
-//        String gateName = boardingPass.getFlight().getBoardingGate();
-//        navigationMapController.setMap(gateName);
-
         FXMLLoader fxmlLoader = new ResultController().getLoader();
         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
         ResultController resultController = fxmlLoader.getController();
@@ -30,6 +38,11 @@ public class CheckInResultTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#name").queryAs(Label.class)).isVisible();
@@ -43,14 +56,23 @@ public class CheckInResultTest {
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next");
     }
 
+    /**
+     * test for clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test for clicking on detail button
+     *
+     * @param robot robot
+     */
     @Test
-//bug
     void onClickDetailsButton(FxRobot robot) {
         robot.clickOn("#detail");
         Assertions.assertThat(robot.lookup("#back").queryAs(Button.class)).hasText("Return");

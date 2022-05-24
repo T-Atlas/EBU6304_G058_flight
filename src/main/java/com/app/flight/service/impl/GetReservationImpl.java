@@ -19,8 +19,14 @@ import java.util.List;
  * @author SongBo
  * @version 1.1
  * @date 2022.4.11
+ * Impl class for GetReservation
  */
 public class GetReservationImpl implements GetReservation, UpdateReservation {
+    /**
+     * lookupReservation from json
+     *
+     * @return reservation or null
+     */
     public static Reservation lookupReservation() {
         String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
         if (reservationStr != null) {
@@ -35,6 +41,12 @@ public class GetReservationImpl implements GetReservation, UpdateReservation {
         return null;
     }
 
+    /**
+     * lookupReservations by passengerId from Csv
+     *
+     * @param passengerId passenger ID
+     * @return ArrayList<Reservation> reservations
+     */
     @Override
     public ArrayList<Reservation> lookupReservations(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
@@ -77,6 +89,11 @@ public class GetReservationImpl implements GetReservation, UpdateReservation {
         }
     }
 
+    /**
+     * check whether reservation is looked up,
+     *
+     * @return true, it is looked up and vice versa
+     */
     @Override
     public boolean updateCheckedFlag() {
         Reservation reservation = lookupReservation();

@@ -15,8 +15,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for SelectPayment
+ */
 @ExtendWith(ApplicationExtension.class)
 public class SelectPaymentTest {
+    /**
+     * Before all tests initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectPayment.fxml"));
@@ -26,6 +37,11 @@ public class SelectPaymentTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#paypal").queryAs(RadioButton.class)).isVisible();
@@ -35,12 +51,22 @@ public class SelectPaymentTest {
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next").isDisabled();
     }
 
+    /**
+     * test for clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test for clicking on paypal radiobutton
+     *
+     * @param robot robot
+     */
     @Test
     void onClickPaypalRadioButton(FxRobot robot) {
         robot.clickOn("#paypal");
@@ -49,6 +75,11 @@ public class SelectPaymentTest {
         robot.clickOn("#next");
     }
 
+    /**
+     * test for clicking on alipay radiobutton
+     *
+     * @param robot robot
+     */
     @Test
     void onClickAlipayRadioButton(FxRobot robot) {
         robot.clickOn("#alipay");
@@ -57,6 +88,11 @@ public class SelectPaymentTest {
         robot.clickOn("#next");
     }
 
+    /**
+     * test for clicking on visa radiobutton
+     *
+     * @param robot robot
+     */
     @Test
     void onClickVisaRadioButton(FxRobot robot) {
         robot.clickOn("#visa");

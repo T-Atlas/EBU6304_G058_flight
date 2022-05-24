@@ -18,24 +18,28 @@ import java.io.IOException;
  */
 public class AttentionNotesController {
     @FXML
-    public Button next;
+    private Button next;
     @FXML
-    public CheckBox confirm;
+    private CheckBox confirm;
 
     /**
-     * if checkbox is checked, make next button able to click
+     * If checkbox is checked, make next button able to click.
      *
-     * @param actionEvent
+     * @param actionEvent the event of checkbox
      */
-    public void check(ActionEvent actionEvent) {
+    @FXML
+    private void check(ActionEvent actionEvent) {
         next.setDisable(!confirm.isSelected());
     }
 
     /**
      * The code for button "next" in "AttentionNotes.fxml"
      * When click the button, change to "InputNumber.fxml"
+     *
+     * @param actionEvent the event of button
      */
-    public void nextClick(ActionEvent actionEvent) {
+    @FXML
+    private void nextClick(ActionEvent actionEvent) {
 
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
@@ -50,6 +54,8 @@ public class AttentionNotesController {
 
     /**
      * The code for other pages to open InputNumber.fxml
+     *
+     * @param stage the stage of other pages
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -59,6 +65,12 @@ public class AttentionNotesController {
         stage.show();
     }
 
+    /**
+     * Get the loader of AttentionNotes.fxml
+     *
+     * @return the loader of AttentionNotes.fxml
+     * @throws IOException the exception to loader
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
     }

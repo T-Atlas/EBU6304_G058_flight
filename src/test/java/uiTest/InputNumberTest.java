@@ -17,9 +17,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
-
+/**
+ * @author JiaBoran
+ * @version 2.1
+ * Test class for InputNumber
+ */
 @ExtendWith(ApplicationExtension.class)
 public class InputNumberTest {
+    /**
+     * Before all tests initiation of uploading fxml page
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/InputNumber.fxml"));
@@ -39,6 +49,11 @@ public class InputNumberTest {
         });
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#number").queryAs(TextField.class)).isVisible();
@@ -51,18 +66,33 @@ public class InputNumberTest {
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next").isDisabled();
     }
 
+    /**
+     * test for clicking on help button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test for clicking return button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickReturnButton(FxRobot robot) {
         robot.clickOn("#back");
         Assertions.assertThat(robot.lookup("#bookingNum").queryAs(RadioButton.class)).isVisible();
     }
 
+    /**
+     * test for cleaning text
+     *
+     * @param robot robot
+     */
     @Test
     void cleanText(FxRobot robot) {
         robot.clickOn("#number");
@@ -76,6 +106,11 @@ public class InputNumberTest {
         Assertions.assertThat(robot.lookup("#surName").queryAs(TextField.class)).hasText("");
     }
 
+    /**
+     * test for inputting text
+     *
+     * @param robot robot
+     */
     @Test
     void inputText(FxRobot robot) {
         robot.clickOn("#number");

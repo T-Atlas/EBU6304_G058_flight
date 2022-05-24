@@ -10,14 +10,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author JiaBoran
  * @version 1.0
- * @date 2022.5.5
+ * Test class for FlightIdValidator
  */
 public class FlightIdValidatorTest {
 
+    /**
+     * test for FlightId using partition test
+     */
     @Test
     public void testFlightId() {
         Flight flight1 = new Flight();
-        flight1.setFlightId("MU1121");//correct version
+        flight1.setFlightId("MU1121");//correct version: First two big case letter and four digits
         assertTrue(flightIdValidator(flight1.getFlightId()));
 
         Flight flight2 = new Flight();

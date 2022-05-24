@@ -17,8 +17,19 @@ import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
 
+/**
+ * @author JiaBoran
+ * @version 2.3
+ * Test class for SelectMethod
+ */
 @ExtendWith(ApplicationExtension.class)
 public class SelectMethodTest {
+    /**
+     * Before all test initiation of uploading fxml pages
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     @Start
     private void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new SelectMethodController().getLoader();
@@ -27,6 +38,11 @@ public class SelectMethodTest {
         stage.show();
     }
 
+    /**
+     * test for containing elements in the page
+     *
+     * @param robot robot
+     */
     @Test
     void containText(FxRobot robot) {
         Assertions.assertThat(robot.lookup("#bookingNum").queryAs(RadioButton.class)).isVisible();
@@ -36,12 +52,22 @@ public class SelectMethodTest {
         Assertions.assertThat(robot.lookup("#next").queryAs(Button.class)).hasText("Next").isDisabled();
     }
 
+    /**
+     * test on clicking help button
+     *
+     * @param robot robot
+     */
     @Test
     void onClickHelpButton(FxRobot robot) {
         robot.clickOn("#help");
         Assertions.assertThat(robot.lookup("#call").queryAs(Button.class)).hasText("Yes");
     }
 
+    /**
+     * test on clicking on booking radiobutton
+     *
+     * @param robot robot
+     */
     @Test
     void onClickBookingRadioButton(FxRobot robot) {
         robot.clickOn("#bookingNum");
@@ -51,6 +77,11 @@ public class SelectMethodTest {
         Assertions.assertThat(robot.lookup("#number").queryAs(TextField.class)).isVisible();
     }
 
+    /**
+     * test on clicking on id radiobutton
+     *
+     * @param robot robot
+     */
     @Test
     void onClickIdRadioButton(FxRobot robot) {
         robot.clickOn("#idNum");
@@ -60,6 +91,11 @@ public class SelectMethodTest {
         Assertions.assertThat(robot.lookup("#surName").queryAs(TextField.class)).isVisible();
     }
 
+    /**
+     * test on clicking on scan radiobutton
+     *
+     * @param robot robot
+     */
     @Test
     void onClickScanRadioButton(FxRobot robot) {
         robot.clickOn("#scan");
