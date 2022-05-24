@@ -1,23 +1,23 @@
 {
-  "passenger": {
-    "passengerId": "123456",
-    "firstName": "Test",
-    "lastName": "Jun",
-    "age": 22,
-    "telephone": "13104368848"
-  },
-  "flight": {
-    "flightId": "MH1234",
-    "departure": "Beijing",
-    "destination": "Shanghai",
-    "boardingGate": "D05",
-    "boardingTime": "2022-10-11 07:05",
-    "departureTime": "2022-10-11 09:55",
-    "arrivalTime": "2022-10-11 12:55"
-  },
-  "seatNo": "1B",
-  "food": {
-    "foodName": "HALAL",
-    "foodPrice": 50.0
-  }
+	"passenger":{
+		"passengerId":"123456",
+		"firstName":"Test",
+		"lastName":"Jun",
+		"age":22,
+		"telephone":"13104368848"
+	},
+	"flight":{
+		"flightId":"MH1234",
+		"departure":"Beijing",
+		"destination":"Shanghai",
+		"boardingGate":"D05",
+		"boardingTime":"2022-10-11 07:05",
+		"departureTime":"2022-10-11 09:55",
+		"arrivalTime":"2022-10-11 12:55"
+	},
+	"seatNo":"1B",
+	"food":{
+		"foodName":"HALAL",
+		"foodPrice":50.0
+	}
 }
