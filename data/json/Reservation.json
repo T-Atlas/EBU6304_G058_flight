@@ -1,42 +1,18 @@
 [
   {
-    "reservationId": "1517540042405449728",
+    "reservationId": "1511111111111111111",
     "passenger": {
-      "passengerId": "123456",
+      "passengerId": "1234",
       "firstName": "Test",
-      "lastName": "Jun",
-      "age": 22,
-      "telephone": "13104368848"
+      "lastName": "test",
+      "age": 2,
+      "telephone": "11111111"
     },
     "flight": {
-      "flightId": "MH1234",
-      "departure": "Beijing",
-      "destination": "Shanghai",
-      "boardingGate": "D05",
-      "boardingTime": "2022-10-11 07:05",
-      "departureTime": "2022-10-11 09:55",
-      "arrivalTime": "2022-10-11 12:55"
-    },
-    "seatLevel": "ECONOMY_CLASS",
-    "mealsAvailable": true,
-    "handBaggageNum": 1,
-    "checkedBaggageNum": 0,
-    "checked": false
-  },
-  {
-    "reservationId": "1517539047050973184",
-    "passenger": {
-      "passengerId": "123456",
-      "firstName": "Test",
-      "lastName": "Jun",
-      "age": 22,
-      "telephone": "13104368848"
-    },
-    "flight": {
-      "flightId": "MH8633",
+      "flightId": "MH1111",
       "departure": "Beijing",
       "destination": "Hainan",
-      "boardingGate": "B08",
+      "boardingGate": "C08",
       "boardingTime": "2022-09-11 07:05",
       "departureTime": "2022-09-11 09:55",
       "arrivalTime": "2022-09-11 12:55"
@@ -45,54 +21,6 @@
     "mealsAvailable": true,
     "handBaggageNum": 0,
     "checkedBaggageNum": 1,
-    "checked": false
-  },
-  {
-    "reservationId": "1517539047050973184",
-    "passenger": {
-      "passengerId": "123456",
-      "firstName": "Test",
-      "lastName": "Jun",
-      "age": 22,
-      "telephone": "13104368848"
-    },
-    "flight": {
-      "flightId": "MH8633",
-      "departure": "Beijing",
-      "destination": "Hainan",
-      "boardingGate": "B08",
-      "boardingTime": "2022-09-11 07:05",
-      "departureTime": "2022-09-11 09:55",
-      "arrivalTime": "2022-09-11 12:55"
-    },
-    "seatLevel": "FIRST_CLASS",
-    "mealsAvailable": true,
-    "handBaggageNum": 0,
-    "checkedBaggageNum": 1,
-    "checked": false
-  },
-  {
-    "reservationId": "1517540042405449728",
-    "passenger": {
-      "passengerId": "123456",
-      "firstName": "Test",
-      "lastName": "Jun",
-      "age": 22,
-      "telephone": "13104368848"
-    },
-    "flight": {
-      "flightId": "MH1234",
-      "departure": "Beijing",
-      "destination": "Shanghai",
-      "boardingGate": "D05",
-      "boardingTime": "2022-10-11 07:05",
-      "departureTime": "2022-10-11 09:55",
-      "arrivalTime": "2022-10-11 12:55"
-    },
-    "seatLevel": "ECONOMY_CLASS",
-    "mealsAvailable": true,
-    "handBaggageNum": 1,
-    "checkedBaggageNum": 0,
     "checked": false
   }
 ]
