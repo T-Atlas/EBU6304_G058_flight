@@ -127,7 +127,14 @@ Coming soon…
 
 ### 5.0 Beta (May 20, 2022) The Latest version
 
-- Big gengxing, deng zhe huang hong lai xie.
+- Fixed the bugs in inputNumber.fxml and improve the code efficiency.
+- Updated the Json and Csv files.
+- Improved how to show the QR codes of baggage.
+- Improved the interfaces.
+- Fixed tableview bugs.
+- Updated javadocs.
+- Added unit test cases and automatic uitest cases.
+- Updated CsvTest.
 
 ### 4.5 RELEASE (May 16, 2022)
 
