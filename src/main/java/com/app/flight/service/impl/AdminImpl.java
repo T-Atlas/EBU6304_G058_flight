@@ -48,4 +48,14 @@ public class AdminImpl implements Admin {
         }
         return checkedInfo;
     }
+
+    @Override
+    public ArrayList<String> getFlightId() {
+        ArrayList<String[]> flightInfo = Csv.readCsv(Csv.FLIGHT_CSV_PATH);
+        ArrayList<String> flightId = new ArrayList<>();
+        for (String[] flight : flightInfo) {
+            flightId.add(flight[0]);
+        }
+        return flightId;
+    }
 }
