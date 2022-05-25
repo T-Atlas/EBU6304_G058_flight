@@ -1,22 +1,22 @@
 [
 	{
-      "reservationId": "1511111111111111111",
-      "passenger": {
-        "passengerId": "1234",
-        "firstName": "Test",
-        "lastName": "test",
-        "age": 2,
-        "telephone": "11111111"
-      },
-      "flight": {
-        "flightId": "MH1111",
-        "departure": "Beijing",
-        "destination": "Hainan",
-        "boardingGate": "C08",
-        "boardingTime": "2022-09-11 07:05",
-        "departureTime": "2022-09-11 09:55",
-        "arrivalTime": "2022-09-11 12:55"
-      },
+		"reservationId":"1517539047050973184",
+		"passenger":{
+			"passengerId":"123456",
+			"firstName":"Test",
+			"lastName":"Jun",
+			"age":22,
+			"telephone":"13104368848"
+		},
+		"flight":{
+			"flightId":"MH8633",
+			"departure":"Beijing",
+			"destination":"Hainan",
+			"boardingGate":"B08",
+			"boardingTime":"2022-09-11 07:05",
+			"departureTime":"2022-09-11 09:55",
+			"arrivalTime":"2022-09-11 12:55"
+		},
 		"seatLevel":"FIRST_CLASS",
 		"mealsAvailable":true,
 		"handBaggageNum":0,

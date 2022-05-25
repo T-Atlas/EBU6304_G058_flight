@@ -33,9 +33,9 @@
                                 <Image url="@../ico/OneworldLogo.png"/>
                             </image>
                         </ImageView>
-                        <Button fx:id="loginButton" layoutX="1091.0" layoutY="44.0" mnemonicParsing="false"
+                        <Button fx:id="loginButton" layoutX="1054.0" layoutY="46.0" mnemonicParsing="false"
                                 onAction="#loginButtonClick"
-                                style="-fx-background-color: LIGHTGREY;-fx-font-weight: normal;" text="Login">
+                                style="-fx-background-color: LIGHTGREY;-fx-font-weight: normal;" text="Admin Login">
                             <font>
                                 <Font name="System Bold" size="16.0"/>
                             </font>

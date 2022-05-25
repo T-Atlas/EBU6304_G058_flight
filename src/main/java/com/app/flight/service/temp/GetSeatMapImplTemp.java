@@ -13,6 +13,7 @@ import java.util.Map;
  * @deprecated This implement method has been deprecated.
  * Use the {@link SeatMapImpl}class instead.
  */
+@Deprecated
 public class GetSeatMapImplTemp implements GetSeatMap {
     /**
      * This method is used to get the seat map.
@@ -22,6 +23,7 @@ public class GetSeatMapImplTemp implements GetSeatMap {
      * Use the {@link SeatMapImpl}class instead.
      */
     @Override
+    @Deprecated
     public Map<Integer, Map<String, Boolean>> lookupSeatMap(String flightId) {
         Map<String, Boolean> rowMap = new HashMap<>(50);
         rowMap.put("A", true);
