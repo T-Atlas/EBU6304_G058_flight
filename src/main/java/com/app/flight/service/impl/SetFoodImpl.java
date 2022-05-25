@@ -12,6 +12,12 @@ import java.util.ArrayList;
  * @author JiaBoran
  */
 public class SetFoodImpl implements SetFood {
+
+    /**
+     * This method is used to get food data from json file
+     *
+     * @return food data
+     */
     public static Food lookupFood() {
         String foodStr = Json.extractJsonData(Json.FOOD_JSON_PATH);
         if (foodStr != null) {
@@ -21,6 +27,11 @@ public class SetFoodImpl implements SetFood {
         }
     }
 
+    /**
+     * This method is used to set food data to csv file
+     *
+     * @param foodName food type
+     */
     @Override
     public void setFood(Food.foodType foodName) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.FOOD_CSV_PATH);
@@ -31,10 +42,10 @@ public class SetFoodImpl implements SetFood {
                 food.setFoodName(Food.foodType.valueOf(foodData[0]));
                 food.setFoodPrice(Double.parseDouble(foodData[1]));
                 Json.writeJson(Json.FOOD_JSON_PATH, food);
-                System.out.println("food数据查找成功");
+                System.out.println("Food data search succeeded");
                 return;
             }
         }
-        System.out.println("food数据查找失败");
+        System.out.println("Food data search failed");
     }
 }

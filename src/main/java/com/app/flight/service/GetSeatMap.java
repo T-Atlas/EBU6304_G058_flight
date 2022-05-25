@@ -1,9 +1,12 @@
 package com.app.flight.service;
 
+import com.app.flight.service.impl.SeatMapImpl;
+
 import java.util.Map;
 
 /**
  * @author zhenghan
+ * @see SeatMapImpl
  */
 public interface GetSeatMap {
     /**

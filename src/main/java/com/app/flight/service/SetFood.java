@@ -1,9 +1,12 @@
 package com.app.flight.service;
 
 import com.app.flight.entity.Food;
+import com.app.flight.service.impl.SetFoodImpl;
 
 /**
- * @author 贾博然
+ * @author Jia Boran
+ * @version 1.0
+ * @see SetFoodImpl
  */
 public interface SetFood {
 

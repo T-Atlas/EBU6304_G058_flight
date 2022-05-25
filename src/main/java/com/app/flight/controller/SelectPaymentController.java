@@ -29,6 +29,9 @@ public class SelectPaymentController {
     public Button next;
     public Button help;
 
+    /**
+     * The code for other pages to open SelectPayment.fxml
+     */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
@@ -37,6 +40,11 @@ public class SelectPaymentController {
         stage.show();
     }
 
+    /**
+     * This method is used to check which payment method the user has selected.
+     *
+     * @return payment
+     */
     public String check() {
         paypal.setUserData("paypal");
         alipay.setUserData("alipay");
@@ -49,6 +57,11 @@ public class SelectPaymentController {
         return payment;
     }
 
+    /**
+     * The method is used to go to the next page.
+     *
+     * @param actionEvent
+     */
     public void nextClick(ActionEvent actionEvent) {
         Stage stage = (Stage) next.getScene().getWindow();
         if (check() != null) {
@@ -71,11 +84,20 @@ public class SelectPaymentController {
 
     }
 
-
+    /**
+     * This method is used to get the loader for the SelectPayment controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectPayment.fxml"));
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {

@@ -2,11 +2,11 @@ package com.app.flight;
 
 
 /**
- * Updated the code of its own version.
+ * This class is used to launch the JavaFX application.
  *
  * @author LianJunhong
- * @version 1.0
- * @date 2022.3.27
+ * @version 4.0
+ * @date 2022.5.17
  */
 public class AppLauncher {
     public static void main(String[] args) {

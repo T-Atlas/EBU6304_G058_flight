@@ -73,6 +73,11 @@ public class PrintTagsController implements Runnable {
         stage.show();
     }
 
+    /**
+     * This method is used to get the loader for the PrintTags controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/PrintTags.fxml"));
     }
@@ -124,6 +129,11 @@ public class PrintTagsController implements Runnable {
         this.percent = percent;
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {

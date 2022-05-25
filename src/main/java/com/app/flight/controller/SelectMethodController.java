@@ -33,7 +33,12 @@ public class SelectMethodController {
     public Button next;
     public Button help;
 
-
+    /**
+     * The code for other pages to open SelectMethod.fxml.
+     *
+     * @param stage
+     * @throws IOException
+     */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
@@ -42,6 +47,11 @@ public class SelectMethodController {
         stage.show();
     }
 
+    /**
+     * The method is used to check whether the user has selected the method.
+     *
+     * @param actionEvent
+     */
     public void check(ActionEvent actionEvent) {
         //if radiobutton in toggle-group is selected,make next button enable
         if (method.getSelectedToggle() != null) {
@@ -49,6 +59,11 @@ public class SelectMethodController {
         }
     }
 
+    /**
+     * The method is used to judge which method is selected and open the next page.
+     *
+     * @param actionEvent
+     */
     public void nextClick(ActionEvent actionEvent) {
 
         idNum.setUserData("id");
@@ -107,10 +122,20 @@ public class SelectMethodController {
         }
     }
 
+    /**
+     * This method is used to get the loader for the SelectMethod controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectMethod.fxml"));
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
