@@ -3,7 +3,6 @@ package com.app.flight.util;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
-import com.app.flight.entity.Admin;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
@@ -179,12 +178,5 @@ public class Csv {
         return true;
     }
 
-    public static Object checkCsv(Object entity, String filePath) {
-        if (entity == null) {
-            return null;
-        } else {
-            return new Admin();
-        }
-    }
 }
 

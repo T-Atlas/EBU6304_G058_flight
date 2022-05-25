@@ -1,13 +1,12 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
-import com.app.flight.entity.Admin;
 import com.app.flight.service.impl.AdminImpl;
-import com.app.flight.util.Csv;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -38,24 +37,19 @@ public class AdminLoginController {
     private Button loginButton;
 
     /**
-     * The code to close current page and open the "welcome admin" page
+     * The code to close current page and open the "AdminView" page
      */
-
     public void loginButtonClick() {
         Platform.runLater(() -> {
-            Admin admin = new Admin();
-            admin.setId(idTextField.getText());
-            admin.setPassword(passwordTextField.getText());
-            admin = (Admin) Csv.checkCsv(admin, "data/csv/Admin.csv");
-            if (admin != null) {
+            AdminImpl adminImpl = new AdminImpl();
+            if (passwordTextField.getText().equals(adminImpl.getPassword(idTextField.getText()))) {
                 try {
-                    admin.setName("Jack");
-                    String meg = "Welcome, Administrator " + admin.getName() + "!";
-
                     FXMLLoader fxmlLoader = new AdminViewController().getLoader();
                     Stage stage = (Stage) loginButton.getScene().getWindow();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                     AdminViewController adminViewController = fxmlLoader.getController();
+
+                    String meg = "Welcome, Administrator " + adminImpl.getName(idTextField.getText()) + "!";
                     adminViewController.setWelcomeMeg(meg);
                     adminViewController.initializeTableView();
                     adminViewController.comboBox.getItems().addAll(new AdminImpl().getFlightId());
@@ -65,6 +59,11 @@ public class AdminLoginController {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please try again");
+                alert.setTitle("Error");
+                alert.setHeaderText("Wrong Password");
+                alert.showAndWait();
             }
         });
     }
