@@ -1,7 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
-import com.app.flight.util.Obj;
+import com.app.flight.util.Common;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -65,7 +65,7 @@ public class SelectPaymentController {
     public void nextClick(ActionEvent actionEvent) {
         Stage stage = (Stage) next.getScene().getWindow();
         if (check() != null) {
-            Obj.setSelectType((String) method.getSelectedToggle().getUserData());
+            Common.setSelectType((String) method.getSelectedToggle().getUserData());
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new PaymentController().getLoader();
