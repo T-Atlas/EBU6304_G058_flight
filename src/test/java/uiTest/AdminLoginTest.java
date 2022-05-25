@@ -59,4 +59,9 @@ public class AdminLoginTest {
     void onClickBackButton(FxRobot robot) {
         robot.clickOn("#backButton");
     }
+
+    @Test
+    void onClickLoginButton(FxRobot robot) {
+        robot.clickOn("#loginButton");
+    }
 }

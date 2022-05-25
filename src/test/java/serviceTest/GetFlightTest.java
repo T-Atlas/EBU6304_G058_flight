@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Test class for testing getting flight
  */
 public class GetFlightTest {
-    static String flightId = "MH8633";
+    static String flightId = "MH8638";
     static Flight flight = new Flight();
 
     /**

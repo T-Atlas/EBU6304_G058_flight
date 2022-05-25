@@ -1,10 +1,10 @@
 {
   "passenger": {
-    "passengerId": "123456",
+    "passengerId": "130681200104296464",
     "firstName": "Test",
-    "lastName": "Jun",
-    "age": 22,
-    "telephone": "13104368848"
+    "lastName": "test",
+    "age": 2,
+    "telephone": "11111111111"
   },
   "flight": {
     "flightId": "MH1111",
@@ -15,7 +15,7 @@
     "departureTime": "2022-09-11 09:55",
     "arrivalTime": "2022-09-11 12:55"
   },
-  "seatNo": "1B",
+  "seatNo": "3D",
   "food": {
     "foodName": "VEGETARIAN",
     "foodPrice": 20.0

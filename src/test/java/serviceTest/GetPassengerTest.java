@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Test class for getting passenger
  */
 public class GetPassengerTest {
-    static String id = "123456";
+    static String id = "130681200104296464";
     static String bookNumber = "1517539047050973184";
     static Passenger passenger = new Passenger();
     static Flight flight = new Flight();
@@ -39,7 +39,7 @@ public class GetPassengerTest {
         passenger.setTelephone("13104368848");
         Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
 
-        flight.setFlightId("MH8633");
+        flight.setFlightId("MH8638");
         flight.setDeparture("Beijing");
         flight.setDestination("Hainan");
         flight.setBoardingGate("B08");
