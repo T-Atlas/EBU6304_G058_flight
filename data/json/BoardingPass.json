@@ -7,10 +7,10 @@
     "telephone": "13104368848"
   },
   "flight": {
-    "flightId": "MH8633",
+    "flightId": "MH1111",
     "departure": "Beijing",
     "destination": "Hainan",
-    "boardingGate": "B08",
+    "boardingGate": "C08",
     "boardingTime": "2022-09-11 07:05",
     "departureTime": "2022-09-11 09:55",
     "arrivalTime": "2022-09-11 12:55"
