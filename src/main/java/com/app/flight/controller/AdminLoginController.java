@@ -40,12 +40,13 @@ public class AdminLoginController {
     /**
      * The code to close current page and open the "welcome admin" page
      */
+
     public void loginButtonClick() {
         Platform.runLater(() -> {
             Admin admin = new Admin();
             admin.setId(idTextField.getText());
             admin.setPassword(passwordTextField.getText());
-            admin = (Admin) Csv.checkCsv(admin, "src/main/resources/com/app/flight/data/csv/Admin.csv");
+            admin = (Admin) Csv.checkCsv(admin, "data/csv/Admin.csv");
             if (admin != null) {
                 try {
                     admin.setName("Jack");

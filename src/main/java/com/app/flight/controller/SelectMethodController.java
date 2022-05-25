@@ -3,7 +3,7 @@ package com.app.flight.controller;
 import cn.hutool.core.thread.ThreadUtil;
 import com.app.flight.Main;
 import com.app.flight.service.external.Scanner;
-import com.app.flight.util.Obj;
+import com.app.flight.util.Common;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,7 +70,7 @@ public class SelectMethodController {
         bookingNum.setUserData("booking");
         scan.setUserData("scan");
 
-        Obj.setSelectType((String) method.getSelectedToggle().getUserData());
+        Common.setSelectType((String) method.getSelectedToggle().getUserData());
         Stage stage = (Stage) next.getScene().getWindow();
         //send selected method to next controller depending on which radiobutton is selected
         if (bookingNum.isSelected() || idNum.isSelected()) {

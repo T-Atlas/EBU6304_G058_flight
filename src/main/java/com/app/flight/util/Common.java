@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
  * @version 1.0
  * @date 2022.4.6
  */
-public class Obj {
+public class Common {
     public static String[] generateObjAttr(Object obj) {
         Class<?> classObj = obj.getClass();
         Field[] fields = classObj.getDeclaredFields();
