@@ -11,6 +11,7 @@ import com.app.flight.service.impl.GetPassengerImpl;
  * @deprecated This implement method has been deprecated.
  * Use the {@link GetPassengerImpl}class instead.
  */
+@Deprecated
 public class GetPassengerImplTemp implements GetPassenger {
     /**
      * This method is used to get the passenger by the passenger's id.
@@ -20,6 +21,7 @@ public class GetPassengerImplTemp implements GetPassenger {
      * Use the {@link GetPassengerImpl}class instead.
      */
     @Override
+    @Deprecated
     public Passenger lookupPassengerById(String passengerId) {
         Passenger passenger = new Passenger();
         passenger.setPassengerId(passengerId);
@@ -38,6 +40,7 @@ public class GetPassengerImplTemp implements GetPassenger {
      * Use the {@link GetPassengerImpl}class instead.
      */
     @Override
+    @Deprecated
     public Passenger lookupPassengerByBookingNumber(String bookNumber) {
         return null;
     }

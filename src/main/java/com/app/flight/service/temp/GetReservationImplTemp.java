@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * @deprecated This implement method has been deprecated.
  * Use the {@link GetReservationImpl}class instead.
  */
+@Deprecated
 public class GetReservationImplTemp implements GetReservation {
 
     /**
@@ -26,6 +27,7 @@ public class GetReservationImplTemp implements GetReservation {
      * Use the {@link GetReservationImpl}class instead.
      */
     @Override
+    @Deprecated
     public ArrayList<Reservation> lookupReservations(String passengerId) {
 
         Passenger passenger = new Passenger();

@@ -35,7 +35,7 @@ public class InputNumberController {
     @FXML
     protected Button clean;
     @FXML
-    protected Button next;
+    public Button next;
     @FXML
     protected Button help;
     @FXML
