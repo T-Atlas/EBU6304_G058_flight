@@ -27,10 +27,21 @@ public class ScanInstructionController {
     public Button help;
     public Button back;
 
+    /**
+     * This method is used to get the loader for the ScanInstruction controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
     }
 
+    /**
+     * This method is used to check the id number of the id card.
+     *
+     * @param idNumber
+     * @param stage
+     */
     public void checkIdNumber(String idNumber, Stage stage) {
         if (isValidCard(idNumber) || idNumber.equals("123456")) {
             GetPassenger getPassenger = new GetPassengerImpl();
@@ -59,6 +70,11 @@ public class ScanInstructionController {
         }
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     */
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();
@@ -74,6 +90,11 @@ public class ScanInstructionController {
 
     }
 
+    /**
+     * This method is used to return to the previous page.
+     *
+     * @param actionEvent
+     */
     public void back(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) mediaView.getScene().getWindow();
