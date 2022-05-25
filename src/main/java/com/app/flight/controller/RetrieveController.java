@@ -48,6 +48,11 @@ public class RetrieveController {
 
     private Reservation preSelectedRow;
 
+    /**
+     * This method is used to show the reservation list in the table view.
+     *
+     * @param p
+     */
     public void showRetrieve(Passenger p) {
         ObservableList<Reservation> list = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations(p.getPassengerId());
@@ -137,6 +142,9 @@ public class RetrieveController {
 
     }
 
+    /**
+     * The code for button "next" to go to "SelectSeat.fxml"
+     */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
@@ -158,6 +166,9 @@ public class RetrieveController {
         });
     }
 
+    /**
+     * The code for other pages to open Retrieve.fxml
+     */
     public void start(Stage stage, Passenger pRetrieve) throws IOException {
 
         FXMLLoader fxmlLoader = getLoader();
@@ -170,10 +181,20 @@ public class RetrieveController {
 
     }
 
+    /**
+     * This method is used to get the loader for the Retrieve controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
     }
 
+    /**
+     * This method is used to monitor the mouse click on the table view.
+     *
+     * @param mouseEvent
+     */
     public void mouseClick(MouseEvent mouseEvent) {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         if (selectedRow != null) {
@@ -187,6 +208,11 @@ public class RetrieveController {
         preSelectedRow = selectedRow;
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {

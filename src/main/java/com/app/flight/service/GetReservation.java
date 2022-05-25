@@ -1,6 +1,7 @@
 package com.app.flight.service;
 
 import com.app.flight.entity.Reservation;
+import com.app.flight.service.impl.GetReservationImpl;
 
 import java.util.ArrayList;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
  * @author SongBo
  * @version 1.0
  * @date 2022.4.23
+ * @see GetReservationImpl
  */
 public interface GetReservation {
 

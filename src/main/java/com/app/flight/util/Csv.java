@@ -29,7 +29,7 @@ public class Csv {
     public static final String BOARDING_PASS_CSV_PATH = "data/csv/BoardingPass.csv";
 
     /**
-     * Add a row of csv data
+     * Add a row of csv data and the entity must have a unique field
      *
      * @param entity   Add the entity corresponding to the data
      * @param filePath File directory for adding data
@@ -69,10 +69,9 @@ public class Csv {
     }
 
     /**
-     * Read all csv data
-     *
+     * Read all csv data and return a list of csv data
      * @param filePath Directory of files for reading csv data
-     * @return Retrieved data sets
+     * @return Retrieved data sets in a list
      */
     public static ArrayList<String[]> readCsv(String filePath) {
         ArrayList<String[]> csvList = new ArrayList<>();
@@ -90,8 +89,7 @@ public class Csv {
     }
 
     /**
-     * Update a row of csv data and the entity must have a unique field
-     *
+     * Update a row of csv data and the entity must have a unique field and the corresponding field must be the same
      * @param entity   Update the entity corresponding to the data
      * @param filePath File directory for updating data
      * @return Whether updated successfully or not
@@ -110,8 +108,7 @@ public class Csv {
     }
 
     /**
-     * Delete a row of csv data
-     *
+     * Delete a row of csv data and the entity must have a unique field and the corresponding field must be the same
      * @param entity   Delete the entity corresponding to the data
      * @param filePath File directory for deleted data
      * @param unique   Does the entity have a unique field

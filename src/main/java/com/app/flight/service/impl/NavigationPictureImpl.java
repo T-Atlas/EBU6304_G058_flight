@@ -15,8 +15,10 @@ public class NavigationPictureImpl implements GetNavigationPicture {
     private final String PATH = "src/main/resources/com/app/flight/image/maps/";
 
     /**
-     * @param type
-     * @return
+     * This method is used to get the navigation picture
+     *
+     * @param type What type of gate
+     * @return The navigation picture
      */
     @Override
     public Image getNavigationPicture(gateType type) {
@@ -40,8 +42,9 @@ public class NavigationPictureImpl implements GetNavigationPicture {
     }
 
     /**
-     * @param gateName
-     * @return
+     * This method is used to get the corresponding gate picture by the gate name
+     * @param gateName The gate name in String
+     * @return The corresponding gate picture
      */
     @Override
     public Image getNavigationPicture(String gateName) {
@@ -49,8 +52,9 @@ public class NavigationPictureImpl implements GetNavigationPicture {
     }
 
     /**
-     * @param gateName
-     * @return
+     * This method is used to convert the gate name to the gate type
+     * @param gateName The gate name in String
+     * @return The corresponding gate type
      */
     @Override
     public gateType convertStringToGateType(String gateName) {

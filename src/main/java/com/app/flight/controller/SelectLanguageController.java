@@ -29,6 +29,9 @@ public class SelectLanguageController {
     @FXML
     private Button loginButton;
 
+    /**
+     * This method is used to change the language to Chinese.
+     */
     @FXML
     protected void onChineseButtonClick() {
         coming.setText("Coming soon!");
@@ -61,10 +64,18 @@ public class SelectLanguageController {
         stage.show();
     }
 
+    /**
+     * This method is used to get the loader of SelectLanguage.fxml.
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
     }
 
+    /**
+     * This method is used to change the language to English.
+     *
+     * @param actionEvent
+     */
     public void onEnglishButtonClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) english.getScene().getWindow();

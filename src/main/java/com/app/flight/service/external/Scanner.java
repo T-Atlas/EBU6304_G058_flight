@@ -16,6 +16,11 @@ public class Scanner implements Runnable {
     public ScanInstructionController scanInstructionController;
     public Stage stage;
 
+    /**
+     * Use to play the tutorial video
+     *
+     * @return the mediaPlayer
+     */
     public MediaPlayer playVideo() {
         File file = new File("src/main/resources/com/app/flight/video/scan.mp4");
         Media media = new Media(file.getAbsoluteFile().toURI().toString());
@@ -43,6 +48,12 @@ public class Scanner implements Runnable {
         this.scanInstructionController.checkIdNumber(idNumber, this.stage);
     }
 
+    /**
+     * Use to set the consoleScanner
+     *
+     * @param scanInstructionController the scanInstructionController
+     * @param stage                     the stage
+     */
     public void ConsoleScanner(ScanInstructionController scanInstructionController, Stage stage) {
         this.scanInstructionController = scanInstructionController;
         this.stage = stage;

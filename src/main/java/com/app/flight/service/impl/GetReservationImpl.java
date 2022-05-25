@@ -81,10 +81,10 @@ public class GetReservationImpl implements GetReservation, UpdateReservation {
             }
         }
         if (flag && Json.writeJson(Json.RESERVATION_JSON_PATH, reservations)) {
-            System.out.println("reservation数据查找成功");
+            System.out.println("Reservation data lookup succeeded");
             return reservations;
         } else {
-            System.out.println("reservation数据查找失败");
+            System.out.println("Reservation data lookup failed");
             return null;
         }
     }
