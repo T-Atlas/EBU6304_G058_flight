@@ -2,6 +2,7 @@ package com.app.flight.controller;
 
 import com.app.flight.Main;
 import com.app.flight.entity.Admin;
+import com.app.flight.service.impl.AdminImpl;
 import com.app.flight.util.Csv;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -49,8 +50,17 @@ public class AdminLoginController {
                 try {
                     admin.setName("Jack");
                     String meg = "Welcome, Administrator " + admin.getName() + "!";
-                    new AdminWelcomeController().start(new Stage(), meg);
-                    ((Stage) (loginButton.getScene().getWindow())).close();
+
+                    FXMLLoader fxmlLoader = new AdminViewController().getLoader();
+                    Stage stage = (Stage) loginButton.getScene().getWindow();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    AdminViewController adminViewController = fxmlLoader.getController();
+                    adminViewController.setWelcomeMeg(meg);
+                    adminViewController.initializeTableView();
+                    adminViewController.comboBox.getItems().addAll(new AdminImpl().getFlightId());
+                    adminViewController.comboBox.getSelectionModel().selectedItemProperty().addListener(
+                            (observable, oldValue, newValue) -> adminViewController.onFlightSelect(newValue)
+                    );
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -73,12 +83,6 @@ public class AdminLoginController {
         });
     }
 
-    /**
-     * The code for other pages to open AdminLogin.fxml
-     *
-     * @param stage
-     * @throws IOException
-     */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
