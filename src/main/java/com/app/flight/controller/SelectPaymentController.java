@@ -31,6 +31,9 @@ public class SelectPaymentController {
 
     /**
      * The code for other pages to open SelectPayment.fxml
+     *
+     * @param stage the stage
+     * @throws IOException the exception
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
