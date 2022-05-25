@@ -1,9 +1,12 @@
 package com.app.flight.service;
 
+import com.app.flight.service.impl.SeatMapImpl;
+
 /**
  * @author SongBo
  * @version 1.0
  * @date 2022.4.22
+ * @see SeatMapImpl
  */
 public interface SetSeatMap {
     /**

@@ -22,6 +22,12 @@ import java.util.Map;
  * @date 2022.4.22
  */
 public class SeatMapImpl implements SetSeatMap, GetSeatMap {
+
+    /**
+     * This method is used to get the seat price.
+     *
+     * @return the price of the seat in double.
+     */
     public static double lookupSeatPrice() {
         String seatStr = Json.extractJsonData(Json.SEAT_JSON_PATH);
         if (seatStr != null) {
@@ -32,6 +38,14 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
         }
     }
 
+    /**
+     * This method is used to update the seat map.
+     *
+     * @param flightId flightId
+     * @param column   Modify the number of columns of seats
+     * @param row      Modify the number of rows of seats
+     * @param price    Modify the price of the selected seat
+     */
     @Override
     public void updateSeatMap(String flightId, String column, int row, double price) {
         Map<Integer, Map<String, Boolean>> seatMap = lookupSeatMap(flightId);
@@ -56,6 +70,12 @@ public class SeatMapImpl implements SetSeatMap, GetSeatMap {
         }
     }
 
+    /**
+     * This method is used to get the seat map.
+     *
+     * @param flightId Flight No.
+     * @return the seat map in Map<Integer, Map<String, Boolean>>
+     */
     @Override
     public Map<Integer, Map<String, Boolean>> lookupSeatMap(String flightId) {
         ArrayList<String[]> seatData = Csv.readCsv(SeatUtil.generateSeatFilePath(flightId));

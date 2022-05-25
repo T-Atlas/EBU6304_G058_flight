@@ -19,7 +19,7 @@ import static com.alibaba.fastjson2.JSON.parseObject;
  */
 public class GetBoardingPassImpl implements GetBoardingPass {
     /**
-     * lookupBoardingPass from json
+     * This method is used to lookup BoardingPass from json file
      *
      * @return BoardingPass or null
      */

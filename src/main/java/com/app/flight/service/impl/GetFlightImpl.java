@@ -68,10 +68,10 @@ public class GetFlightImpl implements GetFlight {
             }
         }
         if (flag && Json.writeJson(Json.FLIGHT_JSON_PATH, flight)) {
-            System.out.println("flight数据查找成功");
+            System.out.println("Flight data search succeeded");
             return flight;
         } else {
-            System.out.println("flight数据查找失败");
+            System.out.println("Flight data search failed");
             return null;
         }
     }

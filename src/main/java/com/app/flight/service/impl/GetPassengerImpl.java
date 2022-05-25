@@ -49,12 +49,12 @@ public class GetPassengerImpl implements GetPassenger {
                 passenger.setAge(Integer.parseInt(passengerData[3]));
                 passenger.setTelephone(passengerData[4]);
                 if (Json.writeJson(Json.PASSENGER_JSON_PATH, passenger)) {
-                    System.out.println("passenger数据查找成功");
+                    System.out.println("Passenger data found successfully");
                     return passenger;
                 }
             }
         }
-        System.out.println("passenger数据查找失败");
+        System.out.println("Passenger data search failed");
         return null;
     }
 
@@ -72,7 +72,7 @@ public class GetPassengerImpl implements GetPassenger {
                 return lookupPassengerById(csvData[1]);
             }
         }
-        System.out.println("passenger数据查找失败");
+        System.out.println("Passenger data search failed");
         return null;
     }
 }

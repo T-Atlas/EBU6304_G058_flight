@@ -5,6 +5,12 @@ package com.app.flight.util;
  */
 public class DataParser {
 
+    /**
+     * Transforms an int No. to a String.
+     *
+     * @param no the number to be transformed
+     * @return the transformed String
+     */
     public static String noToString(int no) {
         return switch (no) {
             case 1 -> "A";

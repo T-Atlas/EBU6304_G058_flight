@@ -4,15 +4,27 @@ import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
 import com.app.flight.entity.Reservation;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.impl.GetReservationImpl;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
+ * This class is the temporary class for implement the GetReservationImp class.
+ *
  * @author LianJunhong
+ * @deprecated This implement method has been deprecated.
+ * Use the {@link GetReservationImpl}class instead.
  */
 public class GetReservationImplTemp implements GetReservation {
 
+    /**
+     * This method is used to get the reservation by the reservation id.
+     * @param passengerId passenger ID
+     * @return the reservation
+     * @deprecated This implement method has been deprecated.
+     * Use the {@link GetReservationImpl}class instead.
+     */
     @Override
     public ArrayList<Reservation> lookupReservations(String passengerId) {
 
