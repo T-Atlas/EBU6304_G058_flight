@@ -1,10 +1,10 @@
 {
   "passenger": {
     "passengerId": "123456",
-    "firstName": "Test",
-    "lastName": "Jun",
-    "age": 22,
-    "telephone": "13104368848"
+    "firstName": "Jun",
+    "lastName": "Test",
+    "age": 21,
+    "telephone": "131043688481234"
   },
   "flight": {
     "flightId": "MH1111",

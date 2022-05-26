@@ -69,4 +69,15 @@ public class AdminImpl implements Admin {
         }
         return null;
     }
+
+    @Override
+    public String getName(String id) {
+        ArrayList<String[]> adminInfo = Csv.readCsv(Csv.ADMIN_CSV_PATH);
+        for (String[] adInfo : adminInfo) {
+            if (id.equals(adInfo[0])) {
+                return adInfo[2];
+            }
+        }
+        return null;
+    }
 }
