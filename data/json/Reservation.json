@@ -11,9 +11,9 @@
         "arrivalTime": "2022-09-11 12:55"
       },
       "seatLevel": "FIRST_CLASS",
-		"mealsAvailable":true,
-		"handBaggageNum":0,
-		"checkedBaggageNum":1,
-		"checked":false
-	}
+      "mealsAvailable": true,
+      "handBaggageNum": 0,
+      "checkedBaggageNum": 1,
+      "checked": false
+    }
 ]
