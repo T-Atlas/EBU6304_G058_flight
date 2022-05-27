@@ -125,7 +125,14 @@ Coming soon…
 
 ## Iteration logs
 
-### 5.0 Beta (May 20, 2022) The Latest version
+### 5.0 RELEASE (May 27, 2022) The final version
+
+- Fixed several bugs.
+- Added many test units.
+- Completed javadocs.
+- Published the final version.
+
+### 5.0 Beta (May 20, 2022)
 
 - Fixed the bugs in inputNumber.fxml and improve the code efficiency.
 - Updated the Json and Csv files.
