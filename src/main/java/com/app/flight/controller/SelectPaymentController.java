@@ -31,6 +31,9 @@ public class SelectPaymentController {
 
     /**
      * The code for other pages to open SelectPayment.fxml
+     *
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -61,6 +64,7 @@ public class SelectPaymentController {
      * The method is used to go to the next page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
         Stage stage = (Stage) next.getScene().getWindow();
@@ -97,6 +101,7 @@ public class SelectPaymentController {
      * This method is used to get the help page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {

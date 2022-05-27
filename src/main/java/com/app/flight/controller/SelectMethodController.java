@@ -63,6 +63,7 @@ public class SelectMethodController {
      * The method is used to judge which method is selected and open the next page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
 
@@ -135,6 +136,7 @@ public class SelectMethodController {
      * This method is used to get the help page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {

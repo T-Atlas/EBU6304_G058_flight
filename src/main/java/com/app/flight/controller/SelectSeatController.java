@@ -50,6 +50,9 @@ public class SelectSeatController {
 
     /**
      * The code for button "next" to go to "SelectFood.fxml"
+     *
+     * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void nextClick(ActionEvent actionEvent) {
@@ -74,6 +77,8 @@ public class SelectSeatController {
 
     /**
      * The code for button "help" to show the help message
+     * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
@@ -92,6 +97,10 @@ public class SelectSeatController {
 
     /**
      * The code for other pages to open SelectSeat.fxml
+     * @param stage
+     * @param seatMap
+     * @param flightId
+     * @throws IOException
      */
     public void start(Stage stage, Map<Integer, Map<String, Boolean>> seatMap, String flightId) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
@@ -109,6 +118,7 @@ public class SelectSeatController {
      * The method is used to show the seat map in the table view.
      *
      * @param seatMap
+     * @throws IOException
      */
     public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap) {
         for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
