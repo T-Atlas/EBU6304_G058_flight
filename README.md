@@ -39,32 +39,33 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 1. #### **Use IDE**
 
-Our project was developed using **JetBrains IntelliJ IDEA** compiler. You can simply open this project folder in IDEA,
-wait for **Maven **to automatically complete the project build, and click the green triangle next to the application
-startup class **AppLauncher.java** to run it.
+   Our project was developed using **JetBrains IntelliJ IDEA** compiler. You can simply open this project folder in
+   IDEA,
+   wait for **Maven **to automatically complete the project build, and click the green triangle next to the application
+   startup class **AppLauncher.java** to run it.
 
    <img src="src/main/resources/com/app/flight/image/startUp.png" alt="startUp" style="zoom:100%;" />
 
 2. #### **Use Jar or executable file**
 
-click **EBU6304_G058_flight.jar** to run the application.
+   click **EBU6304_G058_flight.jar** to run the application.
 
 3. #### **Use the command line**
 
-Go to the project folder.
+   Go to the project folder.
 
-Execute the command    **mvn clean javafx:run**
+   Execute the command    **mvn clean javafx:run**
 
 **For example:**
 
-      ```powershell
+```powershell
    PS C:\Users\LianJunhong\Desktop> cd E:\Java\EBU6304_G058_flight
    PS E:\Java\EBU6304_G058_flight> mvn clean javafx:run
-   ```
+```
 
    Running result:
 
-      ```powershell
+```powershell
 
 [INFO] Scanning for projects...
 [INFO]
@@ -80,20 +81,20 @@ Execute the command    **mvn clean javafx:run**
 [INFO] --- lombok-maven-plugin:1.18.20.0:delombok (default) @ flight ---
 [INFO]
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flight ---
-   [INFO] Using 'UTF-8' encoding to copy filtered resources.
-   [INFO] Copying 43 resources
-   [INFO]
-   [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flight ---
-   [INFO] Changes detected - recompiling the module!
-   [INFO] Compiling 40 source files to E:\Java\EBU6304_G058_flight\target\classes
-   [INFO]
-   [INFO] <<< javafx-maven-plugin:0.0.8:run (default-cli) < process-classes @ flight <<<
-   [INFO]
-   [INFO]
-   [INFO] --- javafx-maven-plugin:0.0.8:run (default-cli) @ flight ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 43 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flight ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to E:\Java\EBU6304_G058_flight\target\classes
+[INFO]
+[INFO] <<< javafx-maven-plugin:0.0.8:run (default-cli) < process-classes @ flight <<<
+[INFO]
+[INFO]
+[INFO] --- javafx-maven-plugin:0.0.8:run (default-cli) @ flight ---
 ```
 
-      <img src="src/main/resources/com/app/flight/image/firstInterface.png" alt="firstInterface" style="zoom: 80%;" />
+<img src="src/main/resources/com/app/flight/image/firstInterface.png" alt="firstInterface" style="zoom: 80%;" />
 
 ------
 
