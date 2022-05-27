@@ -63,6 +63,9 @@ public class ResultController {
 
     /**
      * The code for other pages to open CheckInResult.fxml
+     *
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -74,6 +77,8 @@ public class ResultController {
 
     /**
      * The code for button "next" to go to "Payment.fxml"
+     * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -101,6 +106,7 @@ public class ResultController {
      * This method is used to get the help page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
@@ -121,6 +127,7 @@ public class ResultController {
      * This method is used to show the boarding gate map by the button.
      *
      * @param actionEvent
+     * @throws IOException
      */
     public void showMap(ActionEvent actionEvent) {
         Platform.runLater(() -> {

@@ -83,6 +83,9 @@ public class PaymentController {
 
     /**
      * The code for other pages to open Payment.fxml
+     *
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -94,6 +97,8 @@ public class PaymentController {
 
     /**
      * The code for button "next" to go to "PrintTags.fxml"
+     * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
         if ((!textField.getText().equals("")) && Validator.visaIdValidator(textField.getText())) {
@@ -134,6 +139,7 @@ public class PaymentController {
      * This method is used to get the help page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
@@ -155,6 +161,7 @@ public class PaymentController {
      * And it allows the user to go back to the previous scene.
      *
      * @param actionEvent the event
+     * @throws IOException
      */
     public void returnButton(ActionEvent actionEvent) {
         Platform.runLater(() -> {

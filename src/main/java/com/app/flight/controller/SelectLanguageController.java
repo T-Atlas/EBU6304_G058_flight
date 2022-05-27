@@ -39,6 +39,8 @@ public class SelectLanguageController {
 
     /**
      * The code to close current page and open the login page
+     *
+     * @throws IOException
      */
     @FXML
     public void loginButtonClick() {
@@ -55,6 +57,7 @@ public class SelectLanguageController {
 
     /**
      * The code to open SelectLanguage.fxml.
+     * @param stage
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -66,6 +69,7 @@ public class SelectLanguageController {
 
     /**
      * This method is used to get the loader of SelectLanguage.fxml.
+     * @throws IOException
      */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/SelectLanguage.fxml"));
@@ -75,6 +79,7 @@ public class SelectLanguageController {
      * This method is used to change the language to English.
      *
      * @param actionEvent
+     * @throws IOException
      */
     public void onEnglishButtonClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
