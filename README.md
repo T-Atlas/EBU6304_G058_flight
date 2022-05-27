@@ -135,6 +135,8 @@ Coming soon…
 - Updated javadocs.
 - Added unit test cases and automatic uitest cases.
 - Updated CsvTest.
+- Added the function of administrator login.
+- Added the function of administrator view all the passengers' information.
 
 ### 4.5 RELEASE (May 16, 2022)
 
