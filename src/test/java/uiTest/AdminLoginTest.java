@@ -62,6 +62,10 @@ public class AdminLoginTest {
 
     @Test
     void onClickLoginButton(FxRobot robot) {
+        robot.clickOn("#idTextField");
+        Assertions.assertThat(robot.write("2019213548")).isNotNull();
+        robot.clickOn("#passwordTextField");
+        Assertions.assertThat(robot.write("190894124")).isNotNull();
         robot.clickOn("#loginButton");
     }
 }

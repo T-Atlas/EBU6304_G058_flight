@@ -35,5 +35,4 @@ public class BoardingPass {
      */
     @JSONField(ordinal = 4)
     private Food food;
-
 }
