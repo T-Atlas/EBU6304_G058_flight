@@ -7,6 +7,12 @@ import java.util.ArrayList;
 
 public class AdminImpl implements Admin {
 
+    /**
+     * View passenger information of each flight by flight ID
+     *
+     * @param flightId Flight ID
+     * @return Passenger information
+     */
     @Override
     public ArrayList<String[]> searchCheckedInfoByFlightId(String flightId) {
         ArrayList<String[]> reservationInfo = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
@@ -41,6 +47,11 @@ public class AdminImpl implements Admin {
         return checkedInfo;
     }
 
+    /**
+     * Get all flight ID
+     *
+     * @return All flight ID
+     */
     @Override
     public ArrayList<String> getFlightId() {
         ArrayList<String[]> flightInfo = Csv.readCsv(Csv.FLIGHT_CSV_PATH);
@@ -51,6 +62,12 @@ public class AdminImpl implements Admin {
         return flightId;
     }
 
+    /**
+     * Query the password of the corresponding ID through the administrator ID
+     *
+     * @param id Admin ID
+     * @return Admin password
+     */
     @Override
     public String getPassword(String id) {
         ArrayList<String[]> adminInfo = Csv.readCsv(Csv.ADMIN_CSV_PATH);
@@ -62,6 +79,12 @@ public class AdminImpl implements Admin {
         return null;
     }
 
+    /**
+     * Query the name of the corresponding ID through the administrator ID
+     *
+     * @param id Admin ID
+     * @return Admin name
+     */
     @Override
     public String getName(String id) {
         ArrayList<String[]> adminInfo = Csv.readCsv(Csv.ADMIN_CSV_PATH);
