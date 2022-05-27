@@ -30,7 +30,7 @@ public class AdminWelcomeTest {
      */
     @Start
     private void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminWelcome.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/AdminView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
         stage.setScene(scene);
         stage.show();

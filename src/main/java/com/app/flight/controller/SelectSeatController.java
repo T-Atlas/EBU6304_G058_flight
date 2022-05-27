@@ -4,7 +4,7 @@ import com.app.flight.Main;
 import com.app.flight.entity.Seat;
 import com.app.flight.service.SetSeatMap;
 import com.app.flight.service.impl.SeatMapImpl;
-import com.app.flight.util.DataParser;
+import com.app.flight.util.Common;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -158,7 +158,7 @@ public class SelectSeatController {
                         alert.showAndWait();
                     });
                 }
-                this.gridPane.add(button, DataParser.stringToNo(seats.getKey()), rowMap.getKey() - 1);
+                this.gridPane.add(button, Common.stringToNo(seats.getKey()), rowMap.getKey() - 1);
                 GridPane.setMargin(button, new Insets(18));
             }
         }

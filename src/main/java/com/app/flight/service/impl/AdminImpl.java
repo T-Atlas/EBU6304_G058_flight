@@ -7,14 +7,6 @@ import java.util.ArrayList;
 
 public class AdminImpl implements Admin {
 
-    public static void main(String[] args) {
-        AdminImpl admin = new AdminImpl();
-        ArrayList<String[]> mh8633 = admin.searchCheckedInfoByFlightId("MU1234");
-        for (String[] strings : mh8633) {
-            System.out.println(strings[0] + strings[1] + strings[2] + strings[3] + strings[4] + strings[5]);
-        }
-    }
-
     @Override
     public ArrayList<String[]> searchCheckedInfoByFlightId(String flightId) {
         ArrayList<String[]> reservationInfo = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
@@ -57,5 +49,27 @@ public class AdminImpl implements Admin {
             flightId.add(flight[0]);
         }
         return flightId;
+    }
+
+    @Override
+    public String getPassword(String id) {
+        ArrayList<String[]> adminInfo = Csv.readCsv(Csv.ADMIN_CSV_PATH);
+        for (String[] adInfo : adminInfo) {
+            if (id.equals(adInfo[0])) {
+                return adInfo[1];
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String getName(String id) {
+        ArrayList<String[]> adminInfo = Csv.readCsv(Csv.ADMIN_CSV_PATH);
+        for (String[] adInfo : adminInfo) {
+            if (id.equals(adInfo[0])) {
+                return adInfo[2];
+            }
+        }
+        return null;
     }
 }

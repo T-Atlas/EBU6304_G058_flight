@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class GetReservationTest {
 
-    static String id = "1234";
+    static String id = "130681200104296464";
     static Passenger passenger = new Passenger();
 
     static Flight flight1 = new Flight();
@@ -42,7 +42,7 @@ public class GetReservationTest {
         passenger.setFirstName("Test");
         passenger.setLastName("test");
         passenger.setAge(2);
-        passenger.setTelephone("11111111");
+        passenger.setTelephone("11111111111");
 
         Csv.addCsv(passenger, Csv.PASSENGER_CSV_PATH, true);
 

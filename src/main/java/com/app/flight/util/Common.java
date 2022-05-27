@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
  * @version 1.0
  * @date 2022.4.6
  */
-public class Obj {
+public class Common {
     public static String[] generateObjAttr(Object obj) {
         Class<?> classObj = obj.getClass();
         Field[] fields = classObj.getDeclaredFields();
@@ -43,6 +43,37 @@ public class Obj {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    /**
+     * Transforms an int No. to a String.
+     *
+     * @param no the number to be transformed
+     * @return the transformed String
+     */
+    public static String noToString(int no) {
+        return switch (no) {
+            case 1 -> "A";
+            case 2 -> "B";
+            case 3 -> "C";
+            case 5 -> "D";
+            case 6 -> "E";
+            case 7 -> "F";
+            default -> "";
+        };
+    }
+
+    public static int stringToNo(String s) {
+        return switch (s) {
+            case "A" -> 1;
+            case "B" -> 2;
+            case "C" -> 3;
+            case "D" -> 5;
+            case "E" -> 6;
+            case "F" -> 7;
+            default -> 0;
+        };
     }
 
 }

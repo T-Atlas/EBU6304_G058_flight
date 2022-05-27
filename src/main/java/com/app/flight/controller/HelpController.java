@@ -7,7 +7,7 @@ import com.app.flight.service.external.Scanner;
 import com.app.flight.service.impl.GetFlightImpl;
 import com.app.flight.service.impl.GetPassengerImpl;
 import com.app.flight.service.impl.SeatMapImpl;
-import com.app.flight.util.Obj;
+import com.app.flight.util.Common;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -137,7 +137,7 @@ public class HelpController {
                         fxmlLoader = new InputNumberController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                         InputNumberController inputNumberController = fxmlLoader.getController();
-                        inputNumberController.type = Obj.getSelectType();
+                        inputNumberController.type = Common.getSelectType();
                         inputNumberController.next.setDisable(true);
                         inputNumberController.number.textProperty().addListener(changeListener -> {
                             inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);
@@ -157,7 +157,7 @@ public class HelpController {
                         fxmlLoader = new PaymentController().getLoader();
                         stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
                         PaymentController paymentController = fxmlLoader.getController();
-                        paymentController.pay(Objects.requireNonNull(Obj.getSelectType()));
+                        paymentController.pay(Objects.requireNonNull(Common.getSelectType()));
                     }
                     case "ScanInstructionController" -> {
                         fxmlLoader = new ScanInstructionController().getLoader();
