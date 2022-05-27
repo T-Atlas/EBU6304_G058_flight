@@ -65,6 +65,8 @@ public class RetrieveController {
                     Stage stage = (Stage) next.getScene().getWindow();
                     FXMLLoader fxmlLoader = new ComingSoonController().getLoader();
                     stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    ComingSoonController comingSoonController = fxmlLoader.getController();
+                    comingSoonController.setText("No reservation found");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
