@@ -144,6 +144,9 @@ public class RetrieveController {
 
     /**
      * The code for button "next" to go to "SelectSeat.fxml"
+     *
+     * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -168,6 +171,8 @@ public class RetrieveController {
 
     /**
      * The code for other pages to open Retrieve.fxml
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage, Passenger pRetrieve) throws IOException {
 
@@ -212,6 +217,7 @@ public class RetrieveController {
      * This method is used to get the help page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {

@@ -44,6 +44,9 @@ public class PrintTagsController implements Runnable {
     /**
      * The code for button "next" in PrintTags.fxml
      * When click the button, change to Finished.fxml
+     *
+     * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -64,6 +67,8 @@ public class PrintTagsController implements Runnable {
 
     /**
      * The code for other pages to open PrintTags.fxml
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -133,6 +138,7 @@ public class PrintTagsController implements Runnable {
      * This method is used to get the help page.
      *
      * @param actionEvent
+     * @throws IOException
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {

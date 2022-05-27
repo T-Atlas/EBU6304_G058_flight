@@ -25,7 +25,7 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 - Passengers can check in.
 - Passengers can print tags.
 - Administrator can login.
-- Administrator can view all the passengers' information.(coming soon)
+- Administrator can view all the passengers' information.
 
 
 
@@ -126,6 +126,8 @@ see docs
 - Updated javadocs.
 - Added unit test cases and automatic uitest cases.
 - Updated CsvTest.
+- Added the function of administrator login.
+- Added the function of administrator view all the passengers' information.
 
 ### 4.5 RELEASE (May 16, 2022)
 
