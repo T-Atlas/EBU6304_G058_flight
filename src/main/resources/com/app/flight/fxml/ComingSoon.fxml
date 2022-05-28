@@ -16,7 +16,8 @@
             </font>
         </Label>
         <Button fx:id="homeButton" layoutX="462.0" layoutY="540.0" mnemonicParsing="false" onAction="#home"
-                prefHeight="106.0" prefWidth="277.0" text="Go Back To Home">
+                style="-fx-background-color: LIGHTGREY;-fx-font-weight: bold;" prefHeight="106.0" prefWidth="277.0"
+                text="Go Back To Home">
             <font>
                 <Font size="24.0"/>
             </font>
