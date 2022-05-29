@@ -1,15 +1,1 @@
-You don't have hand baggage
-
-_______________________________________
-
-   ___________VOUCHER___________
- / \                            \.
-|   |                           |.
- \__|                           |.
-    |  NO.1                     |.
-    |  COUNTER: B08             |.
-    |  CHECKED BAGGAGE: 1       |.
-    |                           |.
-    |   ________________________|____
-    |  /                            /.
-    \_/Group58_____________________/.
+You don't have checked baggage

@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 11 SEPTEMBER       |.
-    |  FLIGHT: MH8633           |.
-    |  NAME: Test Jun           |.
-    |  SEAT: 1B                 |.
-    |  GATE: B08                |.
-    |  BD TIME: 07:05           |.
-    |  DEST: Hainan             |.
+    |  DATE: 27 MAY             |.
+    |  FLIGHT: MU4233           |.
+    |  NAME: Fang Hua           |.
+    |  SEAT: 4C                 |.
+    |  GATE: A07                |.
+    |  BD TIME: 08:25           |.
+    |  DEST: Beijing            |.
     |                           |.
     |                           |.
     |   ________________________|____

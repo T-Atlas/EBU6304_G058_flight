@@ -31,7 +31,7 @@
     <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.zxing:core:3.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.javacsv:javacsv:2.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:31.1-jre" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:failureaccess:1.0.1" level="project" />

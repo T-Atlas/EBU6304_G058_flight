@@ -1,9 +1,9 @@
 {
-  "flightId": "MH8638",
-  "departure": "Beijing",
-  "destination": "Hainan",
-  "boardingGate": "B08",
-  "boardingTime": "2022-09-11 07:05",
-  "departureTime": "2022-09-11 09:55",
-  "arrivalTime": "2022-09-11 12:55"
+  "flightId": "MU4233",
+  "departure": "Chengdu",
+  "destination": "Beijing",
+  "boardingGate": "A07",
+  "boardingTime": "2022-05-27 08:25",
+  "departureTime": "2022-05-27 08:55",
+  "arrivalTime": "2022-05-27 13:55"
 }
