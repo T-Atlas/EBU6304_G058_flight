@@ -1,0 +1,458 @@
+Index: src/main/java/com/app/flight/controller/AttentionNotesController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.flight.controller;\r\n\r\nimport com.app.flight.Main;\r\nimport javafx.application.Platform;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.CheckBox;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\n/**\r\n * @author LianJunhong\r\n * @version 2.1\r\n */\r\npublic class AttentionNotesController {\r\n    @FXML\r\n    public Button next;\r\n    @FXML\r\n    public CheckBox confirm;\r\n\r\n    /**\r\n     * if checkbox is checked, make next button able to click\r\n     *\r\n     * @param actionEvent\r\n     */\r\n    public void check(ActionEvent actionEvent) {\r\n        next.setDisable(!confirm.isSelected());\r\n    }\r\n\r\n    /**\r\n     * The code for button \"next\" in \"AttentionNotes.fxml\"\r\n     * When click the button, change to \"InputNumber.fxml\"\r\n     */\r\n    public void nextClick(ActionEvent actionEvent) {\r\n\r\n        Platform.runLater(() -> {\r\n            Stage stage = (Stage) next.getScene().getWindow();\r\n            try {\r\n                FXMLLoader fxmlLoader = new SelectMethodController().getLoader();\r\n                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        });\r\n    }\r\n\r\n    /**\r\n     * The code for other pages to open InputNumber.fxml\r\n     */\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = getLoader();\r\n        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);\r\n        stage.setTitle(\"Smart flight check-in kiosk\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public FXMLLoader getLoader() throws IOException {\r\n        return new FXMLLoader(Main.class.getResource(\"fxml/AttentionNotes.fxml\"));\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/flight/controller/AttentionNotesController.java b/src/main/java/com/app/flight/controller/AttentionNotesController.java
+--- a/src/main/java/com/app/flight/controller/AttentionNotesController.java	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/src/main/java/com/app/flight/controller/AttentionNotesController.java	(date 1653406758035)
+@@ -18,24 +18,26 @@
+  */
+ public class AttentionNotesController {
+     @FXML
+-    public Button next;
++    private Button next;
++    @FXML
++    private CheckBox confirm;
++
++    /**
++     * If checkbox is checked, make next button able to click.
++     * @param actionEvent the event of checkbox
++     */
+     @FXML
+-    public CheckBox confirm;
+-
+-    /**
+-     * if checkbox is checked, make next button able to click
+-     *
+-     * @param actionEvent
+-     */
+-    public void check(ActionEvent actionEvent) {
++    private void check(ActionEvent actionEvent) {
+         next.setDisable(!confirm.isSelected());
+     }
+ 
+     /**
+      * The code for button "next" in "AttentionNotes.fxml"
+      * When click the button, change to "InputNumber.fxml"
++     * @param actionEvent the event of button
+      */
+-    public void nextClick(ActionEvent actionEvent) {
++    @FXML
++    private void nextClick(ActionEvent actionEvent) {
+ 
+         Platform.runLater(() -> {
+             Stage stage = (Stage) next.getScene().getWindow();
+@@ -50,6 +52,7 @@
+ 
+     /**
+      * The code for other pages to open InputNumber.fxml
++     * @param stage the stage of other pages
+      */
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader = getLoader();
+@@ -59,6 +62,11 @@
+         stage.show();
+     }
+ 
++    /**
++     * Get the loader of AttentionNotes.fxml
++     * @return the loader of AttentionNotes.fxml
++     * @throws IOException the exception to loader
++     */
+     public FXMLLoader getLoader() throws IOException {
+         return new FXMLLoader(Main.class.getResource("fxml/AttentionNotes.fxml"));
+     }
+Index: src/main/java/com/app/flight/controller/FinishController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.flight.controller;\r\n\r\nimport com.app.flight.Main;\r\nimport javafx.application.Platform;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\n/**\r\n * This code is used to finish all the steps of check-in.\r\n *\r\n * @author Huanghong\r\n * @version 2.1\r\n * @date 2022.3.30\r\n */\r\n\r\npublic class FinishController {\r\n    public ImageView boardingPassCode;\r\n    public ImageView tagCode;\r\n    @FXML\r\n    private Button finish;\r\n\r\n\r\n    /**\r\n     * The code to close current page and open the first page\r\n     */\r\n    public void finishClick() {\r\n        Platform.runLater(() -> {\r\n            Stage stage = (Stage) finish.getScene().getWindow();\r\n            try {\r\n                FXMLLoader fxmlLoader = new SelectLanguageController().getLoader();\r\n                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        });\r\n    }\r\n\r\n\r\n    /**\r\n     * The code for other pages to open Finished.fxml\r\n     */\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = getLoader();\r\n        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);\r\n        stage.setTitle(\"Smart flight check-in kiosk\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public FXMLLoader getLoader() throws IOException {\r\n        return new FXMLLoader(Main.class.getResource(\"fxml/Finished.fxml\"));\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/flight/controller/FinishController.java b/src/main/java/com/app/flight/controller/FinishController.java
+--- a/src/main/java/com/app/flight/controller/FinishController.java	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/src/main/java/com/app/flight/controller/FinishController.java	(date 1653406758030)
+@@ -20,8 +20,10 @@
+  */
+ 
+ public class FinishController {
+-    public ImageView boardingPassCode;
+-    public ImageView tagCode;
++    @FXML
++    protected ImageView boardingPassCode;
++    @FXML
++    protected ImageView tagCode;
+     @FXML
+     private Button finish;
+ 
+@@ -29,7 +31,8 @@
+     /**
+      * The code to close current page and open the first page
+      */
+-    public void finishClick() {
++    @FXML
++    private void finishClick() {
+         Platform.runLater(() -> {
+             Stage stage = (Stage) finish.getScene().getWindow();
+             try {
+@@ -44,6 +47,8 @@
+ 
+     /**
+      * The code for other pages to open Finished.fxml
++     * @param stage the stage to show the page
++     * @throws IOException if the file is not found
+      */
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader = getLoader();
+@@ -53,6 +58,11 @@
+         stage.show();
+     }
+ 
++    /**
++     * The code for get the loader of the page
++     * @return the loader of the page
++     * @throws IOException if the file is not found
++     */
+     public FXMLLoader getLoader() throws IOException {
+         return new FXMLLoader(Main.class.getResource("fxml/Finished.fxml"));
+     }
+Index: src/main/java/com/app/flight/controller/ComingSoonController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.flight.controller;\r\n\r\nimport com.app.flight.Main;\r\nimport javafx.application.Platform;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\n/**\r\n * @author LianJunhong\r\n * @version 2.1\r\n */\r\npublic class ComingSoonController {\r\n    public Button homeButton;\r\n\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = getLoader();\r\n        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);\r\n        stage.setTitle(\"Smart flight check-in kiosk\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public FXMLLoader getLoader() throws IOException {\r\n        return new FXMLLoader(Main.class.getResource(\"fxml/ComingSoon.fxml\"));\r\n    }\r\n\r\n    public void home(ActionEvent actionEvent) {\r\n        Platform.runLater(() -> {\r\n            Stage stage = (Stage) (homeButton.getScene().getWindow());\r\n            try {\r\n                FXMLLoader fxmlLoader = new SelectLanguageController().getLoader();\r\n                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n                throw new RuntimeException(e);\r\n            }\r\n\r\n        });\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/flight/controller/ComingSoonController.java b/src/main/java/com/app/flight/controller/ComingSoonController.java
+--- a/src/main/java/com/app/flight/controller/ComingSoonController.java	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/src/main/java/com/app/flight/controller/ComingSoonController.java	(date 1653406758009)
+@@ -3,6 +3,7 @@
+ import com.app.flight.Main;
+ import javafx.application.Platform;
+ import javafx.event.ActionEvent;
++import javafx.fxml.FXML;
+ import javafx.fxml.FXMLLoader;
+ import javafx.scene.Scene;
+ import javafx.scene.control.Button;
+@@ -15,8 +16,14 @@
+  * @version 2.1
+  */
+ public class ComingSoonController {
+-    public Button homeButton;
++    @FXML
++    private Button homeButton;
+ 
++    /**
++     * This method is used to the undeveloped page.
++     * @param stage the stage
++     * @throws IOException the IO exception
++     */
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader = getLoader();
+         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+@@ -25,11 +32,21 @@
+         stage.show();
+     }
+ 
++    /**
++     * This method is used to get the loader.
++     * @return the FXMLLoader
++     * @throws IOException the IO exception
++     */
+     public FXMLLoader getLoader() throws IOException {
+         return new FXMLLoader(Main.class.getResource("fxml/ComingSoon.fxml"));
+     }
+ 
+-    public void home(ActionEvent actionEvent) {
++    /**
++     * This method is used to go back to the home page.
++     * @param actionEvent the action event
++     */
++    @FXML
++    private void home(ActionEvent actionEvent) {
+         Platform.runLater(() -> {
+             Stage stage = (Stage) (homeButton.getScene().getWindow());
+             try {
+Index: src/main/java/com/app/flight/service/external/Printer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.flight.service.external;\r\n\r\nimport cn.hutool.core.thread.ThreadUtil;\r\nimport com.alibaba.fastjson2.JSON;\r\nimport com.app.flight.entity.BoardingPass;\r\nimport com.app.flight.entity.Flight;\r\nimport com.app.flight.entity.Passenger;\r\nimport com.app.flight.service.impl.GetReservationImpl;\r\nimport com.app.flight.util.Csv;\r\nimport com.app.flight.util.Json;\r\nimport javafx.application.Platform;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.ProgressBar;\r\nimport javafx.scene.media.Media;\r\nimport javafx.scene.media.MediaPlayer;\r\n\r\nimport java.io.*;\r\nimport java.time.LocalDateTime;\r\nimport java.time.Month;\r\nimport java.util.ArrayList;\r\n\r\n/**\r\n * @author LianJunhong\r\n * @author SongBo\r\n */\r\npublic class Printer {\r\n    private static final String BOARDING_PASS_TXT_PATH = \"data/printer/BoardingPass.txt\";\r\n    private static final String TAG_TXT_PATH = \"data/printer/Tag.txt\";\r\n    public static StringBuilder boardingPassData = new StringBuilder();\r\n    public static StringBuilder tagData = new StringBuilder();\r\n\r\n\r\n    public static void printBoardingPass(String jsonFilePath, String boardingPassFilePath) {\r\n        String jsonData = Json.extractJsonData(jsonFilePath);\r\n        BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);\r\n        Flight flight = boardingPass.getFlight();\r\n        Passenger passenger = boardingPass.getPassenger();\r\n        LocalDateTime boardingTime = flight.getBoardingTime();\r\n        String firstName = passenger.getFirstName();\r\n        String lastName = passenger.getLastName();\r\n        String seatNo = boardingPass.getSeatNo();\r\n        if (seatNo.length() == 2) {\r\n            seatNo = seatNo + \" \";\r\n        }\r\n        String boardingGate = flight.getBoardingGate();\r\n        if (boardingGate.length() == 2) {\r\n            boardingGate = boardingGate + \" \";\r\n        }\r\n        int dayOfMonth = boardingTime.getDayOfMonth();\r\n        Month month = boardingTime.getMonth();\r\n        String hour = String.valueOf(boardingTime.getHour());\r\n        if (hour.length() == 1) {\r\n            hour = \"0\" + hour;\r\n        }\r\n        String minute = String.valueOf(boardingTime.getMinute());\r\n        if (minute.length() == 1) {\r\n            minute = \"0\" + minute;\r\n        }\r\n        String destination = flight.getDestination();\r\n        StringBuilder dateSpaces = new StringBuilder();\r\n        dateSpaces.append(\" \".repeat(18 - String.valueOf(dayOfMonth).length() - month.name().length()));\r\n        StringBuilder nameSpaces = new StringBuilder();\r\n        nameSpaces.append(\" \".repeat(Math.max(0, 18 - firstName.length() - lastName.length())));\r\n        StringBuilder destSpaces = new StringBuilder();\r\n        destSpaces.append(\" \".repeat(Math.max(0, 19 - destination.length())));\r\n        BufferedWriter out = null;\r\n        boardingPassData.delete(0, boardingPassData.length());\r\n        boardingPassData.append(\"DATE: \").append(dayOfMonth).append(\" \").append(month).append(\"\\n\")\r\n                .append(\"FLIGHT: \").append(flight.getFlightId()).append(\"\\n\")\r\n                .append(\"NAME: \").append(firstName).append(\" \").append(lastName).append(\"\\n\")\r\n                .append(\"SEAT: \").append(seatNo).append(\"\\n\")\r\n                .append(\"GATE: \").append(boardingGate).append(\"\\n\")\r\n                .append(\"BD TIME: \").append(hour).append(\":\").append(minute).append(\"\\n\")\r\n                .append(\"DEST: \").append(destination).append(\"\\n\");\r\n        try {\r\n            out = new BufferedWriter(new OutputStreamWriter(\r\n                    new FileOutputStream(boardingPassFilePath)));\r\n            out.write(\"   ________BOARDING_PASS________\\n\" +\r\n                    \" / \\\\                            \\\\.\\n\" +\r\n                    \"|   |                           |.\\n\" +\r\n                    \" \\\\__|                           |.\\n\" +\r\n                    \"    |  DATE: \" + dayOfMonth + \" \" + month + dateSpaces + \"|.\\n\" +\r\n                    \"    |  FLIGHT: \" + flight.getFlightId() + \"           |.\\n\" +\r\n                    \"    |  NAME: \" + firstName + \" \" + lastName + nameSpaces + \"|.\\n\" +\r\n                    \"    |  SEAT: \" + seatNo + \"                |.\\n\" +\r\n                    \"    |  GATE: \" + boardingGate + \"                |.\\n\" +\r\n                    \"    |  BD TIME: \" + hour + \":\" + minute + \"           |.\\n\" +\r\n                    \"    |  DEST: \" + destination + destSpaces + \"|.\\n\" +\r\n                    \"    |                           |.\\n\" +\r\n                    \"    |                           |.\\n\" +\r\n                    \"    |   ________________________|____\\n\" +\r\n                    \"    |  /                            /.\\n\" +\r\n                    \"    \\\\_/Group58_____________________/.\");\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        } finally {\r\n            try {\r\n                assert out != null;\r\n                out.close();\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    public static void printTag(String jsonFilePath, String tagFilePath) {\r\n        String jsonData = Json.extractJsonData(jsonFilePath);\r\n        BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);\r\n        String flightId = boardingPass.getFlight().getFlightId();\r\n        String passengerId = boardingPass.getPassenger().getPassengerId();\r\n        ArrayList<String[]> resCsvData = Csv.readCsv(Csv.RESERVATION_CSV_PATH);\r\n        String[] reservation = new String[6];\r\n        for (String[] resStr : resCsvData) {\r\n            if (resStr[1].equals(passengerId) && resStr[2].equals(flightId)) {\r\n                reservation = resStr.clone();\r\n            }\r\n        }\r\n        BufferedWriter out;\r\n        ArrayList<String[]> boardingPassData = Csv.readCsv(Csv.BOARDING_PASS_CSV_PATH);\r\n        int tagNo = 0;\r\n        for (String[] boardingPassStr : boardingPassData) {\r\n            if (boardingPassStr[1].equals(flightId)) {\r\n                tagNo++;\r\n            }\r\n        }\r\n        StringBuilder no = new StringBuilder(String.valueOf(tagNo));\r\n        no.append(\" \".repeat(Math.max(0, 3 - String.valueOf(tagNo).length())));\r\n        tagData.delete(0, tagData.length());\r\n        if (!reservation[5].equals(\"0\")) {\r\n            tagData.append(\"NO.\").append(no).append(\"\\n\")\r\n                    .append(\"HAND BAGGAGE: \").append(reservation[5]).append(\"\\n\\n\");\r\n            try {\r\n                out = new BufferedWriter(new OutputStreamWriter(\r\n                        new FileOutputStream(tagFilePath)));\r\n                out.write(\"   _____________TAG_____________\\n\" +\r\n                        \" / \\\\                            \\\\.\\n\" +\r\n                        \"|   |                           |.\\n\" +\r\n                        \" \\\\__|                           |.\\n\" +\r\n                        \"    |  NO.\" + no + \"                   |.\\n\" +\r\n                        \"    |  HAND BAGGAGE: \" + reservation[5] + \"          |.\\n\" +\r\n                        \"    |                           |.\\n\" +\r\n                        \"    |   ________________________|____\\n\" +\r\n                        \"    |  /                            /.\\n\" +\r\n                        \"    \\\\_/Group58_____________________/.\");\r\n                out.close();\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        } else {\r\n            try {\r\n                out = new BufferedWriter(new OutputStreamWriter(\r\n                        new FileOutputStream(tagFilePath)));\r\n                tagData.append(\"You don't have hand baggage\\n\\n\");\r\n                out.write(\"You don't have hand baggage\");\r\n                out.close();\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n\r\n        if (!reservation[6].equals(\"0\")) {\r\n            String boardingGate = boardingPass.getFlight().getBoardingGate();\r\n            if (boardingGate.length() == 2) {\r\n                boardingGate = boardingGate + \" \";\r\n            }\r\n            tagData.append(\"NO.\").append(no).append(\"\\n\")\r\n                    .append(\"COUNTER: \").append(boardingGate).append(\"\\n\")\r\n                    .append(\"CHECKED BAGGAGE: \").append(reservation[6]).append(\"\\n\");\r\n            try {\r\n                out = new BufferedWriter(new OutputStreamWriter(\r\n                        new FileOutputStream(tagFilePath, true)));\r\n                out.write(\"\\n\\n_______________________________________\\n\\n\");\r\n                out.write(\"   ___________VOUCHER___________\\n\" +\r\n                        \" / \\\\                            \\\\.\\n\" +\r\n                        \"|   |                           |.\\n\" +\r\n                        \" \\\\__|                           |.\\n\" +\r\n                        \"    |  NO.\" + no + \"                   |.\\n\" +\r\n                        \"    |  COUNTER: \" + boardingGate + \"             |.\\n\" +\r\n                        \"    |  CHECKED BAGGAGE: \" + reservation[6] + \"       |.\\n\" +\r\n                        \"    |                           |.\\n\" +\r\n                        \"    |   ________________________|____\\n\" +\r\n                        \"    |  /                            /.\\n\" +\r\n                        \"    \\\\_/Group58_____________________/.\");\r\n                out.close();\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        } else {\r\n            try {\r\n                out = new BufferedWriter(new OutputStreamWriter(\r\n                        new FileOutputStream(tagFilePath)));\r\n                tagData.append(\"You don't have checked baggage\\n\");\r\n                out.write(\"You don't have checked baggage\");\r\n                out.close();\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    private MediaPlayer sound() {\r\n        String path = \"src/main/resources/com/app/flight/audio/printer.mp3\";\r\n        Media sound = new Media(new File(path).toURI().toString());\r\n        MediaPlayer mediaPlayer = new MediaPlayer(sound);\r\n        mediaPlayer.setVolume(0.5);\r\n        mediaPlayer.play();\r\n        return mediaPlayer;\r\n    }\r\n\r\n    public Boolean print(ProgressBar progressBar, Label percentage) {\r\n        int percent;\r\n        ThreadUtil.sleep(50);\r\n        MediaPlayer mediaPlayer = sound();\r\n        printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);\r\n        printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);\r\n        GetReservationImpl getReservation = new GetReservationImpl();\r\n        if (getReservation.updateCheckedFlag()) {\r\n            System.out.println(\"更新flag成功\");\r\n        }\r\n        for (int i = 0; i <= 100; i++) {\r\n            percent = i;\r\n            progressBar.setProgress(percent / 100.0);\r\n            int finalPercent = percent;\r\n            Platform.runLater(() -> {\r\n                percentage.setText(finalPercent + \" %\");\r\n            });\r\n            ThreadUtil.sleep(50);\r\n        }\r\n\r\n        Platform.runLater(() -> {\r\n            ThreadUtil.sleep(100);\r\n            mediaPlayer.stop();\r\n            percentage.setText(\"Success!\");\r\n        });\r\n        return true;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/flight/service/external/Printer.java b/src/main/java/com/app/flight/service/external/Printer.java
+--- a/src/main/java/com/app/flight/service/external/Printer.java	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/src/main/java/com/app/flight/service/external/Printer.java	(date 1653406758018)
+@@ -30,6 +30,13 @@
+     public static StringBuilder tagData = new StringBuilder();
+ 
+ 
++    /**
++     * This method is used to print boarding pass.
++     * Will generate boarding pass data from json file.
++     * And print boarding pass data to txt file.
++     * @param jsonFilePath json file path of boarding pass
++     * @param boardingPassFilePath txt file path of boarding pass
++     */
+     public static void printBoardingPass(String jsonFilePath, String boardingPassFilePath) {
+         String jsonData = Json.extractJsonData(jsonFilePath);
+         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
+@@ -103,6 +110,12 @@
+         }
+     }
+ 
++    /**
++     * This method is used to generate the tag for the passenger.
++     * Will generate the tag for the passenger and write it to the file.
++     * @param jsonFilePath the path of the json file
++     * @param tagFilePath the path of the tag file
++     */
+     public static void printTag(String jsonFilePath, String tagFilePath) {
+         String jsonData = Json.extractJsonData(jsonFilePath);
+         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
+@@ -198,6 +211,10 @@
+         }
+     }
+ 
++    /**
++     * This method is used to generate the sound of printing the boarding pass.
++     * @return a MediaPlayer object
++     */
+     private MediaPlayer sound() {
+         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
+         Media sound = new Media(new File(path).toURI().toString());
+@@ -207,6 +224,12 @@
+         return mediaPlayer;
+     }
+ 
++    /**
++     * This method is used to print the boarding pass.
++     * @param progressBar the progress bar
++     * @param percentage the text percentage of the progress bar
++     * @return a boolean value,if print is successful,return true,else return false
++     */
+     public Boolean print(ProgressBar progressBar, Label percentage) {
+         int percent;
+         ThreadUtil.sleep(50);
+Index: src/main/java/com/app/flight/controller/FoodTypeController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.flight.controller;\r\n\r\nimport com.app.flight.Main;\r\nimport com.app.flight.entity.Food;\r\nimport com.app.flight.service.SetFood;\r\nimport com.app.flight.service.impl.SetFoodImpl;\r\nimport javafx.application.Platform;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.RadioButton;\r\nimport javafx.scene.control.ToggleGroup;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\n/**\r\n * This code is used to select the food type.\r\n *\r\n * @author HuangHong\r\n * @version 2.1\r\n * @date 2022.3.31\r\n */\r\npublic class FoodTypeController {\r\n\r\n    @FXML\r\n    public ToggleGroup tg;\r\n    public Button help;\r\n    SetFood setFood = new SetFoodImpl();\r\n    @FXML\r\n    private Button next;\r\n    @FXML\r\n    private RadioButton r1;\r\n    @FXML\r\n    private RadioButton r2;\r\n    @FXML\r\n    private RadioButton r3;\r\n    private String type = null;\r\n\r\n    /**\r\n     * To judge which food type is the passenger selected\r\n     *\r\n     * @return type\r\n     */\r\n    public String foodType() {\r\n\r\n        r1.setUserData(Food.foodType.STANDARD);\r\n        r2.setUserData(Food.foodType.VEGETARIAN);\r\n        r3.setUserData(Food.foodType.HALAL);\r\n\r\n        if (tg.getSelectedToggle() == null) {\r\n            type = null;\r\n        } else {\r\n            type = tg.getSelectedToggle().getUserData().toString();\r\n        }\r\n\r\n        return type;\r\n\r\n    }\r\n\r\n    /**\r\n     * The code for button \"next\" in \"SelectFoodType.fxml\"\r\n     * When click the button, change to \"CheckInResult.fxml\"\r\n     */\r\n    public void nextClick(ActionEvent actionEvent) {\r\n\r\n        //invoke foodType() method to get the user's choice of food type\r\n        type = foodType();\r\n\r\n        if (type != null) {\r\n            setFood.setFood(Food.foodType.valueOf(type));\r\n            Platform.runLater(() -> {\r\n                Stage stage = (Stage) next.getScene().getWindow();\r\n                try {\r\n                    FXMLLoader fxmlLoader = new ResultController().getLoader();\r\n                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                    ResultController resultController = fxmlLoader.getController();\r\n                    resultController.showBoardingPass(true);\r\n                } catch (IOException e) {\r\n                    e.printStackTrace();\r\n                }\r\n            });\r\n        } else {\r\n            Alert alert = new Alert(Alert.AlertType.WARNING);\r\n            alert.setHeaderText(\"Please select the food type you prefer!\");\r\n            alert.showAndWait();\r\n        }\r\n    }\r\n\r\n    /**\r\n     * The code for other pages to open SelectFoodType.fxml\r\n     */\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = getLoader();\r\n        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);\r\n        stage.setTitle(\"Smart flight check-in kiosk\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public FXMLLoader getLoader() throws IOException {\r\n        return new FXMLLoader(Main.class.getResource(\"fxml/SelectFoodType.fxml\"));\r\n    }\r\n\r\n    @FXML\r\n    public void helpClick(ActionEvent actionEvent) {\r\n        Platform.runLater(() -> {\r\n            Stage stage = (Stage) help.getScene().getWindow();\r\n            try {\r\n                FXMLLoader fxmlLoader = new HelpController().getLoader();\r\n                stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                HelpController helpController = fxmlLoader.getController();\r\n                helpController.setControllerName(this.getClass().getSimpleName());\r\n            } catch (IOException e) {\r\n                throw new RuntimeException(e);\r\n            }\r\n        });\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/flight/controller/FoodTypeController.java b/src/main/java/com/app/flight/controller/FoodTypeController.java
+--- a/src/main/java/com/app/flight/controller/FoodTypeController.java	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/src/main/java/com/app/flight/controller/FoodTypeController.java	(date 1653406758024)
+@@ -26,10 +26,9 @@
+  */
+ public class FoodTypeController {
+ 
++    private final SetFood setFood = new SetFoodImpl();
+     @FXML
+-    public ToggleGroup tg;
+-    public Button help;
+-    SetFood setFood = new SetFoodImpl();
++    private ToggleGroup tg;
+     @FXML
+     private Button next;
+     @FXML
+@@ -39,13 +38,15 @@
+     @FXML
+     private RadioButton r3;
+     private String type = null;
++    @FXML
++    private Button help;
+ 
+     /**
+-     * To judge which food type is the passenger selected
+-     *
+-     * @return type
++     * To judge which food type is the passenger selected.
++     * @return food type
+      */
+-    public String foodType() {
++    @FXML
++    private String foodType() {
+ 
+         r1.setUserData(Food.foodType.STANDARD);
+         r2.setUserData(Food.foodType.VEGETARIAN);
+@@ -58,14 +59,16 @@
+         }
+ 
+         return type;
+-
+     }
+ 
++
+     /**
+-     * The code for button "next" in "SelectFoodType.fxml"
++     * The code for button "next" in "SelectFoodType.fxml".
+      * When click the button, change to "CheckInResult.fxml"
++     * @param actionEvent the event of clicking the button
+      */
+-    public void nextClick(ActionEvent actionEvent) {
++    @FXML
++    private void nextClick(ActionEvent actionEvent) {
+ 
+         //invoke foodType() method to get the user's choice of food type
+         type = foodType();
+@@ -90,8 +93,11 @@
+         }
+     }
+ 
++
+     /**
+-     * The code for other pages to open SelectFoodType.fxml
++     * The code for other pages to open SelectFoodType.fxml.
++     * @param stage the stage of the page
++     * @throws IOException the exception to loading the page
+      */
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader = getLoader();
+@@ -101,12 +107,21 @@
+         stage.show();
+     }
+ 
++    /**
++     * The code for get the loader of SelectFoodType.fxml.
++     * @return FXMLLoader of SelectFoodType
++     * @throws IOException the exception to loading the page
++     */
+     public FXMLLoader getLoader() throws IOException {
+         return new FXMLLoader(Main.class.getResource("fxml/SelectFoodType.fxml"));
+     }
+ 
++    /**
++     * The code for button "help" in "SelectFoodType.fxml".
++     * @param actionEvent the event of clicking the button
++     */
+     @FXML
+-    public void helpClick(ActionEvent actionEvent) {
++    private void helpClick(ActionEvent actionEvent) {
+         Platform.runLater(() -> {
+             Stage stage = (Stage) help.getScene().getWindow();
+             try {
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"EntryPointsManager\">\r\n    <list size=\"5\">\r\n      <item index=\"0\" class=\"java.lang.String\" itemvalue=\"lombok.Data\" />\r\n      <item index=\"1\" class=\"java.lang.String\" itemvalue=\"org.junit.jupiter.api.AfterAll\" />\r\n      <item index=\"2\" class=\"java.lang.String\" itemvalue=\"org.junit.jupiter.api.BeforeAll\" />\r\n      <item index=\"3\" class=\"java.lang.String\" itemvalue=\"org.junit.jupiter.api.TestMethodOrder\" />\r\n      <item index=\"4\" class=\"java.lang.String\" itemvalue=\"org.testfx.framework.junit5.Start\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"JavadocGenerationManager\">\r\n    <option name=\"OUTPUT_DIRECTORY\" value=\"$PROJECT_DIR$/docs\" />\r\n    <option name=\"OPTION_DOCUMENT_TAG_USE\" value=\"true\" />\r\n    <option name=\"OPTION_DOCUMENT_TAG_AUTHOR\" value=\"true\" />\r\n    <option name=\"OPTION_DOCUMENT_TAG_VERSION\" value=\"true\" />\r\n    <option name=\"OTHER_OPTIONS\" value=\"-encoding UTF-8 -charset UTF-8\" />\r\n    <option name=\"LOCALE\" value=\"en_US\" />\r\n    <option name=\"OPTION_INCLUDE_LIBS\" value=\"true\" />\r\n  </component>\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"PWA\">\r\n    <option name=\"enabled\" value=\"true\" />\r\n    <option name=\"wasEnabledAtLeastOnce\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/.idea/misc.xml	(date 1653406723660)
+@@ -1,12 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="EntryPointsManager">
+-    <list size="5">
+-      <item index="0" class="java.lang.String" itemvalue="lombok.Data" />
+-      <item index="1" class="java.lang.String" itemvalue="org.junit.jupiter.api.AfterAll" />
+-      <item index="2" class="java.lang.String" itemvalue="org.junit.jupiter.api.BeforeAll" />
+-      <item index="3" class="java.lang.String" itemvalue="org.junit.jupiter.api.TestMethodOrder" />
+-      <item index="4" class="java.lang.String" itemvalue="org.testfx.framework.junit5.Start" />
++    <list size="6">
++      <item index="0" class="java.lang.String" itemvalue="javafx.fxml.FXML" />
++      <item index="1" class="java.lang.String" itemvalue="lombok.Data" />
++      <item index="2" class="java.lang.String" itemvalue="org.junit.jupiter.api.AfterAll" />
++      <item index="3" class="java.lang.String" itemvalue="org.junit.jupiter.api.BeforeAll" />
++      <item index="4" class="java.lang.String" itemvalue="org.junit.jupiter.api.TestMethodOrder" />
++      <item index="5" class="java.lang.String" itemvalue="org.testfx.framework.junit5.Start" />
+     </list>
+   </component>
+   <component name="JavadocGenerationManager">
+Index: src/main/java/com/app/flight/controller/HelpController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.flight.controller;\r\n\r\nimport cn.hutool.core.thread.ThreadUtil;\r\nimport com.app.flight.Main;\r\nimport com.app.flight.entity.Passenger;\r\nimport com.app.flight.service.external.Scanner;\r\nimport com.app.flight.service.impl.GetFlightImpl;\r\nimport com.app.flight.service.impl.GetPassengerImpl;\r\nimport com.app.flight.service.impl.SeatMapImpl;\r\nimport com.app.flight.util.Obj;\r\nimport javafx.application.Platform;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.ButtonType;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\nimport java.util.Map;\r\nimport java.util.Objects;\r\n\r\n\r\n/**\r\n * @author LianJunhong\r\n */\r\npublic class HelpController {\r\n    public Button back;\r\n    public Button call;\r\n\r\n    private String controllerName;\r\n\r\n    public String getControllerName() {\r\n        return controllerName;\r\n    }\r\n\r\n    public void setControllerName(String controllerName) {\r\n        this.controllerName = controllerName;\r\n    }\r\n\r\n    public void start(Stage stage) throws IOException {\r\n        FXMLLoader fxmlLoader = getLoader();\r\n        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);\r\n        stage.setTitle(\"Smart flight check-in kiosk\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public FXMLLoader getLoader() throws IOException {\r\n        return new FXMLLoader(Main.class.getResource(\"fxml/Help.fxml\"));\r\n    }\r\n\r\n    public void callButton(ActionEvent actionEvent) {\r\n        //A pop-up window appears after the button is pressed, and the progress bar counts down to five seconds and then displays Please be patient.\r\n        Alert alert = new Alert(Alert.AlertType.INFORMATION, \"\", ButtonType.FINISH);\r\n        alert.setTitle(\"Success\");\r\n        alert.setHeaderText(\"Please be patient.\");\r\n        alert.showAndWait();\r\n    }\r\n\r\n    public void backButton(ActionEvent actionEvent) {\r\n        Platform.runLater(() -> {\r\n            Stage stage = (Stage) back.getScene().getWindow();\r\n            try {\r\n                FXMLLoader fxmlLoader = null;\r\n                switch (controllerName) {\r\n                    case \"FoodTypeController\" -> {\r\n                        fxmlLoader = new FoodTypeController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                    }\r\n                    case \"InfoConfirmController\" -> {\r\n                        Passenger p = GetPassengerImpl.lookupPassenger();\r\n                        if (p != null) {\r\n                            fxmlLoader = new InfoConfirmController().getLoader();\r\n                        } else {\r\n                            fxmlLoader = new ComingSoonController().getLoader();\r\n                        }\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        if (p != null) {\r\n                            InfoConfirmController i = fxmlLoader.getController();\r\n                            i.showNum(p);\r\n                            i.passengerRetrieve = p;\r\n                        }\r\n                    }\r\n                    case \"SelectMethodController\" -> {\r\n                        fxmlLoader = new SelectMethodController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                    }\r\n                    case \"SelectPaymentController\" -> {\r\n                        fxmlLoader = new SelectPaymentController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                    }\r\n                    case \"SelectSeatController\" -> {\r\n                        fxmlLoader = new SelectSeatController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        String flightId = Objects.requireNonNull(GetFlightImpl.lookupFlight()).getFlightId();\r\n                        stage.setTitle(\"Please Select Your SeatUtil\");\r\n                        SeatMapImpl getSeatMap = new SeatMapImpl();\r\n                        Map<Integer, Map<String, Boolean>> seatMap = getSeatMap.lookupSeatMap(flightId);\r\n                        SelectSeatController selectSeatController = fxmlLoader.getController();\r\n                        selectSeatController.flightId = flightId;\r\n                        selectSeatController.showSeatMap(seatMap);\r\n                    }\r\n                    case \"InputNumberController\" -> {\r\n                        fxmlLoader = new InputNumberController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        InputNumberController inputNumberController = fxmlLoader.getController();\r\n                        inputNumberController.type = Obj.getSelectType();\r\n                        inputNumberController.next.setDisable(true);\r\n                        inputNumberController.number.textProperty().addListener(changeListener -> {\r\n                            inputNumberController.next.setDisable(inputNumberController.number.getText().length() <= 0);\r\n                        });\r\n                        if (inputNumberController.type.equals(\"id\")) {\r\n                            inputNumberController.annotation.setText(\"--> Please input your ID number and surname:\");\r\n                            inputNumberController.numLabel.setText(\"ID Number:\");\r\n                            inputNumberController.nameLabel.setText(\"Surname:\");\r\n                        } else if (inputNumberController.type.equals(\"booking\")) {\r\n                            inputNumberController.annotation.setText(\"--> Please input your booking number:\");\r\n                            inputNumberController.nameClean.setVisible(false);\r\n                            inputNumberController.nameClean.setVisible(false);\r\n                            inputNumberController.surName.setVisible(false);\r\n                        }\r\n                    }\r\n                    case \"PaymentController\" -> {\r\n                        fxmlLoader = new PaymentController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        PaymentController paymentController = fxmlLoader.getController();\r\n                        paymentController.pay(Objects.requireNonNull(Obj.getSelectType()));\r\n                    }\r\n                    case \"ScanInstructionController\" -> {\r\n                        fxmlLoader = new ScanInstructionController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        Scanner scanner = new Scanner();\r\n                        ScanInstructionController scanInstructionController = fxmlLoader.getController();\r\n                        scanInstructionController.mediaView.setMediaPlayer(scanner.playVideo());\r\n                        scanner.ConsoleScanner(scanInstructionController, stage);\r\n                        ThreadUtil.execute(scanner);\r\n                    }\r\n                    case \"RetrieveController\" -> {\r\n                        fxmlLoader = new RetrieveController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        RetrieveController retrieveController = fxmlLoader.getController();\r\n                        retrieveController.showRetrieve(Objects.requireNonNull(GetPassengerImpl.lookupPassenger()));\r\n                    }\r\n                    case \"ResultController\" -> {\r\n                        fxmlLoader = new ResultController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        ResultController resultController = fxmlLoader.getController();\r\n                        resultController.showBoardingPass(false);\r\n                    }\r\n                    case \"PrintTagsController\" -> {\r\n                        fxmlLoader = new PrintTagsController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                        PrintTagsController printTagsController = fxmlLoader.getController();\r\n                        printTagsController.progressBar.setProgress(1);\r\n                        printTagsController.percentage.setText(\"Success!\");\r\n                        printTagsController.next.setDisable(false);\r\n                        printTagsController.help.setVisible(true);\r\n                    }\r\n                    default -> {\r\n                        fxmlLoader = new ComingSoonController().getLoader();\r\n                        stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));\r\n                    }\r\n                }\r\n            } catch (IOException e) {\r\n                throw new RuntimeException(e);\r\n            }\r\n        });\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/flight/controller/HelpController.java b/src/main/java/com/app/flight/controller/HelpController.java
+--- a/src/main/java/com/app/flight/controller/HelpController.java	(revision f6a57d0c78a97017cc68912478b949dbf3e75ed2)
++++ b/src/main/java/com/app/flight/controller/HelpController.java	(date 1653406758002)
+@@ -10,6 +10,7 @@
+ import com.app.flight.util.Obj;
+ import javafx.application.Platform;
+ import javafx.event.ActionEvent;
++import javafx.fxml.FXML;
+ import javafx.fxml.FXMLLoader;
+ import javafx.scene.Scene;
+ import javafx.scene.control.Alert;
+@@ -26,19 +27,27 @@
+  * @author LianJunhong
+  */
+ public class HelpController {
+-    public Button back;
+-    public Button call;
++    @FXML
++    private Button back;
++    @FXML
++    private Button call;
+ 
+     private String controllerName;
+ 
+-    public String getControllerName() {
+-        return controllerName;
+-    }
+ 
++    /**
++     * This setter is used to set the controller name.
++     * @param controllerName the controller name
++     */
+     public void setControllerName(String controllerName) {
+         this.controllerName = controllerName;
+     }
+ 
++    /**
++     * Call this method will start help page.
++     * @param stage the stage to show the page
++     * @throws IOException the exception
++     */
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader = getLoader();
+         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+@@ -47,11 +56,21 @@
+         stage.show();
+     }
+ 
++    /**
++     * This method is used to get the loader.
++     * @return the FXMLLoader
++     * @throws IOException the IO exception
++     */
+     public FXMLLoader getLoader() throws IOException {
+         return new FXMLLoader(Main.class.getResource("fxml/Help.fxml"));
+     }
+ 
+-    public void callButton(ActionEvent actionEvent) {
++    /**
++     * This method is used to handle the call help button.
++     * @param actionEvent the action event
++     */
++    @FXML
++    private void callButton(ActionEvent actionEvent) {
+         //A pop-up window appears after the button is pressed, and the progress bar counts down to five seconds and then displays Please be patient.
+         Alert alert = new Alert(Alert.AlertType.INFORMATION, "", ButtonType.FINISH);
+         alert.setTitle("Success");
+@@ -59,7 +78,14 @@
+         alert.showAndWait();
+     }
+ 
+-    public void backButton(ActionEvent actionEvent) {
++    /**
++     * This method is used to handle the back button.
++     * The method will determine which controller to go back to.
++     * And will keep the previous page data.
++     * @param actionEvent  the action event
++     */
++    @FXML
++    private void backButton(ActionEvent actionEvent) {
+         Platform.runLater(() -> {
+             Stage stage = (Stage) back.getScene().getWindow();
+             try {
