@@ -40,9 +40,8 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 1. #### **Use IDE**
 
    Our project was developed using **JetBrains IntelliJ IDEA** compiler. You can simply open this project folder in
-   IDEA,
-   wait for **Maven **to automatically complete the project build, and click the green triangle next to the application
-   startup class **AppLauncher.java** to run it.
+   IDEA, wait for **Maven** to automatically complete the project build, and click the green triangle next to the
+   application startup class **AppLauncher.java** to run it.
 
    <img src="src/main/resources/com/app/flight/image/startUp.png" alt="startUp" style="zoom:100%;" />
 
@@ -98,18 +97,35 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ------
 
-
 ## Requirements
 
-- maven -- 3.8.1 
+- maven -- 3.8.1
 - jdk -- 17
 
+## Test account data
+
+- The passenger data for test:
+
+  PassengerId: 431202198811101720
+
+  FirstName: Fang
+
+  LastName: Hua
+
+  Age: 29
+
+  Telephone: 13177777777
 
 
-## Documentation
+- The administrator data for test:
 
-see docs
+  AdministratorId: 2019213542
 
+  Password:190894696
+
+  Name: SongBo
+
+  Telephone: 13104368848
 
 
 

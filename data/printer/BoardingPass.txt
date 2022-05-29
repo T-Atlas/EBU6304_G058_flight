@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 25 MAY             |.
-    |  FLIGHT: MH1234           |.
-    |  NAME: Jun Test           |.
-    |  SEAT: 5E                 |.
-    |  GATE: A10                |.
-    |  BD TIME: 11:25           |.
-    |  DEST: Shanghai           |.
+    |  DATE: 27 MAY             |.
+    |  FLIGHT: MU4233           |.
+    |  NAME: Fang Hua           |.
+    |  SEAT: 4C                 |.
+    |  GATE: A07                |.
+    |  BD TIME: 08:25           |.
+    |  DEST: Beijing            |.
     |                           |.
     |                           |.
     |   ________________________|____

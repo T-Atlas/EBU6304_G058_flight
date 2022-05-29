@@ -1,9 +1,9 @@
 {
-  "flightId": "MH1234",
-  "departure": "Beijing",
-  "destination": "Shanghai",
-  "boardingGate": "A10",
-  "boardingTime": "2022-05-25 11:25",
-  "departureTime": "2022-05-25 11:55",
-  "arrivalTime": "2022-05-25 14:55"
+  "flightId": "MU4233",
+  "departure": "Chengdu",
+  "destination": "Beijing",
+  "boardingGate": "A07",
+  "boardingTime": "2022-05-27 08:25",
+  "departureTime": "2022-05-27 08:55",
+  "arrivalTime": "2022-05-27 13:55"
 }
