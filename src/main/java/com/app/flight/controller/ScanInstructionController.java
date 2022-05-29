@@ -42,8 +42,8 @@ public class ScanInstructionController {
     /**
      * This method is used to check the id number of the id card.
      *
-     * @param idNumber
-     * @param stage
+     * @param idNumber the input ID number
+     * @param stage    stage
      */
     public void checkIdNumber(String idNumber, Stage stage) {
         if (isValidCard(idNumber) || idNumber.equals("123456")) {
@@ -70,6 +70,14 @@ public class ScanInstructionController {
             });
         } else {
             //TODO:页面提示输入错误
+            Platform.runLater(() -> {
+                try {
+                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
         }
     }
 

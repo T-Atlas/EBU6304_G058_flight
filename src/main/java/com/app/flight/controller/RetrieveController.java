@@ -173,8 +173,9 @@ public class RetrieveController {
 
     /**
      * The code for other pages to open Retrieve.fxml
-     * @param stage
-     * @throws IOException
+     *
+     * @param stage stage
+     * @throws IOException IOException
      */
     public void start(Stage stage, Passenger pRetrieve) throws IOException {
 
@@ -200,7 +201,7 @@ public class RetrieveController {
     /**
      * This method is used to monitor the mouse click on the table view.
      *
-     * @param mouseEvent
+     * @param mouseEvent mouseEvent
      */
     public void mouseClick(MouseEvent mouseEvent) {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
@@ -218,8 +219,7 @@ public class RetrieveController {
     /**
      * This method is used to get the help page.
      *
-     * @param actionEvent
-     * @throws IOException
+     * @param actionEvent actionEvent
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {

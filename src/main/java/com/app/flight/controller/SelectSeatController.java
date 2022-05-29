@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
+ * Page for passengers to select their seat
+ *
  * @author zhenghan
  * @version 2.1
  */
@@ -51,8 +53,7 @@ public class SelectSeatController {
     /**
      * The code for button "next" to go to "SelectFood.fxml"
      *
-     * @param actionEvent
-     * @throws IOException
+     * @param actionEvent actionEvent
      */
     @FXML
     public void nextClick(ActionEvent actionEvent) {
@@ -77,8 +78,8 @@ public class SelectSeatController {
 
     /**
      * The code for button "help" to show the help message
-     * @param actionEvent
-     * @throws IOException
+     *
+     * @param actionEvent actionEvent
      */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
@@ -97,10 +98,11 @@ public class SelectSeatController {
 
     /**
      * The code for other pages to open SelectSeat.fxml
-     * @param stage
-     * @param seatMap
-     * @param flightId
-     * @throws IOException
+     *
+     * @param stage    the stage
+     * @param seatMap  the data of seat map
+     * @param flightId the flight ID on operation
+     * @throws IOException IOException
      */
     public void start(Stage stage, Map<Integer, Map<String, Boolean>> seatMap, String flightId) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
@@ -117,8 +119,7 @@ public class SelectSeatController {
     /**
      * The method is used to show the seat map in the table view.
      *
-     * @param seatMap
-     * @throws IOException
+     * @param seatMap the data of seat map
      */
     public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap) {
         for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
@@ -167,7 +168,7 @@ public class SelectSeatController {
     /**
      * The method is used to show the different seat color.
      *
-     * @param rowNo
+     * @param rowNo the row number of the selected seat
      * @return seat color
      */
     public String getSeatButtonColor(int rowNo) {
@@ -188,7 +189,7 @@ public class SelectSeatController {
     /**
      * The method is used to get the seat price.
      *
-     * @param rowNo
+     * @param rowNo the row number of the selected seat
      * @return seat price
      */
     public double getSeatPrice(int rowNo) {
