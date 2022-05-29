@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * The controller for admin viewing the checking information
+ *
  * @author Zheng Han
  * @version 2.1
  */

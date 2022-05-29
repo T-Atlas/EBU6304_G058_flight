@@ -1,19 +1,26 @@
 [
 	{
-      "reservationId": "1511111111111111111",
-      "flight": {
-        "flightId": "MH1111",
-        "departure": "Beijing",
-        "destination": "Hainan",
-        "boardingGate": "C08",
-        "boardingTime": "2022-09-11 07:05",
-        "departureTime": "2022-09-11 09:55",
-        "arrivalTime": "2022-09-11 12:55"
+      "reservationId": "1517540042405449728",
+      "passenger": {
+        "passengerId": "123456",
+        "firstName": "Jun",
+        "lastName": "Test",
+        "age": 20,
+        "telephone": "13104368848"
       },
-      "seatLevel": "FIRST_CLASS",
+      "flight": {
+        "flightId": "MH1234",
+        "departure": "Beijing",
+        "destination": "Shanghai",
+        "boardingGate": "A10",
+        "boardingTime": "2022-05-25 11:25",
+        "departureTime": "2022-05-25 11:55",
+        "arrivalTime": "2022-05-25 14:55"
+      },
+      "seatLevel": "ECONOMY_CLASS",
       "mealsAvailable": true,
-      "handBaggageNum": 0,
-      "checkedBaggageNum": 1,
+      "handBaggageNum": 1,
+      "checkedBaggageNum": 0,
       "checked": false
     }
 ]

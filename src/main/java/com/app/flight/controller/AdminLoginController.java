@@ -19,6 +19,7 @@ import java.io.IOException;
  * This code is used to finish all the steps of check-in.
  *
  * @author Huanghong
+ * @author zhenghan
  * @version 2.1
  * @date 2022.3.30
  */
@@ -91,6 +92,11 @@ public class AdminLoginController {
         stage.show();
     }
 
+    /**
+     * This method is used to get the loader of SelectLanguage.fxml.
+     *
+     * @throws IOException IOException
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/AdminLogin.fxml"));
     }
