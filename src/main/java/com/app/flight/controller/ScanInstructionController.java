@@ -19,7 +19,10 @@ import static cn.hutool.core.util.IdcardUtil.isValidCard;
 
 
 /**
+ * Help passengers to use the scanning feature
+ *
  * @author LianJunhong
+ * @author zhenghan
  */
 public class ScanInstructionController {
     @FXML
@@ -41,7 +44,6 @@ public class ScanInstructionController {
      *
      * @param idNumber
      * @param stage
-     * @throws IOException
      */
     public void checkIdNumber(String idNumber, Stage stage) {
         if (isValidCard(idNumber) || idNumber.equals("123456")) {
@@ -74,8 +76,7 @@ public class ScanInstructionController {
     /**
      * This method is used to get the help page.
      *
-     * @param actionEvent
-     * @throws IOException
+     * @param actionEvent actionEvent
      */
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -95,8 +96,7 @@ public class ScanInstructionController {
     /**
      * This method is used to return to the previous page.
      *
-     * @param actionEvent
-     * @throws IOException
+     * @param actionEvent actionEvent
      */
     public void back(ActionEvent actionEvent) {
         Platform.runLater(() -> {
