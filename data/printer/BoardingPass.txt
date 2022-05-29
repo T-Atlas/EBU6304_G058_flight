@@ -2,13 +2,13 @@
  / \                            \.
 |   |                           |.
  \__|                           |.
-    |  DATE: 28 MAY             |.
-    |  FLIGHT: MU8653           |.
+    |  DATE: 27 MAY             |.
+    |  FLIGHT: MU4233           |.
     |  NAME: Fang Hua           |.
-    |  SEAT: 3D                 |.
-    |  GATE: B07                |.
-    |  BD TIME: 07:25           |.
-    |  DEST: Guangzhou          |.
+    |  SEAT: 5D                 |.
+    |  GATE: A07                |.
+    |  BD TIME: 08:25           |.
+    |  DEST: Beijing            |.
     |                           |.
     |                           |.
     |   ________________________|____
