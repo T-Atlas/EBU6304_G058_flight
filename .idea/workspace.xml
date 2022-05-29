@@ -13,222 +13,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="5.0 release">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EBU6304_G058_flight.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EBU6304_G058_flight.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/BoardingPass.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/BoardingPass.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/Reservation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/Reservation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/flightSeat/MU4233_2022-05-27.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/flightSeat/MU4233_2022-05-27.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/csv/flightSeat/NH1266_2022-06-01.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/csv/flightSeat/NH1266_2022-06-01.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/BoardingPass.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/BoardingPass.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/Flight.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/Flight.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/Food.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/Food.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/Passenger.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/Passenger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/Reservation.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/Reservation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/Seat.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/Seat.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/json/Type.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/Type.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/printer/BoardingPass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/printer/BoardingPass.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/AppLauncher.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/AppLauncher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/class-use/AppLauncher.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/class-use/AppLauncher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/class-use/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/AdminLoginController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/AdminLoginController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/AdminViewController.TableRow.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/AdminViewController.TableRow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/AdminViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/AdminViewController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/AttentionNotesController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/AttentionNotesController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/ComingSoonController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/ComingSoonController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/FinishController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/FinishController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/FoodTypeController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/FoodTypeController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/HelpController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/HelpController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/InfoConfirmController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/InfoConfirmController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/InputNumberController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/InputNumberController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/NavigationMapController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/NavigationMapController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/PaymentController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/PaymentController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/PrintTagsController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/PrintTagsController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/ResultController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/ResultController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/RetrieveController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/RetrieveController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/ScanInstructionController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/ScanInstructionController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectLanguageController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectLanguageController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectMethodController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectMethodController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectPaymentController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectPaymentController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectSeatController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/SelectSeatController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AdminLoginController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AdminLoginController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AdminViewController.TableRow.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AdminViewController.TableRow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AdminViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AdminViewController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AttentionNotesController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/AttentionNotesController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/ComingSoonController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/ComingSoonController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/FinishController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/FinishController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/FoodTypeController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/FoodTypeController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/HelpController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/HelpController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/InfoConfirmController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/InfoConfirmController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/InputNumberController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/InputNumberController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/NavigationMapController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/NavigationMapController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/PaymentController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/PaymentController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/PrintTagsController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/PrintTagsController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/ResultController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/ResultController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/RetrieveController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/RetrieveController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/ScanInstructionController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/ScanInstructionController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectLanguageController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectLanguageController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectMethodController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectMethodController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectPaymentController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectPaymentController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectSeatController.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/class-use/SelectSeatController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/controller/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/controller/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/BaseAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/BaseAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/BoardingPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/BoardingPass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Company.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Company.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Flight.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Flight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Food.foodType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Food.foodType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Food.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Food.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Passenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Passenger.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Reservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Seat.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Seat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/Staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/Staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/BaseAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/BaseAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/BoardingPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/BoardingPass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Company.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Company.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Flight.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Flight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Food.foodType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Food.foodType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Food.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Food.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Passenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Passenger.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Reservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Seat.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Seat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/class-use/Staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/entity/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/entity/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/Admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetBoardingPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetBoardingPass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetFlight.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetFlight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetNavigationPicture.gateType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetNavigationPicture.gateType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetNavigationPicture.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetNavigationPicture.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetPassenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetPassenger.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetReservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetReservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/GetSeatMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/GetSeatMap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/SetFood.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/SetFood.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/SetSeatMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/SetSeatMap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/UpdateReservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/UpdateReservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/Admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetBoardingPass.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetBoardingPass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetFlight.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetFlight.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetNavigationPicture.gateType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetNavigationPicture.gateType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetNavigationPicture.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetNavigationPicture.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetPassenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetPassenger.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetReservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetReservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetSeatMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/GetSeatMap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/SetFood.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/SetFood.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/SetSeatMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/SetSeatMap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/UpdateReservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/class-use/UpdateReservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/Printer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/Printer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/QRCodeGenerator.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/QRCodeGenerator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/Scanner.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/Scanner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/class-use/Printer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/class-use/Printer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/class-use/QRCodeGenerator.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/class-use/QRCodeGenerator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/class-use/Scanner.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/class-use/Scanner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/external/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/external/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/AdminImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/AdminImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetBoardingPassImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetBoardingPassImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetFlightImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetFlightImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetPassengerImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetPassengerImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetReservationImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/GetReservationImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/NavigationPictureImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/NavigationPictureImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/SeatMapImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/SeatMapImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/SetFoodImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/SetFoodImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/AdminImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/AdminImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetBoardingPassImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetBoardingPassImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetFlightImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetFlightImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetPassengerImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetPassengerImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetReservationImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/GetReservationImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/NavigationPictureImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/NavigationPictureImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/SeatMapImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/SeatMapImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/SetFoodImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/class-use/SetFoodImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/impl/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/impl/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/GetPassengerImplTemp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/GetPassengerImplTemp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/GetReservationImplTemp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/GetReservationImplTemp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/GetSeatMapImplTemp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/GetSeatMapImplTemp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/class-use/GetPassengerImplTemp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/class-use/GetPassengerImplTemp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/class-use/GetReservationImplTemp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/class-use/GetReservationImplTemp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/class-use/GetSeatMapImplTemp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/class-use/GetSeatMapImplTemp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/service/temp/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/service/temp/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/Common.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/Common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/Csv.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/Csv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/Json.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/Json.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/SeatUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/SeatUtil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/Validator.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/Validator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Common.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Csv.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Csv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Json.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Json.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/SeatUtil.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/SeatUtil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Validator.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/class-use/Validator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/com/app/flight/util/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/com/app/flight/util/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-20.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-21.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-22.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/flight/service/external/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/flight/service/external/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/flight/service/external/QRCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/flight/service/external/QRCodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/flight/service/external/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/flight/service/external/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/flight/service/impl/NavigationPictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/flight/service/impl/NavigationPictureImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/audio/printer.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/audio/printer.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/fxml/Finished.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/flight/fxml/Finished.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/fxml/NavigationMap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/flight/fxml/NavigationMap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/AlipayLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/BoardingPassLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/BoardingPassLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/BoardingPassQR.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/BoardingPassQR.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/PaypalLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/QR.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/QR.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/TagLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/TagLogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/QR_Code/TagQR.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/QR_Code/TagQR.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/maps/A.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/maps/A.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/maps/B.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/maps/B.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/maps/C.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/maps/C.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/image/maps/D.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/image/maps/D.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/flight/video/scan.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/data/video/scan.mp4" afterDir="false" />
-    </list>
+    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="5.0 release" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -284,27 +69,27 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindow变更.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Java/EBU6304_G058_flight/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "工件",
-    "project.structure.proportion": "0.15169661",
-    "project.structure.side.proportion": "0.20848057",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindow变更.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Java/EBU6304_G058_flight/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15169661&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20848057&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Java\EBU6304_G058_flight" />
@@ -314,11 +99,11 @@
       <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\image\maps" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java\EBU6304_G058_flight\data" />
       <recent name="E:\Java\EBU6304_G058_flight\data\image\QR_Code" />
       <recent name="E:\Java\EBU6304_G058_flight\data\image" />
       <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\image\QR_Code" />
       <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\image" />
-      <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\ico" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.app.flight" />
@@ -610,14 +395,7 @@
       <workItem from="1653838459918" duration="321000" />
       <workItem from="1653839159200" duration="362000" />
       <workItem from="1653839617838" duration="1298000" />
-      <workItem from="1653841101411" duration="337000" />
-    </task>
-    <task id="LOCAL-00086" summary="update 4.0">
-      <created>1652082844244</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1652082844244</updated>
+      <workItem from="1653841101411" duration="434000" />
     </task>
     <task id="LOCAL-00087" summary="Update QR Code">
       <created>1652277974773</created>
@@ -955,7 +733,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653838775773</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="5.0 release">
+      <created>1653841498807</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1653841498808</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
