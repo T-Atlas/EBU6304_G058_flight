@@ -12,7 +12,7 @@ import java.io.File;
  * @date 2022.5.5
  */
 public class NavigationPictureImpl implements GetNavigationPicture {
-    private final String PATH = "src/main/resources/com/app/flight/image/maps/";
+    public static final String PATH = "src/main/resources/com/app/flight/image/maps/";
 
     /**
      * This method is used to get the navigation picture
@@ -22,6 +22,7 @@ public class NavigationPictureImpl implements GetNavigationPicture {
      */
     @Override
     public Image getNavigationPicture(gateType type) {
+        System.out.println(type);
         switch (type) {
             case GATE_A -> {
                 return new Image(new File(PATH + "A.png").toURI().toString());

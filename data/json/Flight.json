@@ -1,9 +1,9 @@
 {
-  "flightId": "MU4233",
+  "flightId": "MU8653",
   "departure": "Chengdu",
-  "destination": "Beijing",
-  "boardingGate": "A07",
-  "boardingTime": "2022-05-27 08:25",
-  "departureTime": "2022-05-27 08:55",
-  "arrivalTime": "2022-05-27 13:55"
+  "destination": "Guangzhou",
+  "boardingGate": "B07",
+  "boardingTime": "2022-05-28 07:25",
+  "departureTime": "2022-05-28 07:55",
+  "arrivalTime": "2022-05-28 15:35"
 }
