@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Updated the code of its own version.
+ * Main class of the JavaFX application.
  *
  * @author LianJunhong
  * @version 1.0

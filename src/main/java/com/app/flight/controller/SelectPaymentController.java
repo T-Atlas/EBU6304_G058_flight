@@ -1,7 +1,7 @@
 package com.app.flight.controller;
 
 import com.app.flight.Main;
-import com.app.flight.util.Obj;
+import com.app.flight.util.Common;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +29,12 @@ public class SelectPaymentController {
     public Button next;
     public Button help;
 
+    /**
+     * The code for other pages to open SelectPayment.fxml
+     *
+     * @param stage the stage
+     * @throws IOException the exception
+     */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
@@ -37,6 +43,11 @@ public class SelectPaymentController {
         stage.show();
     }
 
+    /**
+     * This method is used to check which payment method the user has selected.
+     *
+     * @return payment
+     */
     public String check() {
         paypal.setUserData("paypal");
         alipay.setUserData("alipay");
@@ -49,10 +60,15 @@ public class SelectPaymentController {
         return payment;
     }
 
+    /**
+     * The method is used to go to the next page.
+     *
+     * @param actionEvent
+     */
     public void nextClick(ActionEvent actionEvent) {
         Stage stage = (Stage) next.getScene().getWindow();
         if (check() != null) {
-            Obj.setSelectType((String) method.getSelectedToggle().getUserData());
+            Common.setSelectType((String) method.getSelectedToggle().getUserData());
             Platform.runLater(() -> {
                 try {
                     FXMLLoader fxmlLoader = new PaymentController().getLoader();
@@ -71,11 +87,20 @@ public class SelectPaymentController {
 
     }
 
-
+    /**
+     * This method is used to get the loader for the SelectPayment controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectPayment.fxml"));
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {

@@ -48,8 +48,13 @@ public class RetrieveController {
 
     private Reservation preSelectedRow;
 
+    /**
+     * This method is used to show the reservation list in the table view.
+     *
+     * @param p
+     */
     public void showRetrieve(Passenger p) {
-        ObservableList<Reservation> list2 = FXCollections.observableArrayList();
+        ObservableList<Reservation> list = FXCollections.observableArrayList();
         rList = getReservation.lookupReservations(p.getPassengerId());
         tableView.setEditable(false);
         next.setDisable(true);
@@ -57,19 +62,21 @@ public class RetrieveController {
         if (rList == null) {
             Platform.runLater(() -> {
                 try {
-                    new ComingSoonController().start(new Stage());
-                    ((Stage) (next.getScene().getWindow())).close();
+                    Stage stage = (Stage) next.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                    ComingSoonController comingSoonController = fxmlLoader.getController();
+                    comingSoonController.setText("No reservation found");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         } else {
             for (int i = 0; i < rList.size(); i++) {
-                list2.add(i, rList.get(i));
+                list.add(i, rList.get(i));
             }
-            tableView.setItems(list2);
+            tableView.setItems(list);
 
-            TableColumn check = new TableColumn();
             TableColumn flightId = new TableColumn("FlightID");
             TableColumn departure = new TableColumn("Departure");
             TableColumn destination = new TableColumn("Destination");
@@ -83,25 +90,35 @@ public class RetrieveController {
             baggage.getColumns().add(checkedBaggage);
 
             //Set the size of column
-            flightId.setMinWidth(162);
-            departure.setMinWidth(190);
-            destination.setMinWidth(190);
-            time.setMinWidth(270);
-            handBaggage.setMinWidth(120);
-            checkedBaggage.setMinWidth(120);
+            flightId.setResizable(false);
+            flightId.setPrefWidth(163);
+            flightId.setReorderable(false);
+            departure.setResizable(false);
+            departure.setPrefWidth(190);
+            departure.setReorderable(false);
+            destination.setResizable(false);
+            destination.setPrefWidth(190);
+            destination.setReorderable(false);
+            time.setResizable(false);
+            time.setPrefWidth(270);
+            time.setReorderable(false);
+            handBaggage.setResizable(false);
+            handBaggage.setPrefWidth(120);
+            handBaggage.setReorderable(false);
+            checkedBaggage.setResizable(false);
+            checkedBaggage.setPrefWidth(120);
+            checkedBaggage.setReorderable(false);
 
             //the style of font size
-            check.setStyle("-fx-font-size:15px;-fx-alignment: center");
             flightId.setStyle("-fx-font-size:20px;-fx-alignment: center");
             departure.setStyle("-fx-font-size:20px;-fx-alignment: center");
             destination.setStyle("-fx-font-size:20px;-fx-alignment: center");
             time.setStyle("-fx-font-size:20px;-fx-alignment: center");
             handBaggage.setStyle("-fx-font-size:20px;-fx-alignment: center;");
             checkedBaggage.setStyle("-fx-font-size:20px;-fx-alignment: center");
-            baggage.setStyle("-fx-font-size:20px");
+            baggage.setStyle("-fx-font-size:20px;-fx-alignment: center");
 
             //set the columns can't sortable
-            check.setSortable(false);
             flightId.setSortable(false);
             departure.setSortable(false);
             destination.setSortable(false);
@@ -109,7 +126,7 @@ public class RetrieveController {
             handBaggage.setSortable(false);
             checkedBaggage.setSortable(false);
 
-            for (int i = 0; i < list2.size(); i++) {
+            for (Reservation reservation : list) {
                 flightId.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getFlightId()));
                 departure.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDeparture()));
                 destination.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reservation, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getFlight().getDestination()));
@@ -117,7 +134,6 @@ public class RetrieveController {
                 handBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("handBaggageNum"));
                 checkedBaggage.setCellValueFactory(new PropertyValueFactory<Reservation, Number>("checkedBaggageNum"));
             }
-
             tableView.getColumns().add(flightId);
             tableView.getColumns().add(departure);
             tableView.getColumns().add(destination);
@@ -128,6 +144,12 @@ public class RetrieveController {
 
     }
 
+    /**
+     * The code for button "next" to go to "SelectSeat.fxml"
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
@@ -149,6 +171,12 @@ public class RetrieveController {
         });
     }
 
+    /**
+     * The code for other pages to open Retrieve.fxml
+     *
+     * @param stage stage
+     * @throws IOException IOException
+     */
     public void start(Stage stage, Passenger pRetrieve) throws IOException {
 
         FXMLLoader fxmlLoader = getLoader();
@@ -161,10 +189,20 @@ public class RetrieveController {
 
     }
 
+    /**
+     * This method is used to get the loader for the Retrieve controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() throws IOException {
         return new FXMLLoader(Main.class.getResource("fxml/Retrieve.fxml"));
     }
 
+    /**
+     * This method is used to monitor the mouse click on the table view.
+     *
+     * @param mouseEvent mouseEvent
+     */
     public void mouseClick(MouseEvent mouseEvent) {
         Reservation selectedRow = tableView.getSelectionModel().getSelectedItem();
         if (selectedRow != null) {
@@ -178,6 +216,11 @@ public class RetrieveController {
         preSelectedRow = selectedRow;
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {

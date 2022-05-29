@@ -10,9 +10,9 @@ import java.io.File;
 public class QRCodeGenerator {
     public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/";
     private static final String TAG_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/TagLogo.png";
-    private static final String TAG_TXT = "src/main/resources/com/app/flight/data/printer/Tag.txt";
+    private static final String TAG_TXT = "data/printer/Tag.txt";
     private static final String BOARDING_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/BoardingPassLogo.png";
-    private static final String BOARDING_TXT = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
+    private static final String BOARDING_TXT = "data/printer/BoardingPass.txt";
     private static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
     private static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
     private static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
@@ -20,6 +20,11 @@ public class QRCodeGenerator {
     private static String url = "";
     private static String path = "";
 
+    /**
+     * Generate QR code for pay
+     *
+     * @param type 1 for PayPal, 2 for alipay
+     */
     public static void generatePayCode(String type) {
         if (type.equals("paypal")) {
             url = PAYPAL_SITE;
@@ -34,12 +39,15 @@ public class QRCodeGenerator {
         config.setImg(new File(path));
         config.setRatio(8);
         QrCodeUtil.generate(
-                url, //二维码内容
-                config,//附带logo
-                FileUtil.newFile(QR_CODE_PATH + "QR.jpg")//写出到的文件
+                url,
+                config,
+                FileUtil.newFile(QR_CODE_PATH + "QR.jpg")
         );
     }
 
+    /**
+     * Generate QR code for boarding pass
+     */
     public static void generateBoardingPassCode() {
         url = FileUtil.readUtf8String(FileUtil.newFile(BOARDING_TXT));
         path = BOARDING_IMAGE_PATH;
@@ -49,12 +57,15 @@ public class QRCodeGenerator {
         config.setMargin(0);
         config.setRatio(6);
         QrCodeUtil.generate(
-                String.valueOf(Printer.boardingPassData), //二维码内容
-                config,//附带logo
-                FileUtil.newFile(QR_CODE_PATH + "BoardingPassQR.jpg")//写出到的文件
+                String.valueOf(Printer.boardingPassData),
+                config,
+                FileUtil.newFile(QR_CODE_PATH + "BoardingPassQR.jpg")
         );
     }
 
+    /**
+     * Generate QR code for tag
+     */
     public static void generateTagCode() {
         url = FileUtil.readUtf8String(FileUtil.newFile(TAG_TXT));
         path = TAG_IMAGE_PATH;
@@ -64,9 +75,9 @@ public class QRCodeGenerator {
         config.setMargin(0);
         config.setRatio(5);
         QrCodeUtil.generate(
-                String.valueOf(Printer.tagData), //二维码内容
-                config,//附带logo
-                FileUtil.newFile(QR_CODE_PATH + "TagQR.jpg")//写出到的文件
+                String.valueOf(Printer.tagData),
+                config,
+                FileUtil.newFile(QR_CODE_PATH + "TagQR.jpg")
         );
     }
 }

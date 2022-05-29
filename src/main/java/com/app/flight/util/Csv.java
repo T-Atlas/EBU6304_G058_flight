@@ -3,7 +3,6 @@ package com.app.flight.util;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONWriter;
-import com.app.flight.entity.Admin;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
@@ -22,14 +21,15 @@ import java.util.Map;
  * @date 2022.4.16
  */
 public class Csv {
-    public static final String FLIGHT_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Flight.csv";
-    public static final String FOOD_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Food.csv";
-    public static final String PASSENGER_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Passenger.csv";
-    public static final String RESERVATION_CSV_PATH = "src/main/resources/com/app/flight/data/csv/Reservation.csv";
-    public static final String BOARDING_PASS_CSV_PATH = "src/main/resources/com/app/flight/data/csv/BoardingPass.csv";
+    public static final String FLIGHT_CSV_PATH = "data/csv/Flight.csv";
+    public static final String FOOD_CSV_PATH = "data/csv/Food.csv";
+    public static final String PASSENGER_CSV_PATH = "data/csv/Passenger.csv";
+    public static final String RESERVATION_CSV_PATH = "data/csv/Reservation.csv";
+    public static final String BOARDING_PASS_CSV_PATH = "data/csv/BoardingPass.csv";
+    public static final String ADMIN_CSV_PATH = "data/csv/Admin.csv";
 
     /**
-     * Add a row of csv data
+     * Add a row of csv data and the entity must have a unique field
      *
      * @param entity   Add the entity corresponding to the data
      * @param filePath File directory for adding data
@@ -39,7 +39,7 @@ public class Csv {
     public static boolean addCsv(Object entity, String filePath, boolean unique) {
         String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString, JSONWriter.Feature.WriteEnumsUsingName);
         JSONObject jsonObj = JSON.parseObject(data);
-        String[] csvHeaders = Obj.generateObjAttr(entity);
+        String[] csvHeaders = Common.generateObjAttr(entity);
         int i = 0;
         try {
             if (unique) {
@@ -69,10 +69,9 @@ public class Csv {
     }
 
     /**
-     * Read all csv data
-     *
+     * Read all csv data and return a list of csv data
      * @param filePath Directory of files for reading csv data
-     * @return Retrieved data sets
+     * @return Retrieved data sets in a list
      */
     public static ArrayList<String[]> readCsv(String filePath) {
         ArrayList<String[]> csvList = new ArrayList<>();
@@ -90,8 +89,7 @@ public class Csv {
     }
 
     /**
-     * Update a row of csv data and the entity must have a unique field
-     *
+     * Update a row of csv data and the entity must have a unique field and the corresponding field must be the same
      * @param entity   Update the entity corresponding to the data
      * @param filePath File directory for updating data
      * @return Whether updated successfully or not
@@ -110,17 +108,16 @@ public class Csv {
     }
 
     /**
-     * Delete a row of csv data
-     *
+     * Delete a row of csv data and the entity must have a unique field and the corresponding field must be the same
      * @param entity   Delete the entity corresponding to the data
      * @param filePath File directory for deleted data
      * @param unique   Does the entity have a unique field
      * @return Whether deleted successfully or not
      */
     public static boolean deleteCsv(Object entity, String filePath, boolean unique) {
-        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString);
+        String data = JSON.toJSONString(entity, JSONWriter.Feature.WriteNonStringValueAsString, JSONWriter.Feature.WriteEnumsUsingName);
         JSONObject jsonObj = JSON.parseObject(data);
-        String[] csvHeaders = Obj.generateObjAttr(entity);
+        String[] csvHeaders = Common.generateObjAttr(entity);
         ArrayList<String[]> csvData = readCsv(filePath);
         int i = 0;
         for (String[] csvRowData : csvData) {
@@ -181,12 +178,5 @@ public class Csv {
         return true;
     }
 
-    public static Object checkCsv(Object entity, String filePath) {
-        if (entity == null) {
-            return null;
-        } else {
-            return new Admin();
-        }
-    }
 }
 

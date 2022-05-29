@@ -3,7 +3,7 @@
 
 EBU6304 – Software Engineering Group Project
 
-**Last Modified Date: 2022-05-08.**
+**Last Modified Date: 2022-05-27.**
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 - Passengers can check in.
 - Passengers can print tags.
 - Administrator can login.
-- Administrator can view all the passengers' information.(coming soon)
+- Administrator can view all the passengers' information.
 
 
 
@@ -35,89 +35,97 @@ Our team will develop a **smart flight check-in kiosk software** for British Air
 
 ## Quick Start : How to run our project
 
-**§§	jdk 17 and Maven 3.8.1 are required	**
+**§§ jdk 17 and Maven 3.8.1 are required    **
 
 1. #### **Use IDE**
 
-   
-
-   Our project was developed using **JetBrains IntelliJ IDEA** compiler. You can simply open this project folder in IDEA, wait for **Maven **to automatically complete the project build, and click the green triangle next to the application startup class **Main.java** to run it.
+   Our project was developed using **JetBrains IntelliJ IDEA** compiler. You can simply open this project folder in
+   IDEA, wait for **Maven** to automatically complete the project build, and click the green triangle next to the
+   application startup class **AppLauncher.java** to run it.
 
    <img src="src/main/resources/com/app/flight/image/startUp.png" alt="startUp" style="zoom:100%;" />
 
-   
+2. #### **Use Jar or executable file**
 
-2. #### **Use the command line**
+   click **EBU6304_G058_flight.jar** to run the application.
 
-   
+3. #### **Use the command line**
 
    Go to the project folder.
 
-   Execute the command 	**mvn clean javafx:run**
+   Execute the command    **mvn clean javafx:run**
 
-   **For example:**
+**For example:**
 
-   ```powershell
+```powershell
    PS C:\Users\LianJunhong\Desktop> cd E:\Java\EBU6304_G058_flight
    PS E:\Java\EBU6304_G058_flight> mvn clean javafx:run
-   ```
+```
 
    Running result:
 
-   ```powershell
-   [INFO] Scanning for projects...
-   [INFO]
-   [INFO] ---------------------------< com.app:flight >---------------------------
-   [INFO] Building fight 2.0
-   [INFO] --------------------------------[ jar ]---------------------------------
-   [INFO]
-   [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ flight ---
-   [INFO] Deleting E:\Java\EBU6304_G058_flight\target
-   [INFO]
-   [INFO] >>> javafx-maven-plugin:0.0.8:run (default-cli) > process-classes @ flight >>>
-   [INFO]
-   [INFO] --- lombok-maven-plugin:1.18.20.0:delombok (default) @ flight ---
-   [INFO]
-   [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flight ---
-   [INFO] Using 'UTF-8' encoding to copy filtered resources.
-   [INFO] Copying 43 resources
-   [INFO]
-   [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flight ---
-   [INFO] Changes detected - recompiling the module!
-   [INFO] Compiling 40 source files to E:\Java\EBU6304_G058_flight\target\classes
-   [INFO]
-   [INFO] <<< javafx-maven-plugin:0.0.8:run (default-cli) < process-classes @ flight <<<
-   [INFO]
-   [INFO]
-   [INFO] --- javafx-maven-plugin:0.0.8:run (default-cli) @ flight ---
-   ```
+```powershell
 
-   <img src="src/main/resources/com/app/flight/image/firstInterface.png" alt="firstInterface" style="zoom:50%;" />
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------------------< com.app:flight >---------------------------
+[INFO] Building fight 5.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ flight ---
+[INFO] Deleting E:\Java\EBU6304_G058_flight\target
+[INFO]
+[INFO] >>> javafx-maven-plugin:0.0.8:run (default-cli) > process-classes @ flight >>>
+[INFO]
+[INFO] --- lombok-maven-plugin:1.18.20.0:delombok (default) @ flight ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ flight ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 43 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ flight ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to E:\Java\EBU6304_G058_flight\target\classes
+[INFO]
+[INFO] <<< javafx-maven-plugin:0.0.8:run (default-cli) < process-classes @ flight <<<
+[INFO]
+[INFO]
+[INFO] --- javafx-maven-plugin:0.0.8:run (default-cli) @ flight ---
+```
 
-   
+<img src="src/main/resources/com/app/flight/image/firstInterface.png" alt="firstInterface" style="zoom: 80%;" />
 
-3. #### **Use Jar or executable file**
+------
 
-   Coming soon…
-
-   
-
-   ------
-
-   
 ## Requirements
 
-- maven -- 3.8.1 
+- maven -- 3.8.1
 - jdk -- 17
 
+## Test account data
+
+- The passenger data for test:
+
+  PassengerId: 431202198811101720
+
+  FirstName: Fang
+
+  LastName: Hua
+
+  Age: 29
+
+  Telephone: 13177777777
 
 
+- The administrator data for test:
 
+  AdministratorId: 2019213542
 
-## Documentation
+  Password:190894696
 
-Coming soon…
+  Name: SongBo
 
+  Telephone: 13104368848
 
 
 
@@ -125,7 +133,34 @@ Coming soon…
 
 ## Iteration logs
 
-### 4.5 Beta (May 13, 2022) The Latest version
+### 5.0 RELEASE (May 27, 2022) The final version
+
+- Fixed several bugs.
+- Added many test units.
+- Completed javadocs.
+- Published the final version.
+
+### 5.0 Beta (May 20, 2022)
+
+- Fixed the bugs in inputNumber.fxml and improve the code efficiency.
+- Updated the Json and Csv files.
+- Improved how to show the QR codes of baggage.
+- Improved the interfaces.
+- Fixed tableview bugs.
+- Updated javadocs.
+- Added unit test cases and automatic uitest cases.
+- Updated CsvTest.
+- Added the function of administrator login.
+- Added the function of administrator view all the passengers' information.
+
+### 4.5 RELEASE (May 16, 2022)
+
+- Fixed several bugs.
+- Added many test units.
+- New page design of inputIdNumber.
+- Updated javadocs.
+
+### 4.5 Beta (May 13, 2022)
 
 - Updated the seat price and get the price in Payment page.
 - Updated the pay QR code.
@@ -135,6 +170,7 @@ Coming soon…
 - Fixed the bugs of codes and selecting seat.
 - Updated validators.
 - Added test units.
+- Updated javadocs.
 
 ### 4.0 Beta (May 8, 2022)
 
@@ -147,23 +183,25 @@ Coming soon…
 - Improved the ScanInstructionController and show the video how to scan ID card to users.
 - Improved Scanner to ues Runnable and Thread pool.
 - Refactor SeatMapImpl with GetSeatMapImpl and SetSeatMapImpl.
+- Added javadocs.
 
 ### 3.5 RELEASE (May 1, 2022)
 
-- Several bugs fixed and new features added in this release.
+- Added new features in this release.
 - Fixed the bug of showing the retrieve information and beautify the page.
 - Improved the interface of selecting food type.
-- The interface logic of searching user information according to function selection is realized.
-- The function of finding user interface is reconstructed.
+- The interface logic of searching user information according to function selection was realized.
+- The function of finding user interface was reconstructed.
 - Fixed RetrieveController select passenger flight bugs.
 - Improved the implementation of the interfaces.
-- Adjust the effect of printing boarding pass progress bar and added printer sound.
+- Adjusted the effect of printing boarding pass progress bar and added printer sound.
 - Optimized thread synchronization.
-- Fix percentage showing during processing print the tags.
+- Fixed percentage showing during processing print the tags.
 - Updated the Json and CSV files.
-- Refactor to update fastjson1 to fastjson2 and fixed bugs.
+- Refactored to update fastjson1 to fastjson2 and fixed bugs.
 - Added help page.
 - Added several test units.
+- Updated javadocs.
 
 ### 3.0 Beta (April 24, 2022)
 
@@ -177,46 +215,52 @@ Coming soon…
 - Added the ability to automatically generate passenger boarding cards.
 - Improved front and back seating map compatibility.
 - Many unit tests have been added to test our main functions.
+- Added javadocs.
 
 ### 2.1 RELEASE (April 20, 2022)
 
 - Several bugs fixed in this release.
 - New features added in this release.
 - New view of seat selection.
+- Updated javadocs.
 
 ### 2.0 Beta (April 17, 2022)
 
-- Further improve the basic functions of our page and realize the closed loop of basic operation logic.
-- Integrate the administrator login function page.
-- Implements the display of flight information (in the form of a list) and passenger selection of seats and meals.
+- Further improved the basic functions of our page and realize the closed loop of basic operation logic.
+- Integrated the administrator login function page.
+- Implemented the display of flight information (in the form of a list) and passenger selection of seats and meals.
 - Several bugs fixed in this release.
+- Added javadoc.
 
 ### 1.5 (April 12, 2022)
 
-- Fix bugs and complete the iteration of the 1.0 version.
-- Finish the pages and complete the functions of booking and retrieve information.
-- Change the design of flight and booking CSV data regardless of whether a passenger has more than one booking and flight.
-- Implement the GetFlight and GetReservation interface and GetFlightImpl and GetReservationImpl class.
+- Fixed bugs and complete the iteration of the 1.0 version.
+- Finished the pages and complete the functions of booking and retrieve information.
+- Changed the design of flight and booking CSV data regardless of whether a passenger has more than one booking and
+  flight.
+- Implemented the GetFlight and GetReservation interface and GetFlightImpl and GetReservationImpl class.
+- Updated javadocs.
 
 ### 1.0 (March 28, 2022)
 
-- Complete the first page about selecting a language.
-- Make entity classes about version 1.0.
-- Complete the programming of common tools related to CSV and JSON.
-- Complete the design of the interface between boundary class and control class.
-- Complete the login interface design and the implementation of the login function.
+- Completed the first page about selecting a language.
+- Made entity classes about version 1.0.
+- Completed the programming of common tools related to CSV and JSON.
+- Completed the design of the interface between boundary class and control class.
+- Completed the login interface design and the implementation of the login function.
+- Added javadoc.
 
  ### 0.5 (March 21, 2022)
 
-- Finally determine 28 user stories and acceptance criteria.
-- Complete product prototype design using Axure.
-- Complete the priority and  Fibonacci story points （first version）.
+- Finally determined 28 user stories and acceptance criteria.
+- Completed product prototype design using Axure.
+- Completed the priority and Fibonacci story points （first version）.
 
  ### 0.1 (March 15, 2022)
 
 - Set up the QMPlus Hub group and discuss the project handout.
-- Discuss and write user stories focus on more specific and quantifiable details.
-- Build project framework.
+- Discussed and wrote user stories focus on more specific and quantifiable details.
+- Built project framework.
 
    
 

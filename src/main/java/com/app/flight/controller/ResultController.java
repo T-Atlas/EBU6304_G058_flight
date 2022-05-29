@@ -42,6 +42,12 @@ public class ResultController {
     private Label foodType;
 
 
+    /**
+     * This method is used to show the boarding pass from Csv.
+     *
+     * @param addCsv
+     * @throws IOException
+     */
     public void showBoardingPass(boolean addCsv) {
         boardingPass = getBoardingPass.lookupBoardingPass();
         name.setText(boardingPass.getPassenger().getFirstName() + boardingPass.getPassenger().getLastName());
@@ -57,6 +63,9 @@ public class ResultController {
 
     /**
      * The code for other pages to open CheckInResult.fxml
+     *
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -66,6 +75,11 @@ public class ResultController {
         stage.show();
     }
 
+    /**
+     * The code for button "next" to go to "Payment.fxml"
+     * @param actionEvent
+     * @throws IOException
+     */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) next.getScene().getWindow();
@@ -79,10 +93,21 @@ public class ResultController {
 
     }
 
+    /**
+     * This method is used to get the loader for the Result controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/CheckInResult.fxml"));
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -98,6 +123,12 @@ public class ResultController {
         });
     }
 
+    /**
+     * This method is used to show the boarding gate map by the button.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void showMap(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();

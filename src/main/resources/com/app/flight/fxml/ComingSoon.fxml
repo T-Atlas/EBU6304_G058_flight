@@ -8,14 +8,16 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="1200.0"
             xmlns="http://javafx.com/javafx/18" fx:controller="com.app.flight.controller.ComingSoonController">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="282.0" prefHeight="236.0"
-               prefWidth="780.0" text="Futures Coming Soon" textAlignment="CENTER">
+        <Label fx:id="text" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="282.0"
+               prefHeight="236.0"
+               style=" -fx-font-weight: bold;" prefWidth="780.0" text="Futures Coming Soon" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="58.0"/>
             </font>
         </Label>
         <Button fx:id="homeButton" layoutX="462.0" layoutY="540.0" mnemonicParsing="false" onAction="#home"
-                prefHeight="106.0" prefWidth="277.0" text="Go Back To Home">
+                style="-fx-background-color: LIGHTGREY;-fx-font-weight: bold;" prefHeight="106.0" prefWidth="277.0"
+                text="Go Back To Home">
             <font>
                 <Font size="24.0"/>
             </font>

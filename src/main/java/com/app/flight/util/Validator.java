@@ -10,22 +10,6 @@ import java.time.LocalDateTime;
  * @date 2022.5.5
  */
 public class Validator {
-
-    /**
-     * Validate bankId 19 digits
-     *
-     * @param id bankId
-     * @return valid or not
-     */
-    public static boolean bankIdValidator(String id) {
-        if (id.length() == 19) {
-            if (isDigit(id)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     /**
      * Validate reservationId 19 digits
      *
@@ -34,9 +18,7 @@ public class Validator {
      */
     public static boolean reservationIdValidator(String reservationId) {
         if (reservationId.length() == 19) {
-            if (isDigit(reservationId)) {
-                return true;
-            }
+            return isDigit(reservationId);
         }
         return false;
     }
@@ -109,11 +91,25 @@ public class Validator {
         return false;
     }
 
+    /**
+     * Validate bankId 19 digits
+     *
+     * @param visaId bankId
+     * @return valid or not
+     */
     public static boolean visaIdValidator(String visaId) {
-        //TODO:验证银行卡号，自己编写规则
-        return true;
+        if (visaId.length() == 19) {
+            return isDigit(visaId);
+        }
+        return false;
     }
 
+    /**
+     * Validate passengerId
+     *
+     * @param id passengerId
+     * @return valid or not
+     */
     public static boolean idValidator(String id) {
         return IdcardUtil.isValidCard(id);
     }

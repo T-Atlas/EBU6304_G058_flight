@@ -14,8 +14,14 @@ import java.util.ArrayList;
  * @author Jia Boran
  * @version 1.0
  * @date 2022.4.11
+ * Impl class for GetFlight
  */
 public class GetFlightImpl implements GetFlight {
+    /**
+     * lookupFlight from json
+     *
+     * @return flight or null
+     */
     public static Flight lookupFlight() {
         String flightStr = Json.extractJsonData(Json.FLIGHT_JSON_PATH);
         if (flightStr != null) {
@@ -25,6 +31,12 @@ public class GetFlightImpl implements GetFlight {
         }
     }
 
+    /**
+     * lookupFlight by flightId from Csv
+     *
+     * @param flightId flight ID
+     * @return flight or null
+     */
     @Override
     public Flight lookupFlight(String flightId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.FLIGHT_CSV_PATH);
@@ -56,10 +68,10 @@ public class GetFlightImpl implements GetFlight {
             }
         }
         if (flag && Json.writeJson(Json.FLIGHT_JSON_PATH, flight)) {
-            System.out.println("flight数据查找成功");
+            System.out.println("Flight data search succeeded");
             return flight;
         } else {
-            System.out.println("flight数据查找失败");
+            System.out.println("Flight data search failed");
             return null;
         }
     }

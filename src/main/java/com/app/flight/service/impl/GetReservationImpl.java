@@ -7,6 +7,7 @@ import com.app.flight.entity.Reservation;
 import com.app.flight.entity.Seat;
 import com.app.flight.service.GetFlight;
 import com.app.flight.service.GetReservation;
+import com.app.flight.service.UpdateReservation;
 import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 
@@ -18,8 +19,14 @@ import java.util.List;
  * @author SongBo
  * @version 1.1
  * @date 2022.4.11
+ * Impl class for GetReservation
  */
-public class GetReservationImpl implements GetReservation {
+public class GetReservationImpl implements GetReservation, UpdateReservation {
+    /**
+     * lookupReservation from json
+     *
+     * @return reservation or null
+     */
     public static Reservation lookupReservation() {
         String reservationStr = Json.extractJsonData(Json.RESERVATION_JSON_PATH);
         if (reservationStr != null) {
@@ -34,13 +41,19 @@ public class GetReservationImpl implements GetReservation {
         return null;
     }
 
+    /**
+     * lookupReservations by passengerId from Csv
+     *
+     * @param passengerId passenger ID
+     * @return ArrayList<Reservation> reservations
+     */
     @Override
     public ArrayList<Reservation> lookupReservations(String passengerId) {
         ArrayList<String[]> csvList = Csv.readCsv(Csv.RESERVATION_CSV_PATH);
         ArrayList<Reservation> reservations = new ArrayList<>();
         boolean flag = false;
         for (String[] csvData : csvList) {
-            if (csvData[1].equals(passengerId)) {
+            if (csvData[1].equals(passengerId) && csvData[7].equals("false")) {
                 flag = true;
                 String[] reservationData = csvData.clone();
                 Reservation reservation = new Reservation();
@@ -68,11 +81,27 @@ public class GetReservationImpl implements GetReservation {
             }
         }
         if (flag && Json.writeJson(Json.RESERVATION_JSON_PATH, reservations)) {
-            System.out.println("reservation数据查找成功");
+            System.out.println("Reservation data lookup succeeded");
             return reservations;
         } else {
-            System.out.println("reservation数据查找失败");
+            System.out.println("Reservation data lookup failed");
             return null;
+        }
+    }
+
+    /**
+     * check whether reservation is looked up,
+     *
+     * @return true, it is looked up and vice versa
+     */
+    @Override
+    public boolean updateCheckedFlag() {
+        Reservation reservation = lookupReservation();
+        if (reservation != null) {
+            reservation.setChecked(true);
+            return Csv.updateCsv(reservation, Csv.RESERVATION_CSV_PATH);
+        } else {
+            return false;
         }
     }
 }

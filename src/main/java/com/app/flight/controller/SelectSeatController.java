@@ -4,7 +4,7 @@ import com.app.flight.Main;
 import com.app.flight.entity.Seat;
 import com.app.flight.service.SetSeatMap;
 import com.app.flight.service.impl.SeatMapImpl;
-import com.app.flight.util.DataParser;
+import com.app.flight.util.Common;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
+ * Page for passengers to select their seat
+ *
  * @author zhenghan
  * @version 2.1
  */
@@ -48,6 +50,11 @@ public class SelectSeatController {
     public Button previousChoiceButton;
     public int previousChoiceRow;
 
+    /**
+     * The code for button "next" to go to "SelectFood.fxml"
+     *
+     * @param actionEvent actionEvent
+     */
     @FXML
     public void nextClick(ActionEvent actionEvent) {
         if (this.choiceColumn != null) {
@@ -69,6 +76,11 @@ public class SelectSeatController {
         }
     }
 
+    /**
+     * The code for button "help" to show the help message
+     *
+     * @param actionEvent actionEvent
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -86,6 +98,11 @@ public class SelectSeatController {
 
     /**
      * The code for other pages to open SelectSeat.fxml
+     *
+     * @param stage    the stage
+     * @param seatMap  the data of seat map
+     * @param flightId the flight ID on operation
+     * @throws IOException IOException
      */
     public void start(Stage stage, Map<Integer, Map<String, Boolean>> seatMap, String flightId) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
@@ -99,6 +116,11 @@ public class SelectSeatController {
         stage.show();
     }
 
+    /**
+     * The method is used to show the seat map in the table view.
+     *
+     * @param seatMap the data of seat map
+     */
     public void showSeatMap(Map<Integer, Map<String, Boolean>> seatMap) {
         for (Map.Entry<Integer, Map<String, Boolean>> rowMap : seatMap.entrySet()) {
             this.gridPane.getRowConstraints().add(new RowConstraints(70, 70, 70));
@@ -137,12 +159,18 @@ public class SelectSeatController {
                         alert.showAndWait();
                     });
                 }
-                this.gridPane.add(button, DataParser.stringToNo(seats.getKey()), rowMap.getKey() - 1);
+                this.gridPane.add(button, Common.stringToNo(seats.getKey()), rowMap.getKey() - 1);
                 GridPane.setMargin(button, new Insets(18));
             }
         }
     }
 
+    /**
+     * The method is used to show the different seat color.
+     *
+     * @param rowNo the row number of the selected seat
+     * @return seat color
+     */
     public String getSeatButtonColor(int rowNo) {
         String color;
         if (rowNo > 0 && rowNo <= firstClassLimit) {
@@ -158,6 +186,12 @@ public class SelectSeatController {
         return "-fx-background-color: " + color;
     }
 
+    /**
+     * The method is used to get the seat price.
+     *
+     * @param rowNo the row number of the selected seat
+     * @return seat price
+     */
     public double getSeatPrice(int rowNo) {
         if (rowNo > 0 && rowNo <= firstClassLimit) {
             // FIRST_CLASS
@@ -171,6 +205,11 @@ public class SelectSeatController {
         }
     }
 
+    /**
+     * This method is used to get the loader for the SelectSeat controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/SelectSeat.fxml"));
     }

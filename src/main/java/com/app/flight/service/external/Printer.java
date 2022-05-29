@@ -5,6 +5,7 @@ import com.alibaba.fastjson2.JSON;
 import com.app.flight.entity.BoardingPass;
 import com.app.flight.entity.Flight;
 import com.app.flight.entity.Passenger;
+import com.app.flight.service.impl.GetReservationImpl;
 import com.app.flight.util.Csv;
 import com.app.flight.util.Json;
 import javafx.application.Platform;
@@ -23,12 +24,20 @@ import java.util.ArrayList;
  * @author SongBo
  */
 public class Printer {
-    private static final String BOARDING_PASS_TXT_PATH = "src/main/resources/com/app/flight/data/printer/BoardingPass.txt";
-    private static final String TAG_TXT_PATH = "src/main/resources/com/app/flight/data/printer/Tag.txt";
+    private static final String BOARDING_PASS_TXT_PATH = "data/printer/BoardingPass.txt";
+    private static final String TAG_TXT_PATH = "data/printer/Tag.txt";
     public static StringBuilder boardingPassData = new StringBuilder();
     public static StringBuilder tagData = new StringBuilder();
 
 
+    /**
+     * This method is used to print boarding pass.
+     * Will generate boarding pass data from json file.
+     * And print boarding pass data to txt file.
+     *
+     * @param jsonFilePath         json file path of boarding pass
+     * @param boardingPassFilePath txt file path of boarding pass
+     */
     public static void printBoardingPass(String jsonFilePath, String boardingPassFilePath) {
         String jsonData = Json.extractJsonData(jsonFilePath);
         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
@@ -102,6 +111,13 @@ public class Printer {
         }
     }
 
+    /**
+     * This method is used to generate the tag for the passenger.
+     * Will generate the tag for the passenger and write it to the file.
+     *
+     * @param jsonFilePath the path of the json file
+     * @param tagFilePath  the path of the tag file
+     */
     public static void printTag(String jsonFilePath, String tagFilePath) {
         String jsonData = Json.extractJsonData(jsonFilePath);
         BoardingPass boardingPass = JSON.parseObject(jsonData, BoardingPass.class);
@@ -197,6 +213,11 @@ public class Printer {
         }
     }
 
+    /**
+     * This method is used to generate the sound of printing the boarding pass.
+     *
+     * @return a MediaPlayer object
+     */
     private MediaPlayer sound() {
         String path = "src/main/resources/com/app/flight/audio/printer.mp3";
         Media sound = new Media(new File(path).toURI().toString());
@@ -206,12 +227,23 @@ public class Printer {
         return mediaPlayer;
     }
 
+    /**
+     * This method is used to print the boarding pass.
+     *
+     * @param progressBar the progress bar
+     * @param percentage  the text percentage of the progress bar
+     * @return a boolean value,if print is successful,return true,else return false
+     */
     public Boolean print(ProgressBar progressBar, Label percentage) {
         int percent;
         ThreadUtil.sleep(50);
         MediaPlayer mediaPlayer = sound();
         printBoardingPass(Json.BOARDING_PASS_JSON_PATH, BOARDING_PASS_TXT_PATH);
         printTag(Json.BOARDING_PASS_JSON_PATH, TAG_TXT_PATH);
+        GetReservationImpl getReservation = new GetReservationImpl();
+        if (getReservation.updateCheckedFlag()) {
+            System.out.println("更新flag成功");
+        }
         for (int i = 0; i <= 100; i++) {
             percent = i;
             progressBar.setProgress(percent / 100.0);

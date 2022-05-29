@@ -19,7 +19,10 @@ import static cn.hutool.core.util.IdcardUtil.isValidCard;
 
 
 /**
+ * Help passengers to use the scanning feature
+ *
  * @author LianJunhong
+ * @author zhenghan
  */
 public class ScanInstructionController {
     @FXML
@@ -27,10 +30,21 @@ public class ScanInstructionController {
     public Button help;
     public Button back;
 
+    /**
+     * This method is used to get the loader for the ScanInstruction controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/ScanInstruction.fxml"));
     }
 
+    /**
+     * This method is used to check the id number of the id card.
+     *
+     * @param idNumber the input ID number
+     * @param stage    stage
+     */
     public void checkIdNumber(String idNumber, Stage stage) {
         if (isValidCard(idNumber) || idNumber.equals("123456")) {
             GetPassenger getPassenger = new GetPassengerImpl();
@@ -48,7 +62,7 @@ public class ScanInstructionController {
                     if (passenger != null) {
                         InfoConfirmController i = fxmlLoader.getController();
                         i.showNum(passenger);
-                        i.pRetrieve = passenger;
+                        i.passengerRetrieve = passenger;
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -56,9 +70,22 @@ public class ScanInstructionController {
             });
         } else {
             //TODO:页面提示输入错误
+            Platform.runLater(() -> {
+                try {
+                    FXMLLoader fxmlLoader = new ComingSoonController().getLoader();
+                    stage.setScene(new Scene(fxmlLoader.load(), 1200, 800));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
         }
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent actionEvent
+     */
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();
@@ -74,6 +101,11 @@ public class ScanInstructionController {
 
     }
 
+    /**
+     * This method is used to return to the previous page.
+     *
+     * @param actionEvent actionEvent
+     */
     public void back(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) mediaView.getScene().getWindow();

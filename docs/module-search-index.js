@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"com.app.flight"}];updateSearchResults();
+moduleSearchIndex = [];updateSearchResults();

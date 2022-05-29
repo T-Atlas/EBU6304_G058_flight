@@ -26,11 +26,17 @@ import java.io.IOException;
 public class PrintTagsController implements Runnable {
 
     public Button help;
+
+    public ProgressBar getProgressBar() {
+        return progressBar;
+    }
+
     @FXML
     protected ProgressBar progressBar;
     @FXML
-    protected Label percentage;
+    public Label percentage;
     @FXML
+    public
     Button next;
 
     private int percent;
@@ -38,6 +44,9 @@ public class PrintTagsController implements Runnable {
     /**
      * The code for button "next" in PrintTags.fxml
      * When click the button, change to Finished.fxml
+     *
+     * @param actionEvent
+     * @throws IOException
      */
     public void nextClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -58,6 +67,8 @@ public class PrintTagsController implements Runnable {
 
     /**
      * The code for other pages to open PrintTags.fxml
+     * @param stage
+     * @throws IOException
      */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
@@ -67,6 +78,11 @@ public class PrintTagsController implements Runnable {
         stage.show();
     }
 
+    /**
+     * This method is used to get the loader for the PrintTags controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/PrintTags.fxml"));
     }
@@ -118,6 +134,12 @@ public class PrintTagsController implements Runnable {
         this.percent = percent;
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {

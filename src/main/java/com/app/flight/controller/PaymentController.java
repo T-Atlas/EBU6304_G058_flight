@@ -30,9 +30,10 @@ public class PaymentController {
 
 
     @FXML
-    public Button finish;
-    public Button help;
-    public Boolean whetherPayment = false;
+    private Button finish;
+    @FXML
+    private Button help;
+    private Boolean whetherPayment = false;
     @FXML
     private ImageView code;
     @FXML
@@ -47,6 +48,11 @@ public class PaymentController {
     private Label foodPrice;
 
 
+    /**
+     * This method is used to show the total price of service and generate QR code.
+     *
+     * @param paymentMethod
+     */
     public void pay(String paymentMethod) {
         code.setVisible(false);
         textField.setVisible(false);
@@ -75,6 +81,12 @@ public class PaymentController {
         }
     }
 
+    /**
+     * The code for other pages to open Payment.fxml
+     *
+     * @param stage
+     * @throws IOException
+     */
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = getLoader();
         Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
@@ -83,6 +95,11 @@ public class PaymentController {
         stage.show();
     }
 
+    /**
+     * The code for button "next" to go to "PrintTags.fxml"
+     * @param actionEvent
+     * @throws IOException
+     */
     public void nextClick(ActionEvent actionEvent) {
         if ((!textField.getText().equals("")) && Validator.visaIdValidator(textField.getText())) {
             whetherPayment = true;
@@ -109,10 +126,21 @@ public class PaymentController {
         }
     }
 
+    /**
+     * This method is used to get the loader for the Payment controller.
+     *
+     * @return a new FXMLLoader
+     */
     public FXMLLoader getLoader() {
         return new FXMLLoader(Main.class.getResource("fxml/Payment.fxml"));
     }
 
+    /**
+     * This method is used to get the help page.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void helpClick(ActionEvent actionEvent) {
         Platform.runLater(() -> {
@@ -128,6 +156,13 @@ public class PaymentController {
         });
     }
 
+    /**
+     * This method is called when the user clicks on the return button.
+     * And it allows the user to go back to the previous scene.
+     *
+     * @param actionEvent the event
+     * @throws IOException
+     */
     public void returnButton(ActionEvent actionEvent) {
         Platform.runLater(() -> {
             Stage stage = (Stage) help.getScene().getWindow();
@@ -140,6 +175,11 @@ public class PaymentController {
         });
     }
 
+    /**
+     * This method is used to clean the user's input.
+     *
+     * @param actionEvent the event of clicking the button
+     */
     public void clean(ActionEvent actionEvent) {
         textField.setText("");
     }

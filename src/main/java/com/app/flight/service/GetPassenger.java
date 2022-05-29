@@ -1,9 +1,11 @@
 package com.app.flight.service;
 
 import com.app.flight.entity.Passenger;
+import com.app.flight.service.impl.GetPassengerImpl;
 
 /**
  * @author LianJunhong
+ * @see GetPassengerImpl
  */
 public interface GetPassenger {
     /**
