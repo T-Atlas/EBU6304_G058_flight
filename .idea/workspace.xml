@@ -396,13 +396,7 @@
       <workItem from="1653839159200" duration="362000" />
       <workItem from="1653839617838" duration="1298000" />
       <workItem from="1653841101411" duration="434000" />
-    </task>
-    <task id="LOCAL-00087" summary="Update QR Code">
-      <created>1652277974773</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1652277974773</updated>
+      <workItem from="1653841779943" duration="234000" />
     </task>
     <task id="LOCAL-00088" summary="Update QR Code">
       <created>1652279133269</created>
@@ -740,7 +734,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653841498808</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="5.0 release">
+      <created>1653842005494</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1653842005494</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
