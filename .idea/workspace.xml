@@ -13,8 +13,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="5.0 release">
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="Contributor Covenant Code of Conduct">
+      <change afterPath="$PROJECT_DIR$/SECURITY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -400,13 +401,6 @@
       <workItem from="1653841101411" duration="434000" />
       <workItem from="1653841779943" duration="234000" />
     </task>
-    <task id="LOCAL-00088" summary="Update QR Code">
-      <created>1652279133269</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1652279133269</updated>
-    </task>
     <task id="LOCAL-00089" summary="Update QR Code">
       <created>1652339117580</created>
       <option name="number" value="00089" />
@@ -743,7 +737,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653842005494</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="Contributor Covenant Code of Conduct">
+      <created>1654062951679</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1654062951679</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -827,7 +828,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="help return function" />
     <MESSAGE value="reformat" />
     <MESSAGE value="add return function" />
     <MESSAGE value="add return function and README.md" />
@@ -852,7 +852,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="fix bugs with no reservation" />
     <MESSAGE value="5.0 release" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.0 release" />
+    <MESSAGE value="Contributor Covenant Code of Conduct" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contributor Covenant Code of Conduct" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
