@@ -8,14 +8,14 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import java.io.File;
 
 public class QRCodeGenerator {
-    public static final String QR_CODE_PATH = "src/main/resources/com/app/flight/image/QR_Code/";
-    private static final String TAG_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/TagLogo.png";
+    public static final String QR_CODE_PATH = "data/image/QR_Code/";
+    private static final String TAG_IMAGE_PATH = "data/image/QR_Code/TagLogo.png";
     private static final String TAG_TXT = "data/printer/Tag.txt";
-    private static final String BOARDING_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/BoardingPassLogo.png";
+    private static final String BOARDING_IMAGE_PATH = "data/image/QR_Code/BoardingPassLogo.png";
     private static final String BOARDING_TXT = "data/printer/BoardingPass.txt";
-    private static final String PAYPAL_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/PaypalLogo.png";
+    private static final String PAYPAL_IMAGE_PATH = "data/image/QR_Code/PaypalLogo.png";
     private static final String PAYPAL_SITE = "https://www.paypal.com/ph/signin";
-    private static final String ALIPAY_IMAGE_PATH = "src/main/resources/com/app/flight/image/QR_Code/AlipayLogo.png";
+    private static final String ALIPAY_IMAGE_PATH = "data/image/QR_Code/AlipayLogo.png";
     private static final String ALIPAY_SITE = "https://auth.alipay.com/login/index.htm";
     private static String url = "";
     private static String path = "";

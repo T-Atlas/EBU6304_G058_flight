@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="EBU6304_G058_flight:jar">
+    <output-path>$PROJECT_DIR$/target/artifacts/EBU6304_G058_flight_jar</output-path>
+    <root id="archive" name="EBU6304_G058_flight.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="EBU6304_G058_flight" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-controls/18.0.1/javafx-controls-18.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/jetbrains/kotlin/kotlin-stdlib/1.6.10/kotlin-stdlib-1.6.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-fxml/18.0.1/javafx-fxml-18.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-graphics/18.0.1/javafx-graphics-18.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-base/18.0.1/javafx-base-18.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.10/kotlin-stdlib-common-1.6.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-media/18.0.1/javafx-media-18.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-graphics/18.0.1/javafx-graphics-18.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.10/kotlin-stdlib-jdk7-1.6.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-media/18.0.1/javafx-media-18.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-base/18.0.1/javafx-base-18.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/cn/hutool/hutool-all/5.8.0.M4/hutool-all-5.8.0.M4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.10/kotlin-stdlib-jdk8-1.6.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/com/google/zxing/core/3.5.0/core-3.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/com/alibaba/fastjson2/fastjson2/2.0.3/fastjson2-2.0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-controls/18.0.1/javafx-controls-18.0.1-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/maven/repository/org/openjfx/javafx-fxml/18.0.1/javafx-fxml-18.0.1-win.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

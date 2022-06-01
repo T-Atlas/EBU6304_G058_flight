@@ -22,7 +22,7 @@ public class Scanner implements Runnable {
      * @return the mediaPlayer
      */
     public MediaPlayer playVideo() {
-        File file = new File("src/main/resources/com/app/flight/video/scan.mp4");
+        File file = new File("data/video/scan.mp4");
         Media media = new Media(file.getAbsoluteFile().toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);

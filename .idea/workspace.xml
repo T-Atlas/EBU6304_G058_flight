@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="EBU6304_G058_flight:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="5.0 release" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="T-Atlas" />
+        <option name="repository" value="EBU6304_G058_flight" />
+      </RepoCoordinatesHolder>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="27Sxhs8NAdKS8p7iD5CTqLhrTF7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindow变更.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Java/EBU6304_G058_flight/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15169661&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20848057&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java\EBU6304_G058_flight" />
+      <recent name="E:\Java\EBU6304_G058_flight\src\test\java" />
+      <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\fxml" />
+      <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\css" />
+      <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\image\maps" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java\EBU6304_G058_flight\data" />
+      <recent name="E:\Java\EBU6304_G058_flight\data\image\QR_Code" />
+      <recent name="E:\Java\EBU6304_G058_flight\data\image" />
+      <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\image\QR_Code" />
+      <recent name="E:\Java\EBU6304_G058_flight\src\main\resources\com\app\flight\image" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.app.flight" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app.flight.dependenciesTest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.AppLauncher">
+    <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.flight.AppLauncher" />
+      <module name="EBU6304_G058_flight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.flight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.app.flight.Main" />
+      <module name="EBU6304_G058_flight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.flight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dependenciesTest.OrdinalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dependenciesTest.OrdinalTest" />
+      <module name="EBU6304_G058_flight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dependenciesTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdinalTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EBU6304_G058_flight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.flight.dependenciesTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app.flight.dependenciesTest" />
+      <option name="MAIN_CLASS_NAME" value="com.app.flight.dependenciesTest.OrdinalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdinalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EBU6304_G058_flight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dependenciesTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dependenciesTest" />
+      <option name="MAIN_CLASS_NAME" value="dependenciesTest.OrdinalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="flight [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.OrdinalTest" />
+      <item itemvalue="JUnit.OrdinalTest (1)" />
+      <item itemvalue="Maven.flight [javafx:run]" />
+      <item itemvalue="应用程序.AppLauncher" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.dependenciesTest.OrdinalTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.AppLauncher" />
+        <item itemvalue="应用程序.dependenciesTest.OrdinalTest" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="JUnit.OrdinalTest (1)" />
+        <item itemvalue="JUnit.OrdinalTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="" />
+      <created>1649327417554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649327417554</updated>
+      <workItem from="1649327422418" duration="1821000" />
+      <workItem from="1649329276338" duration="201000" />
+      <workItem from="1649343874171" duration="232000" />
+      <workItem from="1649347443813" duration="42000" />
+      <workItem from="1649424488823" duration="6234000" />
+      <workItem from="1649731691972" duration="396000" />
+      <workItem from="1649769766178" duration="697000" />
+      <workItem from="1649770745615" duration="1154000" />
+      <workItem from="1649772964569" duration="2984000" />
+      <workItem from="1649776335814" duration="141000" />
+      <workItem from="1650011950665" duration="225000" />
+      <workItem from="1650012189383" duration="232000" />
+      <workItem from="1650028176957" duration="729000" />
+      <workItem from="1650028942316" duration="66000" />
+      <workItem from="1650030123727" duration="147000" />
+      <workItem from="1650030483281" duration="908000" />
+      <workItem from="1650039647340" duration="406000" />
+      <workItem from="1650040453132" duration="788000" />
+      <workItem from="1650095655537" duration="6000" />
+      <workItem from="1650098828989" duration="1778000" />
+      <workItem from="1650103417156" duration="749000" />
+      <workItem from="1650276682440" duration="837000" />
+      <workItem from="1650379686806" duration="545000" />
+      <workItem from="1650380254930" duration="642000" />
+      <workItem from="1650381112479" duration="609000" />
+      <workItem from="1650460273321" duration="1827000" />
+      <workItem from="1650464125541" duration="703000" />
+      <workItem from="1650465112976" duration="1567000" />
+      <workItem from="1650467358690" duration="223000" />
+      <workItem from="1650467833996" duration="191000" />
+      <workItem from="1650470256559" duration="380000" />
+      <workItem from="1650553760040" duration="3000" />
+      <workItem from="1650636953485" duration="3209000" />
+      <workItem from="1650641384918" duration="7295000" />
+      <workItem from="1650683589757" duration="725000" />
+      <workItem from="1650777274894" duration="137000" />
+      <workItem from="1650777466909" duration="6045000" />
+      <workItem from="1650783655319" duration="988000" />
+      <workItem from="1650784954206" duration="150000" />
+      <workItem from="1650886617532" duration="116000" />
+      <workItem from="1650973233339" duration="164000" />
+      <workItem from="1651045057651" duration="104000" />
+      <workItem from="1651045176876" duration="17000" />
+      <workItem from="1651066799853" duration="6420000" />
+      <workItem from="1651117632903" duration="2785000" />
+      <workItem from="1651133422017" duration="473000" />
+      <workItem from="1651136469251" duration="523000" />
+      <workItem from="1651139957887" duration="52000" />
+      <workItem from="1651140959608" duration="1375000" />
+      <workItem from="1651152614747" duration="8361000" />
+      <workItem from="1651230128970" duration="3642000" />
+      <workItem from="1651240986395" duration="38000" />
+      <workItem from="1651328239567" duration="975000" />
+      <workItem from="1651369291037" duration="56000" />
+      <workItem from="1651369361096" duration="5003000" />
+      <workItem from="1651389270709" duration="2360000" />
+      <workItem from="1651391681771" duration="1887000" />
+      <workItem from="1651394163318" duration="200000" />
+      <workItem from="1651395925324" duration="685000" />
+      <workItem from="1651397122192" duration="56000" />
+      <workItem from="1651400191836" duration="578000" />
+      <workItem from="1651402901331" duration="278000" />
+      <workItem from="1651403481027" duration="862000" />
+      <workItem from="1651407090488" duration="64000" />
+      <workItem from="1651411731156" duration="189000" />
+      <workItem from="1651415078837" duration="1520000" />
+      <workItem from="1651420467675" duration="954000" />
+      <workItem from="1651422947518" duration="402000" />
+      <workItem from="1651461324833" duration="513000" />
+      <workItem from="1651461948444" duration="5129000" />
+      <workItem from="1651469310933" duration="277000" />
+      <workItem from="1651469855574" duration="1178000" />
+      <workItem from="1651489319296" duration="223000" />
+      <workItem from="1651489573697" duration="10346000" />
+      <workItem from="1651501139830" duration="2421000" />
+      <workItem from="1651503873985" duration="73000" />
+      <workItem from="1651546023939" duration="5172000" />
+      <workItem from="1651592415584" duration="2060000" />
+      <workItem from="1651671454931" duration="525000" />
+      <workItem from="1651673316456" duration="1137000" />
+      <workItem from="1651674497409" duration="48000" />
+      <workItem from="1651676039213" duration="10324000" />
+      <workItem from="1651686716426" duration="1292000" />
+      <workItem from="1651689235677" duration="330000" />
+      <workItem from="1651689767919" duration="1916000" />
+      <workItem from="1651723969509" duration="2760000" />
+      <workItem from="1651852046818" duration="1257000" />
+      <workItem from="1651887850965" duration="438000" />
+      <workItem from="1651926490327" duration="7791000" />
+      <workItem from="1652059940404" duration="68000" />
+      <workItem from="1652082284021" duration="694000" />
+      <workItem from="1652273388926" duration="324000" />
+      <workItem from="1652273733858" duration="6285000" />
+      <workItem from="1652334404877" duration="4747000" />
+      <workItem from="1652342348760" duration="105000" />
+      <workItem from="1652342509479" duration="1059000" />
+      <workItem from="1652361225460" duration="570000" />
+      <workItem from="1652406043057" duration="204000" />
+      <workItem from="1652406345160" duration="2081000" />
+      <workItem from="1652408673324" duration="1745000" />
+      <workItem from="1652411125880" duration="463000" />
+      <workItem from="1652411633863" duration="11000" />
+      <workItem from="1652418463782" duration="4646000" />
+      <workItem from="1652423385246" duration="1430000" />
+      <workItem from="1652446779954" duration="648000" />
+      <workItem from="1652447467271" duration="130000" />
+      <workItem from="1652447618578" duration="223000" />
+      <workItem from="1652447868905" duration="105000" />
+      <workItem from="1652448111555" duration="973000" />
+      <workItem from="1652449120657" duration="165000" />
+      <workItem from="1652455694623" duration="101000" />
+      <workItem from="1652579235724" duration="4732000" />
+      <workItem from="1652584152759" duration="21000" />
+      <workItem from="1652601547938" duration="5726000" />
+      <workItem from="1652610411081" duration="1052000" />
+      <workItem from="1652620117665" duration="26000" />
+      <workItem from="1652620707856" duration="42000" />
+      <workItem from="1652621125164" duration="7539000" />
+      <workItem from="1652628780734" duration="1305000" />
+      <workItem from="1652630233892" duration="206000" />
+      <workItem from="1652630530883" duration="817000" />
+      <workItem from="1652631469780" duration="208000" />
+      <workItem from="1652631698856" duration="1032000" />
+      <workItem from="1652669963427" duration="191000" />
+      <workItem from="1652681181151" duration="1034000" />
+      <workItem from="1652690305476" duration="764000" />
+      <workItem from="1652883636230" duration="688000" />
+      <workItem from="1652884647908" duration="30000" />
+      <workItem from="1653186873117" duration="310000" />
+      <workItem from="1653188197212" duration="736000" />
+      <workItem from="1653226329947" duration="327000" />
+      <workItem from="1653290578610" duration="35000" />
+      <workItem from="1653310987878" duration="6583000" />
+      <workItem from="1653367919860" duration="1154000" />
+      <workItem from="1653369266845" duration="110000" />
+      <workItem from="1653371596998" duration="222000" />
+      <workItem from="1653402086764" duration="4808000" />
+      <workItem from="1653441842396" duration="4177000" />
+      <workItem from="1653477392050" duration="563000" />
+      <workItem from="1653487956957" duration="611000" />
+      <workItem from="1653488588270" duration="238000" />
+      <workItem from="1653579369155" duration="222000" />
+      <workItem from="1653656249178" duration="2085000" />
+      <workItem from="1653658574583" duration="1139000" />
+      <workItem from="1653665960772" duration="524000" />
+      <workItem from="1653667108458" duration="334000" />
+      <workItem from="1653715646341" duration="238000" />
+      <workItem from="1653828512024" duration="246000" />
+      <workItem from="1653829644508" duration="88000" />
+      <workItem from="1653829928090" duration="1833000" />
+      <workItem from="1653834266143" duration="635000" />
+      <workItem from="1653834986342" duration="124000" />
+      <workItem from="1653836255027" duration="609000" />
+      <workItem from="1653837097621" duration="60000" />
+      <workItem from="1653837333931" duration="214000" />
+      <workItem from="1653837833911" duration="344000" />
+      <workItem from="1653838271440" duration="119000" />
+      <workItem from="1653838459918" duration="321000" />
+      <workItem from="1653839159200" duration="362000" />
+      <workItem from="1653839617838" duration="1298000" />
+      <workItem from="1653841101411" duration="434000" />
+      <workItem from="1653841779943" duration="234000" />
+    </task>
+    <task id="LOCAL-00088" summary="Update QR Code">
+      <created>1652279133269</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1652279133269</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Update QR Code">
+      <created>1652339117580</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1652339117581</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Update Validator">
+      <created>1652343237548</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1652343237549</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Update Validator">
+      <created>1652343455781</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1652343455781</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Update Validator">
+      <created>1652343533540</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1652343533540</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Update Seat Price function">
+      <created>1652361687130</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1652361687131</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Update QR">
+      <created>1652411584166</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1652411584166</updated>
+    </task>
+    <task id="LOCAL-00095" summary="fix bugs of QR code and SelectSeatController">
+      <created>1652422644391</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1652422644391</updated>
+    </task>
+    <task id="LOCAL-00096" summary="add surname function&#10;reduce Code Redundancy">
+      <created>1652447102178</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1652447102178</updated>
+    </task>
+    <task id="LOCAL-00097" summary="add javadocs for project">
+      <created>1652448873987</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1652448873988</updated>
+    </task>
+    <task id="LOCAL-00098" summary="add javadocs for project">
+      <created>1652449236681</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1652449236681</updated>
+    </task>
+    <task id="LOCAL-00099" summary="add css and some modifies">
+      <created>1652583593339</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1652583593339</updated>
+    </task>
+    <task id="LOCAL-00100" summary="add css and some modifies">
+      <created>1652583625262</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1652583625263</updated>
+    </task>
+    <task id="LOCAL-00101" summary="update libs and find bugs">
+      <created>1652603158223</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1652603158224</updated>
+    </task>
+    <task id="LOCAL-00102" summary="update libs and find bugs">
+      <created>1652605390181</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1652605390181</updated>
+    </task>
+    <task id="LOCAL-00103" summary="update libs and find bugs">
+      <created>1652607312287</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1652607312287</updated>
+    </task>
+    <task id="LOCAL-00104" summary="update libs and find bugs">
+      <created>1652622922298</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1652622922299</updated>
+    </task>
+    <task id="LOCAL-00105" summary="remove modules and packages">
+      <created>1652629597163</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1652629597164</updated>
+    </task>
+    <task id="LOCAL-00106" summary="huge update to solve the jar problem.">
+      <created>1652632692941</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1652632692941</updated>
+    </task>
+    <task id="LOCAL-00107" summary="add UI test examples">
+      <created>1652682109119</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1652682109119</updated>
+    </task>
+    <task id="LOCAL-00108" summary="update to 5.0">
+      <created>1653187170161</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1653187170161</updated>
+    </task>
+    <task id="LOCAL-00109" summary="update to 5.0">
+      <created>1653188242983</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1653188242983</updated>
+    </task>
+    <task id="LOCAL-00110" summary="fix tableview bugs">
+      <created>1653316351327</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1653316351328</updated>
+    </task>
+    <task id="LOCAL-00111" summary="update javadocs&#10;add unit test cases and automatic uitest cases">
+      <created>1653368872818</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1653368872819</updated>
+    </task>
+    <task id="LOCAL-00112" summary="update javadocs&#10;add unit test cases and automatic uitest cases">
+      <created>1653368938612</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1653368938612</updated>
+    </task>
+    <task id="LOCAL-00113" summary="update javadocs&#10;add unit test cases and automatic uitest cases">
+      <created>1653369029419</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1653369029419</updated>
+    </task>
+    <task id="LOCAL-00114" summary="update build jar&#10;5.24">
+      <created>1653369302083</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1653369302085</updated>
+    </task>
+    <task id="LOCAL-00115" summary="update build jar&#10;5.24">
+      <created>1653371698465</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1653371698465</updated>
+    </task>
+    <task id="LOCAL-00116" summary="update build jar&#10;5.24">
+      <created>1653402573461</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1653402573462</updated>
+    </task>
+    <task id="LOCAL-00117" summary="update javadoc and visibility of class">
+      <created>1653404998314</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1653404998314</updated>
+    </task>
+    <task id="LOCAL-00118" summary="update javadoc and visibility of class">
+      <created>1653406775940</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1653406775940</updated>
+    </task>
+    <task id="LOCAL-00119" summary="update javadoc and visibility of class">
+      <created>1653406902832</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1653406902832</updated>
+    </task>
+    <task id="LOCAL-00120" summary="update javadoc and visibility of class">
+      <created>1653445895163</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1653445895164</updated>
+    </task>
+    <task id="LOCAL-00121" summary="update javadoc and visibility of class">
+      <created>1653477832170</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1653477832171</updated>
+    </task>
+    <task id="LOCAL-00122" summary="update javadoc and visibility of class">
+      <created>1653488224536</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1653488224536</updated>
+    </task>
+    <task id="LOCAL-00123" summary="update javadoc and visibility of class">
+      <created>1653488640487</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1653488640487</updated>
+    </task>
+    <task id="LOCAL-00124" summary="update javadoc and visibility of class">
+      <created>1653488787909</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1653488787909</updated>
+    </task>
+    <task id="LOCAL-00125" summary="update javadoc and visibility of class">
+      <created>1653658373544</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1653658373545</updated>
+    </task>
+    <task id="LOCAL-00126" summary="update README.md">
+      <created>1653659366628</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1653659366629</updated>
+    </task>
+    <task id="LOCAL-00127" summary="update README.md">
+      <created>1653659580463</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1653659580463</updated>
+    </task>
+    <task id="LOCAL-00128" summary="update README.md">
+      <created>1653659674065</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1653659674065</updated>
+    </task>
+    <task id="LOCAL-00129" summary="fix bugs with no reservation">
+      <created>1653666478135</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1653666478135</updated>
+    </task>
+    <task id="LOCAL-00130" summary="fix bugs with no reservation">
+      <created>1653715852006</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1653715852007</updated>
+    </task>
+    <task id="LOCAL-00131" summary="5.0 release">
+      <created>1653834890642</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1653834890644</updated>
+    </task>
+    <task id="LOCAL-00132" summary="5.0 release">
+      <created>1653835016511</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1653835016511</updated>
+    </task>
+    <task id="LOCAL-00133" summary="5.0 release">
+      <created>1653838670134</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1653838670134</updated>
+    </task>
+    <task id="LOCAL-00134" summary="5.0 release">
+      <created>1653838775773</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1653838775773</updated>
+    </task>
+    <task id="LOCAL-00135" summary="5.0 release">
+      <created>1653841498807</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1653841498808</updated>
+    </task>
+    <task id="LOCAL-00136" summary="5.0 release">
+      <created>1653842005494</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1653842005494</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="e10a6ace-6f93-4b07-a758-7d14b539e686">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="help return function" />
+    <MESSAGE value="reformat" />
+    <MESSAGE value="add return function" />
+    <MESSAGE value="add return function and README.md" />
+    <MESSAGE value="update 4.0" />
+    <MESSAGE value="Update QR Code" />
+    <MESSAGE value="Update Validator" />
+    <MESSAGE value="Update Seat Price function" />
+    <MESSAGE value="Update QR" />
+    <MESSAGE value="fix bugs of QR code and SelectSeatController" />
+    <MESSAGE value="add surname function&#10;reduce Code Redundancy" />
+    <MESSAGE value="add javadocs for project" />
+    <MESSAGE value="add css and some modifies" />
+    <MESSAGE value="update libs and find bugs" />
+    <MESSAGE value="remove modules and packages" />
+    <MESSAGE value="huge update to solve the jar problem." />
+    <MESSAGE value="add UI test examples" />
+    <MESSAGE value="update to 5.0" />
+    <MESSAGE value="fix tableview bugs" />
+    <MESSAGE value="update javadocs&#10;add unit test cases and automatic uitest cases" />
+    <MESSAGE value="update build jar&#10;5.24" />
+    <MESSAGE value="update javadoc and visibility of class" />
+    <MESSAGE value="update README.md" />
+    <MESSAGE value="fix bugs with no reservation" />
+    <MESSAGE value="5.0 release" />
+    <option name="LAST_COMMIT_MESSAGE" value="5.0 release" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

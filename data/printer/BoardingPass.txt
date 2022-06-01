@@ -5,7 +5,7 @@
     |  DATE: 27 MAY             |.
     |  FLIGHT: MU4233           |.
     |  NAME: Fang Hua           |.
-    |  SEAT: 4C                 |.
+    |  SEAT: 5D                 |.
     |  GATE: A07                |.
     |  BD TIME: 08:25           |.
     |  DEST: Beijing            |.

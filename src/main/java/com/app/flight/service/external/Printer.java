@@ -219,7 +219,7 @@ public class Printer {
      * @return a MediaPlayer object
      */
     private MediaPlayer sound() {
-        String path = "src/main/resources/com/app/flight/audio/printer.mp3";
+        String path = "data/audio/printer.mp3";
         Media sound = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setVolume(0.5);
