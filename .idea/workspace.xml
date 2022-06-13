@@ -13,8 +13,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="Contributor Covenant Code of Conduct">
-      <change afterPath="$PROJECT_DIR$/SECURITY.md" afterDir="false" />
+    <list default="true" id="49ffe846-1a06-4d0f-9f98-f6da31562104" name="变更" comment="CodeQL">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_5_25_22_14____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_5_27_21_51____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2022_5_29_22_25____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_5_25_22_14_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_5_27_21_51_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2022_5_29_22_25_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,11 +227,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.AppLauncher" />
+        <item itemvalue="JUnit.OrdinalTest" />
+        <item itemvalue="JUnit.OrdinalTest (1)" />
         <item itemvalue="应用程序.dependenciesTest.OrdinalTest" />
         <item itemvalue="应用程序.Main" />
-        <item itemvalue="应用程序.AppLauncher" />
-        <item itemvalue="JUnit.OrdinalTest (1)" />
-        <item itemvalue="JUnit.OrdinalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -400,20 +405,10 @@
       <workItem from="1653839617838" duration="1298000" />
       <workItem from="1653841101411" duration="434000" />
       <workItem from="1653841779943" duration="234000" />
-    </task>
-    <task id="LOCAL-00089" summary="Update QR Code">
-      <created>1652339117580</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1652339117581</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Update Validator">
-      <created>1652343237548</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1652343237549</updated>
+      <workItem from="1654215721329" duration="125000" />
+      <workItem from="1654483113063" duration="156000" />
+      <workItem from="1654684526260" duration="77000" />
+      <workItem from="1655100895088" duration="30000" />
     </task>
     <task id="LOCAL-00091" summary="Update Validator">
       <created>1652343455781</created>
@@ -744,7 +739,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654062951679</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="CodeQL">
+      <created>1654063404124</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1654063404124</updated>
+    </task>
+    <task id="LOCAL-00139" summary="CodeQL">
+      <created>1654063436644</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1654063436644</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -828,7 +837,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reformat" />
     <MESSAGE value="add return function" />
     <MESSAGE value="add return function and README.md" />
     <MESSAGE value="update 4.0" />
@@ -853,7 +861,8 @@
     <MESSAGE value="fix bugs with no reservation" />
     <MESSAGE value="5.0 release" />
     <MESSAGE value="Contributor Covenant Code of Conduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contributor Covenant Code of Conduct" />
+    <MESSAGE value="CodeQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="CodeQL" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
