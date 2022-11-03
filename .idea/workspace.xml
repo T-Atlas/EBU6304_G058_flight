@@ -114,7 +114,7 @@
       <recent name="com.app.flight.dependenciesTest" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.AppLauncher">
+  <component name="RunManager" selected="JUnit.OrdinalTest">
     <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.app.flight.AppLauncher" />
       <module name="EBU6304_G058_flight" />
@@ -221,11 +221,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.AppLauncher" />
         <item itemvalue="JUnit.OrdinalTest" />
         <item itemvalue="JUnit.OrdinalTest (1)" />
         <item itemvalue="应用程序.dependenciesTest.OrdinalTest" />
         <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.AppLauncher" />
       </list>
     </recent_temporary>
   </component>
@@ -404,6 +404,15 @@
       <workItem from="1654684526260" duration="77000" />
       <workItem from="1655100895088" duration="331000" />
       <workItem from="1655261827527" duration="46000" />
+      <workItem from="1655276746990" duration="859000" />
+      <workItem from="1655296363949" duration="30000" />
+      <workItem from="1655466679104" duration="127000" />
+      <workItem from="1655974527128" duration="430000" />
+      <workItem from="1657550554978" duration="90000" />
+      <workItem from="1659703003872" duration="103000" />
+      <workItem from="1659703120554" duration="208000" />
+      <workItem from="1660565729918" duration="62000" />
+      <workItem from="1660565809585" duration="51000" />
     </task>
     <task id="LOCAL-00092" summary="Update Validator">
       <created>1652343533540</created>
